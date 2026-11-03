@@ -62,9 +62,13 @@ class ProjectPolicy(Contract):
     stop_on_unknown_usage: bool = True
     completion_version: Literal["legacy-v1", "explicit-v1"] = "legacy-v1"
     progress_version: Literal["legacy-v1", "progress-v1"] = "legacy-v1"
+    repair_cycle_version: Literal["off", "repair-cycle-v1"] = "off"
     schema_version: int = 1
 
     def validate(self):
+        if self.repair_cycle_version != "off" and (self.completion_version != "explicit-v1"
+                or self.progress_version != "progress-v1" or self.max_feedback_rounds != 1):
+            raise ValueError("Repair cycle requires explicit completion, progress accounting and one correction")
         if not 0 <= self.max_feedback_rounds <= 2:
             raise ValueError("At most two public-feedback retries")
         if self.task_limits.max_rounds > 30 or self.task_limits.max_tool_calls > 100:
@@ -79,6 +83,8 @@ class ProjectPolicy(Contract):
             value.pop("completion_version")
         if self.progress_version == "legacy-v1":
             value.pop("progress_version")
+        if self.repair_cycle_version == "off":
+            value.pop("repair_cycle_version")
         return value
 
 
@@ -195,6 +201,10 @@ class ProjectEvaluationRunner:
         if not isinstance(task, ProjectRunInput) or not isinstance(policy, ProjectPolicy) or not isinstance(model, ModelSpec):
             raise TypeError("Typed project, policy and model configuration required")
         task = ProjectRunInput.from_json(task.to_json())
+        if policy.repair_cycle_version != "off":
+            from .repair_cycle import INSTRUCTION as CYCLE_INSTRUCTION
+            instructions += CYCLE_INSTRUCTION
+            prompt_version = "project-repair-cycle-v1"
         if model.provider == "openai" and not allow_live:
             raise ValueError("Live project trials require explicit scope authorization")
         model_request_kwargs(model, model_options)
@@ -419,6 +429,13 @@ class ProjectEvaluationRunner:
                 key = "coding-" + str(generation)
                 try:
                     limits = single_limits(policy.task_limits, budget, seconds)
+                    if policy.repair_cycle_version != "off":
+                        from .repair_cycle import task_limits as cycle_limits
+                        # Clip against remaining JOB capacity, then retain a small
+                        # corrective runway within the already bounded role profile.
+                        limits = cycle_limits(limits, generation)
+                        trace.emit("project.repair_cycle.allocated", count=generation,
+                            limit=limits.max_model_calls, revision_id=policy.repair_cycle_version)
                     budget.reserve(key, limits)
                 except BudgetExceeded:
                     raw["stop_reason"] = "budget_exhausted"
@@ -504,7 +521,8 @@ class ProjectEvaluationRunner:
                     limits=limits, model=current_model, model_options=model_options, cancel_event=cancel_event,
                     system_instructions=instructions, record_requests=True, worker_command=worker_command,
                     permission_recovery=recovery, coding_continuation=continuation,
-                    optimization=(RuntimeOptimization(compact_reports=True, version="explicit-report-v1")
+                    optimization=(RuntimeOptimization(compact_reports=True, version="explicit-report-v1",
+                                      coding_phase_version=policy.repair_cycle_version)
                                   if policy.completion_version == "explicit-v1" else None),
                     context_policy=writer_context_policy, evidence_context=structured_context)
                 write_json(directory / (key + ".input.json"), spec)
@@ -668,7 +686,8 @@ class ProjectEvaluationRunner:
                         usage_unknown=any(s["usage_unknown"] for s in snapshot["settlements"].values()),
                         budget_pending=bool(snapshot["pending"]), policy_intact=raw["policy_intact"], source_intact=True,
                         cancelled=cancel_event is not None and cancel_event.is_set())
-                    decision = decide(features, expert_policy, handoff=handoff)
+                    decision = decide(features, expert_policy, handoff=handoff,
+                        repair_cycle_version=policy.repair_cycle_version)
                     receipt = dict(sequence=len(raw["routing_decisions"]), task_id=result.task_id, attempt_id=result.attempt_id,
                         features=features.to_dict(), decision=decision.to_dict(), source_manifest_sha256=after.digest,
                         legacy_revision=workspace_revision(project), budget_sha256=_fingerprint(snapshot))

@@ -94,6 +94,14 @@ Only the existing Code expert may run. Original Job allowance, writer reserve,
 single episode and unknown/permission/source stops remain in force.
 """
 INITIAL_RULES_SHA256 = hashlib.sha256(INITIAL_ROUTING_RULES.encode("utf-8")).hexdigest()
+REPAIR_CYCLE_RULES = INITIAL_ROUTING_RULES + """\nrepair-cycle-v1
+After a used consultation, permit one Controller-bounded corrective writer with
+4 model calls, 3 tools, 20000 tokens and 70 seconds remaining. Require a validated
+public failure and either a completed failed workflow or the existing eligible
+local-stop receipt. Preserve all unknown, permission, source and retry stops.
+No new expert, Job or authority is granted. Recheck and reserve the same Job.
+"""
+REPAIR_CYCLE_RULES_SHA256 = hashlib.sha256(REPAIR_CYCLE_RULES.encode()).hexdigest()
 _TRACEBACK = re.compile(r"(?m)^\s*Traceback \(most recent call last\):\s*$")
 _CHAIN = re.compile(r"(?m)^\s*(?:The above exception was the direct cause of the following exception:|"
                     r"During handling of the above exception, another exception occurred:)\s*$")
@@ -247,7 +255,7 @@ class RoutingDecision(Contract):
     def validate(self):
         for value in (self.policy_sha256, self.features_sha256, self.rules_sha256):
             digest(value)
-        if self.rules_sha256 not in (RULES_SHA256, V2_RULES_SHA256, V3_RULES_SHA256, CLOSURE_RULES_SHA256, REQUEST_RULES_SHA256, INITIAL_RULES_SHA256):
+        if self.rules_sha256 not in (RULES_SHA256, V2_RULES_SHA256, V3_RULES_SHA256, CLOSURE_RULES_SHA256, REQUEST_RULES_SHA256, INITIAL_RULES_SHA256, REPAIR_CYCLE_RULES_SHA256):
             raise ValueError("Unknown routing rule identity")
         if self.action == "consult_experts":
             if self.roles not in (("code_analysis",), ("code_analysis", "log_analysis")):
@@ -302,10 +310,12 @@ def extract_public_features(*, public_log, source_files, verification_status, wo
         source_intact=source_intact, cancelled=cancelled)
 
 
-def decide(features, policy=ExpertPolicy(), *, handoff=None, initial=False):
+def decide(features, policy=ExpertPolicy(), *, handoff=None, initial=False, repair_cycle_version="off"):
     """Recomputable admission proposal; no mutation, budget reservation or execution."""
     if type(features) is not PublicRoutingFeatures or type(policy) is not ExpertPolicy:
         raise TypeError("Typed public features and expert policy required")
+    if repair_cycle_version not in ("off", "repair-cycle-v1"):
+        raise ValueError("Unknown repair cycle")
     if type(initial) is not bool or initial and handoff is not None:
         raise ValueError("Initial consultation and writer handoff are distinct origins")
     if handoff is not None:
@@ -324,6 +334,8 @@ def decide(features, policy=ExpertPolicy(), *, handoff=None, initial=False):
         version = REQUEST_RULES_SHA256
     if initial:
         version = INITIAL_RULES_SHA256
+    if repair_cycle_version != "off":
+        version = REPAIR_CYCLE_RULES_SHA256
 
     def result(action, *reasons, roles=()):
         return RoutingDecision(action=action, roles=roles, reason_codes=reasons,
@@ -352,6 +364,14 @@ def decide(features, policy=ExpertPolicy(), *, handoff=None, initial=False):
         # Leave original Single budget admission to its existing controller.
         # Enabling no experts must not impose this new strategy's writer floor.
         return result("stop" if local else "keep_single", "expert_policy_off")
+
+    if repair_cycle_version != "off" and not initial and features.episodes_used:
+        from .repair_cycle import MIN_CALLS, MIN_TOOLS, MIN_TOKENS, MIN_SECONDS
+        fits_correction = (features.remaining_model_calls >= MIN_CALLS
+            and features.remaining_tool_calls >= MIN_TOOLS and features.remaining_total_tokens >= MIN_TOKENS
+            and features.remaining_seconds >= MIN_SECONDS)
+        return result("keep_single" if fits_correction else "stop",
+            "bounded_public_correction" if fits_correction else "correction_reserve_unavailable")
 
     def fits(experts):
         limits = policy.expert_limits

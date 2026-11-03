@@ -247,6 +247,22 @@ class RuntimeHooks:
             raise ValueError("Invalid trusted verification reserve")
         self._verification_reserve_seconds = float(verification_timeout)
 
+    def coding_phase_instruction(self, agent):
+        if getattr(self.optimization, "coding_phase_version", "off") != "repair-cycle-v1":
+            return None
+        if agent.mutation_count:
+            return None
+        due = (agent.investigation_rounds >= min(4, max(1, agent.max_investigation_rounds - 1))
+               or self.ledger.model_calls >= self.ledger.limits.max_model_calls - 4)
+        if not due:
+            return None
+        from .coding import CODING_ACTION_PHASE, CODING_ACTION_PHASE_SHA256
+        if not getattr(self, "_coding_action_announced", False):
+            self._coding_action_announced = True
+            self.trace.emit("coding.action_phase", revision_id=CODING_ACTION_PHASE_SHA256,
+                count=self.ledger.limits.max_model_calls-self.ledger.model_calls)
+        return CODING_ACTION_PHASE
+
     def coding_report_reason(self, messages, tools):
         if not self._coding_completion:
             return None

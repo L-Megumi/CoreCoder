@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "protocol_id": "m20-repair-cycle-v1",
+  "planned": 4,
+  "schedule": [
+    {
+      "case_id": "packaging-requirement-hash",
+      "repeat": 1,
+      "scope": "live-packaging-requirement-hash-cycle-v1",
+      "planned_id": "packaging-requirement-hash-expert_assisted"
+    },
+    {
+      "case_id": "sam-checkpoint-resume",
+      "repeat": 1,
+      "scope": "live-sam-checkpoint-resume-cycle-v1",
+      "planned_id": "sam-checkpoint-resume-expert_assisted"
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "repeat": 1,
+      "scope": "live-jsonpointer_scalar-cycle-v1",
+      "planned_id": "jsonpointer_scalar-expert_assisted"
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "repeat": 1,
+      "scope": "live-itsdangerous_future-cycle-v1",
+      "planned_id": "itsdangerous_future-expert_assisted"
+    }
+  ],
+  "budget": {
+    "max_requests": 88,
+    "max_tokens": 1600000,
+    "usd_admission": 1.0
+  },
+  "source_files": 601,
+  "source_manifest_sha256": "2ee5d946b128732ae423e458a9f049080272c1d3f9aaca8b7a047bbfe5de82c6",
+  "prompt_changed": true,
+  "old_results_preserved": true,
+  "no_in_trial_tuning": true,
+  "ordinary_failures_retained": true,
+  "purpose": "Four new-version development diagnostics, one per case; not a matched stability or causal improvement estimate"
+}

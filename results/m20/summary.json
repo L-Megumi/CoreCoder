@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "protocol_id": "m20-repair-cycle-v1",
+  "planned": 4,
+  "started": 4,
+  "archived": 4,
+  "successes": 4,
+  "e2e": 1.0,
+  "f2p_passes": 4,
+  "p2p_passes": 4,
+  "totals": {
+    "prompt_tokens": 416709,
+    "completion_tokens": 9210,
+    "total_tokens": 425919,
+    "prompt_cache_hit_tokens": 64896,
+    "prompt_cache_miss_tokens": 351813,
+    "requests": 42,
+    "tool_calls": 50,
+    "wall_seconds": 144.587037
+  },
+  "provider_unknown": 0,
+  "runtime_unknown": 0,
+  "pending": 0,
+  "actual_paid_trials": 4,
+  "repetitions_per_case": 1,
+  "online_corrective_attempts": 0,
+  "action_phase_trials": 0,
+  "tariff_estimate_usd": 0.058492638,
+  "conservative_admission_charge_usd": 0.1360647,
+  "pricing_source": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "pricing_checked_date": "2026-11-03",
+  "cost_is_invoice": false,
+  "cases": [
+    {
+      "case_id": "packaging-requirement-hash",
+      "requests": 11,
+      "actual_tokens": 148060,
+      "f2p_checks": 5,
+      "p2p_checks": 10,
+      "feedback": 0,
+      "action_phase": false
+    },
+    {
+      "case_id": "sam-checkpoint-resume",
+      "requests": 12,
+      "actual_tokens": 127144,
+      "f2p_checks": 3,
+      "p2p_checks": 3,
+      "feedback": 0,
+      "action_phase": false
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "requests": 12,
+      "actual_tokens": 88604,
+      "f2p_checks": 4,
+      "p2p_checks": 7,
+      "feedback": 0,
+      "action_phase": false
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "requests": 7,
+      "actual_tokens": 62111,
+      "f2p_checks": 3,
+      "p2p_checks": 7,
+      "feedback": 0,
+      "action_phase": false
+    }
+  ],
+  "interpretation": "New-version development sanity check, one trial per case. Not a stability estimate or causal improvement over M19 or Single.",
+  "old_m19_results_modified": false,
+  "full_regression": false,
+  "guard_permissions_expanded": false
+}

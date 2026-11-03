@@ -1,0 +1,14 @@
+{
+  "README.md": "44a476732fca4afc17ad538ba8bbdc793b165c494f9683ebb27f37cce6e08c36",
+  "accounting-replay.json": "1eb31411262822ff3afcb464335c423b45fd285e8581d64e9147cd53630d4b76",
+  "changes.json": "95b84cfeddbc43d3b67b2ff41b81465388f96f75558577f2802ffa2689a8caf5",
+  "offline-checks.json": "e314ce74ef60d35dccf9ea2e91bf1eebb3da86c14c8cc0a7f3d9dc456374dda4",
+  "protocol.json": "2b0f34dcba95223e1e2e7ec53667fdfa912cbb5d3c7755da7b60300b602b66d7",
+  "recompute.py": "eea1b3d13a5017d1dac3801a5fec277c3b3c8714e783f378053fc964cf7c4592",
+  "source-identity.json": "85a68a54736964351b090b120c2bdf8f820ea1795724464f7a30bc60e5b9e9f2",
+  "summary.json": "54927eee7ef5fffa3dac025eafe45524a8d322e4b5ddf23da962bea8484f5979",
+  "trials/1-packaging-requirement-hash.json": "15e1f5d1024ab770c324fe2449479c3656e0e5446b0227336958cd5bec07922b",
+  "trials/2-sam-checkpoint-resume.json": "df19b62ad3a111b109b71b879e153ef4176bec76a4dd9f01e8094653793c8d6e",
+  "trials/3-jsonpointer_scalar.json": "8e959c7d3968722dfabd0bff1b3fc54d5951daa03437e20e54e86114f6c38112",
+  "trials/4-itsdangerous_future.json": "aa129d7541dd8f059248a418fe3f839524cc1472d6e156f633f4f97b514f7892"
+}

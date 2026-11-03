@@ -1,0 +1,10 @@
+{
+  "all_targeted_passed": true,
+  "new_tests": 26,
+  "legacy_routing": 70,
+  "legacy_permission": 33,
+  "unique_passed": 129,
+  "full_regression": false,
+  "paid_calls": 0,
+  "test_count_semantics": "26 new tests and final routing tests pass on final source; unchanged permission tests passed before the routing identity registration fix. Initial development failures are retained."
+}

@@ -54,6 +54,15 @@ CODING_EXPERT_REQUEST = (
     "or when the controller has entered its finalization-only phase."
 )
 CODING_EXPERT_REQUEST_SHA256 = hashlib.sha256(CODING_EXPERT_REQUEST.encode()).hexdigest()
+CODING_ACTION_PHASE = (
+    "[Controller execution phase: repair-cycle-v1]\n"
+    "The investigation window is nearing its end. Tools remain available inside the existing allowance. "
+    "Use the current source observations and expert handoff to choose a minimal justified edit. "
+    "If a decisive fact is missing, make one focused source check; avoid re-reading unchanged ranges. "
+    "Do not accept an expert hypothesis as verified fact. If no edit is justified, report incomplete. "
+    "Preserve the public command and remaining final-report/verification allowance."
+)
+CODING_ACTION_PHASE_SHA256 = hashlib.sha256(CODING_ACTION_PHASE.encode()).hexdigest()
 
 
 def _request_path(value):

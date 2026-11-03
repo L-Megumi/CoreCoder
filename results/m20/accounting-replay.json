@@ -1,0 +1,33 @@
+{
+  "old_exception": "TypeError",
+  "new_accounting_stop": true,
+  "original_permission_reason_preserved": "permission_violation",
+  "runtime_unknown_liability_retained": {
+    "accounting_complete": false,
+    "charged": {
+      "model_calls": 12,
+      "tool_calls": 24,
+      "total_tokens": 200000
+    },
+    "estimated_input_tokens": null,
+    "known_completion_tokens": null,
+    "known_prompt_tokens": null,
+    "reserved": {
+      "model_calls": 12,
+      "tool_calls": 24,
+      "total_tokens": 200000
+    },
+    "usage_unknown": true
+  },
+  "denial_target_matches": [
+    {
+      "denial_id": "denial-e61b6287ddab4332ae5938509bd3bfe4",
+      "reason": "write_not_allowed",
+      "matches_writable_candidate": true,
+      "candidate_relative_path": "sam.py",
+      "tool_executed": false
+    }
+  ],
+  "old_records_modified": false,
+  "paid_api_calls": 0
+}

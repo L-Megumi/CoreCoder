@@ -1,0 +1,34 @@
+{
+  "corecoder/workflow.py": {
+    "before": "f5b8d87723af70d66399bb45b47dc0f8f8c00da9fc357cb91eed7edfcbd2dc4b",
+    "after": "362f0200ce67ab1fb5abf8111808cb0230e1b73cb4ececd0ccc63969045d63e0"
+  },
+  "tests/test_project_repair_cycle.py": {
+    "before": null,
+    "after": "1c4570518788caf79681da75ea1872c3307ab1210d1691c4ea060b89c11e5b89"
+  },
+  "researchcoder/runtime/budget.py": {
+    "before": "467ff0b90bb389699fc8d19faa9229b8c1661a074f7caba0b7c7a7a21f78bbbb",
+    "after": "1db9ae2ea6374f3c1d0f55715d01e9358d17edacc316511a63546e8b84ef7ebc"
+  },
+  "researchcoder/runtime/coding.py": {
+    "before": "5f5e19bd98ec7ce09fbd61556e5bf2f04cbc3d25a39d27c67b6f486e2a9208a4",
+    "after": "6d6e9c56acc3beba0ebae76cca2de47a70d7a2cb8c81e3b05632e6307bfaa80b"
+  },
+  "researchcoder/runtime/optimization.py": {
+    "before": "2fc17db1ec36da7b04149a6b96d20ee1bfbc926fc3c464c4f95fe245715d0268",
+    "after": "1776d3f9d2e7806e55cd0016f9e70833a35de5d4ff4c17032180e291d37fda10"
+  },
+  "researchcoder/evaluation/projects/repair_cycle.py": {
+    "before": null,
+    "after": "ccf9cdd3f30b7bd90b978a1b1b163d71870946ffbb421c7e4c9279faeac12013"
+  },
+  "researchcoder/evaluation/projects/routing.py": {
+    "before": "9ddcd58bd588bbdb812e0c6f464491c169553c018865bbd1dd8abe6b56a716a4",
+    "after": "6973dc2b7d75f2f3cfc316aca7059425f6a56e96a095e0ae422573cf5dd62e58"
+  },
+  "researchcoder/evaluation/projects/runner.py": {
+    "before": "4bb3fa6890c4bc3b22be352432877e6f3475c3e32473b9e78512a25fba650405",
+    "after": "4d22876b93ddcc30c2af9c07df5e937ceff2d03f9b18ee5e943d5f88062b8b67"
+  }
+}

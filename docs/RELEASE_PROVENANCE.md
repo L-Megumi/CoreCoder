@@ -1,6 +1,8 @@
 # Release provenance
 
-The runtime packages in this release preserve the frozen M18 final implementation.
+The initial M19 source release (commit 3acd19f) preserves the frozen M18 implementation.
+The subsequent opt-in M20 repair-cycle changes and their separate execution identity
+are documented in results/m20. M19 records remain unchanged and recoverable by commit.
 Portable repository fixtures include the complete pinned candidate manifest and
 the independent public/F2P/P2P checks used by the evaluator. Profile entry wrappers
 resolve sibling files rather than historical server paths; the underlying Oracle
