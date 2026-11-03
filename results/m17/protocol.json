@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "protocol_id": "m17-packaging-requirement-hash-feedback-v3-r2",
+  "source_files": 595,
+  "source_manifest_sha256": "512691e807ec0089bb3696b1531bc711997ded5007dfa17aebe8d9a036fd30a2",
+  "source_snapshot_sha256": "d6f067bbe03cfb6902db1f0d43e90a69ec2c926992838efecb79b11153cbcf5b",
+  "schedule": [
+    {
+      "planned_id": "packaging-requirement-hash-expert_assisted",
+      "case_id": "packaging-requirement-hash",
+      "mode": "expert_assisted",
+      "arm": "expert_assisted",
+      "repeat": 1,
+      "config": "configs/packaging-requirement-hash-expert_assisted.json",
+      "config_sha256": "8d3913a3830601ac11dbf32e3b58d73e5ba30729c4310c5e55b29d27e329b552",
+      "public_input_sha256": "bb26da2a4ef42d0cd2f9931608f5ac33f79d266d2011636c4115d92a4a2e79c4",
+      "oracle_sha256": {
+        "public_check": "ccda2d33b933aedbdca2edbbf5f7b1bebfe4b57113171339707de7fd7ef1818d",
+        "f2p_check": "af4b034bf98519606fc4f447dfcfa88d985b945065564a4fa44008f3ba0f086a",
+        "p2p_check": "80bb7e565a4422078fe9de816655d3410c864afa3470bbec95d3d31cd748d21e"
+      }
+    }
+  ],
+  "prompt_identity": {
+    "writer_sha256": "45752c4918c4e97e29608c07fa12b0b99bf4c0fa1e2805082d9b8b026a7f2ecc",
+    "writer_explicit_sha256": "19776b5415e30f64d5e4aae64dc9ce086771199533f4cf8bf438059c1477cca4",
+    "writer_system_template_source_sha256": "bf96e7d17ead662a23372efe428136d18f00fdbfcd0fbd40c89a385c6d1d30d9",
+    "writer_guard_template_source_sha256": "de168dd5cd6669e5c912d96673a8befcc54a0005146636e8759f4c1bb6eded9a",
+    "expert_system_template_source_sha256": "3275d46d48fe3ac14e588aa850d39eee29aa98e7a391235de16a20012f0750e7",
+    "expert_role_sha256": "db64207abe274733f97c754db9024fedacac672891f3e623bb4401636fd1f82f",
+    "expert_compact_sha256": "f93f16f925c513c3364b380bae7b93fd45034bc26a9ef82b087a5de2b6af3273",
+    "identity_semantics": "Static instruction and source-template hashes, not hashes of dynamic bound system messages; actual requests are archived per Worker",
+    "initial_writer_request_option": "disabled_after_initial_consultation",
+    "expert_report_version": "evidence-ready-v2",
+    "expert_explicit_report_sha256": "b4fad89fbd48aeadf814c74807e0a2184e6909279645c0fb40a5fd2b57adcc29",
+    "expert_investigation_sha256": "c99ab7a38791e05b9c16d763342f5ed3df550670d150bd64f1b6162249c68359",
+    "expert_report_reserve_calls": 1,
+    "writer_repair_continuity_sha256": "b901438cc3b4a7bd72b9e468f337569da8cebcde1a3f799eb42e91d15088e5d9",
+    "compact_handoff_source_sha256": "5a276c672775fc1d78afb8d8fc9f369bb3dcc6287a5bb3beb16607c4d2768099",
+    "writer_followup_sha256": "bede365a7d27f31023a879156270deafd8b3236b9c42bc46a6189e492959e7b4",
+    "expert_assignment_sha256": "ea7a67a0c6ab42770d38b1412412b3cccf7a4ff77b8592b4189f91dfa6cade89"
+  },
+  "routing_rules_sha256": "ab120277f1fe09b5eca59b2563e061d4b251cb64764020d5ab3e3c273f6c35a3",
+  "limits": {
+    "jobs": 1,
+    "http": 24,
+    "tokens": 400000,
+    "usd_admission": 0.25,
+    "job_http": 24,
+    "job_tools": 60,
+    "job_tokens": 400000,
+    "job_seconds": 180,
+    "output_tokens": 2048,
+    "context_tokens": 32000
+  },
+  "config_delta": {
+    "expert_policy.initial_mode": "code-first-v1",
+    "expert_policy.report_version": "readiness-v2",
+    "expert_limits": {
+      "model_calls": 6,
+      "rounds": 6,
+      "tool_calls": 10,
+      "tokens": 80000,
+      "seconds": 45
+    },
+    "report_reserve_calls": 1,
+    "writer_min_model_calls": 12,
+    "writer_context_policy.repair_state_version": "state-v1",
+    "expert_policy.assignment_version": "focused-v1",
+    "writer_context_policy.expert_followup_version": "followup-v3",
+    "case_and_checks": "Frozen development input and unchanged original Oracle through protected receipt adapters",
+    "other_config": "Existing model, budget and permissions preserved; new independent case trial; no runtime changes from M15",
+    "receipt_adapter_version": "Per-case pinned original Oracle adapter; see frozen exact_fields",
+    "public_execution_policy": "Original per-case task objective, no cross-case policy substitution"
+  },
+  "scope_smoke": {
+    "checks": [
+      "expanded_count_token_fee_or_case_rejected",
+      "duplicate_or_second_job_rejected",
+      "request_25_stops_before_transport",
+      "unknown_usage_stops_and_retains_liability"
+    ],
+    "passed": 4,
+    "model_calls": 0,
+    "credentials_loaded": false
+  },
+  "focused_test_count": 45,
+  "focused_test_count_semantics": "Inherited M16 45 passing targeted pytest nodes over byte-identical runtime, tests and existing fixtures; not rerun in M17.",
+  "full_regression": "deferred_by_user",
+  "automatic_repeat": false,
+  "old_results_modified": false,
+  "purpose": "One real packaging-requirement-hash execution with unchanged focused-v1/followup-v3 collaboration and a pinned per-case original Oracle on the frozen development packaging-requirement-hash case; assess evidence handoff and repair verification, not adaptive triggering or causal superiority",
+  "case_history": "packaging-requirement-hash is a frozen development fixture; no in-batch strategy tuning or validation/holdout case use",
+  "business_failures_retained": true,
+  "fee_semantics": "Conservative admission estimate, not a provider invoice guarantee",
+  "batch": {
+    "protocol_id": "m17-three-development-v1",
+    "case_order": [
+      "packaging-requirement-hash",
+      "sam-checkpoint-resume",
+      "jsonpointer_scalar",
+      "itsdangerous_future"
+    ],
+    "max_jobs": 4,
+    "max_model_requests": 96,
+    "token_admission": 1600000,
+    "usd_admission": 1.0,
+    "scope": "Development diagnostic closeout; no causal architecture comparison."
+  },
+  "model": {
+    "provider": "deepseek",
+    "name": "deepseek-flash",
+    "thinking": false,
+    "max_output_tokens": 2048,
+    "context_tokens": 32000
+  },
+  "source_record_sha256": "e4803106732908da530426d6456638a26b3e878719f69ba33ef29099dfda1bd4",
+  "publication_note": "Private source paths and network launch configuration omitted. Hashes identify original protocol and prompt versions; no old experiment records changed."
+}

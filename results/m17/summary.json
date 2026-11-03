@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "context": [
+    {
+      "arm": "A",
+      "strategy": "original",
+      "cases": 10,
+      "expected": 32,
+      "retained": 23,
+      "evidence_retention": 0.71875,
+      "mean_before_tokens": 16145.6,
+      "mean_after_tokens": 717.9,
+      "reduction_from_uncompressed": 0.9555358735506887,
+      "construction_failures": 2,
+      "recovered_documents": 116,
+      "build_seconds": 0.6672188531374559,
+      "fixed_rule_probe_passed": 5,
+      "mean_duplicate_ratio": 0.4
+    },
+    {
+      "arm": "B",
+      "strategy": "truncate",
+      "cases": 10,
+      "expected": 32,
+      "retained": 21,
+      "evidence_retention": 0.65625,
+      "mean_before_tokens": 16145.6,
+      "mean_after_tokens": 888.8,
+      "reduction_from_uncompressed": 0.9449509463878704,
+      "construction_failures": 0,
+      "recovered_documents": 140,
+      "build_seconds": 0.6864071909803897,
+      "fixed_rule_probe_passed": 5,
+      "mean_duplicate_ratio": 0.8007527112979128
+    },
+    {
+      "arm": "C",
+      "strategy": "summary",
+      "cases": 10,
+      "expected": 32,
+      "retained": 17,
+      "evidence_retention": 0.53125,
+      "mean_before_tokens": 16145.6,
+      "mean_after_tokens": 163.0,
+      "reduction_from_uncompressed": 0.9899043702308988,
+      "construction_failures": 0,
+      "recovered_documents": 140,
+      "build_seconds": 0.7472342398250476,
+      "fixed_rule_probe_passed": 4,
+      "mean_duplicate_ratio": 0.5
+    },
+    {
+      "arm": "D",
+      "strategy": "evidence",
+      "cases": 10,
+      "expected": 32,
+      "retained": 32,
+      "evidence_retention": 1.0,
+      "mean_before_tokens": 16145.6,
+      "mean_after_tokens": 1392.7,
+      "reduction_from_uncompressed": 0.9137412050341889,
+      "construction_failures": 0,
+      "recovered_documents": 140,
+      "build_seconds": 0.6860104037914425,
+      "fixed_rule_probe_passed": 10,
+      "mean_duplicate_ratio": 0.48778283464705874
+    }
+  ],
+  "oracle_controls": {
+    "total": 24,
+    "matched_expected_outcome": 24
+  },
+  "scripted": {
+    "total": 4,
+    "passed": 4,
+    "paid_api_calls": 0,
+    "model_accuracy_claim": false
+  },
+  "real": {
+    "planned": 4,
+    "started": 1,
+    "archived": 1,
+    "completed_repairs": 0,
+    "cancelled_after_start": 1,
+    "cancelled_before_start": 3,
+    "model_requests": 1,
+    "tool_calls": 0,
+    "actual_provider_tokens": null,
+    "unknown_requests": 1,
+    "unknown_liability": {
+      "tokens": 6853,
+      "usd": 0.0038991
+    },
+    "stop_reason": "usage_unknown"
+  },
+  "full_regression": false,
+  "installation_acceptance": false,
+  "current_pytest_nodes_run": 0
+}

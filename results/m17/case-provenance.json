@@ -1,0 +1,209 @@
+{
+  "cases": [
+    {
+      "case_id": "jsonpointer_scalar",
+      "source": {
+        "repo": "stefankoegl/python-json-pointer",
+        "html_url": "https://github.com/stefankoegl/python-json-pointer/commit/16c4c8e33a30e364d94f7a870a6c79916b5f870d",
+        "source_files": [
+          "LICENSE.txt",
+          "jsonpointer.py"
+        ]
+      },
+      "source_scope": "Pinned upstream package source slice with original license; independent locally authored synthetic Oracle; not a full repository benchmark",
+      "original_faulty_commit": "f15abacd371a3415fb874634687d1619aa5a6fe4",
+      "original_fixed_commit": "16c4c8e33a30e364d94f7a870a6c79916b5f870d",
+      "writable_paths": [
+        "jsonpointer.py"
+      ],
+      "origin_relative_path": "jsonpointer.py",
+      "oracle_sha256": "4d56d2807741c41be29bf133b2a2d3853a5b3caeb142f4fae8f3d8db5895b867",
+      "git_blob_checks": [
+        {
+          "ref": "16c4c8e33a30e364d94f7a870a6c79916b5f870d",
+          "path": "LICENSE.txt",
+          "state": "healthy",
+          "expected": "491196d773493c591f1287107c3d368f2f8263d3"
+        },
+        {
+          "ref": "16c4c8e33a30e364d94f7a870a6c79916b5f870d",
+          "path": "jsonpointer.py",
+          "state": "healthy",
+          "expected": "fc26ad67057005c1da199a5ff29f46d6b3342916"
+        },
+        {
+          "ref": "f15abacd371a3415fb874634687d1619aa5a6fe4",
+          "path": "jsonpointer.py",
+          "state": "faulty",
+          "expected": "2285ffce192fc66df4b769982e2d782339f6921f"
+        }
+      ],
+      "manifests": {
+        "faulty": {
+          "jsonpointer.py": "8fcd6596bee332f11d024e38845a988e787e2c0faec2e5fe791e156d165cc277",
+          "LICENSE.txt": "d8b24f15d472885f788a2d6e985850f264627b86012a17bb242c83f310d907e5"
+        },
+        "healthy": {
+          "jsonpointer.py": "6f6b88c0e7bd3a97577b66e728872d6d95a4b51e9221c7c5731fb2f4713db73b",
+          "LICENSE.txt": "d8b24f15d472885f788a2d6e985850f264627b86012a17bb242c83f310d907e5"
+        },
+        "repaired": {
+          "jsonpointer.py": "6f6b88c0e7bd3a97577b66e728872d6d95a4b51e9221c7c5731fb2f4713db73b",
+          "LICENSE.txt": "d8b24f15d472885f788a2d6e985850f264627b86012a17bb242c83f310d907e5"
+        },
+        "negative": {
+          "jsonpointer.py": "13b9e2822e9307e4f802412f2e3a9f104c6fcc3a34fea71926209209d12beece",
+          "LICENSE.txt": "d8b24f15d472885f788a2d6e985850f264627b86012a17bb242c83f310d907e5"
+        }
+      }
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "source": {
+        "repo": "pallets/itsdangerous",
+        "html_url": "https://github.com/pallets/itsdangerous/commit/c30678d19e37011890e2374cca04f7789e101793",
+        "source_files": [
+          "LICENSE.rst",
+          "src/itsdangerous/__init__.py",
+          "src/itsdangerous/_json.py",
+          "src/itsdangerous/encoding.py",
+          "src/itsdangerous/exc.py",
+          "src/itsdangerous/jws.py",
+          "src/itsdangerous/serializer.py",
+          "src/itsdangerous/signer.py",
+          "src/itsdangerous/timed.py",
+          "src/itsdangerous/url_safe.py"
+        ]
+      },
+      "source_scope": "Pinned upstream package source slice with original license; independent locally authored synthetic Oracle; not a full repository benchmark",
+      "original_faulty_commit": "1a9b8d1f9968eb248bda69f39d373a6330b692ba",
+      "original_fixed_commit": "c30678d19e37011890e2374cca04f7789e101793",
+      "writable_paths": [
+        "src/itsdangerous/timed.py"
+      ],
+      "origin_relative_path": "src/itsdangerous/timed.py",
+      "oracle_sha256": "4d56d2807741c41be29bf133b2a2d3853a5b3caeb142f4fae8f3d8db5895b867",
+      "git_blob_checks": [
+        {
+          "ref": "c30678d19e37011890e2374cca04f7789e101793",
+          "path": "LICENSE.rst",
+          "state": "healthy",
+          "expected": "7b190ca6712aa09eede3e6de79f68d7fa29072da"
+        },
+        {
+          "ref": "c30678d19e37011890e2374cca04f7789e101793",
+          "path": "src/itsdangerous/__init__.py",
+          "state": "healthy",
+          "expected": "1709a9bc44601342b017db0c408670d97f88a781"
+        },
+        {
+          "ref": "c30678d19e37011890e2374cca04f7789e101793",
+          "path": "src/itsdangerous/_json.py",
+          "state": "healthy",
+          "expected": "470636fd16de456f81f837fcf33362c3ac7992c9"
+        },
+        {
+          "ref": "c30678d19e37011890e2374cca04f7789e101793",
+          "path": "src/itsdangerous/encoding.py",
+          "state": "healthy",
+          "expected": "afcaca49cb7f1edc39884dfe6eb4ac52858ee026"
+        },
+        {
+          "ref": "c30678d19e37011890e2374cca04f7789e101793",
+          "path": "src/itsdangerous/exc.py",
+          "state": "healthy",
+          "expected": "8c9021db167cb2d8379cd8542bced9a9c48c0368"
+        },
+        {
+          "ref": "c30678d19e37011890e2374cca04f7789e101793",
+          "path": "src/itsdangerous/jws.py",
+          "state": "healthy",
+          "expected": "27ee1401eb8ba44d5137508ad0b846f5ea45c4d5"
+        },
+        {
+          "ref": "c30678d19e37011890e2374cca04f7789e101793",
+          "path": "src/itsdangerous/serializer.py",
+          "state": "healthy",
+          "expected": "72e84a18f1963a04b165b00411962188c42681cb"
+        },
+        {
+          "ref": "c30678d19e37011890e2374cca04f7789e101793",
+          "path": "src/itsdangerous/signer.py",
+          "state": "healthy",
+          "expected": "2dd4c803ed7110a1eb04c085145dc857bd301e30"
+        },
+        {
+          "ref": "c30678d19e37011890e2374cca04f7789e101793",
+          "path": "src/itsdangerous/timed.py",
+          "state": "healthy",
+          "expected": "656bc1656e06a425541f9e9ad522f506e34d9924"
+        },
+        {
+          "ref": "c30678d19e37011890e2374cca04f7789e101793",
+          "path": "src/itsdangerous/url_safe.py",
+          "state": "healthy",
+          "expected": "14aa7b9723356ee4ab96e7bb142891512ce7c3a3"
+        },
+        {
+          "ref": "1a9b8d1f9968eb248bda69f39d373a6330b692ba",
+          "path": "src/itsdangerous/timed.py",
+          "state": "faulty",
+          "expected": "2ae026195fdad135d8c4b828b64dd39cba8523e6"
+        }
+      ],
+      "manifests": {
+        "faulty": {
+          "LICENSE.rst": "63af09891b6be8ad1a4252ed43af0f4efba7fc948e228367bed7f3c5ae0b09d7",
+          "src/itsdangerous/encoding.py": "3c6192ed5dd7731c8f84665ff7ccee2124f1e504d5481167155d5a7489106ac8",
+          "src/itsdangerous/exc.py": "25307d061d4fdc5856c25b86c0be7f4a6cafd79f944f8f78c7ba0b3f372cdc95",
+          "src/itsdangerous/jws.py": "03ade0da2f0447c31875c7771548b6a5d3d3d58bed74bc0652dbd860c91be22a",
+          "src/itsdangerous/serializer.py": "5549cda3779af4f6b0e1ece42975cba13006d83813d27b86781415d156b5c63a",
+          "src/itsdangerous/signer.py": "3ef671ac4f78263a537c6c2ff804e00c82a37514b635420d38a2964b10890c62",
+          "src/itsdangerous/timed.py": "f0be07c03a26203279dec588d965f6af7a00013afa3ebeb223568990a3c67290",
+          "src/itsdangerous/url_safe.py": "8b478133d0d4e12767aad41a63a2867a49a74fa5a0254a3bec3a9cce456190a3",
+          "src/itsdangerous/_json.py": "5943004fb3d2c84be305a36946b1bfb371b60c6380d13ceb037655813a792bd2",
+          "src/itsdangerous/__init__.py": "09dca301d34d47df8b258f4fbbced55430ae43ca0858e7e4a23c438572a64b28"
+        },
+        "healthy": {
+          "LICENSE.rst": "63af09891b6be8ad1a4252ed43af0f4efba7fc948e228367bed7f3c5ae0b09d7",
+          "src/itsdangerous/encoding.py": "3c6192ed5dd7731c8f84665ff7ccee2124f1e504d5481167155d5a7489106ac8",
+          "src/itsdangerous/exc.py": "25307d061d4fdc5856c25b86c0be7f4a6cafd79f944f8f78c7ba0b3f372cdc95",
+          "src/itsdangerous/jws.py": "03ade0da2f0447c31875c7771548b6a5d3d3d58bed74bc0652dbd860c91be22a",
+          "src/itsdangerous/serializer.py": "5549cda3779af4f6b0e1ece42975cba13006d83813d27b86781415d156b5c63a",
+          "src/itsdangerous/signer.py": "3ef671ac4f78263a537c6c2ff804e00c82a37514b635420d38a2964b10890c62",
+          "src/itsdangerous/timed.py": "13ef04d25944516cdf406c09e4d6fe52ccc5cb44b4edf6e9c8d2023d8908d52b",
+          "src/itsdangerous/url_safe.py": "8b478133d0d4e12767aad41a63a2867a49a74fa5a0254a3bec3a9cce456190a3",
+          "src/itsdangerous/_json.py": "5943004fb3d2c84be305a36946b1bfb371b60c6380d13ceb037655813a792bd2",
+          "src/itsdangerous/__init__.py": "09dca301d34d47df8b258f4fbbced55430ae43ca0858e7e4a23c438572a64b28"
+        },
+        "repaired": {
+          "LICENSE.rst": "63af09891b6be8ad1a4252ed43af0f4efba7fc948e228367bed7f3c5ae0b09d7",
+          "src/itsdangerous/encoding.py": "3c6192ed5dd7731c8f84665ff7ccee2124f1e504d5481167155d5a7489106ac8",
+          "src/itsdangerous/exc.py": "25307d061d4fdc5856c25b86c0be7f4a6cafd79f944f8f78c7ba0b3f372cdc95",
+          "src/itsdangerous/jws.py": "03ade0da2f0447c31875c7771548b6a5d3d3d58bed74bc0652dbd860c91be22a",
+          "src/itsdangerous/serializer.py": "5549cda3779af4f6b0e1ece42975cba13006d83813d27b86781415d156b5c63a",
+          "src/itsdangerous/signer.py": "3ef671ac4f78263a537c6c2ff804e00c82a37514b635420d38a2964b10890c62",
+          "src/itsdangerous/timed.py": "13ef04d25944516cdf406c09e4d6fe52ccc5cb44b4edf6e9c8d2023d8908d52b",
+          "src/itsdangerous/url_safe.py": "8b478133d0d4e12767aad41a63a2867a49a74fa5a0254a3bec3a9cce456190a3",
+          "src/itsdangerous/_json.py": "5943004fb3d2c84be305a36946b1bfb371b60c6380d13ceb037655813a792bd2",
+          "src/itsdangerous/__init__.py": "09dca301d34d47df8b258f4fbbced55430ae43ca0858e7e4a23c438572a64b28"
+        },
+        "negative": {
+          "LICENSE.rst": "63af09891b6be8ad1a4252ed43af0f4efba7fc948e228367bed7f3c5ae0b09d7",
+          "src/itsdangerous/encoding.py": "3c6192ed5dd7731c8f84665ff7ccee2124f1e504d5481167155d5a7489106ac8",
+          "src/itsdangerous/exc.py": "25307d061d4fdc5856c25b86c0be7f4a6cafd79f944f8f78c7ba0b3f372cdc95",
+          "src/itsdangerous/jws.py": "03ade0da2f0447c31875c7771548b6a5d3d3d58bed74bc0652dbd860c91be22a",
+          "src/itsdangerous/serializer.py": "5549cda3779af4f6b0e1ece42975cba13006d83813d27b86781415d156b5c63a",
+          "src/itsdangerous/signer.py": "3ef671ac4f78263a537c6c2ff804e00c82a37514b635420d38a2964b10890c62",
+          "src/itsdangerous/timed.py": "8e345c7c4db5029878647eb741b55520735d81f180e4b26750f7e45706c1cad5",
+          "src/itsdangerous/url_safe.py": "8b478133d0d4e12767aad41a63a2867a49a74fa5a0254a3bec3a9cce456190a3",
+          "src/itsdangerous/_json.py": "5943004fb3d2c84be305a36946b1bfb371b60c6380d13ceb037655813a792bd2",
+          "src/itsdangerous/__init__.py": "09dca301d34d47df8b258f4fbbced55430ae43ca0858e7e4a23c438572a64b28"
+        }
+      }
+    }
+  ],
+  "oracle_authorship": "Independent synthetic checks authored for ResearchCoder; not upstream test-suite scores.",
+  "source_publication": "No third-party source code is copied into this results-only folder. Original licenses and source blobs are preserved in the local case snapshot.",
+  "healthy_faulty_repaired_negative_controls": 24
+}

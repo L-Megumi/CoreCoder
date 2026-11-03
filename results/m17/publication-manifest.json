@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "files": {
+    "case-provenance.json": "f34624118375ac70fb3c8d0a1b5fcd4d59689bb3148c64619061cb40295f16d1",
+    "context-records.json": "e8c35610432a3af1c7d29ea1db5defce8c0ec4da1eba08e9af1b4d3a65a264bf",
+    "interruption-review.json": "8d8f1c3d6308197ee1e9c9aef1cdaa552fa2e81dc43e0f7b4729d97578b9dd2a",
+    "oracle-controls.json": "258a67df979c0c3db12826115b9d3a20d143c6d43e5257d187e39e9a9e78b716",
+    "protocol.json": "d8edaa4ebfb7533770a7cea18e241a63a923be335b473f870d53446eecf3b598",
+    "publication-review.json": "7c7db1ede25f339b11513ecdd1348cad58f39f6f0cc09e210c3def55c47e08f1",
+    "README.md": "8f5ad979d136a6cd392a7daa81a55928608090af3fefcf2f10934c69c3ac86e5",
+    "real-trials.json": "a8ba7b5161310f693b42b3dd5037bf838d0f787d01e916810a0e82c6b550ee4b",
+    "recompute.py": "fd7326cbede6ef34d32e6909a95486d0ba6575654ae7eb0361b2910104c85062",
+    "scripted-e2e.json": "ccd8c2c906a90e4bc4a27a149b2e20ec54f886c1aa57ccdf93f327a2bc771aa7",
+    "scripted-execution-history.json": "98b97857c1c2f1c3b2afef1ea9e3ff6fb3da9fa2a821942bb7345ac563d8f163",
+    "source-identity.json": "4177aced27b4ec873d634298e26c184dc020964742a92906e8cc53685abbb3e3",
+    "summary.json": "04f0038545ad59d827ea9ca6ac811990a7c94f4743e3ed5279ea554ddc8d6a4a"
+  }
+}

@@ -1,0 +1,705 @@
+{
+  "ready": true,
+  "checks": [
+    {
+      "case_id": "jsonpointer_scalar",
+      "state": "faulty",
+      "profile": "public",
+      "returncode": 1,
+      "result": {
+        "case_id": "jsonpointer_scalar",
+        "profile": "public",
+        "passed": false,
+        "checks": [
+          {
+            "check": "reject_scalar_0",
+            "passed": false,
+            "error_type": "AssertionError"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "state": "faulty",
+      "profile": "f2p",
+      "returncode": 1,
+      "result": {
+        "case_id": "jsonpointer_scalar",
+        "profile": "f2p",
+        "passed": false,
+        "checks": [
+          {
+            "check": "reject_scalar_0",
+            "passed": false,
+            "error_type": "AssertionError"
+          },
+          {
+            "check": "reject_scalar_1",
+            "passed": false,
+            "error_type": "AssertionError"
+          },
+          {
+            "check": "reject_scalar_2",
+            "passed": false,
+            "error_type": "AssertionError"
+          },
+          {
+            "check": "reject_scalar_3",
+            "passed": false,
+            "error_type": "AssertionError"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "state": "faulty",
+      "profile": "p2p",
+      "returncode": 0,
+      "result": {
+        "case_id": "jsonpointer_scalar",
+        "profile": "p2p",
+        "passed": true,
+        "checks": [
+          {
+            "check": "legal_resolution_0",
+            "passed": true
+          },
+          {
+            "check": "legal_resolution_1",
+            "passed": true
+          },
+          {
+            "check": "legal_resolution_2",
+            "passed": true
+          },
+          {
+            "check": "legal_resolution_3",
+            "passed": true
+          },
+          {
+            "check": "legal_resolution_4",
+            "passed": true
+          },
+          {
+            "check": "leading_zero_refused",
+            "passed": true
+          },
+          {
+            "check": "missing_default",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "state": "healthy",
+      "profile": "public",
+      "returncode": 0,
+      "result": {
+        "case_id": "jsonpointer_scalar",
+        "profile": "public",
+        "passed": true,
+        "checks": [
+          {
+            "check": "reject_scalar_0",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "state": "healthy",
+      "profile": "f2p",
+      "returncode": 0,
+      "result": {
+        "case_id": "jsonpointer_scalar",
+        "profile": "f2p",
+        "passed": true,
+        "checks": [
+          {
+            "check": "reject_scalar_0",
+            "passed": true
+          },
+          {
+            "check": "reject_scalar_1",
+            "passed": true
+          },
+          {
+            "check": "reject_scalar_2",
+            "passed": true
+          },
+          {
+            "check": "reject_scalar_3",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "state": "healthy",
+      "profile": "p2p",
+      "returncode": 0,
+      "result": {
+        "case_id": "jsonpointer_scalar",
+        "profile": "p2p",
+        "passed": true,
+        "checks": [
+          {
+            "check": "legal_resolution_0",
+            "passed": true
+          },
+          {
+            "check": "legal_resolution_1",
+            "passed": true
+          },
+          {
+            "check": "legal_resolution_2",
+            "passed": true
+          },
+          {
+            "check": "legal_resolution_3",
+            "passed": true
+          },
+          {
+            "check": "legal_resolution_4",
+            "passed": true
+          },
+          {
+            "check": "leading_zero_refused",
+            "passed": true
+          },
+          {
+            "check": "missing_default",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "state": "repaired",
+      "profile": "public",
+      "returncode": 0,
+      "result": {
+        "case_id": "jsonpointer_scalar",
+        "profile": "public",
+        "passed": true,
+        "checks": [
+          {
+            "check": "reject_scalar_0",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "state": "repaired",
+      "profile": "f2p",
+      "returncode": 0,
+      "result": {
+        "case_id": "jsonpointer_scalar",
+        "profile": "f2p",
+        "passed": true,
+        "checks": [
+          {
+            "check": "reject_scalar_0",
+            "passed": true
+          },
+          {
+            "check": "reject_scalar_1",
+            "passed": true
+          },
+          {
+            "check": "reject_scalar_2",
+            "passed": true
+          },
+          {
+            "check": "reject_scalar_3",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "state": "repaired",
+      "profile": "p2p",
+      "returncode": 0,
+      "result": {
+        "case_id": "jsonpointer_scalar",
+        "profile": "p2p",
+        "passed": true,
+        "checks": [
+          {
+            "check": "legal_resolution_0",
+            "passed": true
+          },
+          {
+            "check": "legal_resolution_1",
+            "passed": true
+          },
+          {
+            "check": "legal_resolution_2",
+            "passed": true
+          },
+          {
+            "check": "legal_resolution_3",
+            "passed": true
+          },
+          {
+            "check": "legal_resolution_4",
+            "passed": true
+          },
+          {
+            "check": "leading_zero_refused",
+            "passed": true
+          },
+          {
+            "check": "missing_default",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "state": "negative",
+      "profile": "public",
+      "returncode": 0,
+      "result": {
+        "case_id": "jsonpointer_scalar",
+        "profile": "public",
+        "passed": true,
+        "checks": [
+          {
+            "check": "reject_scalar_0",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "state": "negative",
+      "profile": "f2p",
+      "returncode": 0,
+      "result": {
+        "case_id": "jsonpointer_scalar",
+        "profile": "f2p",
+        "passed": true,
+        "checks": [
+          {
+            "check": "reject_scalar_0",
+            "passed": true
+          },
+          {
+            "check": "reject_scalar_1",
+            "passed": true
+          },
+          {
+            "check": "reject_scalar_2",
+            "passed": true
+          },
+          {
+            "check": "reject_scalar_3",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "state": "negative",
+      "profile": "p2p",
+      "returncode": 1,
+      "result": {
+        "case_id": "jsonpointer_scalar",
+        "profile": "p2p",
+        "passed": false,
+        "checks": [
+          {
+            "check": "legal_resolution_0",
+            "passed": false,
+            "error_type": "JsonPointerException"
+          },
+          {
+            "check": "legal_resolution_1",
+            "passed": false,
+            "error_type": "JsonPointerException"
+          },
+          {
+            "check": "legal_resolution_2",
+            "passed": false,
+            "error_type": "JsonPointerException"
+          },
+          {
+            "check": "legal_resolution_3",
+            "passed": false,
+            "error_type": "JsonPointerException"
+          },
+          {
+            "check": "legal_resolution_4",
+            "passed": false,
+            "error_type": "JsonPointerException"
+          },
+          {
+            "check": "leading_zero_refused",
+            "passed": true
+          },
+          {
+            "check": "missing_default",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "state": "faulty",
+      "profile": "public",
+      "returncode": 1,
+      "result": {
+        "case_id": "itsdangerous_future",
+        "profile": "public",
+        "passed": false,
+        "checks": [
+          {
+            "check": "future_age_0",
+            "passed": false,
+            "error_type": "AssertionError"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "state": "faulty",
+      "profile": "f2p",
+      "returncode": 1,
+      "result": {
+        "case_id": "itsdangerous_future",
+        "profile": "f2p",
+        "passed": false,
+        "checks": [
+          {
+            "check": "future_age_0",
+            "passed": false,
+            "error_type": "AssertionError"
+          },
+          {
+            "check": "future_age_1",
+            "passed": false,
+            "error_type": "AssertionError"
+          },
+          {
+            "check": "future_age_2",
+            "passed": false,
+            "error_type": "AssertionError"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "state": "faulty",
+      "profile": "p2p",
+      "returncode": 0,
+      "result": {
+        "case_id": "itsdangerous_future",
+        "profile": "p2p",
+        "passed": true,
+        "checks": [
+          {
+            "check": "valid_age_0",
+            "passed": true
+          },
+          {
+            "check": "valid_age_17",
+            "passed": true
+          },
+          {
+            "check": "valid_age_60",
+            "passed": true
+          },
+          {
+            "check": "old_signature_expired",
+            "passed": true
+          },
+          {
+            "check": "unbounded_compatibility",
+            "passed": true
+          },
+          {
+            "check": "timestamp_return",
+            "passed": true
+          },
+          {
+            "check": "tampered_signature_refused",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "state": "healthy",
+      "profile": "public",
+      "returncode": 0,
+      "result": {
+        "case_id": "itsdangerous_future",
+        "profile": "public",
+        "passed": true,
+        "checks": [
+          {
+            "check": "future_age_0",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "state": "healthy",
+      "profile": "f2p",
+      "returncode": 0,
+      "result": {
+        "case_id": "itsdangerous_future",
+        "profile": "f2p",
+        "passed": true,
+        "checks": [
+          {
+            "check": "future_age_0",
+            "passed": true
+          },
+          {
+            "check": "future_age_1",
+            "passed": true
+          },
+          {
+            "check": "future_age_2",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "state": "healthy",
+      "profile": "p2p",
+      "returncode": 0,
+      "result": {
+        "case_id": "itsdangerous_future",
+        "profile": "p2p",
+        "passed": true,
+        "checks": [
+          {
+            "check": "valid_age_0",
+            "passed": true
+          },
+          {
+            "check": "valid_age_17",
+            "passed": true
+          },
+          {
+            "check": "valid_age_60",
+            "passed": true
+          },
+          {
+            "check": "old_signature_expired",
+            "passed": true
+          },
+          {
+            "check": "unbounded_compatibility",
+            "passed": true
+          },
+          {
+            "check": "timestamp_return",
+            "passed": true
+          },
+          {
+            "check": "tampered_signature_refused",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "state": "repaired",
+      "profile": "public",
+      "returncode": 0,
+      "result": {
+        "case_id": "itsdangerous_future",
+        "profile": "public",
+        "passed": true,
+        "checks": [
+          {
+            "check": "future_age_0",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "state": "repaired",
+      "profile": "f2p",
+      "returncode": 0,
+      "result": {
+        "case_id": "itsdangerous_future",
+        "profile": "f2p",
+        "passed": true,
+        "checks": [
+          {
+            "check": "future_age_0",
+            "passed": true
+          },
+          {
+            "check": "future_age_1",
+            "passed": true
+          },
+          {
+            "check": "future_age_2",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "state": "repaired",
+      "profile": "p2p",
+      "returncode": 0,
+      "result": {
+        "case_id": "itsdangerous_future",
+        "profile": "p2p",
+        "passed": true,
+        "checks": [
+          {
+            "check": "valid_age_0",
+            "passed": true
+          },
+          {
+            "check": "valid_age_17",
+            "passed": true
+          },
+          {
+            "check": "valid_age_60",
+            "passed": true
+          },
+          {
+            "check": "old_signature_expired",
+            "passed": true
+          },
+          {
+            "check": "unbounded_compatibility",
+            "passed": true
+          },
+          {
+            "check": "timestamp_return",
+            "passed": true
+          },
+          {
+            "check": "tampered_signature_refused",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "state": "negative",
+      "profile": "public",
+      "returncode": 0,
+      "result": {
+        "case_id": "itsdangerous_future",
+        "profile": "public",
+        "passed": true,
+        "checks": [
+          {
+            "check": "future_age_0",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "state": "negative",
+      "profile": "f2p",
+      "returncode": 0,
+      "result": {
+        "case_id": "itsdangerous_future",
+        "profile": "f2p",
+        "passed": true,
+        "checks": [
+          {
+            "check": "future_age_0",
+            "passed": true
+          },
+          {
+            "check": "future_age_1",
+            "passed": true
+          },
+          {
+            "check": "future_age_2",
+            "passed": true
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "state": "negative",
+      "profile": "p2p",
+      "returncode": 1,
+      "result": {
+        "case_id": "itsdangerous_future",
+        "profile": "p2p",
+        "passed": false,
+        "checks": [
+          {
+            "check": "valid_age_0",
+            "passed": false,
+            "error_type": "SignatureExpired"
+          },
+          {
+            "check": "valid_age_17",
+            "passed": false,
+            "error_type": "SignatureExpired"
+          },
+          {
+            "check": "valid_age_60",
+            "passed": false,
+            "error_type": "SignatureExpired"
+          },
+          {
+            "check": "old_signature_expired",
+            "passed": true
+          },
+          {
+            "check": "unbounded_compatibility",
+            "passed": true
+          },
+          {
+            "check": "timestamp_return",
+            "passed": false,
+            "error_type": "SignatureExpired"
+          },
+          {
+            "check": "tampered_signature_refused",
+            "passed": true
+          }
+        ]
+      }
+    }
+  ],
+  "count": 24,
+  "paid_api_calls": 0
+}

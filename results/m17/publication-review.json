@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "scope": "Only results/m17; no full source or arbitrary raw logs.",
+  "sensitive_content_findings": [],
+  "checks": [
+    "private_key",
+    "github_token",
+    "api_key_value",
+    "personal_linux_path",
+    "personal_windows_path",
+    "private_ip",
+    "authorization_bearer"
+  ],
+  "raw_archive_verified_members": 2559,
+  "excluded": [
+    "private keys",
+    "environment files",
+    "private paths",
+    "raw provider prompts",
+    "worker stdout/stderr bodies",
+    "SQLite databases",
+    "full source snapshot",
+    "arbitrary original Artifacts"
+  ],
+  "remote_authentication": "Dedicated repository deploy key authenticated; write check and upload are separate steps."
+}

@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "closed_utc": "2026-11-03T10:23:30.107123+00:00",
+  "status": "engineering_complete_real_llm_evaluation_incomplete",
+  "planned": 4,
+  "started": 1,
+  "archived": 1,
+  "completed_repairs": 0,
+  "cancelled_after_start": 1,
+  "cancelled_before_start": 3,
+  "stop_reason": "usage_unknown",
+  "trials": [
+    {
+      "case_id": "packaging-requirement-hash",
+      "planned": true,
+      "started": true,
+      "status": "cancelled",
+      "result": {
+        "schema_version": 1,
+        "job_id": "project-3a1e060732614ae9b469ae47a29e0192",
+        "project_id": "packaging-requirement-hash",
+        "status": "cancelled",
+        "failure_kind": "interrupted",
+        "end_to_end_success": false,
+        "fail_to_pass": null,
+        "pass_to_pass": null,
+        "diagnosis_correct": null,
+        "localization_correct": null,
+        "diagnosis_review": "not_scored_model_hypothesis_only",
+        "feedback_retries": 0,
+        "wall_seconds": 49.61178,
+        "usage_semantics": "provider_usage_with_unknown_retained",
+        "evaluation_checks": 3,
+        "model_requests": 1,
+        "tool_calls": 0,
+        "actual_prompt_tokens": null,
+        "actual_completion_tokens": null,
+        "estimated_input_tokens": 3203,
+        "unknown_requests": 1,
+        "usage_complete": false,
+        "cost": null,
+        "evidence_retention": null,
+        "progress_metrics": {
+          "version": "progress-v1",
+          "recorded_attempts": 0,
+          "stopped_attempts": 0,
+          "observed_tool_rounds": 0,
+          "novel_evidence_fingerprints": 0,
+          "no_progress_rounds": 0,
+          "semantics": "per_attempt_observed_novelty_not_diagnostic_correctness"
+        }
+      },
+      "transport": {
+        "requests": 1,
+        "known": 0,
+        "pending": 0,
+        "unknown": 1,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "cache_hit_tokens": 0,
+        "cache_miss_tokens": 0,
+        "actual_usage_complete": false,
+        "cache_usage_complete": false,
+        "responsibility_usd": 0.0038991,
+        "cost_semantics": "Observer admission/responsibility charge; not a provider invoice. No new pricing assumption."
+      },
+      "execution_final": {
+        "schema_version": 1,
+        "planned": 1,
+        "started": 1,
+        "archived": 1,
+        "not_started": 0,
+        "stop_reason": "usage_unknown",
+        "controller_error_type": null,
+        "transport_totals": {
+          "requests": 1,
+          "tokens": 6853,
+          "usd": 0.0038991,
+          "pending": 0,
+          "unknown": 1
+        },
+        "source_unchanged": true,
+        "residual_worker_groups": [],
+        "residual_worker_groups_unknown": [],
+        "scope_state_available": true,
+        "finalization_error_types": [],
+        "scope_id": "m17-packaging-requirement-hash-feedback-v3-r2",
+        "no_automatic_replay": true,
+        "development_diagnostic_comparison": true
+      }
+    },
+    {
+      "case_id": "sam-checkpoint-resume",
+      "planned": true,
+      "started": false,
+      "status": "cancelled_before_start",
+      "result": null
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "planned": true,
+      "started": false,
+      "status": "cancelled_before_start",
+      "result": null
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "planned": true,
+      "started": false,
+      "status": "cancelled_before_start",
+      "result": null
+    }
+  ],
+  "model_requests": 1,
+  "actual_provider_tokens": null,
+  "unknown_requests": 1,
+  "pending": 0,
+  "unknown_liability": {
+    "tokens": 6853,
+    "usd": 0.0038991
+  },
+  "prior_m15_unknown": {
+    "tokens": 14218,
+    "usd": 0.0061086,
+    "preserved": true
+  },
+  "context_matrix_rows": 40,
+  "role_views": 80,
+  "new_oracle_controls": 24,
+  "scripted_e2e_passed": 4,
+  "scripted_e2e_total": 4,
+  "current_pytest_nodes_run": 0,
+  "inherited_m16_pytest_nodes": 45,
+  "full_regression": false,
+  "installation_acceptance": false,
+  "no_residual_supervised_workers": true,
+  "owned_proxy_closed": true,
+  "automatic_replay": false,
+  "historical_results_modified": false
+}

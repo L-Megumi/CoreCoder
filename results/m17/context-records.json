@@ -1,0 +1,3815 @@
+{
+  "schema_version": 1,
+  "mode": "offline_deterministic_context_probe_and_scripted_dag",
+  "provider_requests": 0,
+  "provider_usage": null,
+  "manifest_sha256": "ed69f5ca5eea5b4b7789fb3e68c45de8c729b7892d6b4621df81adde26d6d78b",
+  "token_semantics": "estimated characters/3; no real model accuracy or billing claim",
+  "summary_strategy": "Existing generic ContextManager deterministic extractive fallback; no paid/model-generated summary.",
+  "duplicate_definition": "Repeated content-bearing character units / all supplied units across two role views; references/control overhead excluded.",
+  "fixture_oracle": "Independent expected evidence/fault/source answers; not patch execution. Separate DAG rows run the held-out PyTorch gradient oracle.",
+  "source_record_sha256": "9e84b915e0e31e5d5e198e1d527a8b8abbdcca491b4383e80c510582ff414566",
+  "derivation": "All 40 numerical rows preserved; role message bodies omitted. Original ArtifactRefs identify the private archive, not public downloadable blobs.",
+  "rows": [
+    {
+      "case_id": "long_traceback",
+      "arm": "A",
+      "strategy": "original",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 13293,
+      "after_tokens": 962,
+      "build_seconds": 0.05854870204348117,
+      "task_seconds": 1.1096009984612465e-05,
+      "diagnosis": {
+        "fault": "shape_mismatch",
+        "location": "train/head.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 3,
+      "retained": [
+        "mat1 and mat2 shapes cannot be multiplied",
+        "train/head.py",
+        "projection(features)"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-d549a7e90363498782966b4753b6b331",
+            "storage_key": "benchmark/artifact-d549a7e90363498782966b4753b6b331.blob",
+            "sha256": "be1577bae94e89425e813e3498ef0d9c532ab4617044ccb20710577fc1a50790",
+            "size_bytes": 4638,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-06e19d81692a4ce4b3704173ddf0ecc5",
+            "storage_key": "benchmark/artifact-06e19d81692a4ce4b3704173ddf0ecc5.blob",
+            "sha256": "698b9fa0f3582bc272c88b217064731555f1de0647ed27eed076b747e3491946",
+            "size_bytes": 4646,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "original",
+            "before_tokens": 13293,
+            "after_tokens": 962,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.03368628898169845,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-4b7611fb338049a39ed543eb617cee97",
+            "storage_key": "benchmark/artifact-4b7611fb338049a39ed543eb617cee97.blob",
+            "sha256": "9fed0ce86cf26cf6e75f117425e91f0c123c151bd512abb36d9203dd09841a6a",
+            "size_bytes": 4644,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-23dfc5640ebb47d68810d9df3c785421",
+            "storage_key": "benchmark/artifact-23dfc5640ebb47d68810d9df3c785421.blob",
+            "sha256": "78aec2ed4edc7d81ac9f874d17094f9eb53c1f48a1b36dd60341d4032a91091a",
+            "size_bytes": 4652,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "original",
+            "before_tokens": 13293,
+            "after_tokens": 962,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.01590754697099328,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "long_traceback",
+      "arm": "B",
+      "strategy": "truncate",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 13293,
+      "after_tokens": 660,
+      "build_seconds": 0.04595495096873492,
+      "task_seconds": 1.9588042050600052e-05,
+      "diagnosis": {
+        "fault": null,
+        "location": null,
+        "decision": "insufficient_visible_evidence"
+      },
+      "expected_count": 3,
+      "retained_count": 2,
+      "retained": [
+        "train/head.py",
+        "projection(features)"
+      ],
+      "evidence_retention": 0.6666666666666666,
+      "diagnosis_match": false,
+      "location_match": false,
+      "answer_oracle_passed": false,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.8289550496205488,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-279aa399609f4a7ca62002939e4ab8a9",
+            "storage_key": "benchmark/artifact-279aa399609f4a7ca62002939e4ab8a9.blob",
+            "sha256": "a9cee16021b32b51b576db3571d602274a753483de2263ff6c370e6180e6d1c1",
+            "size_bytes": 4639,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-54494a5ea3784856880c53bf5dffe083",
+            "storage_key": "benchmark/artifact-54494a5ea3784856880c53bf5dffe083.blob",
+            "sha256": "698b9fa0f3582bc272c88b217064731555f1de0647ed27eed076b747e3491946",
+            "size_bytes": 4646,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 13293,
+            "after_tokens": 660,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.023610741016454995,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-475fc782f8a24a4894e3133588e7853d",
+            "storage_key": "benchmark/artifact-475fc782f8a24a4894e3133588e7853d.blob",
+            "sha256": "74a2bf5068259b2e60d53e45a6ca75834e98cc5b001e4035d0a4761e2ce9e22c",
+            "size_bytes": 4645,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-850a7422a46a4a049ef23c6b0c803844",
+            "storage_key": "benchmark/artifact-850a7422a46a4a049ef23c6b0c803844.blob",
+            "sha256": "78aec2ed4edc7d81ac9f874d17094f9eb53c1f48a1b36dd60341d4032a91091a",
+            "size_bytes": 4652,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 13293,
+            "after_tokens": 660,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.014156489982269704,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "long_traceback",
+      "arm": "C",
+      "strategy": "summary",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 13293,
+      "after_tokens": 377,
+      "build_seconds": 0.051735442015342414,
+      "task_seconds": 8.264905773103237e-06,
+      "diagnosis": {
+        "fault": "shape_mismatch",
+        "location": "train/head.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 2,
+      "retained": [
+        "mat1 and mat2 shapes cannot be multiplied",
+        "train/head.py"
+      ],
+      "evidence_retention": 0.6666666666666666,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-57ba60448d4245e882a969e256a95e7c",
+            "storage_key": "benchmark/artifact-57ba60448d4245e882a969e256a95e7c.blob",
+            "sha256": "5ca813060528c8d1c5fd8799ce6996c6276dbadeefe4f9059739a30f434391c6",
+            "size_bytes": 4638,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-38ead61bc98846b3ad35904efba2f138",
+            "storage_key": "benchmark/artifact-38ead61bc98846b3ad35904efba2f138.blob",
+            "sha256": "698b9fa0f3582bc272c88b217064731555f1de0647ed27eed076b747e3491946",
+            "size_bytes": 4646,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 13293,
+            "after_tokens": 377,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.026536969002336264,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-ebb90af71a4c4b7c95282f0bb5f12cd7",
+            "storage_key": "benchmark/artifact-ebb90af71a4c4b7c95282f0bb5f12cd7.blob",
+            "sha256": "1191aeb63cca0daf15b2124ece07927d331e2765de7dbda52ad2b105399c0365",
+            "size_bytes": 4644,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-c88a67e3a5cd44e9b6e139d4977a9c52",
+            "storage_key": "benchmark/artifact-c88a67e3a5cd44e9b6e139d4977a9c52.blob",
+            "sha256": "78aec2ed4edc7d81ac9f874d17094f9eb53c1f48a1b36dd60341d4032a91091a",
+            "size_bytes": 4652,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 13293,
+            "after_tokens": 377,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.016927520046010613,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "long_traceback",
+      "arm": "D",
+      "strategy": "evidence",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 13293,
+      "after_tokens": 1566,
+      "build_seconds": 0.04732805897947401,
+      "task_seconds": 1.0089948773384094e-05,
+      "diagnosis": {
+        "fault": "shape_mismatch",
+        "location": "train/head.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 3,
+      "retained": [
+        "mat1 and mat2 shapes cannot be multiplied",
+        "train/head.py",
+        "projection(features)"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-05a9a760369d4f788c9bc7c47eb1e8c1",
+            "storage_key": "benchmark/artifact-05a9a760369d4f788c9bc7c47eb1e8c1.blob",
+            "sha256": "1191383db6e776c5b163f3ac52fc92a37027dbf9de6a4e3f030d5d3c006128c5",
+            "size_bytes": 4640,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-0ec5546e82a64e6ab519fb5554fbf790",
+            "storage_key": "benchmark/artifact-0ec5546e82a64e6ab519fb5554fbf790.blob",
+            "sha256": "698b9fa0f3582bc272c88b217064731555f1de0647ed27eed076b747e3491946",
+            "size_bytes": 4646,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 13293,
+            "after_tokens": 1565,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.024555443902499974,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-bc7c73fddbed4198bc2ef961245e0dd7",
+            "storage_key": "benchmark/artifact-bc7c73fddbed4198bc2ef961245e0dd7.blob",
+            "sha256": "5f48bd4eb9a4f89b5968aa7d01153978100268221069e5ccf7c03cb81f9f7b85",
+            "size_bytes": 4645,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-7acbbae5b9cf482a97bc4e7980722e05",
+            "storage_key": "benchmark/artifact-7acbbae5b9cf482a97bc4e7980722e05.blob",
+            "sha256": "78aec2ed4edc7d81ac9f874d17094f9eb53c1f48a1b36dd60341d4032a91091a",
+            "size_bytes": 4652,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 13293,
+            "after_tokens": 1566,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.01426772796548903,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "middle_error",
+      "arm": "A",
+      "strategy": "original",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 11985,
+      "after_tokens": 820,
+      "build_seconds": 0.04895817907527089,
+      "task_seconds": 1.0082963854074478e-05,
+      "diagnosis": {
+        "fault": "dataset_path",
+        "location": "data/loader.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 3,
+      "retained": [
+        "missing validation images",
+        "data/loader.py",
+        "/datasets/val"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-5197b6a89f414c58ac2edaf43d4f848f",
+            "storage_key": "benchmark/artifact-5197b6a89f414c58ac2edaf43d4f848f.blob",
+            "sha256": "f8a2c1b51cff7458ed2b0c5403b0057001e14c25f4f1044ed1935ab5d2c003f8",
+            "size_bytes": 4638,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-3202c3119742403c973fbd323e81864d",
+            "storage_key": "benchmark/artifact-3202c3119742403c973fbd323e81864d.blob",
+            "sha256": "7a0add3b7ce11f059a8bfe407a147c91b5703db9e6ff8ca25bda1fc6d3e73401",
+            "size_bytes": 4645,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "original",
+            "before_tokens": 11985,
+            "after_tokens": 820,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.02531425200868398,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-dc92c22d952547dab52f115cf70a4d2a",
+            "storage_key": "benchmark/artifact-dc92c22d952547dab52f115cf70a4d2a.blob",
+            "sha256": "1a520357442feb99e05d326bb3c1aa56e148845bae3ea21228e8c60834306b3e",
+            "size_bytes": 4645,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-1605e28432514e4e9b5a0981a80f19e6",
+            "storage_key": "benchmark/artifact-1605e28432514e4e9b5a0981a80f19e6.blob",
+            "sha256": "261808b23045678d06c756ec5efc3973de198936d5b368d20c5a367256ef9349",
+            "size_bytes": 4651,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "original",
+            "before_tokens": 11985,
+            "after_tokens": 820,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.014734779950231314,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "middle_error",
+      "arm": "B",
+      "strategy": "truncate",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 11985,
+      "after_tokens": 669,
+      "build_seconds": 0.04709067801013589,
+      "task_seconds": 1.1199968867003918e-05,
+      "diagnosis": {
+        "fault": "dataset_path",
+        "location": "data/loader.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 3,
+      "retained": [
+        "missing validation images",
+        "data/loader.py",
+        "/datasets/val"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.8236645605973578,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-0231225df34d45ef879d26389954481c",
+            "storage_key": "benchmark/artifact-0231225df34d45ef879d26389954481c.blob",
+            "sha256": "4334ce5fcd806b45ceb5f235b465fd44f5eed67e4646eda6982bad07afc82ff0",
+            "size_bytes": 4639,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-1fb5ceb93942452888b5c35dfa929020",
+            "storage_key": "benchmark/artifact-1fb5ceb93942452888b5c35dfa929020.blob",
+            "sha256": "7a0add3b7ce11f059a8bfe407a147c91b5703db9e6ff8ca25bda1fc6d3e73401",
+            "size_bytes": 4645,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 11985,
+            "after_tokens": 669,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.024849887005984783,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-4cd5c510fa8e4a26b2232c4415fd85b5",
+            "storage_key": "benchmark/artifact-4cd5c510fa8e4a26b2232c4415fd85b5.blob",
+            "sha256": "cffee34d651c871782b7e0abead805b09eb08ee28795f24c0f3ba1cc13565fa1",
+            "size_bytes": 4645,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-c9201bb3fca54c74a5a38ca53a2bd444",
+            "storage_key": "benchmark/artifact-c9201bb3fca54c74a5a38ca53a2bd444.blob",
+            "sha256": "261808b23045678d06c756ec5efc3973de198936d5b368d20c5a367256ef9349",
+            "size_bytes": 4651,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 11985,
+            "after_tokens": 669,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.013602104969322681,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "middle_error",
+      "arm": "C",
+      "strategy": "summary",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 11985,
+      "after_tokens": 176,
+      "build_seconds": 0.05209759995341301,
+      "task_seconds": 7.593072950839996e-06,
+      "diagnosis": {
+        "fault": "dataset_path",
+        "location": "data/loader.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 3,
+      "retained": [
+        "missing validation images",
+        "data/loader.py",
+        "/datasets/val"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-e708cf0ccd3f4623be9448ac72491506",
+            "storage_key": "benchmark/artifact-e708cf0ccd3f4623be9448ac72491506.blob",
+            "sha256": "6e973044a45b183138989cfddddae85c8af49b4a3a4d8ad05aa699f418c6d534",
+            "size_bytes": 4638,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-9cb4f65bef3c443da386755402588e58",
+            "storage_key": "benchmark/artifact-9cb4f65bef3c443da386755402588e58.blob",
+            "sha256": "7a0add3b7ce11f059a8bfe407a147c91b5703db9e6ff8ca25bda1fc6d3e73401",
+            "size_bytes": 4645,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 11985,
+            "after_tokens": 176,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.027444820967502892,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-95b8160c05f44c6bb10021d7cbaa86bf",
+            "storage_key": "benchmark/artifact-95b8160c05f44c6bb10021d7cbaa86bf.blob",
+            "sha256": "5e8abd3a2cf6a552a682bdc3485a98d34b0c9407cd32b0b1e00ccc4f707eb93d",
+            "size_bytes": 4644,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-af568749fc1e4ccbb322d91b7718fe96",
+            "storage_key": "benchmark/artifact-af568749fc1e4ccbb322d91b7718fe96.blob",
+            "sha256": "261808b23045678d06c756ec5efc3973de198936d5b368d20c5a367256ef9349",
+            "size_bytes": 4651,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 11985,
+            "after_tokens": 176,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.015928253065794706,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "middle_error",
+      "arm": "D",
+      "strategy": "evidence",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 11985,
+      "after_tokens": 1369,
+      "build_seconds": 0.04888152808416635,
+      "task_seconds": 1.2243981473147869e-05,
+      "diagnosis": {
+        "fault": "dataset_path",
+        "location": "data/loader.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 3,
+      "retained": [
+        "missing validation images",
+        "data/loader.py",
+        "/datasets/val"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-ac83309165b543e4b49573312ab49d29",
+            "storage_key": "benchmark/artifact-ac83309165b543e4b49573312ab49d29.blob",
+            "sha256": "d00e570a337d43930221e971020efab1ba47871afa685aeaa943e1caf7409491",
+            "size_bytes": 4640,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-72b1abf88a4d4235b725f6c51c5e0dbd",
+            "storage_key": "benchmark/artifact-72b1abf88a4d4235b725f6c51c5e0dbd.blob",
+            "sha256": "7a0add3b7ce11f059a8bfe407a147c91b5703db9e6ff8ca25bda1fc6d3e73401",
+            "size_bytes": 4645,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 11985,
+            "after_tokens": 1368,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.024580397992394865,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-b7de020b8f344abba23e342ecde44561",
+            "storage_key": "benchmark/artifact-b7de020b8f344abba23e342ecde44561.blob",
+            "sha256": "fbe6a4c1bd3681fe48a453aa5bddbb61f97c0ba65ae13911b0eaa926faf71084",
+            "size_bytes": 4645,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-da51bc7fb7e34debbae693f5772a3221",
+            "storage_key": "benchmark/artifact-da51bc7fb7e34debbae693f5772a3221.blob",
+            "sha256": "261808b23045678d06c756ec5efc3973de198936d5b368d20c5a367256ef9349",
+            "size_bytes": 4651,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 11985,
+            "after_tokens": 1369,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.01468177605420351,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "repeated_nan",
+      "arm": "A",
+      "strategy": "original",
+      "input_cap": 4000,
+      "error": "ValueError",
+      "before_tokens": 14041,
+      "after_tokens": 0,
+      "build_seconds": 0.05511760199442506,
+      "task_seconds": 8.147908374667168e-06,
+      "diagnosis": {
+        "fault": null,
+        "location": null,
+        "decision": "insufficient_visible_evidence"
+      },
+      "expected_count": 3,
+      "retained_count": 0,
+      "retained": [],
+      "evidence_retention": 0.0,
+      "diagnosis_match": false,
+      "location_match": false,
+      "answer_oracle_passed": false,
+      "recoverability": 0.0,
+      "duplicate_context_ratio": 0.0,
+      "receipts": []
+    },
+    {
+      "case_id": "repeated_nan",
+      "arm": "B",
+      "strategy": "truncate",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 14041,
+      "after_tokens": 655,
+      "build_seconds": 0.05923032097052783,
+      "task_seconds": 1.4481018297374249e-05,
+      "diagnosis": {
+        "fault": "unstable_log",
+        "location": "train/loss.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 2,
+      "retained": [
+        "train/loss.py",
+        "torch.log(prob)"
+      ],
+      "evidence_retention": 0.6666666666666666,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.8316656856974691,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-d2dabf80443345dc9e77b1c7ff5b3eb4",
+            "storage_key": "benchmark/artifact-d2dabf80443345dc9e77b1c7ff5b3eb4.blob",
+            "sha256": "f6f00917d5c53b7761b8af8862c06de51d294324157b09f70521277746a8f7c1",
+            "size_bytes": 4638,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-a67a26ebddc94e7d9fbf94da8799d150",
+            "storage_key": "benchmark/artifact-a67a26ebddc94e7d9fbf94da8799d150.blob",
+            "sha256": "d741e2b2401b15bd70667da8099b54b1a356a457b0868975e67cb5a9b793482b",
+            "size_bytes": 4644,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 14041,
+            "after_tokens": 655,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.03251959301996976,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-6b07c5b72e774e6984596a1c7593d583",
+            "storage_key": "benchmark/artifact-6b07c5b72e774e6984596a1c7593d583.blob",
+            "sha256": "633b02ccd131d6385d2d8533d5781e85d59517d3e5bfaffdb3381aa145043001",
+            "size_bytes": 4644,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-b0300c63b6f140e9a6968002b44b5375",
+            "storage_key": "benchmark/artifact-b0300c63b6f140e9a6968002b44b5375.blob",
+            "sha256": "8c23433456457ddad0ac4d0655d71ba2a0b960b38d0fcef0ffbdd32843c7f535",
+            "size_bytes": 4650,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 14041,
+            "after_tokens": 655,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.01784960099030286,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "repeated_nan",
+      "arm": "C",
+      "strategy": "summary",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 14041,
+      "after_tokens": 104,
+      "build_seconds": 0.08434945705812424,
+      "task_seconds": 9.421957656741142e-06,
+      "diagnosis": {
+        "fault": null,
+        "location": null,
+        "decision": "insufficient_visible_evidence"
+      },
+      "expected_count": 3,
+      "retained_count": 1,
+      "retained": [
+        "train/loss.py"
+      ],
+      "evidence_retention": 0.3333333333333333,
+      "diagnosis_match": false,
+      "location_match": false,
+      "answer_oracle_passed": false,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-736635acd09f4c9e8fc1bb38b08f4d17",
+            "storage_key": "benchmark/artifact-736635acd09f4c9e8fc1bb38b08f4d17.blob",
+            "sha256": "948f302a477bd3c2fd7dace95dbb16b5d2882a8c064c4a4ad8ab453cd7010d8e",
+            "size_bytes": 4637,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-546b1b540cb84454bf72a97bdf85f1a9",
+            "storage_key": "benchmark/artifact-546b1b540cb84454bf72a97bdf85f1a9.blob",
+            "sha256": "d741e2b2401b15bd70667da8099b54b1a356a457b0868975e67cb5a9b793482b",
+            "size_bytes": 4644,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 14041,
+            "after_tokens": 104,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.03164420707616955,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-7c69181dd37b4222bee90df292444156",
+            "storage_key": "benchmark/artifact-7c69181dd37b4222bee90df292444156.blob",
+            "sha256": "d614ed0fa3a649c944ea870ec423e7332698f4627d1cf9b732eb9a28cc7e838c",
+            "size_bytes": 4643,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-185795d79ab542b9a9b460dfeba03c50",
+            "storage_key": "benchmark/artifact-185795d79ab542b9a9b460dfeba03c50.blob",
+            "sha256": "8c23433456457ddad0ac4d0655d71ba2a0b960b38d0fcef0ffbdd32843c7f535",
+            "size_bytes": 4650,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 14041,
+            "after_tokens": 104,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.04322610201779753,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "repeated_nan",
+      "arm": "D",
+      "strategy": "evidence",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 14041,
+      "after_tokens": 894,
+      "build_seconds": 0.07104757300112396,
+      "task_seconds": 1.757405698299408e-05,
+      "diagnosis": {
+        "fault": "unstable_log",
+        "location": "train/loss.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 3,
+      "retained": [
+        "loss=NaN",
+        "train/loss.py",
+        "torch.log(prob)"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-34da78ec9bf645a28ff071493a94e663",
+            "storage_key": "benchmark/artifact-34da78ec9bf645a28ff071493a94e663.blob",
+            "sha256": "92c5064012d78363d2b2d7dceda72b4f2b5a94da5d6a1b06efee8752ee064f6e",
+            "size_bytes": 4638,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-9bcb1b558e9e479dbc50844d284a2395",
+            "storage_key": "benchmark/artifact-9bcb1b558e9e479dbc50844d284a2395.blob",
+            "sha256": "d741e2b2401b15bd70667da8099b54b1a356a457b0868975e67cb5a9b793482b",
+            "size_bytes": 4644,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 14041,
+            "after_tokens": 894,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.03615410695783794,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-6b82401f739746cb9b9bc8ac24b08804",
+            "storage_key": "benchmark/artifact-6b82401f739746cb9b9bc8ac24b08804.blob",
+            "sha256": "41eb322605b990f1323de430259c5e3fe86c66fe5855094131f75df06130b185",
+            "size_bytes": 4645,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-d222cc81f3f84618b97b384f15030c85",
+            "storage_key": "benchmark/artifact-d222cc81f3f84618b97b384f15030c85.blob",
+            "sha256": "8c23433456457ddad0ac4d0655d71ba2a0b960b38d0fcef0ffbdd32843c7f535",
+            "size_bytes": 4650,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 14041,
+            "after_tokens": 894,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.024902335950173438,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "repeated_inf",
+      "arm": "A",
+      "strategy": "original",
+      "input_cap": 4000,
+      "error": "ValueError",
+      "before_tokens": 14449,
+      "after_tokens": 0,
+      "build_seconds": 0.055343718035146594,
+      "task_seconds": 9.170034900307655e-06,
+      "diagnosis": {
+        "fault": null,
+        "location": null,
+        "decision": "insufficient_visible_evidence"
+      },
+      "expected_count": 3,
+      "retained_count": 0,
+      "retained": [],
+      "evidence_retention": 0.0,
+      "diagnosis_match": false,
+      "location_match": false,
+      "answer_oracle_passed": false,
+      "recoverability": 0.0,
+      "duplicate_context_ratio": 0.0,
+      "receipts": []
+    },
+    {
+      "case_id": "repeated_inf",
+      "arm": "B",
+      "strategy": "truncate",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 14449,
+      "after_tokens": 663,
+      "build_seconds": 0.08874875004403293,
+      "task_seconds": 1.7057056538760662e-05,
+      "diagnosis": {
+        "fault": "division_zero",
+        "location": "train/normalize.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 2,
+      "retained": [
+        "train/normalize.py",
+        "features / std"
+      ],
+      "evidence_retention": 0.6666666666666666,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.8272357723577236,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-7cc6d392762240ae9c3ac89d5c7c0a46",
+            "storage_key": "benchmark/artifact-7cc6d392762240ae9c3ac89d5c7c0a46.blob",
+            "sha256": "4e0c400400cef8004b5c3f8bb4d209b99847f61930265462adae1dd75ce8d824",
+            "size_bytes": 4638,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-33fef57074da4c628bc92f5983f4b0cd",
+            "storage_key": "benchmark/artifact-33fef57074da4c628bc92f5983f4b0cd.blob",
+            "sha256": "894e23e662fa1f4ef69d86788cf3bb28d5c6248f15a183cac73dbcd6e23bd7ce",
+            "size_bytes": 4649,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 14449,
+            "after_tokens": 663,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.05519867897965014,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-f8a24ba107c049f18ddafde63dd77cee",
+            "storage_key": "benchmark/artifact-f8a24ba107c049f18ddafde63dd77cee.blob",
+            "sha256": "b0334fc28cfab94a785e79d52b06e95a6274a2d99161ca809664283b93afdef5",
+            "size_bytes": 4644,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-236bbb21160d496188f2363f56e27123",
+            "storage_key": "benchmark/artifact-236bbb21160d496188f2363f56e27123.blob",
+            "sha256": "f2601ac27523ffe2a37d693066804d9ebb92889ba855b662b9eb4992b564bd58",
+            "size_bytes": 4655,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 14449,
+            "after_tokens": 663,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.02411833603400737,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "repeated_inf",
+      "arm": "C",
+      "strategy": "summary",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 14449,
+      "after_tokens": 104,
+      "build_seconds": 0.08274570503272116,
+      "task_seconds": 9.682029485702515e-06,
+      "diagnosis": {
+        "fault": null,
+        "location": null,
+        "decision": "insufficient_visible_evidence"
+      },
+      "expected_count": 3,
+      "retained_count": 1,
+      "retained": [
+        "train/normalize.py"
+      ],
+      "evidence_retention": 0.3333333333333333,
+      "diagnosis_match": false,
+      "location_match": false,
+      "answer_oracle_passed": false,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-c49d5a7bade04d598854de51ac91fbfe",
+            "storage_key": "benchmark/artifact-c49d5a7bade04d598854de51ac91fbfe.blob",
+            "sha256": "21bf3afc2cba48d41302ad0c2df142cfff2478043c33da71d40ac1079c80897b",
+            "size_bytes": 4637,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-81dd3817bbd542b9b0897cd1a5e1ea6f",
+            "storage_key": "benchmark/artifact-81dd3817bbd542b9b0897cd1a5e1ea6f.blob",
+            "sha256": "894e23e662fa1f4ef69d86788cf3bb28d5c6248f15a183cac73dbcd6e23bd7ce",
+            "size_bytes": 4649,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 14449,
+            "after_tokens": 104,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.03242185804992914,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-7198c972858445e2b93b845213f20329",
+            "storage_key": "benchmark/artifact-7198c972858445e2b93b845213f20329.blob",
+            "sha256": "ddc6d620bdccbcda81f2c22e1793459e229c47bf33ba58be3755f7f79ebdea86",
+            "size_bytes": 4644,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-b0eacef35e754ab3841ff794788f27cc",
+            "storage_key": "benchmark/artifact-b0eacef35e754ab3841ff794788f27cc.blob",
+            "sha256": "f2601ac27523ffe2a37d693066804d9ebb92889ba855b662b9eb4992b564bd58",
+            "size_bytes": 4655,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 14449,
+            "after_tokens": 104,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.024947211961261928,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "repeated_inf",
+      "arm": "D",
+      "strategy": "evidence",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 14449,
+      "after_tokens": 912,
+      "build_seconds": 0.08414171193726361,
+      "task_seconds": 2.469797618687153e-05,
+      "diagnosis": {
+        "fault": "division_zero",
+        "location": "train/normalize.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 3,
+      "retained": [
+        "grad_norm=Inf",
+        "train/normalize.py",
+        "features / std"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-dc15f21c696e47e8961c5b37189c671c",
+            "storage_key": "benchmark/artifact-dc15f21c696e47e8961c5b37189c671c.blob",
+            "sha256": "98de1f4ee029e83ae5db6cfca46c91c0c0fb815ea40dd40c6abab4b9c98f5ed7",
+            "size_bytes": 4639,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-26ff522801674c25a0536f4dba11f29a",
+            "storage_key": "benchmark/artifact-26ff522801674c25a0536f4dba11f29a.blob",
+            "sha256": "894e23e662fa1f4ef69d86788cf3bb28d5c6248f15a183cac73dbcd6e23bd7ce",
+            "size_bytes": 4649,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 14449,
+            "after_tokens": 911,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.036423397017642856,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-e537bcab0aa34ae4b034e384b3ab557a",
+            "storage_key": "benchmark/artifact-e537bcab0aa34ae4b034e384b3ab557a.blob",
+            "sha256": "8b4cb6a97d343ef544f7376ac768df91b7fad2ee7e450c0095c4a781c93f9772",
+            "size_bytes": 4644,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-dc13e75781a74834a679fba71acd6c9d",
+            "storage_key": "benchmark/artifact-dc13e75781a74834a679fba71acd6c9d.blob",
+            "sha256": "f2601ac27523ffe2a37d693066804d9ebb92889ba855b662b9eb4992b564bd58",
+            "size_bytes": 4655,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 14449,
+            "after_tokens": 912,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 5,
+            "elapsed_seconds": 0.03716017899569124,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "wrapped_exception",
+      "arm": "A",
+      "strategy": "original",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 12058,
+      "after_tokens": 995,
+      "build_seconds": 0.06131862697657198,
+      "task_seconds": 9.289011359214783e-06,
+      "diagnosis": {
+        "fault": "dataset_path",
+        "location": "data/loader.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 4,
+      "retained_count": 4,
+      "retained": [
+        "FileNotFoundError",
+        "RuntimeError",
+        [
+          "cause_id",
+          "The above exception was the direct cause"
+        ],
+        "data/loader.py"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-ac068cec5dab4a21978ae299e67e22cc",
+            "storage_key": "benchmark/artifact-ac068cec5dab4a21978ae299e67e22cc.blob",
+            "sha256": "2f68ed2a068b1eac018100e0eb00c1c770026a57c945e29999085e74f176c1c1",
+            "size_bytes": 4638,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-bde705a0f7474f86b13947d16c3b8a4c",
+            "storage_key": "benchmark/artifact-bde705a0f7474f86b13947d16c3b8a4c.blob",
+            "sha256": "c03ada2f44f16e81ddcdc3e6ff5ea0a28918d104858f27f3d3f45a1d909da9c0",
+            "size_bytes": 4650,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "original",
+            "before_tokens": 12058,
+            "after_tokens": 995,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 5,
+            "elapsed_seconds": 0.03224796999711543,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-cdca7cd2c3de49b6b5495d018f0e3760",
+            "storage_key": "benchmark/artifact-cdca7cd2c3de49b6b5495d018f0e3760.blob",
+            "sha256": "10708673ca5d369eccf78c2113854b96d293d55de34363dc7ba5fd7e7edae4de",
+            "size_bytes": 4644,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-351f0a0dfabf48fcbfb983824ebf8950",
+            "storage_key": "benchmark/artifact-351f0a0dfabf48fcbfb983824ebf8950.blob",
+            "sha256": "c4250cc15e1b847150264611793e31a4afcb95853dae14b3957603b84b85b5f5",
+            "size_bytes": 4656,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "original",
+            "before_tokens": 12058,
+            "after_tokens": 995,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 5,
+            "elapsed_seconds": 0.01910707901697606,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "wrapped_exception",
+      "arm": "B",
+      "strategy": "truncate",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 12058,
+      "after_tokens": 671,
+      "build_seconds": 0.05015515198465437,
+      "task_seconds": 1.0509975254535675e-05,
+      "diagnosis": {
+        "fault": "dataset_path",
+        "location": "data/loader.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 4,
+      "retained_count": 2,
+      "retained": [
+        "FileNotFoundError",
+        "data/loader.py"
+      ],
+      "evidence_retention": 0.5,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.822737686139748,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-af7cef5e64224d8988a4ecabb121b862",
+            "storage_key": "benchmark/artifact-af7cef5e64224d8988a4ecabb121b862.blob",
+            "sha256": "9414d72c6177beb3e861c9c95b5fdb11964f637cc83a99bb2fbae456122cb57a",
+            "size_bytes": 4638,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-95fab3a8aae3440c9c21383a60b33128",
+            "storage_key": "benchmark/artifact-95fab3a8aae3440c9c21383a60b33128.blob",
+            "sha256": "c03ada2f44f16e81ddcdc3e6ff5ea0a28918d104858f27f3d3f45a1d909da9c0",
+            "size_bytes": 4650,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 12058,
+            "after_tokens": 671,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 5,
+            "elapsed_seconds": 0.02453550195787102,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-f15c373da37949b0950ab93b545a0a35",
+            "storage_key": "benchmark/artifact-f15c373da37949b0950ab93b545a0a35.blob",
+            "sha256": "324aa8ad422cc8673c094fb00080803f70d28b6fac37134ac21eb3295552f30d",
+            "size_bytes": 4645,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-1f2ae2f5b1a146acafe0a66fb3ec54bb",
+            "storage_key": "benchmark/artifact-1f2ae2f5b1a146acafe0a66fb3ec54bb.blob",
+            "sha256": "c4250cc15e1b847150264611793e31a4afcb95853dae14b3957603b84b85b5f5",
+            "size_bytes": 4656,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 12058,
+            "after_tokens": 671,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 5,
+            "elapsed_seconds": 0.016281991032883525,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "wrapped_exception",
+      "arm": "C",
+      "strategy": "summary",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 12058,
+      "after_tokens": 196,
+      "build_seconds": 0.05324000504333526,
+      "task_seconds": 6.830901838839054e-06,
+      "diagnosis": {
+        "fault": "dataset_path",
+        "location": "data/loader.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 4,
+      "retained_count": 3,
+      "retained": [
+        "FileNotFoundError",
+        "RuntimeError",
+        "data/loader.py"
+      ],
+      "evidence_retention": 0.75,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-c6e553bc87464d70b3b919158f09a8ee",
+            "storage_key": "benchmark/artifact-c6e553bc87464d70b3b919158f09a8ee.blob",
+            "sha256": "2dc8cc56e3a8f18b4767b0e545f2b100f91176d82d6ee408e80e76cee954cdc9",
+            "size_bytes": 4638,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-02b20311b47f4f57a7a4ebac4fe7a76e",
+            "storage_key": "benchmark/artifact-02b20311b47f4f57a7a4ebac4fe7a76e.blob",
+            "sha256": "c03ada2f44f16e81ddcdc3e6ff5ea0a28918d104858f27f3d3f45a1d909da9c0",
+            "size_bytes": 4650,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 12058,
+            "after_tokens": 196,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 5,
+            "elapsed_seconds": 0.027213577996008098,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-4f094a3342804ee295e76280d661dc97",
+            "storage_key": "benchmark/artifact-4f094a3342804ee295e76280d661dc97.blob",
+            "sha256": "b65feb43aabd4be7cafac6aef43c0021b3809b868bd4a97ccb6c172028a22290",
+            "size_bytes": 4644,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-0b27ea91c7214fa7b458406da5ab16f5",
+            "storage_key": "benchmark/artifact-0b27ea91c7214fa7b458406da5ab16f5.blob",
+            "sha256": "c4250cc15e1b847150264611793e31a4afcb95853dae14b3957603b84b85b5f5",
+            "size_bytes": 4656,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 12058,
+            "after_tokens": 196,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 5,
+            "elapsed_seconds": 0.017048779991455376,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "wrapped_exception",
+      "arm": "D",
+      "strategy": "evidence",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 12058,
+      "after_tokens": 1594,
+      "build_seconds": 0.0467472419841215,
+      "task_seconds": 1.1641066521406174e-05,
+      "diagnosis": {
+        "fault": "dataset_path",
+        "location": "data/loader.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 4,
+      "retained_count": 4,
+      "retained": [
+        "FileNotFoundError",
+        "RuntimeError",
+        [
+          "cause_id",
+          "The above exception was the direct cause"
+        ],
+        "data/loader.py"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.24316500482470246,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-365f6ef88f72406182b9a84cf8262bab",
+            "storage_key": "benchmark/artifact-365f6ef88f72406182b9a84cf8262bab.blob",
+            "sha256": "7cf26d590e779b1bb8ece3be413919b7610463243cab2f12b25ee560baf4d1a3",
+            "size_bytes": 4640,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-49c0a5ee5e824ac1ab0a8335a186caab",
+            "storage_key": "benchmark/artifact-49c0a5ee5e824ac1ab0a8335a186caab.blob",
+            "sha256": "c03ada2f44f16e81ddcdc3e6ff5ea0a28918d104858f27f3d3f45a1d909da9c0",
+            "size_bytes": 4650,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 12058,
+            "after_tokens": 1594,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 5,
+            "elapsed_seconds": 0.024577250936999917,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-11270d7e63ca48628b087aaab48b589c",
+            "storage_key": "benchmark/artifact-11270d7e63ca48628b087aaab48b589c.blob",
+            "sha256": "5be2118a4043f2ec3150ee523cc54e15a17d27856f005358a9dfd6d13308af79",
+            "size_bytes": 4646,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-960da982f9b74fb4a788cc35b8d06468",
+            "storage_key": "benchmark/artifact-960da982f9b74fb4a788cc35b8d06468.blob",
+            "sha256": "c4250cc15e1b847150264611793e31a4afcb95853dae14b3957603b84b85b5f5",
+            "size_bytes": 4656,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 12058,
+            "after_tokens": 1594,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 5,
+            "elapsed_seconds": 0.013733130996115506,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "multifile_dependency",
+      "arm": "A",
+      "strategy": "original",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 12142,
+      "after_tokens": 955,
+      "build_seconds": 0.06794374203309417,
+      "task_seconds": 1.5042023733258247e-05,
+      "diagnosis": {
+        "fault": "detached_features",
+        "location": "models/backbone.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 3,
+      "retained": [
+        "models/backbone.py",
+        "from models.backbone import encode",
+        "features.detach()"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-ca691bba577c46e786d6fea4c7d64457",
+            "storage_key": "benchmark/artifact-ca691bba577c46e786d6fea4c7d64457.blob",
+            "sha256": "f0845a77363d9d959815920603b6f5081c243aed9a54f22a64c1aa7ef69ea7e6",
+            "size_bytes": 6127,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-fa312098c96d4f3ba0c503f825b732f8",
+            "storage_key": "benchmark/artifact-fa312098c96d4f3ba0c503f825b732f8.blob",
+            "sha256": "545a58ecebf5638e06014a99b39a67905b860577ce6f5a0ea662cce7f880a236",
+            "size_bytes": 7003,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 9,
+          "statistics": {
+            "strategy": "original",
+            "before_tokens": 12142,
+            "after_tokens": 955,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 5,
+            "original_documents": 7,
+            "elapsed_seconds": 0.033147295005619526,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-2dfd65a39f3543fc8d4f440b19521597",
+            "storage_key": "benchmark/artifact-2dfd65a39f3543fc8d4f440b19521597.blob",
+            "sha256": "1e6d6911c6b76e4bee10a830c1c3fb280ffcd53368c5a4b7ed1aba10ae3c8c20",
+            "size_bytes": 6135,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-9c2b2ed8aba7463e957fbce135bc8f0f",
+            "storage_key": "benchmark/artifact-9c2b2ed8aba7463e957fbce135bc8f0f.blob",
+            "sha256": "ae5b9cb86347bcb784bc1c4870105f0fd3c2b02ceba4b6fcd62c717e29deac1e",
+            "size_bytes": 7012,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 9,
+          "statistics": {
+            "strategy": "original",
+            "before_tokens": 12142,
+            "after_tokens": 955,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 5,
+            "original_documents": 7,
+            "elapsed_seconds": 0.023444549064151943,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "multifile_dependency",
+      "arm": "B",
+      "strategy": "truncate",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 12142,
+      "after_tokens": 868,
+      "build_seconds": 0.0986052710795775,
+      "task_seconds": 2.7411035262048244e-05,
+      "diagnosis": {
+        "fault": "detached_features",
+        "location": "models/backbone.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 3,
+      "retained": [
+        "models/backbone.py",
+        "from models.backbone import encode",
+        "features.detach()"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.7497783687943262,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-2155b6f119e74887835cd0568c8932d0",
+            "storage_key": "benchmark/artifact-2155b6f119e74887835cd0568c8932d0.blob",
+            "sha256": "cd9f7171f011fa7ed959549c1d9cf540e395ff4357e143b4f9048b7f7444219e",
+            "size_bytes": 6126,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-d56f5a39e675459fab398ed88baea6eb",
+            "storage_key": "benchmark/artifact-d56f5a39e675459fab398ed88baea6eb.blob",
+            "sha256": "545a58ecebf5638e06014a99b39a67905b860577ce6f5a0ea662cce7f880a236",
+            "size_bytes": 7003,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 9,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 12142,
+            "after_tokens": 868,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 5,
+            "original_documents": 7,
+            "elapsed_seconds": 0.03542390500660986,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-5d874751403c4688b2791ce7f1c71326",
+            "storage_key": "benchmark/artifact-5d874751403c4688b2791ce7f1c71326.blob",
+            "sha256": "13127047f3e9cf9f2b647cae85882200a8c9e92bb3d0bbced4e43e069fdc7040",
+            "size_bytes": 6134,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-509813d287be4d35ba0dc5003e32ff58",
+            "storage_key": "benchmark/artifact-509813d287be4d35ba0dc5003e32ff58.blob",
+            "sha256": "ae5b9cb86347bcb784bc1c4870105f0fd3c2b02ceba4b6fcd62c717e29deac1e",
+            "size_bytes": 7012,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 9,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 12142,
+            "after_tokens": 868,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 5,
+            "original_documents": 7,
+            "elapsed_seconds": 0.04203265707474202,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "multifile_dependency",
+      "arm": "C",
+      "strategy": "summary",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 12142,
+      "after_tokens": 169,
+      "build_seconds": 0.0889567598933354,
+      "task_seconds": 1.0680989362299442e-05,
+      "diagnosis": {
+        "fault": null,
+        "location": null,
+        "decision": "insufficient_visible_evidence"
+      },
+      "expected_count": 3,
+      "retained_count": 1,
+      "retained": [
+        "models/backbone.py"
+      ],
+      "evidence_retention": 0.3333333333333333,
+      "diagnosis_match": false,
+      "location_match": false,
+      "answer_oracle_passed": false,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-925319a35ca741c68b24ff586d066a9d",
+            "storage_key": "benchmark/artifact-925319a35ca741c68b24ff586d066a9d.blob",
+            "sha256": "8e2d7c9ab9bd89ef2f68259722bd1705bf25d255a77f8d4e11e3ab33b89248ba",
+            "size_bytes": 6125,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-84cfe68dc47043479310e234049da254",
+            "storage_key": "benchmark/artifact-84cfe68dc47043479310e234049da254.blob",
+            "sha256": "545a58ecebf5638e06014a99b39a67905b860577ce6f5a0ea662cce7f880a236",
+            "size_bytes": 7003,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 9,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 12142,
+            "after_tokens": 169,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 5,
+            "original_documents": 7,
+            "elapsed_seconds": 0.05123474495485425,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-002db5e6f4764ac3aed9c681f57d629b",
+            "storage_key": "benchmark/artifact-002db5e6f4764ac3aed9c681f57d629b.blob",
+            "sha256": "24f726fc86fb24f7303066c51ab8ec84fb7583589689f83feb9a7df8b7ace431",
+            "size_bytes": 6134,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-60494c8b4b29431887029b19d5ab51e5",
+            "storage_key": "benchmark/artifact-60494c8b4b29431887029b19d5ab51e5.blob",
+            "sha256": "ae5b9cb86347bcb784bc1c4870105f0fd3c2b02ceba4b6fcd62c717e29deac1e",
+            "size_bytes": 7012,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 9,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 12142,
+            "after_tokens": 169,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 5,
+            "original_documents": 7,
+            "elapsed_seconds": 0.025840925984084606,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "multifile_dependency",
+      "arm": "D",
+      "strategy": "evidence",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 12142,
+      "after_tokens": 1595,
+      "build_seconds": 0.10375778388697654,
+      "task_seconds": 3.8847094401717186e-05,
+      "diagnosis": {
+        "fault": "detached_features",
+        "location": "models/backbone.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 3,
+      "retained": [
+        "models/backbone.py",
+        "from models.backbone import encode",
+        "features.detach()"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-a6ea64245b364462b8947d8fc403d933",
+            "storage_key": "benchmark/artifact-a6ea64245b364462b8947d8fc403d933.blob",
+            "sha256": "ab68b510cd2e2deaa6a767523ade8cf6561f69c5da5be4035717b1072e34eafc",
+            "size_bytes": 6127,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-4b2750b187c7472e8093528bd1601095",
+            "storage_key": "benchmark/artifact-4b2750b187c7472e8093528bd1601095.blob",
+            "sha256": "545a58ecebf5638e06014a99b39a67905b860577ce6f5a0ea662cce7f880a236",
+            "size_bytes": 7003,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 9,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 12142,
+            "after_tokens": 1594,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 5,
+            "original_documents": 7,
+            "elapsed_seconds": 0.03481981600634754,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-aa964e351e2e488b87b7021a5098479f",
+            "storage_key": "benchmark/artifact-aa964e351e2e488b87b7021a5098479f.blob",
+            "sha256": "7802e622db64258d20daa02120665bc144fd6acb8091d7ff9e926d5daacf4165",
+            "size_bytes": 6136,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-0b48a74453b247fe8e3722d55062b15e",
+            "storage_key": "benchmark/artifact-0b48a74453b247fe8e3722d55062b15e.blob",
+            "sha256": "ae5b9cb86347bcb784bc1c4870105f0fd3c2b02ceba4b6fcd62c717e29deac1e",
+            "size_bytes": 7012,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 9,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 12142,
+            "after_tokens": 1595,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 5,
+            "original_documents": 7,
+            "elapsed_seconds": 0.053675404051318765,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "middle_source",
+      "arm": "A",
+      "strategy": "original",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 15846,
+      "after_tokens": 483,
+      "build_seconds": 0.0818924360210076,
+      "task_seconds": 2.41969246417284e-05,
+      "diagnosis": {
+        "fault": null,
+        "location": null,
+        "decision": "insufficient_visible_evidence"
+      },
+      "expected_count": 3,
+      "retained_count": 2,
+      "retained": [
+        "train/joint.py",
+        "backbone gradients missing"
+      ],
+      "evidence_retention": 0.6666666666666666,
+      "diagnosis_match": false,
+      "location_match": false,
+      "answer_oracle_passed": false,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-2423caa14ea9433a8ad448200236abe5",
+            "storage_key": "benchmark/artifact-2423caa14ea9433a8ad448200236abe5.blob",
+            "sha256": "3fb939effbcc1231aec67cf239ce1e639a91fa449f4f250bfd3b44bddd9d3b7a",
+            "size_bytes": 4640,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-370bf9b287b746368502d528d9894530",
+            "storage_key": "benchmark/artifact-370bf9b287b746368502d528d9894530.blob",
+            "sha256": "e33576a35c94832f7acf257e99528b2d6afb57a5cbad81be85f26d0c5d6d258d",
+            "size_bytes": 4651,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "original",
+            "before_tokens": 15846,
+            "after_tokens": 483,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 5,
+            "elapsed_seconds": 0.03413888800423592,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-4fe7a3138cad4d199f9af46350602f1c",
+            "storage_key": "benchmark/artifact-4fe7a3138cad4d199f9af46350602f1c.blob",
+            "sha256": "be450a03eb3c5776df3691b6875fd260b4236ab7e0a77df24f8a1448179c9665",
+            "size_bytes": 4646,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-bbb8fb9b1b8a479991fc1c6055335ae9",
+            "storage_key": "benchmark/artifact-bbb8fb9b1b8a479991fc1c6055335ae9.blob",
+            "sha256": "2fe826c98481d59fabecedcb0136cea3f3d94b85c9e95f4413d4a1e4b2d26d74",
+            "size_bytes": 4657,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "original",
+            "before_tokens": 15846,
+            "after_tokens": 483,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 5,
+            "elapsed_seconds": 0.03541394998319447,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "middle_source",
+      "arm": "B",
+      "strategy": "truncate",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 15846,
+      "after_tokens": 903,
+      "build_seconds": 0.08780933602247387,
+      "task_seconds": 3.276707138866186e-05,
+      "diagnosis": {
+        "fault": null,
+        "location": null,
+        "decision": "insufficient_visible_evidence"
+      },
+      "expected_count": 3,
+      "retained_count": 1,
+      "retained": [
+        "train/joint.py"
+      ],
+      "evidence_retention": 0.3333333333333333,
+      "diagnosis_match": false,
+      "location_match": false,
+      "answer_oracle_passed": false,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.7331967213114754,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-cee1e228be834393a034d060bdbee049",
+            "storage_key": "benchmark/artifact-cee1e228be834393a034d060bdbee049.blob",
+            "sha256": "80d176c3be983ffbf6d5d50bb3539d5814bc79b4c4a7e511ae10b0907bbcf747",
+            "size_bytes": 4641,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-cb6ee111aab340dfb5024b5ef6f266b8",
+            "storage_key": "benchmark/artifact-cb6ee111aab340dfb5024b5ef6f266b8.blob",
+            "sha256": "e33576a35c94832f7acf257e99528b2d6afb57a5cbad81be85f26d0c5d6d258d",
+            "size_bytes": 4651,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 15846,
+            "after_tokens": 903,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 5,
+            "elapsed_seconds": 0.035399466985836625,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-8d073498554c4771bfaf5bfe1cf5c4b1",
+            "storage_key": "benchmark/artifact-8d073498554c4771bfaf5bfe1cf5c4b1.blob",
+            "sha256": "9f8cd6b0197e7774e23f7833b4e4572fc00c5fa2aefccf34aea348630c1e02d4",
+            "size_bytes": 4647,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-f673802851ea4abe9e655cd7783de0e5",
+            "storage_key": "benchmark/artifact-f673802851ea4abe9e655cd7783de0e5.blob",
+            "sha256": "2fe826c98481d59fabecedcb0136cea3f3d94b85c9e95f4413d4a1e4b2d26d74",
+            "size_bytes": 4657,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 15846,
+            "after_tokens": 903,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 5,
+            "elapsed_seconds": 0.023281609057448804,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "middle_source",
+      "arm": "C",
+      "strategy": "summary",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 15846,
+      "after_tokens": 106,
+      "build_seconds": 0.09689051192253828,
+      "task_seconds": 1.1819996871054173e-05,
+      "diagnosis": {
+        "fault": null,
+        "location": null,
+        "decision": "insufficient_visible_evidence"
+      },
+      "expected_count": 3,
+      "retained_count": 1,
+      "retained": [
+        "train/joint.py"
+      ],
+      "evidence_retention": 0.3333333333333333,
+      "diagnosis_match": false,
+      "location_match": false,
+      "answer_oracle_passed": false,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-203d3a291630438b94891145f9be14d7",
+            "storage_key": "benchmark/artifact-203d3a291630438b94891145f9be14d7.blob",
+            "sha256": "2bb65dda2d36ffe056b0e8a92ab95366cbb2972c4af441e822acd1aefc6cf009",
+            "size_bytes": 4639,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-d35e8027eef24ea29828bbac380aeec6",
+            "storage_key": "benchmark/artifact-d35e8027eef24ea29828bbac380aeec6.blob",
+            "sha256": "e33576a35c94832f7acf257e99528b2d6afb57a5cbad81be85f26d0c5d6d258d",
+            "size_bytes": 4651,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 15846,
+            "after_tokens": 106,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 5,
+            "elapsed_seconds": 0.04642110294662416,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-5a651f0e29e748e6a63dffef98cf6202",
+            "storage_key": "benchmark/artifact-5a651f0e29e748e6a63dffef98cf6202.blob",
+            "sha256": "157c41614ffc0ba4eaff6bce8a3251304c513d48c8343ca78d1015c0475152ec",
+            "size_bytes": 4646,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-f80026959bbf40e58cea29a7fe764842",
+            "storage_key": "benchmark/artifact-f80026959bbf40e58cea29a7fe764842.blob",
+            "sha256": "2fe826c98481d59fabecedcb0136cea3f3d94b85c9e95f4413d4a1e4b2d26d74",
+            "size_bytes": 4657,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 15846,
+            "after_tokens": 106,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 5,
+            "elapsed_seconds": 0.038909713039174676,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "middle_source",
+      "arm": "D",
+      "strategy": "evidence",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 15846,
+      "after_tokens": 1087,
+      "build_seconds": 0.06880552193615586,
+      "task_seconds": 2.2831023670732975e-05,
+      "diagnosis": {
+        "fault": "detached_features",
+        "location": "train/joint.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 3,
+      "retained": [
+        "train/joint.py",
+        "features = model.backbone(x).detach()",
+        "backbone gradients missing"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-6d217100d994448cab302f2ff5bcd647",
+            "storage_key": "benchmark/artifact-6d217100d994448cab302f2ff5bcd647.blob",
+            "sha256": "f6b5fe881cd506f12f71149bd4c7ee2ffd3087a35ecd8d8d4f9ef3670de1e8e6",
+            "size_bytes": 4641,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-04d2c27786af45b0b932420d83a58fb6",
+            "storage_key": "benchmark/artifact-04d2c27786af45b0b932420d83a58fb6.blob",
+            "sha256": "e33576a35c94832f7acf257e99528b2d6afb57a5cbad81be85f26d0c5d6d258d",
+            "size_bytes": 4651,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 15846,
+            "after_tokens": 1087,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 5,
+            "elapsed_seconds": 0.03351767698768526,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-35b8d24e2086479eb890cb62e035fc1b",
+            "storage_key": "benchmark/artifact-35b8d24e2086479eb890cb62e035fc1b.blob",
+            "sha256": "b130f7a4a3ac930e2a523874e520ba55e86736239e051a1709ef312267dfefd5",
+            "size_bytes": 4648,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-552a74291c87443ca4d42a95f7fa577a",
+            "storage_key": "benchmark/artifact-552a74291c87443ca4d42a95f7fa577a.blob",
+            "sha256": "2fe826c98481d59fabecedcb0136cea3f3d94b85c9e95f4413d4a1e4b2d26d74",
+            "size_bytes": 4657,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 6,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 15846,
+            "after_tokens": 1087,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 5,
+            "elapsed_seconds": 0.023657154059037566,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "duplicate_agents",
+      "arm": "A",
+      "strategy": "original",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 35855,
+      "after_tokens": 812,
+      "build_seconds": 0.12849351298063993,
+      "task_seconds": 9.379931725561619e-06,
+      "diagnosis": {
+        "fault": "shape_mismatch",
+        "location": "train/head.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 3,
+      "retained": [
+        "train/head.py",
+        "mat1 and mat2 shapes cannot be multiplied",
+        "projection(features)"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-c7432175f76c48c4b3588ca891b0e804",
+            "storage_key": "benchmark/artifact-c7432175f76c48c4b3588ca891b0e804.blob",
+            "sha256": "3c4514f32d568d02683120d838c32324863c2f1a236cf13d5ce0b8fa21d6c705",
+            "size_bytes": 10599,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-7c685a0206fe4c06839c1498c40829bd",
+            "storage_key": "benchmark/artifact-7c685a0206fe4c06839c1498c40829bd.blob",
+            "sha256": "c1ad9ee5d4fc6bf2ca5cf9f29c306ae0771e6b4ef46770e72b3d3798c92861b1",
+            "size_bytes": 7624,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 10,
+          "statistics": {
+            "strategy": "original",
+            "before_tokens": 35855,
+            "after_tokens": 812,
+            "input_budget": 4000,
+            "duplicate_chars": 71304,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 13,
+            "elapsed_seconds": 0.05942820501513779,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-8aa7d038932b4d8b81b699943a208dba",
+            "storage_key": "benchmark/artifact-8aa7d038932b4d8b81b699943a208dba.blob",
+            "sha256": "df83c1a681e3a2e7d3caf7089b0e376b66fb214c2b12782df4f50bc40b70d951",
+            "size_bytes": 10614,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-a83aa1abb9b24a248835a1afb9f76a4d",
+            "storage_key": "benchmark/artifact-a83aa1abb9b24a248835a1afb9f76a4d.blob",
+            "sha256": "aad6629bc2d032af05d3359b3f70f373edf46f7939b73e13b9af8b9d6a3e7af8",
+            "size_bytes": 7634,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 10,
+          "statistics": {
+            "strategy": "original",
+            "before_tokens": 35855,
+            "after_tokens": 812,
+            "input_budget": 4000,
+            "duplicate_chars": 71304,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 13,
+            "elapsed_seconds": 0.058316319016739726,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "duplicate_agents",
+      "arm": "B",
+      "strategy": "truncate",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 35855,
+      "after_tokens": 1901,
+      "build_seconds": 0.10143293195869774,
+      "task_seconds": 2.5202985852956772e-05,
+      "diagnosis": {
+        "fault": null,
+        "location": null,
+        "decision": "insufficient_visible_evidence"
+      },
+      "expected_count": 3,
+      "retained_count": 2,
+      "retained": [
+        "train/head.py",
+        "projection(features)"
+      ],
+      "evidence_retention": 0.6666666666666666,
+      "diagnosis_match": false,
+      "location_match": false,
+      "answer_oracle_passed": false,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.941908713692946,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-09782b8c65e64fad87c6e036f07040c1",
+            "storage_key": "benchmark/artifact-09782b8c65e64fad87c6e036f07040c1.blob",
+            "sha256": "4f57459464035370e348e8d6a12e5378e79969bb13df8dab12b079f12ac20a5d",
+            "size_bytes": 10599,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-7d29516b0e964dd9ba2d0919f8a99871",
+            "storage_key": "benchmark/artifact-7d29516b0e964dd9ba2d0919f8a99871.blob",
+            "sha256": "c1ad9ee5d4fc6bf2ca5cf9f29c306ae0771e6b4ef46770e72b3d3798c92861b1",
+            "size_bytes": 7624,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 10,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 35855,
+            "after_tokens": 1901,
+            "input_budget": 4000,
+            "duplicate_chars": 71304,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 13,
+            "elapsed_seconds": 0.0583724370226264,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-6e110c79a1704d5c9200cfc3b7ea73bd",
+            "storage_key": "benchmark/artifact-6e110c79a1704d5c9200cfc3b7ea73bd.blob",
+            "sha256": "85e599d5a22d5bf5ab9bf60be60c04dc250f81faf85a3e9c0a64eee316cb59a9",
+            "size_bytes": 10615,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-35f9912178174e3d8ef4ce08706400c6",
+            "storage_key": "benchmark/artifact-35f9912178174e3d8ef4ce08706400c6.blob",
+            "sha256": "aad6629bc2d032af05d3359b3f70f373edf46f7939b73e13b9af8b9d6a3e7af8",
+            "size_bytes": 7634,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 10,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 35855,
+            "after_tokens": 1901,
+            "input_budget": 4000,
+            "duplicate_chars": 71304,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 13,
+            "elapsed_seconds": 0.032940122997388244,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "duplicate_agents",
+      "arm": "C",
+      "strategy": "summary",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 35855,
+      "after_tokens": 163,
+      "build_seconds": 0.12070466903969646,
+      "task_seconds": 7.52799678593874e-06,
+      "diagnosis": {
+        "fault": "shape_mismatch",
+        "location": "train/head.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 2,
+      "retained": [
+        "train/head.py",
+        "mat1 and mat2 shapes cannot be multiplied"
+      ],
+      "evidence_retention": 0.6666666666666666,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-8bd46eded8e4478c9c4cafb05aa130be",
+            "storage_key": "benchmark/artifact-8bd46eded8e4478c9c4cafb05aa130be.blob",
+            "sha256": "81c91373c8951502834d03f39e3d3f54d3f82761c3070b3ebe02b5797a273b86",
+            "size_bytes": 10598,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-6e07990b2ca24a02af84cee20c670f30",
+            "storage_key": "benchmark/artifact-6e07990b2ca24a02af84cee20c670f30.blob",
+            "sha256": "c1ad9ee5d4fc6bf2ca5cf9f29c306ae0771e6b4ef46770e72b3d3798c92861b1",
+            "size_bytes": 7624,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 10,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 35855,
+            "after_tokens": 163,
+            "input_budget": 4000,
+            "duplicate_chars": 71304,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 13,
+            "elapsed_seconds": 0.05614211701322347,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-30054724dea24bf58b54d84369ce85f4",
+            "storage_key": "benchmark/artifact-30054724dea24bf58b54d84369ce85f4.blob",
+            "sha256": "fbe60e204a59b5cb686a305d8f5c03c22ecfb3d211a8fdb581b8d14c17b94d35",
+            "size_bytes": 10612,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-e65a4875341245d69e7e9e2b5892899b",
+            "storage_key": "benchmark/artifact-e65a4875341245d69e7e9e2b5892899b.blob",
+            "sha256": "aad6629bc2d032af05d3359b3f70f373edf46f7939b73e13b9af8b9d6a3e7af8",
+            "size_bytes": 7634,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 10,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 35855,
+            "after_tokens": 163,
+            "input_budget": 4000,
+            "duplicate_chars": 71304,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 13,
+            "elapsed_seconds": 0.05414403707254678,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "duplicate_agents",
+      "arm": "D",
+      "strategy": "evidence",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 35855,
+      "after_tokens": 2047,
+      "build_seconds": 0.11007532000076026,
+      "task_seconds": 1.4262041077017784e-05,
+      "diagnosis": {
+        "fault": "shape_mismatch",
+        "location": "train/head.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 3,
+      "retained": [
+        "train/head.py",
+        "mat1 and mat2 shapes cannot be multiplied",
+        "projection(features)"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.6346633416458853,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-f4c7ec522c874b399615162fa5aa2a4c",
+            "storage_key": "benchmark/artifact-f4c7ec522c874b399615162fa5aa2a4c.blob",
+            "sha256": "720dcb0edc32dba9722c06809a57aedbd8c13b816a2eaeb963988a56ce794095",
+            "size_bytes": 10600,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-8a9700de5d5545a28c44bf2672ae3381",
+            "storage_key": "benchmark/artifact-8a9700de5d5545a28c44bf2672ae3381.blob",
+            "sha256": "c1ad9ee5d4fc6bf2ca5cf9f29c306ae0771e6b4ef46770e72b3d3798c92861b1",
+            "size_bytes": 7624,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 10,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 35855,
+            "after_tokens": 2046,
+            "input_budget": 4000,
+            "duplicate_chars": 71304,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 13,
+            "elapsed_seconds": 0.05529415898490697,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-c520386d554d41bb9a4b304b9bb11d6a",
+            "storage_key": "benchmark/artifact-c520386d554d41bb9a4b304b9bb11d6a.blob",
+            "sha256": "7dc2fa4b35fd3b08fc87823c9a24e429674800e3321a66ecc6f5b66f3bb3d2e3",
+            "size_bytes": 10614,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-52441bb669144a70a75c4e4fd5a03115",
+            "storage_key": "benchmark/artifact-52441bb669144a70a75c4e4fd5a03115.blob",
+            "sha256": "aad6629bc2d032af05d3359b3f70f373edf46f7939b73e13b9af8b9d6a3e7af8",
+            "size_bytes": 7634,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 10,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 35855,
+            "after_tokens": 2047,
+            "input_budget": 4000,
+            "duplicate_chars": 71304,
+            "omitted_records": 0,
+            "selected_records": 2,
+            "original_documents": 13,
+            "elapsed_seconds": 0.04471163195557892,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "conflicting_claims",
+      "arm": "A",
+      "strategy": "original",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 15879,
+      "after_tokens": 1062,
+      "build_seconds": 0.054053250001743436,
+      "task_seconds": 2.1831016056239605e-05,
+      "diagnosis": {
+        "fault": null,
+        "location": null,
+        "decision": "insufficient_visible_evidence"
+      },
+      "expected_count": 3,
+      "retained_count": 2,
+      "retained": [
+        "train/joint.py",
+        "backbone gradients missing"
+      ],
+      "evidence_retention": 0.6666666666666666,
+      "diagnosis_match": false,
+      "location_match": false,
+      "answer_oracle_passed": false,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-f6e33263dcaa41c48a787c167b5f5cc2",
+            "storage_key": "benchmark/artifact-f6e33263dcaa41c48a787c167b5f5cc2.blob",
+            "sha256": "724d9638ca33df0943c39638a0a4028b363f52645b43669a9a130682cbe19f9d",
+            "size_bytes": 5384,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-671374c5b3674df599ded5b427841cff",
+            "storage_key": "benchmark/artifact-671374c5b3674df599ded5b427841cff.blob",
+            "sha256": "1686a6c7ca9f31cfe9c52b09aac52d0f206ca246a562d458be0be02774f5e0b4",
+            "size_bytes": 5398,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 7,
+          "statistics": {
+            "strategy": "original",
+            "before_tokens": 15879,
+            "after_tokens": 1062,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 6,
+            "elapsed_seconds": 0.029744185972958803,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-068ee8d21fed4e208c479873eca4af50",
+            "storage_key": "benchmark/artifact-068ee8d21fed4e208c479873eca4af50.blob",
+            "sha256": "8eff088758540c9fc273a92b9f075068f0c60670fd55c23c7069979bedd52ff2",
+            "size_bytes": 5391,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-5380e7c807304c8ba3ed1a5f068786e4",
+            "storage_key": "benchmark/artifact-5380e7c807304c8ba3ed1a5f068786e4.blob",
+            "sha256": "2fa90cbcc9d86db9688fb03e51a6c04664aec8e20483a408d8531b8ede2ab89a",
+            "size_bytes": 5405,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 7,
+          "statistics": {
+            "strategy": "original",
+            "before_tokens": 15879,
+            "after_tokens": 1062,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 6,
+            "elapsed_seconds": 0.015186202013865113,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "conflicting_claims",
+      "arm": "B",
+      "strategy": "truncate",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 15879,
+      "after_tokens": 935,
+      "build_seconds": 0.05269701895304024,
+      "task_seconds": 1.8588034436106682e-05,
+      "diagnosis": {
+        "fault": null,
+        "location": null,
+        "decision": "insufficient_visible_evidence"
+      },
+      "expected_count": 3,
+      "retained_count": 1,
+      "retained": [
+        "train/joint.py"
+      ],
+      "evidence_retention": 0.3333333333333333,
+      "diagnosis_match": false,
+      "location_match": false,
+      "answer_oracle_passed": false,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.7241922773837668,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-e5c09c6bd7784cdcb8a4d54f63464957",
+            "storage_key": "benchmark/artifact-e5c09c6bd7784cdcb8a4d54f63464957.blob",
+            "sha256": "c1a3b7868a17dd10ca7d8bd6257a232a7542a52b6fcbef57ec8279cf9b9db91e",
+            "size_bytes": 5383,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-a428ec7cae3342a3a67a22e51f77566a",
+            "storage_key": "benchmark/artifact-a428ec7cae3342a3a67a22e51f77566a.blob",
+            "sha256": "1686a6c7ca9f31cfe9c52b09aac52d0f206ca246a562d458be0be02774f5e0b4",
+            "size_bytes": 5398,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 7,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 15879,
+            "after_tokens": 935,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 6,
+            "elapsed_seconds": 0.025923434062860906,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-ff75646bc44f4e4c8cd666644184f631",
+            "storage_key": "benchmark/artifact-ff75646bc44f4e4c8cd666644184f631.blob",
+            "sha256": "46a065faade3edaa17c0cd745d7da101b720d3c2eae1a0eefee1e74ce1cfde6d",
+            "size_bytes": 5390,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-8394b51519d94a7abf99ff40a74472dd",
+            "storage_key": "benchmark/artifact-8394b51519d94a7abf99ff40a74472dd.blob",
+            "sha256": "2fa90cbcc9d86db9688fb03e51a6c04664aec8e20483a408d8531b8ede2ab89a",
+            "size_bytes": 5405,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 7,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 15879,
+            "after_tokens": 935,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 6,
+            "elapsed_seconds": 0.017939186072908342,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "conflicting_claims",
+      "arm": "C",
+      "strategy": "summary",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 15879,
+      "after_tokens": 108,
+      "build_seconds": 0.05575482593849301,
+      "task_seconds": 9.488081559538841e-06,
+      "diagnosis": {
+        "fault": null,
+        "location": null,
+        "decision": "insufficient_visible_evidence"
+      },
+      "expected_count": 3,
+      "retained_count": 1,
+      "retained": [
+        "train/joint.py"
+      ],
+      "evidence_retention": 0.3333333333333333,
+      "diagnosis_match": false,
+      "location_match": false,
+      "answer_oracle_passed": false,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-017c3f2d6b894455b38ad3c581b74205",
+            "storage_key": "benchmark/artifact-017c3f2d6b894455b38ad3c581b74205.blob",
+            "sha256": "22b0124df6169095360b1a751f514073a8f8b1a127a9256616359e0ed0e83f43",
+            "size_bytes": 5382,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-e3360c91a5a24846890ce1409afabea9",
+            "storage_key": "benchmark/artifact-e3360c91a5a24846890ce1409afabea9.blob",
+            "sha256": "1686a6c7ca9f31cfe9c52b09aac52d0f206ca246a562d458be0be02774f5e0b4",
+            "size_bytes": 5398,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 7,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 15879,
+            "after_tokens": 108,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 6,
+            "elapsed_seconds": 0.028983702999539673,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-ce2de9b37f504f209e74c88f34c6bb1f",
+            "storage_key": "benchmark/artifact-ce2de9b37f504f209e74c88f34c6bb1f.blob",
+            "sha256": "e133b5223ca033d9eac54d97c359d77d4671650cb1511204699d423e4e8e73ec",
+            "size_bytes": 5388,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-ff975aa003264e8cae1fabb6dd45e48f",
+            "storage_key": "benchmark/artifact-ff975aa003264e8cae1fabb6dd45e48f.blob",
+            "sha256": "2fa90cbcc9d86db9688fb03e51a6c04664aec8e20483a408d8531b8ede2ab89a",
+            "size_bytes": 5405,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 7,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 15879,
+            "after_tokens": 108,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 6,
+            "elapsed_seconds": 0.01785837404895574,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "conflicting_claims",
+      "arm": "D",
+      "strategy": "evidence",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 15879,
+      "after_tokens": 1121,
+      "build_seconds": 0.04985977301839739,
+      "task_seconds": 1.912098377943039e-05,
+      "diagnosis": {
+        "fault": "detached_features",
+        "location": "train/joint.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 3,
+      "retained_count": 3,
+      "retained": [
+        "train/joint.py",
+        "features = model.backbone(x).detach()",
+        "backbone gradients missing"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-5d61a5626a1e4c829a827352850f500b",
+            "storage_key": "benchmark/artifact-5d61a5626a1e4c829a827352850f500b.blob",
+            "sha256": "c3a768a681f42ccc2cb1943c7135b888c35b847d62f870ba9756918bab6c4fe7",
+            "size_bytes": 5383,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-a47192b24b234ddfafcba23e4d4d0a26",
+            "storage_key": "benchmark/artifact-a47192b24b234ddfafcba23e4d4d0a26.blob",
+            "sha256": "1686a6c7ca9f31cfe9c52b09aac52d0f206ca246a562d458be0be02774f5e0b4",
+            "size_bytes": 5398,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 7,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 15879,
+            "after_tokens": 1120,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 6,
+            "elapsed_seconds": 0.02619510004296899,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-3a28817ee2dd4a82b3a968c9bdfcc139",
+            "storage_key": "benchmark/artifact-3a28817ee2dd4a82b3a968c9bdfcc139.blob",
+            "sha256": "2a3936460979953a31066cb2f38bfe4e58e3733b61d68c9bee69e0aea8de24f1",
+            "size_bytes": 5389,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-8df52e4fe9ad428484c547f51a8645e1",
+            "storage_key": "benchmark/artifact-8df52e4fe9ad428484c547f51a8645e1.blob",
+            "sha256": "2fa90cbcc9d86db9688fb03e51a6c04664aec8e20483a408d8531b8ede2ab89a",
+            "size_bytes": 5405,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 7,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 15879,
+            "after_tokens": 1121,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 3,
+            "original_documents": 6,
+            "elapsed_seconds": 0.0147936170687899,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "verification_history",
+      "arm": "A",
+      "strategy": "original",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 15908,
+      "after_tokens": 1090,
+      "build_seconds": 0.05554908397607505,
+      "task_seconds": 2.2736028768122196e-05,
+      "diagnosis": {
+        "fault": null,
+        "location": null,
+        "decision": "insufficient_visible_evidence"
+      },
+      "expected_count": 4,
+      "retained_count": 3,
+      "retained": [
+        "FAILED joint_gradient_oracle",
+        "train/joint.py",
+        "Error: edit_file failed"
+      ],
+      "evidence_retention": 0.75,
+      "diagnosis_match": false,
+      "location_match": false,
+      "answer_oracle_passed": false,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-67193319537746ba8e82b463818b87a6",
+            "storage_key": "benchmark/artifact-67193319537746ba8e82b463818b87a6.blob",
+            "sha256": "a5e076f97fb79b0aa0dcda7310b6d4c4a1f8753bcb27a6c383e0f348e89f739b",
+            "size_bytes": 6130,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-035e8cb08569407185abec1420c55f7d",
+            "storage_key": "benchmark/artifact-035e8cb08569407185abec1420c55f7d.blob",
+            "sha256": "154b3c99895ea84f22e608cb653e96fe184c844885539dd022daf6dd4df20a29",
+            "size_bytes": 6146,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 8,
+          "statistics": {
+            "strategy": "original",
+            "before_tokens": 15908,
+            "after_tokens": 1090,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 6,
+            "original_documents": 7,
+            "elapsed_seconds": 0.029901089030317962,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-eeb3957d99474635b410d82f05bafc9f",
+            "storage_key": "benchmark/artifact-eeb3957d99474635b410d82f05bafc9f.blob",
+            "sha256": "018a0c9365367f38f5808d636a6dc0c95b06db4f74a3f259c4344139088bcfe0",
+            "size_bytes": 6138,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-36a5ed6e275746a49bd4da9ec419e97d",
+            "storage_key": "benchmark/artifact-36a5ed6e275746a49bd4da9ec419e97d.blob",
+            "sha256": "fcee0242e22169f2a3f703acfa847457518af25270d727a8a7c7f5bfd868026a",
+            "size_bytes": 6154,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 8,
+          "statistics": {
+            "strategy": "original",
+            "before_tokens": 15908,
+            "after_tokens": 1090,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 6,
+            "original_documents": 7,
+            "elapsed_seconds": 0.016333024948835373,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "verification_history",
+      "arm": "B",
+      "strategy": "truncate",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 15908,
+      "after_tokens": 963,
+      "build_seconds": 0.05468278098851442,
+      "task_seconds": 1.926603727042675e-05,
+      "diagnosis": {
+        "fault": null,
+        "location": null,
+        "decision": "insufficient_visible_evidence"
+      },
+      "expected_count": 4,
+      "retained_count": 3,
+      "retained": [
+        "FAILED joint_gradient_oracle",
+        "train/joint.py",
+        "Error: edit_file failed"
+      ],
+      "evidence_retention": 0.75,
+      "diagnosis_match": false,
+      "location_match": false,
+      "answer_oracle_passed": false,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.7241922773837668,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-56ea1ff1ea0044149657be7227644cdd",
+            "storage_key": "benchmark/artifact-56ea1ff1ea0044149657be7227644cdd.blob",
+            "sha256": "ccbcdf328f25c52525bccfa01f152d2df214c4c7bc8af4e4c8411ff79d1d3b5d",
+            "size_bytes": 6128,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-f6a5621fa3074272a4c6a471881eea40",
+            "storage_key": "benchmark/artifact-f6a5621fa3074272a4c6a471881eea40.blob",
+            "sha256": "154b3c99895ea84f22e608cb653e96fe184c844885539dd022daf6dd4df20a29",
+            "size_bytes": 6146,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 8,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 15908,
+            "after_tokens": 963,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 6,
+            "original_documents": 7,
+            "elapsed_seconds": 0.02947754494380206,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-038b6c04ac124f899cbb0aaaddca7b8a",
+            "storage_key": "benchmark/artifact-038b6c04ac124f899cbb0aaaddca7b8a.blob",
+            "sha256": "8bed48228d46297ae388da0d0442c810256b1f5acc5697e659704e8c97385488",
+            "size_bytes": 6137,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-884d5520d8d34a2789cab8df38e1a175",
+            "storage_key": "benchmark/artifact-884d5520d8d34a2789cab8df38e1a175.blob",
+            "sha256": "fcee0242e22169f2a3f703acfa847457518af25270d727a8a7c7f5bfd868026a",
+            "size_bytes": 6154,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 8,
+          "statistics": {
+            "strategy": "truncate",
+            "before_tokens": 15908,
+            "after_tokens": 963,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 6,
+            "original_documents": 7,
+            "elapsed_seconds": 0.016040956950746477,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "verification_history",
+      "arm": "C",
+      "strategy": "summary",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 15908,
+      "after_tokens": 127,
+      "build_seconds": 0.06075926392804831,
+      "task_seconds": 9.607058018445969e-06,
+      "diagnosis": {
+        "fault": null,
+        "location": null,
+        "decision": "insufficient_visible_evidence"
+      },
+      "expected_count": 4,
+      "retained_count": 2,
+      "retained": [
+        "train/joint.py",
+        "Error: edit_file failed"
+      ],
+      "evidence_retention": 0.5,
+      "diagnosis_match": false,
+      "location_match": false,
+      "answer_oracle_passed": false,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-57a000d6cbe34c588f50e228e461ac2c",
+            "storage_key": "benchmark/artifact-57a000d6cbe34c588f50e228e461ac2c.blob",
+            "sha256": "9fdbafba6d8a9d5d7648071ca55b42f9d4230919e13186cea03846011cd20734",
+            "size_bytes": 6128,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-33a4038e356d4502a02926bfd0a851ef",
+            "storage_key": "benchmark/artifact-33a4038e356d4502a02926bfd0a851ef.blob",
+            "sha256": "154b3c99895ea84f22e608cb653e96fe184c844885539dd022daf6dd4df20a29",
+            "size_bytes": 6146,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 8,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 15908,
+            "after_tokens": 127,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 6,
+            "original_documents": 7,
+            "elapsed_seconds": 0.032221699017100036,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-8567737f6bfd47cab9a60720dab37f4a",
+            "storage_key": "benchmark/artifact-8567737f6bfd47cab9a60720dab37f4a.blob",
+            "sha256": "c14d038c21ef5f8d0d77eaf0b8ec860ddc477c48503ba6ec00c254c663188f9c",
+            "size_bytes": 6136,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-d2adde39addb4586a5bc4ea9be5d0a99",
+            "storage_key": "benchmark/artifact-d2adde39addb4586a5bc4ea9be5d0a99.blob",
+            "sha256": "fcee0242e22169f2a3f703acfa847457518af25270d727a8a7c7f5bfd868026a",
+            "size_bytes": 6154,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 8,
+          "statistics": {
+            "strategy": "summary",
+            "before_tokens": 15908,
+            "after_tokens": 127,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 6,
+            "original_documents": 7,
+            "elapsed_seconds": 0.019182194024324417,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "verification_history",
+      "arm": "D",
+      "strategy": "evidence",
+      "input_cap": 4000,
+      "error": null,
+      "before_tokens": 15908,
+      "after_tokens": 1742,
+      "build_seconds": 0.05536589096300304,
+      "task_seconds": 2.4814042262732983e-05,
+      "diagnosis": {
+        "fault": "detached_features",
+        "location": "train/joint.py",
+        "decision": "fixed_rule_probe"
+      },
+      "expected_count": 4,
+      "retained_count": 4,
+      "retained": [
+        "FAILED joint_gradient_oracle",
+        "train/joint.py",
+        "Error: edit_file failed",
+        "features = model.backbone(x).detach()"
+      ],
+      "evidence_retention": 1.0,
+      "diagnosis_match": true,
+      "location_match": true,
+      "answer_oracle_passed": true,
+      "recoverability": 1.0,
+      "duplicate_context_ratio": 0.5,
+      "receipts": [
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-4ce66e3fc6d647258d31d81d8394ec2e",
+            "storage_key": "benchmark/artifact-4ce66e3fc6d647258d31d81d8394ec2e.blob",
+            "sha256": "343e209595bbf3d8d9fd8c3579546ecad9f999241b1b5a40664aebe650cd4f27",
+            "size_bytes": 6130,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-6f092522b0d2445a82bd92512ebfa882",
+            "storage_key": "benchmark/artifact-6f092522b0d2445a82bd92512ebfa882.blob",
+            "sha256": "154b3c99895ea84f22e608cb653e96fe184c844885539dd022daf6dd4df20a29",
+            "size_bytes": 6146,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 8,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 15908,
+            "after_tokens": 1742,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 6,
+            "original_documents": 7,
+            "elapsed_seconds": 0.029788145096972585,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        },
+        {
+          "receipt": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-2357752aca0648b39694dc7455dfff8e",
+            "storage_key": "benchmark/artifact-2357752aca0648b39694dc7455dfff8e.blob",
+            "sha256": "ece7ab76af27edbef4c9fbf93554f53fae154aaed0885ffead89c3fb0c58ceb9",
+            "size_bytes": 6138,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "catalog": {
+            "job_id": "benchmark",
+            "artifact_id": "artifact-584b510168d24f9783e661d79cf69281",
+            "storage_key": "benchmark/artifact-584b510168d24f9783e661d79cf69281.blob",
+            "sha256": "fcee0242e22169f2a3f703acfa847457518af25270d727a8a7c7f5bfd868026a",
+            "size_bytes": 6154,
+            "media_type": "application/json",
+            "schema_version": 1
+          },
+          "restored_documents": 8,
+          "statistics": {
+            "strategy": "evidence",
+            "before_tokens": 15908,
+            "after_tokens": 1742,
+            "input_budget": 4000,
+            "duplicate_chars": 0,
+            "omitted_records": 0,
+            "selected_records": 6,
+            "original_documents": 7,
+            "elapsed_seconds": 0.016272115986794233,
+            "fallback": null,
+            "token_semantics": "estimated characters/3, not provider usage"
+          }
+        }
+      ]
+    }
+  ],
+  "autograd_dag": []
+}

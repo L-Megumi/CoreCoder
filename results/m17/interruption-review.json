@@ -1,0 +1,133 @@
+{
+  "case_id": "packaging-requirement-hash",
+  "requests": [
+    {
+      "request_id": "attempt-6e3e5bf3da4846e28cfec6c1043affb9:1",
+      "job_id": "project-3a1e060732614ae9b469ae47a29e0192",
+      "task_id": "experts-1.expert-code",
+      "attempt_id": "attempt-6e3e5bf3da4846e28cfec6c1043affb9",
+      "ordinal": 1,
+      "start_utc": "2026-11-03T09:30:05.791783+00:00",
+      "end_utc": "2026-11-03T09:30:49.658045+00:00",
+      "status": "unknown",
+      "response_status": "error",
+      "usage": {},
+      "reserved_tokens": 6853,
+      "reserved_usd": 0.0038991,
+      "token_charge": 6853,
+      "usd_charge": 0.0038991
+    }
+  ],
+  "provider_events": [
+    {
+      "file": "control/attempt-6e3e5bf3da4846e28cfec6c1043affb9.jsonl",
+      "event": "provider.stream_error",
+      "timestamp": "2026-11-03T09:30:49.657472+00:00",
+      "job_id": "project-3a1e060732614ae9b469ae47a29e0192",
+      "task_id": "experts-1.expert-code",
+      "attempt_id": "attempt-6e3e5bf3da4846e28cfec6c1043affb9",
+      "ordinal": 1,
+      "error_type": "KeyboardInterrupt"
+    }
+  ],
+  "expert_execution_records": [
+    {
+      "task_id": "experts-1.expert-code",
+      "attempt_id": "attempt-6e3e5bf3da4846e28cfec6c1043affb9",
+      "status": "failed",
+      "failure_kind": "timeout",
+      "budget": {
+        "charged_tokens": 5251,
+        "context_audit_complete": true,
+        "context_audits": [
+          {
+            "after_evidence": [],
+            "before_evidence": [],
+            "scope": "gateway_admitted_input; before/after optional context engine, not whole Agent history"
+          }
+        ],
+        "elapsed_seconds": 44.040886224014685,
+        "estimated_input_tokens": 3203,
+        "known_completion_tokens": 0,
+        "known_prompt_tokens": 0,
+        "last_failure_kind": "model_error",
+        "local_limit_detail": null,
+        "model_calls": 1,
+        "pending": {},
+        "rounds": 1,
+        "settlements": [
+          {
+            "charged": 5251,
+            "completion_tokens": null,
+            "prompt_tokens": null,
+            "reservation_id": "reservation-a256ebc42ce54549b77d4a6a21432977",
+            "reserved": 5251,
+            "status": "error",
+            "unknown": true
+          }
+        ],
+        "stop_kind": null,
+        "token_boundary": "Characters/3 plus output reservation; unknown/failed usage retains its reservation. Actual usage may exceed estimates.",
+        "tool_calls": 0,
+        "unknown_requests": 1
+      },
+      "trace": {
+        "artifact_id": "artifact-543725f95d0e47109842161bd1b6afb6",
+        "job_id": "project-3a1e060732614ae9b469ae47a29e0192",
+        "media_type": "application/json",
+        "schema_version": 1,
+        "sha256": "5a201c0cebf9e05598b427084c86cd26c667c8ea07b859fc03939ef561506be9",
+        "size_bytes": 10743,
+        "storage_key": "project-3a1e060732614ae9b469ae47a29e0192/tasks/experts-1.expert-code/artifact-543725f95d0e47109842161bd1b6afb6.blob"
+      }
+    }
+  ],
+  "result": {
+    "schema_version": 1,
+    "job_id": "project-3a1e060732614ae9b469ae47a29e0192",
+    "project_id": "packaging-requirement-hash",
+    "status": "cancelled",
+    "failure_kind": "interrupted",
+    "end_to_end_success": false,
+    "fail_to_pass": null,
+    "pass_to_pass": null,
+    "diagnosis_correct": null,
+    "localization_correct": null,
+    "diagnosis_review": "not_scored_model_hypothesis_only",
+    "feedback_retries": 0,
+    "wall_seconds": 49.61178,
+    "usage_semantics": "provider_usage_with_unknown_retained",
+    "evaluation_checks": 3,
+    "model_requests": 1,
+    "tool_calls": 0,
+    "actual_prompt_tokens": null,
+    "actual_completion_tokens": null,
+    "estimated_input_tokens": 3203,
+    "unknown_requests": 1,
+    "usage_complete": false,
+    "cost": null,
+    "evidence_retention": null,
+    "progress_metrics": {
+      "version": "progress-v1",
+      "recorded_attempts": 0,
+      "stopped_attempts": 0,
+      "observed_tool_rounds": 0,
+      "novel_evidence_fingerprints": 0,
+      "no_progress_rounds": 0,
+      "semantics": "per_attempt_observed_novelty_not_diagnostic_correctness"
+    }
+  },
+  "facts": {
+    "expert_attempt_failure_kind": "timeout",
+    "provider_stream_exception": "KeyboardInterrupt",
+    "expert_wall_limit_seconds": 45,
+    "writer_started": false,
+    "tool_calls": 0,
+    "source_modified": false,
+    "final_f2p_p2p_executed": false,
+    "actual_provider_usage": null,
+    "automatic_retry": false
+  },
+  "interpretation": "Expert attempt recorded timeout; its first provider stream was interrupted with KeyboardInterrupt before usage arrived. This is not evidence of an SDK APITimeoutError or of a specific provider/server/network root cause.",
+  "stop_rule": "Unknown usage stops the batch and retains its reservation; remaining three planned trials are explicitly unstarted."
+}
