@@ -1,0 +1,627 @@
+{
+  "rows": [
+    {
+      "run_id": "chain-evidence-2",
+      "variant": "chain",
+      "arm": "evidence",
+      "repeat": 2,
+      "diagnosis_valid": true,
+      "failure_type": null,
+      "score": {
+        "expected": 7,
+        "recalled": 6,
+        "extra": 1,
+        "recall": 0.8571428571428571,
+        "precision": 0.8571428571428571,
+        "missing": [
+          [
+            "config",
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/chain/project/dataset"
+          ]
+        ],
+        "unexpected": [
+          [
+            "config",
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/chain/project/data.yaml"
+          ]
+        ]
+      },
+      "requests": 1,
+      "prompt_tokens": 3389,
+      "completion_tokens": 1298,
+      "usage_complete": true,
+      "history_before_tokens_estimate": 74550,
+      "post_tokens_estimate": 3399,
+      "context_events": [
+        {
+          "history_tokens_before_estimate": 74550,
+          "history_and_memory_tokens_after_estimate": 2522,
+          "groups_collapsed": true,
+          "memory_chars": 7543
+        }
+      ],
+      "baseline_summary_present": false
+    },
+    {
+      "run_id": "long_config-evidence-1",
+      "variant": "long_config",
+      "arm": "evidence",
+      "repeat": 1,
+      "diagnosis_valid": true,
+      "failure_type": null,
+      "score": {
+        "expected": 7,
+        "recalled": 5,
+        "extra": 2,
+        "recall": 0.7142857142857143,
+        "precision": 0.7142857142857143,
+        "missing": [
+          [
+            "config",
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/long_config/project/dataset"
+          ],
+          [
+            "config",
+            "val",
+            "images/val"
+          ]
+        ],
+        "unexpected": [
+          [
+            "config",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/long_config/project/data.yaml:41",
+            "path: /home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/long_config/project/dataset"
+          ],
+          [
+            "config",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/long_config/project/data.yaml:42",
+            "val: images/val"
+          ]
+        ]
+      },
+      "requests": 1,
+      "prompt_tokens": 3538,
+      "completion_tokens": 1470,
+      "usage_complete": true,
+      "history_before_tokens_estimate": 74963,
+      "post_tokens_estimate": 3585,
+      "context_events": [
+        {
+          "history_tokens_before_estimate": 74963,
+          "history_and_memory_tokens_after_estimate": 2702,
+          "groups_collapsed": true,
+          "memory_chars": 8084
+        }
+      ],
+      "baseline_summary_present": false
+    },
+    {
+      "run_id": "numeric-baseline-1",
+      "variant": "numeric",
+      "arm": "baseline",
+      "repeat": 1,
+      "diagnosis_valid": false,
+      "failure_type": "ValueError",
+      "score": {
+        "expected": 5,
+        "recalled": 1,
+        "extra": 5,
+        "recall": 0.2,
+        "precision": 0.16666666666666666,
+        "missing": [
+          [
+            "evidence",
+            "ev_7449b6c3ff9231d0b8d4"
+          ],
+          [
+            "numeric",
+            "inf"
+          ],
+          [
+            "numeric",
+            "nan"
+          ],
+          [
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/numeric/previous/dataset/images/val",
+            "missing"
+          ]
+        ],
+        "unexpected": [
+          [
+            "evidence",
+            "historical-failure.log:1"
+          ],
+          [
+            "numeric",
+            "gradient=inf"
+          ],
+          [
+            "numeric",
+            "loss=nan"
+          ],
+          [
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/numeric/historical-failure.log",
+            "exists"
+          ],
+          [
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/numeric/project/train.py",
+            "exists"
+          ]
+        ]
+      },
+      "requests": 2,
+      "prompt_tokens": 3783,
+      "completion_tokens": 1154,
+      "usage_complete": true,
+      "history_before_tokens_estimate": 72297,
+      "post_tokens_estimate": 2858,
+      "context_events": [],
+      "baseline_summary_present": true
+    },
+    {
+      "run_id": "numeric-baseline-2",
+      "variant": "numeric",
+      "arm": "baseline",
+      "repeat": 2,
+      "diagnosis_valid": false,
+      "failure_type": "ValueError",
+      "score": {
+        "expected": 5,
+        "recalled": 2,
+        "extra": 3,
+        "recall": 0.4,
+        "precision": 0.4,
+        "missing": [
+          [
+            "numeric",
+            "inf"
+          ],
+          [
+            "numeric",
+            "nan"
+          ],
+          [
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/numeric/previous/dataset/images/val",
+            "missing"
+          ]
+        ],
+        "unexpected": [
+          [
+            "numeric",
+            "gradient=inf"
+          ],
+          [
+            "numeric",
+            "loss=nan"
+          ],
+          [
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/numeric/project/train.py",
+            "exists"
+          ]
+        ]
+      },
+      "requests": 2,
+      "prompt_tokens": 3949,
+      "completion_tokens": 1403,
+      "usage_complete": true,
+      "history_before_tokens_estimate": 72297,
+      "post_tokens_estimate": 2963,
+      "context_events": [],
+      "baseline_summary_present": true
+    },
+    {
+      "run_id": "numeric-evidence-2",
+      "variant": "numeric",
+      "arm": "evidence",
+      "repeat": 2,
+      "diagnosis_valid": true,
+      "failure_type": null,
+      "score": {
+        "expected": 5,
+        "recalled": 5,
+        "extra": 0,
+        "recall": 1.0,
+        "precision": 1.0,
+        "missing": [],
+        "unexpected": []
+      },
+      "requests": 1,
+      "prompt_tokens": 1688,
+      "completion_tokens": 813,
+      "usage_complete": true,
+      "history_before_tokens_estimate": 72297,
+      "post_tokens_estimate": 1595,
+      "context_events": [
+        {
+          "history_tokens_before_estimate": 72297,
+          "history_and_memory_tokens_after_estimate": 716,
+          "groups_collapsed": true,
+          "memory_chars": 2125
+        }
+      ],
+      "baseline_summary_present": false
+    },
+    {
+      "run_id": "chain-baseline-2",
+      "variant": "chain",
+      "arm": "baseline",
+      "repeat": 2,
+      "diagnosis_valid": false,
+      "failure_type": "ValueError",
+      "score": {
+        "expected": 7,
+        "recalled": 0,
+        "extra": 1,
+        "recall": 0.0,
+        "precision": 0.0,
+        "missing": [
+          [
+            "cause",
+            "ev_1080517a6f2e46303339",
+            "ev_c301a4c78b07083cc532"
+          ],
+          [
+            "config",
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/chain/project/dataset"
+          ],
+          [
+            "config",
+            "val",
+            "images/val"
+          ],
+          [
+            "evidence",
+            "ev_1080517a6f2e46303339"
+          ],
+          [
+            "evidence",
+            "ev_c301a4c78b07083cc532"
+          ],
+          [
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/chain/previous/dataset/images/val",
+            "missing"
+          ],
+          [
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/chain/project/dataset/images/val",
+            "exists"
+          ]
+        ],
+        "unexpected": [
+          [
+            "path",
+            "data.yaml",
+            "exists"
+          ]
+        ]
+      },
+      "requests": 2,
+      "prompt_tokens": 3795,
+      "completion_tokens": 1159,
+      "usage_complete": true,
+      "history_before_tokens_estimate": 74550,
+      "post_tokens_estimate": 2915,
+      "context_events": [],
+      "baseline_summary_present": true
+    },
+    {
+      "run_id": "long_config-evidence-2",
+      "variant": "long_config",
+      "arm": "evidence",
+      "repeat": 2,
+      "diagnosis_valid": true,
+      "failure_type": null,
+      "score": {
+        "expected": 7,
+        "recalled": 6,
+        "extra": 1,
+        "recall": 0.8571428571428571,
+        "precision": 0.8571428571428571,
+        "missing": [
+          [
+            "config",
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/long_config/project/dataset"
+          ]
+        ],
+        "unexpected": [
+          [
+            "config",
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/long_config/project/data.yaml"
+          ]
+        ]
+      },
+      "requests": 1,
+      "prompt_tokens": 3538,
+      "completion_tokens": 1190,
+      "usage_complete": true,
+      "history_before_tokens_estimate": 74963,
+      "post_tokens_estimate": 3585,
+      "context_events": [
+        {
+          "history_tokens_before_estimate": 74963,
+          "history_and_memory_tokens_after_estimate": 2702,
+          "groups_collapsed": true,
+          "memory_chars": 8084
+        }
+      ],
+      "baseline_summary_present": false
+    },
+    {
+      "run_id": "numeric-evidence-1",
+      "variant": "numeric",
+      "arm": "evidence",
+      "repeat": 1,
+      "diagnosis_valid": true,
+      "failure_type": null,
+      "score": {
+        "expected": 5,
+        "recalled": 3,
+        "extra": 2,
+        "recall": 0.6,
+        "precision": 0.6,
+        "missing": [
+          [
+            "numeric",
+            "inf"
+          ],
+          [
+            "numeric",
+            "nan"
+          ]
+        ],
+        "unexpected": [
+          [
+            "numeric",
+            "gradient=inf"
+          ],
+          [
+            "numeric",
+            "loss=nan"
+          ]
+        ]
+      },
+      "requests": 1,
+      "prompt_tokens": 1688,
+      "completion_tokens": 837,
+      "usage_complete": true,
+      "history_before_tokens_estimate": 72297,
+      "post_tokens_estimate": 1595,
+      "context_events": [
+        {
+          "history_tokens_before_estimate": 72297,
+          "history_and_memory_tokens_after_estimate": 716,
+          "groups_collapsed": true,
+          "memory_chars": 2125
+        }
+      ],
+      "baseline_summary_present": false
+    },
+    {
+      "run_id": "long_config-baseline-1",
+      "variant": "long_config",
+      "arm": "baseline",
+      "repeat": 1,
+      "diagnosis_valid": false,
+      "failure_type": "ValueError",
+      "score": {
+        "expected": 7,
+        "recalled": 1,
+        "extra": 0,
+        "recall": 0.14285714285714285,
+        "precision": 1.0,
+        "missing": [
+          [
+            "cause",
+            "ev_2190ae0964198e5941a7",
+            "ev_bc427c5cf234723ae911"
+          ],
+          [
+            "config",
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/long_config/project/dataset"
+          ],
+          [
+            "config",
+            "val",
+            "images/val"
+          ],
+          [
+            "evidence",
+            "ev_2190ae0964198e5941a7"
+          ],
+          [
+            "evidence",
+            "ev_bc427c5cf234723ae911"
+          ],
+          [
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/long_config/previous/dataset/images/val",
+            "missing"
+          ]
+        ],
+        "unexpected": []
+      },
+      "requests": 2,
+      "prompt_tokens": 3540,
+      "completion_tokens": 976,
+      "usage_complete": true,
+      "history_before_tokens_estimate": 74963,
+      "post_tokens_estimate": 2805,
+      "context_events": [],
+      "baseline_summary_present": true
+    },
+    {
+      "run_id": "chain-baseline-1",
+      "variant": "chain",
+      "arm": "baseline",
+      "repeat": 1,
+      "diagnosis_valid": false,
+      "failure_type": "ValueError",
+      "score": {
+        "expected": 7,
+        "recalled": 1,
+        "extra": 1,
+        "recall": 0.14285714285714285,
+        "precision": 0.5,
+        "missing": [
+          [
+            "cause",
+            "ev_1080517a6f2e46303339",
+            "ev_c301a4c78b07083cc532"
+          ],
+          [
+            "config",
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/chain/project/dataset"
+          ],
+          [
+            "config",
+            "val",
+            "images/val"
+          ],
+          [
+            "evidence",
+            "ev_1080517a6f2e46303339"
+          ],
+          [
+            "evidence",
+            "ev_c301a4c78b07083cc532"
+          ],
+          [
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/chain/previous/dataset/images/val",
+            "missing"
+          ]
+        ],
+        "unexpected": [
+          [
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/chain/project/data.yaml",
+            "exists"
+          ]
+        ]
+      },
+      "requests": 2,
+      "prompt_tokens": 3683,
+      "completion_tokens": 1102,
+      "usage_complete": true,
+      "history_before_tokens_estimate": 74550,
+      "post_tokens_estimate": 2832,
+      "context_events": [],
+      "baseline_summary_present": true
+    },
+    {
+      "run_id": "chain-evidence-1",
+      "variant": "chain",
+      "arm": "evidence",
+      "repeat": 1,
+      "diagnosis_valid": true,
+      "failure_type": null,
+      "score": {
+        "expected": 7,
+        "recalled": 6,
+        "extra": 1,
+        "recall": 0.8571428571428571,
+        "precision": 0.8571428571428571,
+        "missing": [
+          [
+            "config",
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/chain/project/dataset"
+          ]
+        ],
+        "unexpected": [
+          [
+            "config",
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/chain/project/data.yaml"
+          ]
+        ]
+      },
+      "requests": 1,
+      "prompt_tokens": 3389,
+      "completion_tokens": 1246,
+      "usage_complete": true,
+      "history_before_tokens_estimate": 74550,
+      "post_tokens_estimate": 3399,
+      "context_events": [
+        {
+          "history_tokens_before_estimate": 74550,
+          "history_and_memory_tokens_after_estimate": 2522,
+          "groups_collapsed": true,
+          "memory_chars": 7543
+        }
+      ],
+      "baseline_summary_present": false
+    },
+    {
+      "run_id": "long_config-baseline-2",
+      "variant": "long_config",
+      "arm": "baseline",
+      "repeat": 2,
+      "diagnosis_valid": false,
+      "failure_type": "ValueError",
+      "score": {
+        "expected": 7,
+        "recalled": 1,
+        "extra": 0,
+        "recall": 0.14285714285714285,
+        "precision": 1.0,
+        "missing": [
+          [
+            "cause",
+            "ev_2190ae0964198e5941a7",
+            "ev_bc427c5cf234723ae911"
+          ],
+          [
+            "config",
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/long_config/project/dataset"
+          ],
+          [
+            "config",
+            "val",
+            "images/val"
+          ],
+          [
+            "evidence",
+            "ev_2190ae0964198e5941a7"
+          ],
+          [
+            "evidence",
+            "ev_bc427c5cf234723ae911"
+          ],
+          [
+            "path",
+            "/home/example/ResearchCoder/.tmp/stage18-long-context-v2/fixtures/long_config/previous/dataset/images/val",
+            "missing"
+          ]
+        ],
+        "unexpected": []
+      },
+      "requests": 2,
+      "prompt_tokens": 3641,
+      "completion_tokens": 1108,
+      "usage_complete": true,
+      "history_before_tokens_estimate": 74963,
+      "post_tokens_estimate": 2876,
+      "context_events": [],
+      "baseline_summary_present": true
+    }
+  ],
+  "requests": 18,
+  "combined_requests": 36,
+  "source_unchanged": true
+}

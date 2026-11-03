@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "case_id": "peekable_negative_slice",
+  "source": {
+    "repo": "more-itertools/more-itertools",
+    "commit": "e6ce1b0f65a57c459fc5004ad84158447b65b0ac",
+    "parent": "b21ec4ee8e139ebe297e2221980a694bebb69523",
+    "html_url": "https://github.com/more-itertools/more-itertools/commit/e6ce1b0f65a57c459fc5004ad84158447b65b0ac",
+    "license_file": "LICENSE",
+    "source_files": [
+      "more_itertools/__init__.py",
+      "more_itertools/more.py",
+      "more_itertools/recipes.py",
+      "LICENSE"
+    ],
+    "changed_source_files": [
+      "more_itertools/more.py"
+    ]
+  },
+  "source_scope": "Unmodified upstream package source slice and original license; not a full repository benchmark",
+  "original_faulty_commit": "b21ec4ee8e139ebe297e2221980a694bebb69523",
+  "original_fixed_commit": "e6ce1b0f65a57c459fc5004ad84158447b65b0ac",
+  "writable_paths": [
+    "more_itertools/more.py"
+  ],
+  "oracle_sha256": "c5b5da21945b45ae602644e6d4a1f2c340dab25c178497a3bbaca1caca458881",
+  "manifests": {
+    "faulty": {
+      "LICENSE": "09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46",
+      "more_itertools/more.py": "1bdc5f323ea18906436a42268b942d5b4d15ac8b3ff17c1211a59fb192fa068e",
+      "more_itertools/recipes.py": "98bf2a0f8ca454a4674c99e50cb883c3d602032b2fa21b3f3a7e56f4950285e0",
+      "more_itertools/__init__.py": "19cb2d318e8d45eb7d56136a55f1452c9469d21597571c31d752aa8232a2c07b"
+    },
+    "healthy": {
+      "LICENSE": "09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46",
+      "more_itertools/more.py": "4db2c161a2ca62f0741238e13c835d386bfefbc077fb91818c9c4572812e68f8",
+      "more_itertools/recipes.py": "98bf2a0f8ca454a4674c99e50cb883c3d602032b2fa21b3f3a7e56f4950285e0",
+      "more_itertools/__init__.py": "19cb2d318e8d45eb7d56136a55f1452c9469d21597571c31d752aa8232a2c07b"
+    },
+    "repaired": {
+      "LICENSE": "09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46",
+      "more_itertools/more.py": "4db2c161a2ca62f0741238e13c835d386bfefbc077fb91818c9c4572812e68f8",
+      "more_itertools/recipes.py": "98bf2a0f8ca454a4674c99e50cb883c3d602032b2fa21b3f3a7e56f4950285e0",
+      "more_itertools/__init__.py": "19cb2d318e8d45eb7d56136a55f1452c9469d21597571c31d752aa8232a2c07b"
+    }
+  },
+  "expected_checks": {
+    "public": [
+      "bounded_prefix_5_1"
+    ],
+    "f2p": [
+      "bounded_prefix_2_1",
+      "bounded_prefix_7_2",
+      "bounded_prefix_11_3",
+      "bounded_prefix_8_4"
+    ],
+    "p2p": [
+      "existing_slice_0",
+      "existing_slice_1",
+      "existing_slice_2",
+      "existing_slice_3",
+      "existing_slice_4"
+    ]
+  },
+  "objective": "Repair peekable reverse slicing with a nonnegative start and omitted stop: preserve Python sequence slice results while consuming only the required prefix of the iterable. Preserve iterator position and existing forward/reverse slicing behavior. Maintain the public API; change only the listed files.",
+  "public_log": "AssertionError: peekable(source())[5::-1] consumed beyond the six-item prefix required by this public slice. The iterator must remain at its first item after indexing. Source inventory is the provided more_itertools package slice.",
+  "origin_relative_path": "more_itertools/more.py"
+}

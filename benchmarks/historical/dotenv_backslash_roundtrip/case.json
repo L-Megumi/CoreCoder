@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "case_id": "dotenv_backslash_roundtrip",
+  "source": {
+    "repo": "theskumar/python-dotenv",
+    "commit": "f7b18d9c72d1abcc2ad4023424b84f5bee30d266",
+    "parent": "751f8c148222e58aa173c83c4e5e6cfccb2cc124",
+    "html_url": "https://github.com/theskumar/python-dotenv/commit/f7b18d9c72d1abcc2ad4023424b84f5bee30d266",
+    "license_file": "LICENSE",
+    "source_files": [
+      "src/dotenv/__init__.py",
+      "src/dotenv/main.py",
+      "src/dotenv/parser.py",
+      "src/dotenv/variables.py",
+      "src/dotenv/version.py",
+      "LICENSE"
+    ],
+    "changed_source_files": [
+      "src/dotenv/main.py",
+      "src/dotenv/parser.py"
+    ]
+  },
+  "source_scope": "Unmodified upstream package source slice and original license; not a full repository benchmark",
+  "original_faulty_commit": "751f8c148222e58aa173c83c4e5e6cfccb2cc124",
+  "original_fixed_commit": "f7b18d9c72d1abcc2ad4023424b84f5bee30d266",
+  "writable_paths": [
+    "src/dotenv/main.py",
+    "src/dotenv/parser.py"
+  ],
+  "oracle_sha256": "0b7cbcc74659aa1b8f09ff2e14a1a31f13c02096688bd7f131f3aa189b483856",
+  "manifests": {
+    "faulty": {
+      "LICENSE": "80619b7049f08c81683ad0e01f08f257a840652dd71ee83146d36658c7d2c2b9",
+      "src/dotenv/main.py": "27e9b390d4432c14b41a796d8e66415a01ca2ee2eeb331d447888d101f4b631e",
+      "src/dotenv/parser.py": "2dfc1a909cf8994ef87320952958256b9e19b91990cdcf07090061aaf7f6bb93",
+      "src/dotenv/variables.py": "083d2a5cebefa41deae51a4140c0fda97eaf1d7ed2c96f92ba2c063054a5b74f",
+      "src/dotenv/version.py": "bae7f854db53340f777cc86802eafd61a7f368a2459dccd8f87d524824ae4554",
+      "src/dotenv/__init__.py": "6e163e88aeb0c0765a996208e9e482b820165d435d9f64d016610eb97494ed23"
+    },
+    "healthy": {
+      "LICENSE": "80619b7049f08c81683ad0e01f08f257a840652dd71ee83146d36658c7d2c2b9",
+      "src/dotenv/main.py": "697eb33eee75d78b73db61eaf96bf9a6547548c1811c93501b67e056e5470dea",
+      "src/dotenv/parser.py": "6052533a6cd4e0ad5052fe88e5936853059c28ed3fec0f098cd29a7cb376dca4",
+      "src/dotenv/variables.py": "083d2a5cebefa41deae51a4140c0fda97eaf1d7ed2c96f92ba2c063054a5b74f",
+      "src/dotenv/version.py": "bae7f854db53340f777cc86802eafd61a7f368a2459dccd8f87d524824ae4554",
+      "src/dotenv/__init__.py": "6e163e88aeb0c0765a996208e9e482b820165d435d9f64d016610eb97494ed23"
+    },
+    "repaired": {
+      "LICENSE": "80619b7049f08c81683ad0e01f08f257a840652dd71ee83146d36658c7d2c2b9",
+      "src/dotenv/main.py": "697eb33eee75d78b73db61eaf96bf9a6547548c1811c93501b67e056e5470dea",
+      "src/dotenv/parser.py": "6052533a6cd4e0ad5052fe88e5936853059c28ed3fec0f098cd29a7cb376dca4",
+      "src/dotenv/variables.py": "083d2a5cebefa41deae51a4140c0fda97eaf1d7ed2c96f92ba2c063054a5b74f",
+      "src/dotenv/version.py": "bae7f854db53340f777cc86802eafd61a7f368a2459dccd8f87d524824ae4554",
+      "src/dotenv/__init__.py": "6e163e88aeb0c0765a996208e9e482b820165d435d9f64d016610eb97494ed23"
+    },
+    "writer_only": {
+      "LICENSE": "80619b7049f08c81683ad0e01f08f257a840652dd71ee83146d36658c7d2c2b9",
+      "src/dotenv/main.py": "697eb33eee75d78b73db61eaf96bf9a6547548c1811c93501b67e056e5470dea",
+      "src/dotenv/parser.py": "2dfc1a909cf8994ef87320952958256b9e19b91990cdcf07090061aaf7f6bb93",
+      "src/dotenv/variables.py": "083d2a5cebefa41deae51a4140c0fda97eaf1d7ed2c96f92ba2c063054a5b74f",
+      "src/dotenv/version.py": "bae7f854db53340f777cc86802eafd61a7f368a2459dccd8f87d524824ae4554",
+      "src/dotenv/__init__.py": "6e163e88aeb0c0765a996208e9e482b820165d435d9f64d016610eb97494ed23"
+    },
+    "parser_only": {
+      "LICENSE": "80619b7049f08c81683ad0e01f08f257a840652dd71ee83146d36658c7d2c2b9",
+      "src/dotenv/main.py": "27e9b390d4432c14b41a796d8e66415a01ca2ee2eeb331d447888d101f4b631e",
+      "src/dotenv/parser.py": "6052533a6cd4e0ad5052fe88e5936853059c28ed3fec0f098cd29a7cb376dca4",
+      "src/dotenv/variables.py": "083d2a5cebefa41deae51a4140c0fda97eaf1d7ed2c96f92ba2c063054a5b74f",
+      "src/dotenv/version.py": "bae7f854db53340f777cc86802eafd61a7f368a2459dccd8f87d524824ae4554",
+      "src/dotenv/__init__.py": "6e163e88aeb0c0765a996208e9e482b820165d435d9f64d016610eb97494ed23"
+    }
+  },
+  "expected_checks": {
+    "public": [
+      "synthetic_roundtrip_0"
+    ],
+    "f2p": [
+      "synthetic_roundtrip_0",
+      "synthetic_roundtrip_1",
+      "synthetic_roundtrip_2",
+      "synthetic_roundtrip_3",
+      "synthetic_roundtrip_4"
+    ],
+    "p2p": [
+      "synthetic_roundtrip_0",
+      "synthetic_roundtrip_1",
+      "synthetic_roundtrip_2",
+      "synthetic_roundtrip_3",
+      "synthetic_roundtrip_4",
+      "synthetic_roundtrip_5"
+    ]
+  },
+  "objective": "Repair literal string round-trip through dotenv.set_key and dotenv.get_key when values contain backslashes. Preserve existing entries, quote modes, ordinary values, parser behavior and the public API. All inputs are synthetic. Change only the listed files.",
+  "public_log": "AssertionError: set_key/get_key did not round-trip a synthetic value consisting of two leading backslashes followed by storage, one backslash and trial. Existing unrelated entries must be preserved. Source inventory is the provided src/dotenv package slice.",
+  "origin_relative_path": "src/dotenv/main.py"
+}

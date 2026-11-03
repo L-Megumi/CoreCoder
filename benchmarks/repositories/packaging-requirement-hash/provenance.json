@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "case_id": "packaging-requirement-hash",
+  "source_revision": "664f049980f1873c458de72a449003b83173f445",
+  "source_manifest_sha256": null,
+  "original_checker_sha256": {
+    "oracle/reproduce.py": "bcf6836d9304c3a9fc338d311a86bf70629392e234b576b203adb49426d33b3e",
+    "oracle/independent_oracle.py": "9c8bd9e5c274d0f23b8c420897695f393af985c2b5a9ed3a328c4ff912301f82"
+  },
+  "source_files": 132,
+  "upstream": "pypa/packaging",
+  "scope": "Pinned historical development fixture; locally authored independent public/F2P/P2P checks.",
+  "oracle_original_bytes_preserved": true,
+  "distributed_checker_sha256": {
+    "oracle/independent_oracle.py": "9c8bd9e5c274d0f23b8c420897695f393af985c2b5a9ed3a328c4ff912301f82",
+    "oracle/reproduce.py": "bcf6836d9304c3a9fc338d311a86bf70629392e234b576b203adb49426d33b3e"
+  },
+  "portable_wrapper_note": "Only profile entry wrappers resolve sibling assets relatively. Oracle and adapter source bytes are unchanged."
+}

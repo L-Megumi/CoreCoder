@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "case_id": "jsonpointer_scalar",
+  "source_revision": "f15abacd371a3415fb874634687d1619aa5a6fe4",
+  "source_manifest_sha256": null,
+  "original_checker_sha256": {
+    "oracle/oracle.py": "4d56d2807741c41be29bf133b2a2d3853a5b3caeb142f4fae8f3d8db5895b867",
+    "oracle/case.json": "05b9f977bed415065253eec5e540ce101b435397b04dd96e06d1a1035042426f",
+    "oracle/historical_check.py": "a4d9ba3f3726b49ab9292bc87ac10b03c234a2b9de6d3818ef11714fa0850f5a",
+    "oracle/public-entry.py": "3a3d9d73ced3cbf248822e3dea0d259645a0f0d8ffadb95905e3cc07ed3284a1",
+    "oracle/f2p-entry.py": "60f7908157b9bc72dac252f55a6490d4d644099ec5083b25d65da53dabdd41bf",
+    "oracle/p2p-entry.py": "02b24a476772a021fde53501ce1c93915e060e5a9bf5e46bfaa562ba18b6aa05"
+  },
+  "source_files": 2,
+  "upstream": "stefankoegl/python-json-pointer",
+  "scope": "Pinned historical development fixture; locally authored independent public/F2P/P2P checks.",
+  "oracle_original_bytes_preserved": true,
+  "distributed_checker_sha256": {
+    "oracle/historical_check.py": "a4d9ba3f3726b49ab9292bc87ac10b03c234a2b9de6d3818ef11714fa0850f5a",
+    "oracle/case.json": "05b9f977bed415065253eec5e540ce101b435397b04dd96e06d1a1035042426f",
+    "oracle/f2p-entry.py": "c57b7c34ab3547047f359aa3e400c71a6f7475a490a3f713d208e6b1efe21971",
+    "oracle/oracle.py": "4d56d2807741c41be29bf133b2a2d3853a5b3caeb142f4fae8f3d8db5895b867",
+    "oracle/public-entry.py": "863f2970f6969f07fcea5ca0ade1f56f1b092649f015f7382dc9ce0924649c7c",
+    "oracle/p2p-entry.py": "605fbd2d34fabcf6c54d48d4145af361e954ec5227183f6aaab7d3b4d10ae099"
+  },
+  "portable_wrapper_note": "Only profile entry wrappers resolve sibling assets relatively. Oracle and adapter source bytes are unchanged."
+}

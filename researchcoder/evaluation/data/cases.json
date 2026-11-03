@@ -1,0 +1,349 @@
+{
+  "benchmark_id": "researchcoder-pytorch",
+  "version": "v1.0",
+  "cases": [
+    {
+      "case_id": "autograd_detach",
+      "category": "autograd",
+      "split": "development",
+      "project_version": "pytorch-cpu-v1",
+      "objective": "Jointly train backbone and head; both must receive gradients and update. Preserve intentionally frozen training behavior.",
+      "public_log": "WARNING: training.py joint-training check observed missing backbone gradient and parameter update.",
+      "assets": [
+        {
+          "path": "training.py",
+          "healthy_sha256": "d1bf707f5f30e2778cc3f76b72a4534a5ded5b18079146bc7de0b9d1df513edb",
+          "faulty_sha256": "6361414bdb635abbe154b5bd8986499ea09fd98894b26328407171b573ad699e",
+          "schema_version": 1
+        }
+      ],
+      "writable_paths": [
+        "training.py"
+      ],
+      "reference_cause": "Unintended detach disconnects backbone from the joint training graph.",
+      "cause_concepts": [
+        [
+          "detach",
+          "disconnect"
+        ],
+        [
+          "backbone",
+          "gradient"
+        ]
+      ],
+      "fault_locations": [
+        "training.py"
+      ],
+      "acceptable_repair": "Jointly train backbone and head; both must receive gradients and update. Preserve intentionally frozen training behavior.",
+      "oracle_sha256": "9a1a51dfd913e9f86aded559f94f6225ba4db2851068094c3f5d650d55b31362",
+      "oracle_support_sha256": "a442cd1c9ae74506b524aca5b1a06f6902d20fa136ce83d9cacf24ce733d3885",
+      "dependency_profile": "pytorch-cpu",
+      "timeout_seconds": 30,
+      "fail_to_pass_profile": "holdout",
+      "pass_to_pass_profile": "regression",
+      "schema_version": 1
+    },
+    {
+      "case_id": "shape_transpose",
+      "category": "shape",
+      "split": "development",
+      "project_version": "pytorch-cpu-v1",
+      "objective": "Return predictions with batch rows and class columns, preserving differentiability and caller inputs.",
+      "public_log": "ERROR: training.py prediction check failed: batch/class dimensions do not match requested training batch.",
+      "assets": [
+        {
+          "path": "training.py",
+          "healthy_sha256": "1478df619ed225655337958b62eeae431ce57ac367a899f1d8d5beceb744a377",
+          "faulty_sha256": "807d0d693cb0b9ed9fa86457299ba49b097d0f1cbc614faca728e34da97281ee",
+          "schema_version": 1
+        }
+      ],
+      "writable_paths": [
+        "training.py"
+      ],
+      "reference_cause": "Transposing prediction swaps batch and class axes.",
+      "cause_concepts": [
+        [
+          "transpos",
+          "swap"
+        ],
+        [
+          "batch",
+          "shape",
+          "axis"
+        ]
+      ],
+      "fault_locations": [
+        "training.py"
+      ],
+      "acceptable_repair": "Return predictions with batch rows and class columns, preserving differentiability and caller inputs.",
+      "oracle_sha256": "9a1a51dfd913e9f86aded559f94f6225ba4db2851068094c3f5d650d55b31362",
+      "oracle_support_sha256": "a442cd1c9ae74506b524aca5b1a06f6902d20fa136ce83d9cacf24ce733d3885",
+      "dependency_profile": "pytorch-cpu",
+      "timeout_seconds": 30,
+      "fail_to_pass_profile": "holdout",
+      "pass_to_pass_profile": "regression",
+      "schema_version": 1
+    },
+    {
+      "case_id": "dtype_features",
+      "category": "dtype",
+      "split": "development",
+      "project_version": "pytorch-cpu-v1",
+      "objective": "Prepare input features for the model parameter dtype and device without mutating inputs or changing model parameters.",
+      "public_log": "ERROR: training.py linear forward failed: mat1 and mat2 must have the same dtype, got Long and Double.",
+      "assets": [
+        {
+          "path": "training.py",
+          "healthy_sha256": "77375ce7937fca72e3092be58e1dac322c814dcac9ce2630c35f576d520ab3ed",
+          "faulty_sha256": "b3d4bd4e9c7df0232b614834331abe2d521b8e4edb0bf2dce7ea83aad69976fc",
+          "schema_version": 1
+        }
+      ],
+      "writable_paths": [
+        "training.py"
+      ],
+      "reference_cause": "Forcing features to int64 breaks agreement with floating model dtype.",
+      "cause_concepts": [
+        [
+          "dtype",
+          "int64",
+          "long"
+        ],
+        [
+          "feature",
+          "input"
+        ]
+      ],
+      "fault_locations": [
+        "training.py"
+      ],
+      "acceptable_repair": "Prepare input features for the model parameter dtype and device without mutating inputs or changing model parameters.",
+      "oracle_sha256": "9a1a51dfd913e9f86aded559f94f6225ba4db2851068094c3f5d650d55b31362",
+      "oracle_support_sha256": "a442cd1c9ae74506b524aca5b1a06f6902d20fa136ce83d9cacf24ce733d3885",
+      "dependency_profile": "pytorch-cpu",
+      "timeout_seconds": 30,
+      "fail_to_pass_profile": "holdout",
+      "pass_to_pass_profile": "regression",
+      "schema_version": 1
+    },
+    {
+      "case_id": "nonfinite_logsigmoid",
+      "category": "nonfinite",
+      "split": "development",
+      "project_version": "pytorch-cpu-v1",
+      "objective": "Compute elementwise positive-class logistic loss with finite values and correct gradients, including extreme logits.",
+      "public_log": "WARNING: training.py positive-class loss contains Inf and nonfinite gradients for extreme negative logits.",
+      "assets": [
+        {
+          "path": "training.py",
+          "healthy_sha256": "ee998471d6ce56e9dc1c4552c895c4e474de176f98c44fc9ce282c7cd63e6b36",
+          "faulty_sha256": "6720c642d00a0642bc0956279a03f376249e88dcb1d485a79fbe3bc3b82818a6",
+          "schema_version": 1
+        }
+      ],
+      "writable_paths": [
+        "training.py"
+      ],
+      "reference_cause": "Taking log of an underflowed sigmoid makes positive-class logistic loss nonfinite.",
+      "cause_concepts": [
+        [
+          "log",
+          "sigmoid",
+          "softplus"
+        ],
+        [
+          "underflow",
+          "nonfinite",
+          "inf",
+          "stable"
+        ]
+      ],
+      "fault_locations": [
+        "training.py"
+      ],
+      "acceptable_repair": "Compute elementwise positive-class logistic loss with finite values and correct gradients, including extreme logits.",
+      "oracle_sha256": "9a1a51dfd913e9f86aded559f94f6225ba4db2851068094c3f5d650d55b31362",
+      "oracle_support_sha256": "a442cd1c9ae74506b524aca5b1a06f6902d20fa136ce83d9cacf24ce733d3885",
+      "dependency_profile": "pytorch-cpu",
+      "timeout_seconds": 30,
+      "fail_to_pass_profile": "holdout",
+      "pass_to_pass_profile": "regression",
+      "schema_version": 1
+    },
+    {
+      "case_id": "label_indices",
+      "category": "labels",
+      "split": "validation",
+      "project_version": "pytorch-cpu-v1",
+      "objective": "Compute multiclass cross entropy for integer class indices and preserve existing probability-target support; do not mutate labels.",
+      "public_log": "ERROR: training.py classification loss raised RuntimeError: expected scalar type Long but found Float for class indices.",
+      "assets": [
+        {
+          "path": "training.py",
+          "healthy_sha256": "33f6bccfc610f8b971189dcfe88393a335184807db7a4842ae81b6609ecc18c6",
+          "faulty_sha256": "15d6a86d2fa7149743e692f751e3be22701fb2573aeb88eb1e88f72e93bc105d",
+          "schema_version": 1
+        }
+      ],
+      "writable_paths": [
+        "training.py"
+      ],
+      "reference_cause": "Casting class-index labels to float violates cross entropy target dtype; probability targets must remain floating.",
+      "cause_concepts": [
+        [
+          "label",
+          "target",
+          "indice"
+        ],
+        [
+          "float",
+          "long",
+          "dtype"
+        ]
+      ],
+      "fault_locations": [
+        "training.py"
+      ],
+      "acceptable_repair": "Compute multiclass cross entropy for integer class indices and preserve existing probability-target support; do not mutate labels.",
+      "oracle_sha256": "9a1a51dfd913e9f86aded559f94f6225ba4db2851068094c3f5d650d55b31362",
+      "oracle_support_sha256": "a442cd1c9ae74506b524aca5b1a06f6902d20fa136ce83d9cacf24ce733d3885",
+      "dependency_profile": "pytorch-cpu",
+      "timeout_seconds": 30,
+      "fail_to_pass_profile": "holdout",
+      "pass_to_pass_profile": "regression",
+      "schema_version": 1
+    },
+    {
+      "case_id": "optimizer_omission",
+      "category": "optimizer",
+      "split": "validation",
+      "project_version": "pytorch-cpu-v1",
+      "objective": "Build SGD at learning rate 0.05 for joint backbone/head training, preserving parameter identity and requires_grad flags.",
+      "public_log": "WARNING: training.py optimizer step updated head but omitted trainable backbone parameters.",
+      "assets": [
+        {
+          "path": "training.py",
+          "healthy_sha256": "597c870513e50011a12ec3f5d79df74ae8475f619dad93d6fe5b86227fb7d4d4",
+          "faulty_sha256": "1f7164947a5528a3ace94620eefcf165e01c5559ec1f33d8264f79c88a3fc9e5",
+          "schema_version": 1
+        }
+      ],
+      "writable_paths": [
+        "training.py"
+      ],
+      "reference_cause": "Optimizer includes only head parameters and omits trainable backbone.",
+      "cause_concepts": [
+        [
+          "optimizer",
+          "sgd"
+        ],
+        [
+          "omit",
+          "only",
+          "backbone"
+        ]
+      ],
+      "fault_locations": [
+        "training.py"
+      ],
+      "acceptable_repair": "Build SGD at learning rate 0.05 for joint backbone/head training, preserving parameter identity and requires_grad flags.",
+      "oracle_sha256": "9a1a51dfd913e9f86aded559f94f6225ba4db2851068094c3f5d650d55b31362",
+      "oracle_support_sha256": "a442cd1c9ae74506b524aca5b1a06f6902d20fa136ce83d9cacf24ce733d3885",
+      "dependency_profile": "pytorch-cpu",
+      "timeout_seconds": 30,
+      "fail_to_pass_profile": "holdout",
+      "pass_to_pass_profile": "regression",
+      "schema_version": 1
+    },
+    {
+      "case_id": "normalization_scale",
+      "category": "preprocessing",
+      "split": "holdout",
+      "project_version": "pytorch-cpu-v1",
+      "objective": "Apply per-channel standardization (x - mean) / std without mutating input, preserving arbitrary positive channel std.",
+      "public_log": "WARNING: training.py preprocessing check observed incorrect channel scale when standard deviations differ from one.",
+      "assets": [
+        {
+          "path": "training.py",
+          "healthy_sha256": "a8e83e519b9b53ae344e8a1a0dbdbbda9b1d595961e7316bbdf1fea235d3ef2d",
+          "faulty_sha256": "404f1f7dd5c5886d0823a5736d9717b85b8a399e22f1ca14c15a4e5b86a68ada",
+          "schema_version": 1
+        }
+      ],
+      "writable_paths": [
+        "training.py"
+      ],
+      "reference_cause": "Normalization divides by squared standard deviation rather than standard deviation.",
+      "cause_concepts": [
+        [
+          "std",
+          "standard"
+        ],
+        [
+          "squar",
+          "variance",
+          "scale"
+        ]
+      ],
+      "fault_locations": [
+        "training.py"
+      ],
+      "acceptable_repair": "Apply per-channel standardization (x - mean) / std without mutating input, preserving arbitrary positive channel std.",
+      "oracle_sha256": "9a1a51dfd913e9f86aded559f94f6225ba4db2851068094c3f5d650d55b31362",
+      "oracle_support_sha256": "a442cd1c9ae74506b524aca5b1a06f6902d20fa136ce83d9cacf24ce733d3885",
+      "dependency_profile": "pytorch-cpu",
+      "timeout_seconds": 30,
+      "fail_to_pass_profile": "holdout",
+      "pass_to_pass_profile": "regression",
+      "schema_version": 1
+    },
+    {
+      "case_id": "crossfile_batch",
+      "category": "crossfile",
+      "split": "holdout",
+      "project_version": "pytorch-cpu-v1",
+      "objective": "Predict one regression value per input row, including batch size one; preserve gradients and the batch axis across helpers.",
+      "public_log": "ERROR: training.py predict through ops.py helper lost the batch axis for a one-row training input.",
+      "assets": [
+        {
+          "path": "training.py",
+          "healthy_sha256": "32e5a35a4a71e35c9afce3cfb3d1f71f88cf0e8fed29971ce99b4957c1ad3696",
+          "faulty_sha256": "32e5a35a4a71e35c9afce3cfb3d1f71f88cf0e8fed29971ce99b4957c1ad3696",
+          "schema_version": 1
+        },
+        {
+          "path": "ops.py",
+          "healthy_sha256": "16f953b7ec0ac10c973ab60b13907955b52bc4780c02cec33e0415e987a61d4a",
+          "faulty_sha256": "3af0e4344705daf292c998f738a26a75b672b503e12f36f9115a0b6a99798c83",
+          "schema_version": 1
+        }
+      ],
+      "writable_paths": [
+        "ops.py"
+      ],
+      "reference_cause": "Cross-file helper uses unqualified squeeze and removes the singleton batch dimension.",
+      "cause_concepts": [
+        [
+          "squeeze"
+        ],
+        [
+          "batch",
+          "singleton"
+        ]
+      ],
+      "fault_locations": [
+        "ops.py"
+      ],
+      "acceptable_repair": "Predict one regression value per input row, including batch size one; preserve gradients and the batch axis across helpers.",
+      "oracle_sha256": "9a1a51dfd913e9f86aded559f94f6225ba4db2851068094c3f5d650d55b31362",
+      "oracle_support_sha256": "a442cd1c9ae74506b524aca5b1a06f6902d20fa136ce83d9cacf24ce733d3885",
+      "dependency_profile": "pytorch-cpu",
+      "timeout_seconds": 30,
+      "fail_to_pass_profile": "holdout",
+      "pass_to_pass_profile": "regression",
+      "schema_version": 1
+    }
+  ],
+  "schema_version": 1
+}

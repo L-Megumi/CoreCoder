@@ -1,0 +1,344 @@
+{
+  "expert_policy": {
+    "expert_limits": {
+      "max_context_tokens": 16000,
+      "max_model_calls": 6,
+      "max_output_tokens": 2048,
+      "max_rounds": 6,
+      "max_runtime_seconds": 180,
+      "max_tool_calls": 10,
+      "max_total_tokens": 80000,
+      "schema_version": 1
+    },
+    "initial_mode": "code-first-v1",
+    "max_episodes": 1,
+    "max_workers": 2,
+    "mode": "public-failure-v1",
+    "report_version": "readiness-v3",
+    "schedule_version": "serial-parallel-v2",
+    "schema_version": 1,
+    "working_set_version": "active-v1",
+    "writer_min_model_calls": 12,
+    "writer_min_seconds": 90,
+    "writer_min_tool_calls": 3,
+    "writer_min_total_tokens": 20000,
+    "assignment_version": "focused-v1",
+    "latency_profile": "streaming-v1"
+  },
+  "f2p_check": {
+    "check_id": "jsonpointer_scalar-f2p",
+    "argv_template": [
+      "@PYTHON@",
+      "-I",
+      "-B",
+      "@CASE@/oracle/f2p-entry.py",
+      "{project}"
+    ],
+    "protected_files": [
+      {
+        "path": "@CASE@/oracle/oracle.py",
+        "sha256": "4d56d2807741c41be29bf133b2a2d3853a5b3caeb142f4fae8f3d8db5895b867",
+        "schema_version": 1
+      },
+      {
+        "path": "@CASE@/oracle/case.json",
+        "sha256": "05b9f977bed415065253eec5e540ce101b435397b04dd96e06d1a1035042426f",
+        "schema_version": 1
+      },
+      {
+        "path": "@CASE@/oracle/historical_check.py",
+        "sha256": "a4d9ba3f3726b49ab9292bc87ac10b03c234a2b9de6d3818ef11714fa0850f5a",
+        "schema_version": 1
+      },
+      {
+        "path": "@CASE@/oracle/f2p-entry.py",
+        "sha256": "c57b7c34ab3547047f359aa3e400c71a6f7475a490a3f713d208e6b1efe21971",
+        "schema_version": 1
+      }
+    ],
+    "receipt": {
+      "kind": "checks_json",
+      "origin_field": "candidate_origin",
+      "origin_relative_path": "jsonpointer.py",
+      "required_fields": [
+        "case_id",
+        "profile",
+        "passed",
+        "checks",
+        "candidate_origin",
+        "source_sha256",
+        "adapter_version"
+      ],
+      "field_types": [],
+      "nonempty_fields": [],
+      "exact_fields": [
+        [
+          "case_id",
+          "jsonpointer_scalar"
+        ],
+        [
+          "profile",
+          "f2p"
+        ],
+        [
+          "adapter_version",
+          "historical-original-v1"
+        ]
+      ],
+      "expected_checks": [
+        "reject_scalar_0",
+        "reject_scalar_1",
+        "reject_scalar_2",
+        "reject_scalar_3"
+      ],
+      "check_name_field": "check",
+      "check_exact_fields": [],
+      "digest_field": "source_sha256",
+      "digest_relative_path": "jsonpointer.py",
+      "schema_version": 1
+    },
+    "timeout_seconds": 20,
+    "schema_version": 1
+  },
+  "handoff_policy": {
+    "closure_version": "reserve-incomplete-v1",
+    "max_handoffs": 1,
+    "mode": "local-stop-v3",
+    "request_version": "explicit-request-v1",
+    "schema_version": 1
+  },
+  "model": {
+    "base_url": "https://api.deepseek.com",
+    "credential_env": "DEEPSEEK_API_KEY",
+    "model": "deepseek-flash",
+    "provider": "openai",
+    "schema_version": 1,
+    "turns": []
+  },
+  "model_options": {
+    "schema_version": 1,
+    "thinking": "disabled"
+  },
+  "p2p_check": {
+    "check_id": "jsonpointer_scalar-p2p",
+    "argv_template": [
+      "@PYTHON@",
+      "-I",
+      "-B",
+      "@CASE@/oracle/p2p-entry.py",
+      "{project}"
+    ],
+    "protected_files": [
+      {
+        "path": "@CASE@/oracle/oracle.py",
+        "sha256": "4d56d2807741c41be29bf133b2a2d3853a5b3caeb142f4fae8f3d8db5895b867",
+        "schema_version": 1
+      },
+      {
+        "path": "@CASE@/oracle/case.json",
+        "sha256": "05b9f977bed415065253eec5e540ce101b435397b04dd96e06d1a1035042426f",
+        "schema_version": 1
+      },
+      {
+        "path": "@CASE@/oracle/historical_check.py",
+        "sha256": "a4d9ba3f3726b49ab9292bc87ac10b03c234a2b9de6d3818ef11714fa0850f5a",
+        "schema_version": 1
+      },
+      {
+        "path": "@CASE@/oracle/p2p-entry.py",
+        "sha256": "605fbd2d34fabcf6c54d48d4145af361e954ec5227183f6aaab7d3b4d10ae099",
+        "schema_version": 1
+      }
+    ],
+    "receipt": {
+      "kind": "checks_json",
+      "origin_field": "candidate_origin",
+      "origin_relative_path": "jsonpointer.py",
+      "required_fields": [
+        "case_id",
+        "profile",
+        "passed",
+        "checks",
+        "candidate_origin",
+        "source_sha256",
+        "adapter_version"
+      ],
+      "field_types": [],
+      "nonempty_fields": [],
+      "exact_fields": [
+        [
+          "case_id",
+          "jsonpointer_scalar"
+        ],
+        [
+          "profile",
+          "p2p"
+        ],
+        [
+          "adapter_version",
+          "historical-original-v1"
+        ]
+      ],
+      "expected_checks": [
+        "legal_resolution_0",
+        "legal_resolution_1",
+        "legal_resolution_2",
+        "legal_resolution_3",
+        "legal_resolution_4",
+        "leading_zero_refused",
+        "missing_default"
+      ],
+      "check_name_field": "check",
+      "check_exact_fields": [],
+      "digest_field": "source_sha256",
+      "digest_relative_path": "jsonpointer.py",
+      "schema_version": 1
+    },
+    "timeout_seconds": 20,
+    "schema_version": 1
+  },
+  "permission_recovery_mode": "bounded-public-read-v1",
+  "policy": {
+    "completion_version": "explicit-v1",
+    "job_limits": {
+      "max_model_calls": 22,
+      "max_runtime_seconds": 600,
+      "max_tool_calls": 60,
+      "max_total_tokens": 400000,
+      "schema_version": 1
+    },
+    "max_feedback_rounds": 1,
+    "progress_version": "progress-v1",
+    "schema_version": 1,
+    "stop_on_unknown_usage": true,
+    "task_limits": {
+      "max_context_tokens": 32000,
+      "max_model_calls": 12,
+      "max_output_tokens": 2048,
+      "max_rounds": 10,
+      "max_runtime_seconds": 300,
+      "max_tool_calls": 24,
+      "max_total_tokens": 200000,
+      "schema_version": 1
+    }
+  },
+  "public_check": {
+    "check_id": "jsonpointer_scalar-public",
+    "argv_template": [
+      "@PYTHON@",
+      "-I",
+      "-B",
+      "@CASE@/oracle/public-entry.py",
+      "{project}"
+    ],
+    "protected_files": [
+      {
+        "path": "@CASE@/oracle/oracle.py",
+        "sha256": "4d56d2807741c41be29bf133b2a2d3853a5b3caeb142f4fae8f3d8db5895b867",
+        "schema_version": 1
+      },
+      {
+        "path": "@CASE@/oracle/case.json",
+        "sha256": "05b9f977bed415065253eec5e540ce101b435397b04dd96e06d1a1035042426f",
+        "schema_version": 1
+      },
+      {
+        "path": "@CASE@/oracle/historical_check.py",
+        "sha256": "a4d9ba3f3726b49ab9292bc87ac10b03c234a2b9de6d3818ef11714fa0850f5a",
+        "schema_version": 1
+      },
+      {
+        "path": "@CASE@/oracle/public-entry.py",
+        "sha256": "863f2970f6969f07fcea5ca0ade1f56f1b092649f015f7382dc9ce0924649c7c",
+        "schema_version": 1
+      }
+    ],
+    "receipt": {
+      "kind": "checks_json",
+      "origin_field": "candidate_origin",
+      "origin_relative_path": "jsonpointer.py",
+      "required_fields": [
+        "case_id",
+        "profile",
+        "passed",
+        "checks",
+        "candidate_origin",
+        "source_sha256",
+        "adapter_version"
+      ],
+      "field_types": [],
+      "nonempty_fields": [],
+      "exact_fields": [
+        [
+          "case_id",
+          "jsonpointer_scalar"
+        ],
+        [
+          "profile",
+          "public"
+        ],
+        [
+          "adapter_version",
+          "historical-original-v1"
+        ]
+      ],
+      "expected_checks": [
+        "reject_scalar_0"
+      ],
+      "check_name_field": "check",
+      "check_exact_fields": [],
+      "digest_field": "source_sha256",
+      "digest_relative_path": "jsonpointer.py",
+      "schema_version": 1
+    },
+    "timeout_seconds": 20,
+    "schema_version": 1
+  },
+  "public_execution_policy": {
+    "mode": "candidate-exception-v1",
+    "schema_version": 1
+  },
+  "schema_version": 1,
+  "source_root": "@CASE@/source",
+  "task": {
+    "project_id": "jsonpointer_scalar-development",
+    "source_revision": "f15abacd371a3415fb874634687d1619aa5a6fe4",
+    "manifest": {
+      "entries": [
+        {
+          "path": "LICENSE.txt",
+          "sha256": "d8b24f15d472885f788a2d6e985850f264627b86012a17bb242c83f310d907e5",
+          "size_bytes": 1413,
+          "schema_version": 1
+        },
+        {
+          "path": "jsonpointer.py",
+          "sha256": "8fcd6596bee332f11d024e38845a988e787e2c0faec2e5fe791e156d165cc277",
+          "size_bytes": 10551,
+          "schema_version": 1
+        }
+      ],
+      "algorithm": "all-files-v1",
+      "schema_version": 1
+    },
+    "objective": "Repair JSON Pointer traversal so JSON string values are treated as scalar values: applying a further path token to a string must raise JsonPointerException. Preserve valid mapping/list traversal, escaping, existing defaults and public APIs. Change only the listed source file.",
+    "public_log": "AssertionError: resolve_pointer({\"value\":\"abc\"}, \"/value/0\") returned a character instead of refusing traversal through a JSON scalar. Resolving \"/value\" itself should still return the string.",
+    "writable_paths": [
+      "jsonpointer.py"
+    ],
+    "schema_version": 1
+  },
+  "writer_context_policy": {
+    "allow_recovery": true,
+    "coding_source_mode": "observed-source-v2",
+    "max_records": 32,
+    "role": "repair",
+    "schema_version": 1,
+    "strategy": "evidence",
+    "working_set_version": "active-v1",
+    "repair_state_version": "state-v1",
+    "expert_followup_version": "followup-v3",
+    "writer_guidance_version": "focused-repair-v1",
+    "handoff_view_version": "bounded-excerpts-v1"
+  }
+}

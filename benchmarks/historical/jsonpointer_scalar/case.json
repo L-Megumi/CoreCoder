@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "case_id": "jsonpointer_scalar",
+  "source": {
+    "repo": "stefankoegl/python-json-pointer",
+    "html_url": "https://github.com/stefankoegl/python-json-pointer/commit/16c4c8e33a30e364d94f7a870a6c79916b5f870d",
+    "source_files": [
+      "LICENSE.txt",
+      "jsonpointer.py"
+    ]
+  },
+  "source_scope": "Pinned upstream package source slice with original license; independent locally authored synthetic Oracle; not a full repository benchmark",
+  "original_faulty_commit": "f15abacd371a3415fb874634687d1619aa5a6fe4",
+  "original_fixed_commit": "16c4c8e33a30e364d94f7a870a6c79916b5f870d",
+  "writable_paths": [
+    "jsonpointer.py"
+  ],
+  "origin_relative_path": "jsonpointer.py",
+  "objective": "Repair JSON Pointer traversal so JSON string values are treated as scalar values: applying a further path token to a string must raise JsonPointerException. Preserve valid mapping/list traversal, escaping, existing defaults and public APIs. Change only the listed source file.",
+  "public_log": "AssertionError: resolve_pointer({\"value\":\"abc\"}, \"/value/0\") returned a character instead of refusing traversal through a JSON scalar. Resolving \"/value\" itself should still return the string.",
+  "expected_checks": {
+    "public": [
+      "reject_scalar_0"
+    ],
+    "f2p": [
+      "reject_scalar_0",
+      "reject_scalar_1",
+      "reject_scalar_2",
+      "reject_scalar_3"
+    ],
+    "p2p": [
+      "legal_resolution_0",
+      "legal_resolution_1",
+      "legal_resolution_2",
+      "legal_resolution_3",
+      "legal_resolution_4",
+      "leading_zero_refused",
+      "missing_default"
+    ]
+  },
+  "manifests": {
+    "faulty": {
+      "jsonpointer.py": "8fcd6596bee332f11d024e38845a988e787e2c0faec2e5fe791e156d165cc277",
+      "LICENSE.txt": "d8b24f15d472885f788a2d6e985850f264627b86012a17bb242c83f310d907e5"
+    },
+    "healthy": {
+      "jsonpointer.py": "6f6b88c0e7bd3a97577b66e728872d6d95a4b51e9221c7c5731fb2f4713db73b",
+      "LICENSE.txt": "d8b24f15d472885f788a2d6e985850f264627b86012a17bb242c83f310d907e5"
+    },
+    "repaired": {
+      "jsonpointer.py": "6f6b88c0e7bd3a97577b66e728872d6d95a4b51e9221c7c5731fb2f4713db73b",
+      "LICENSE.txt": "d8b24f15d472885f788a2d6e985850f264627b86012a17bb242c83f310d907e5"
+    },
+    "negative": {
+      "jsonpointer.py": "13b9e2822e9307e4f802412f2e3a9f104c6fcc3a34fea71926209209d12beece",
+      "LICENSE.txt": "d8b24f15d472885f788a2d6e985850f264627b86012a17bb242c83f310d907e5"
+    }
+  },
+  "oracle_sha256": "4d56d2807741c41be29bf133b2a2d3853a5b3caeb142f4fae8f3d8db5895b867",
+  "git_blob_checks": [
+    {
+      "ref": "16c4c8e33a30e364d94f7a870a6c79916b5f870d",
+      "path": "LICENSE.txt",
+      "state": "healthy",
+      "expected": "491196d773493c591f1287107c3d368f2f8263d3"
+    },
+    {
+      "ref": "16c4c8e33a30e364d94f7a870a6c79916b5f870d",
+      "path": "jsonpointer.py",
+      "state": "healthy",
+      "expected": "fc26ad67057005c1da199a5ff29f46d6b3342916"
+    },
+    {
+      "ref": "f15abacd371a3415fb874634687d1619aa5a6fe4",
+      "path": "jsonpointer.py",
+      "state": "faulty",
+      "expected": "2285ffce192fc66df4b769982e2d782339f6921f"
+    }
+  ]
+}

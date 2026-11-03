@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "protocol_id": "m19-unified-final-v1",
+  "planned": 12,
+  "started": 12,
+  "archived": 12,
+  "not_started": 0,
+  "successes": 7,
+  "end_to_end_rate": 0.5833333333333334,
+  "totals": {
+    "prompt_tokens": 1369319,
+    "completion_tokens": 32084,
+    "total_tokens": 1401403,
+    "prompt_cache_hit_tokens": 223104,
+    "prompt_cache_miss_tokens": 1146215,
+    "requests": 136,
+    "wall_seconds": 468.310368,
+    "successes": 7,
+    "f2p": 7,
+    "p2p": 10,
+    "tool_calls_known_subtotal": 144,
+    "tool_calls_unknown_trials": 1,
+    "runtime_unknown_settlements": 1
+  },
+  "runtime_charged": {
+    "model_calls": 141,
+    "tool_calls": 173,
+    "total_tokens": 1503595
+  },
+  "workflow_status_counts": {
+    "succeeded": 7,
+    "incomplete": 4,
+    "cancelled": 1
+  },
+  "independent_checks_completed": 11,
+  "budget_unknown_liability": {
+    "tasks": 1,
+    "model_calls": 12,
+    "tool_calls": 24,
+    "total_tokens": 200000
+  },
+  "admission_pricing_upper_charge_usd": 0.4492965,
+  "cache_and_offpeak_tariff_estimate_usd": 0.191851962,
+  "pricing_source": "https://api-docs.deepseek.com/quick_start/pricing/",
+  "pricing_checked_utc_date": "2026-11-03",
+  "cost_semantics": "Published cache/off-peak tariff estimate from observed Usage; not an invoice. Runtime unknown liability remains reserved.",
+  "cases": {
+    "packaging-requirement-hash": {
+      "planned": 3,
+      "started": 3,
+      "archived": 3,
+      "successes": 2,
+      "requests": 34,
+      "actual_tokens": 438006
+    },
+    "sam-checkpoint-resume": {
+      "planned": 3,
+      "started": 3,
+      "archived": 3,
+      "successes": 1,
+      "requests": 34,
+      "actual_tokens": 380006
+    },
+    "jsonpointer_scalar": {
+      "planned": 3,
+      "started": 3,
+      "archived": 3,
+      "successes": 1,
+      "requests": 38,
+      "actual_tokens": 322463
+    },
+    "itsdangerous_future": {
+      "planned": 3,
+      "started": 3,
+      "archived": 3,
+      "successes": 3,
+      "requests": 30,
+      "actual_tokens": 260928
+    }
+  },
+  "prompt_identities": [
+    {
+      "version": "project-single-v2-public-paths",
+      "sha256": "45752c4918c4e97e29608c07fa12b0b99bf4c0fa1e2805082d9b8b026a7f2ecc"
+    }
+  ],
+  "one_runtime_identity": true,
+  "no_in_trial_tuning": true,
+  "full_regression": false,
+  "full_regression_stopped_by_user": true,
+  "interpretation": "Repeated development-case observations, n=3 per case. Does not establish stable generalized success or an advantage over Single Agent."
+}

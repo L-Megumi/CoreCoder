@@ -1,0 +1,383 @@
+{
+  "expert_policy": {
+    "expert_limits": {
+      "max_context_tokens": 16000,
+      "max_model_calls": 6,
+      "max_output_tokens": 2048,
+      "max_rounds": 6,
+      "max_runtime_seconds": 180,
+      "max_tool_calls": 10,
+      "max_total_tokens": 80000,
+      "schema_version": 1
+    },
+    "initial_mode": "code-first-v1",
+    "max_episodes": 1,
+    "max_workers": 2,
+    "mode": "public-failure-v1",
+    "report_version": "readiness-v3",
+    "schedule_version": "serial-parallel-v2",
+    "schema_version": 1,
+    "working_set_version": "active-v1",
+    "writer_min_model_calls": 12,
+    "writer_min_seconds": 90,
+    "writer_min_tool_calls": 3,
+    "writer_min_total_tokens": 20000,
+    "assignment_version": "focused-v1",
+    "latency_profile": "streaming-v1"
+  },
+  "f2p_check": {
+    "check_id": "m2-independent-f2p",
+    "argv_template": [
+      "@TORCH_PYTHON@",
+      "-I",
+      "-B",
+      "@CASE@/oracle/sam_independent_checks.py",
+      "--project",
+      "{project}",
+      "--profile",
+      "f2p"
+    ],
+    "protected_files": [
+      {
+        "path": "@CASE@/oracle/sam_independent_checks.py",
+        "sha256": "79d811eb61066fb6625f2f74e2137111cef368d408cf1b247eed6828e08032d6",
+        "schema_version": 1
+      }
+    ],
+    "receipt": {
+      "kind": "checks_json",
+      "origin_field": "origin",
+      "origin_relative_path": "sam.py",
+      "required_fields": [],
+      "field_types": [],
+      "nonempty_fields": [],
+      "exact_fields": [
+        [
+          "schema_version",
+          1
+        ],
+        [
+          "profile",
+          "f2p"
+        ]
+      ],
+      "expected_checks": [
+        "restore_multigroup",
+        "restore_adaptive",
+        "restore_zero_rho"
+      ],
+      "check_name_field": "case",
+      "check_exact_fields": [],
+      "digest_field": null,
+      "digest_relative_path": null,
+      "schema_version": 1
+    },
+    "timeout_seconds": 60,
+    "schema_version": 1
+  },
+  "handoff_policy": {
+    "closure_version": "reserve-incomplete-v1",
+    "max_handoffs": 1,
+    "mode": "local-stop-v3",
+    "request_version": "explicit-request-v1",
+    "schema_version": 1
+  },
+  "model": {
+    "base_url": "https://api.deepseek.com",
+    "credential_env": "DEEPSEEK_API_KEY",
+    "model": "deepseek-flash",
+    "provider": "openai",
+    "schema_version": 1,
+    "turns": []
+  },
+  "model_options": {
+    "schema_version": 1,
+    "thinking": "disabled"
+  },
+  "p2p_check": {
+    "check_id": "m2-independent-p2p",
+    "argv_template": [
+      "@TORCH_PYTHON@",
+      "-I",
+      "-B",
+      "@CASE@/oracle/sam_independent_checks.py",
+      "--project",
+      "{project}",
+      "--profile",
+      "p2p"
+    ],
+    "protected_files": [
+      {
+        "path": "@CASE@/oracle/sam_independent_checks.py",
+        "sha256": "79d811eb61066fb6625f2f74e2137111cef368d408cf1b247eed6828e08032d6",
+        "schema_version": 1
+      }
+    ],
+    "receipt": {
+      "kind": "checks_json",
+      "origin_field": "origin",
+      "origin_relative_path": "sam.py",
+      "required_fields": [],
+      "field_types": [],
+      "nonempty_fields": [],
+      "exact_fields": [
+        [
+          "schema_version",
+          1
+        ],
+        [
+          "profile",
+          "p2p"
+        ]
+      ],
+      "expected_checks": [
+        "normal_multigroup",
+        "normal_adaptive",
+        "zero_rho_sgd"
+      ],
+      "check_name_field": "case",
+      "check_exact_fields": [],
+      "digest_field": null,
+      "digest_relative_path": null,
+      "schema_version": 1
+    },
+    "timeout_seconds": 60,
+    "schema_version": 1
+  },
+  "permission_recovery_mode": "bounded-public-read-v1",
+  "policy": {
+    "completion_version": "explicit-v1",
+    "job_limits": {
+      "max_model_calls": 22,
+      "max_runtime_seconds": 600,
+      "max_tool_calls": 60,
+      "max_total_tokens": 400000,
+      "schema_version": 1
+    },
+    "max_feedback_rounds": 1,
+    "progress_version": "progress-v1",
+    "schema_version": 1,
+    "stop_on_unknown_usage": true,
+    "task_limits": {
+      "max_context_tokens": 32000,
+      "max_model_calls": 12,
+      "max_output_tokens": 2048,
+      "max_rounds": 10,
+      "max_runtime_seconds": 300,
+      "max_tool_calls": 24,
+      "max_total_tokens": 200000,
+      "schema_version": 1
+    }
+  },
+  "public_check": {
+    "check_id": "m2-public-reproduction",
+    "argv_template": [
+      "@TORCH_PYTHON@",
+      "-I",
+      "-B",
+      "@CASE@/oracle/reproduce.py",
+      "--project",
+      "{project}"
+    ],
+    "protected_files": [
+      {
+        "path": "@CASE@/oracle/reproduce.py",
+        "sha256": "7f23303bd7007a361cad6ed12f90363764e1d30b30927005c96dd986a4010436",
+        "schema_version": 1
+      }
+    ],
+    "receipt": {
+      "kind": "public_json",
+      "origin_field": "origin",
+      "origin_relative_path": "sam.py",
+      "required_fields": [
+        "original_lr",
+        "constructor_lr",
+        "reported_restored_lr",
+        "uninterrupted",
+        "resumed"
+      ],
+      "field_types": [
+        [
+          "original_lr",
+          "float"
+        ],
+        [
+          "constructor_lr",
+          "float"
+        ],
+        [
+          "reported_restored_lr",
+          "float"
+        ],
+        [
+          "uninterrupted",
+          "list"
+        ],
+        [
+          "resumed",
+          "list"
+        ]
+      ],
+      "nonempty_fields": [
+        "uninterrupted",
+        "resumed"
+      ],
+      "exact_fields": [],
+      "expected_checks": [],
+      "check_name_field": "check",
+      "check_exact_fields": [],
+      "digest_field": null,
+      "digest_relative_path": null,
+      "schema_version": 1
+    },
+    "timeout_seconds": 60,
+    "schema_version": 1
+  },
+  "public_execution_policy": {
+    "mode": "candidate-exception-v1",
+    "schema_version": 1
+  },
+  "schema_version": 1,
+  "source_root": "@CASE@/source",
+  "task": {
+    "project_id": "sam-checkpoint-resume",
+    "source_revision": "d212252f0ecc3b2e9fa4198e0606d7fb06907b2c",
+    "manifest": {
+      "entries": [
+        {
+          "path": ".github/stale.yml",
+          "sha256": "4a71c201bc940156f661740813305cc8d3847049c38cb750e18a582ed882d829",
+          "size_bytes": 682,
+          "schema_version": 1
+        },
+        {
+          "path": ".gitignore",
+          "sha256": "79b6f8054f8ef5e9e78c18174bf57caf29b11410166b9268d6923e87520eb88f",
+          "size_bytes": 1799,
+          "schema_version": 1
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "8dd5a9d860cb903c196a4ca4e33e44d1850c01bfbb9ea51a2ddd5cd90c653efd",
+          "size_bytes": 1069,
+          "schema_version": 1
+        },
+        {
+          "path": "README.md",
+          "sha256": "3cf39b11ed3ac44ed1ef1ce6a542014a0022f8859e2a05681cb651fb0dccd55d",
+          "size_bytes": 8471,
+          "schema_version": 1
+        },
+        {
+          "path": "example/README.md",
+          "sha256": "c229e22e88a7f743a9d0ece462eb57fb6d626bdcb2147268a8706ab91e1137b9",
+          "size_bytes": 172,
+          "schema_version": 1
+        },
+        {
+          "path": "example/data/cifar.py",
+          "sha256": "62ed0972694e3777491bcdbacb79141bb5d7906b0d61ce61fc11ac92b7321387",
+          "size_bytes": 1547,
+          "schema_version": 1
+        },
+        {
+          "path": "example/model/smooth_cross_entropy.py",
+          "sha256": "bff75d90e8d4f012f140595659f5308183e4c16649f6feaeab5c32820b075cf6",
+          "size_bytes": 420,
+          "schema_version": 1
+        },
+        {
+          "path": "example/model/wide_res_net.py",
+          "sha256": "d1dc2e9d9a6d854694429c0b9a8a66b72af72ab235532b645e3377716dbd5ffa",
+          "size_bytes": 3974,
+          "schema_version": 1
+        },
+        {
+          "path": "example/train.py",
+          "sha256": "a87d5f6ac60b0dbd55043339d2b3fdfcdaad1eba3cc7b7fdb7088f3a9c085fb7",
+          "size_bytes": 3471,
+          "schema_version": 1
+        },
+        {
+          "path": "example/utility/cutout.py",
+          "sha256": "60455eecf07dad07b134170d7c02dcd7845ccb65214662241e037c71515c287e",
+          "size_bytes": 620,
+          "schema_version": 1
+        },
+        {
+          "path": "example/utility/initialize.py",
+          "sha256": "e30f752e025f2ef5995e0c81b1dd3e6b896751437c4fdf0bf22d0830fbce87a3",
+          "size_bytes": 312,
+          "schema_version": 1
+        },
+        {
+          "path": "example/utility/loading_bar.py",
+          "sha256": "8c4bcbcb055a55c0e16b973ef112f5b3906a57d3e698ba388e391db5ad4bcbf3",
+          "size_bytes": 399,
+          "schema_version": 1
+        },
+        {
+          "path": "example/utility/log.py",
+          "sha256": "456f79f646629f21e0693eb3308d083dab7dca33fa510d3eaead8952ec6c43f8",
+          "size_bytes": 4397,
+          "schema_version": 1
+        },
+        {
+          "path": "example/utility/step_lr.py",
+          "sha256": "523bdadc41240f0c5c8fa19af3c9bd93aeb3ad8e500c19707c030132f25a72a3",
+          "size_bytes": 693,
+          "schema_version": 1
+        },
+        {
+          "path": "img/README.md",
+          "sha256": "1618b4f92514c2c32ea3fff5fa0a6497c51f419ced153ab58ba3786e683d639d",
+          "size_bytes": 80,
+          "schema_version": 1
+        },
+        {
+          "path": "img/loss_landscape.png",
+          "sha256": "b6e2a20bfa4102e819c8fb383f5d5cb9490783f9e4235ef952f02061b3ee5e50",
+          "size_bytes": 645046,
+          "schema_version": 1
+        },
+        {
+          "path": "sam.py",
+          "sha256": "3ee1a395370b8dd07bdd76effbc94f4b845a3e4e99a305c1e68d48521c636796",
+          "size_bytes": 2260,
+          "schema_version": 1
+        }
+      ],
+      "algorithm": "all-files-v1",
+      "schema_version": 1
+    },
+    "objective": "Restore consistent SAM training after loading a checkpoint: with identical weights and zero-momentum SGD, resumed updates must follow the restored learning rates and subsequent scheduler changes. Preserve ordinary SAM/ASAM training. Momentum-history restoration is outside this case.",
+    "public_log": "{\"constructor_lr\": 0.5, \"origin\": \"<historical-candidate>/sam.py\", \"original_lr\": 0.1, \"reported_restored_lr\": 0.1, \"resumed\": [0.42250000000003046], \"uninterrupted\": [0.8005000000000101]}\n\nTraceback (most recent call last):\n  File \"<public-reproduction>/reproduce.py\", line 54, in <module>\n    main()\n  File \"<public-reproduction>/reproduce.py\", line 48, in main\n    assert torch.allclose(uninterrupted, resumed, atol=1e-12, rtol=1e-12), (\nAssertionError: Checkpoint resume changes the next SAM/SGD update despite identical weights, gradients and restored learning rate\n",
+    "writable_paths": [
+      "example/data/cifar.py",
+      "example/model/smooth_cross_entropy.py",
+      "example/model/wide_res_net.py",
+      "example/train.py",
+      "example/utility/cutout.py",
+      "example/utility/initialize.py",
+      "example/utility/loading_bar.py",
+      "example/utility/log.py",
+      "example/utility/step_lr.py",
+      "sam.py"
+    ],
+    "schema_version": 1
+  },
+  "writer_context_policy": {
+    "allow_recovery": true,
+    "coding_source_mode": "observed-source-v2",
+    "max_records": 32,
+    "role": "repair",
+    "schema_version": 1,
+    "strategy": "evidence",
+    "working_set_version": "active-v1",
+    "repair_state_version": "state-v1",
+    "expert_followup_version": "followup-v3",
+    "writer_guidance_version": "focused-repair-v1",
+    "handoff_view_version": "bounded-excerpts-v1"
+  }
+}

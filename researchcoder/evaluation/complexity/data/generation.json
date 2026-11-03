@@ -1,0 +1,110 @@
+{
+  "cpx_01": {
+    "python": "3.10.20",
+    "torch": "2.7.1+cu128",
+    "device": "cpu",
+    "controlled_repetitions": 48,
+    "public_seed_range": [
+      10001,
+      10048
+    ],
+    "fixture_generator_sha256": "a29c9889b7c908f14a6ae18ef54b1f3074c1985c1d0545b24025fb471ae0286e",
+    "builder_sha256": "597bb84f836913f5388a5b27c61e800642f7dc2a630ba28f193aac883ec1d7c0",
+    "reference_sha256": "346122732d020eddcf331172964f6ba9965ee7361df341d08781f5d6247fd901",
+    "scenarios": "16 normal + 16 stress + 16 normal, genuine independently seeded CPU training runs",
+    "training_lines": 240,
+    "validation_lines": 48,
+    "public_log_chars": 381,
+    "healthy_and_faulty_share_immutable_historical_logs": true
+  },
+  "cpx_02": {
+    "python": "3.10.20",
+    "torch": "2.7.1+cu128",
+    "device": "cpu",
+    "controlled_repetitions": 48,
+    "public_seed_range": [
+      10001,
+      10048
+    ],
+    "fixture_generator_sha256": "a29c9889b7c908f14a6ae18ef54b1f3074c1985c1d0545b24025fb471ae0286e",
+    "builder_sha256": "597bb84f836913f5388a5b27c61e800642f7dc2a630ba28f193aac883ec1d7c0",
+    "reference_sha256": "346122732d020eddcf331172964f6ba9965ee7361df341d08781f5d6247fd901",
+    "scenarios": "16 normal + 16 stress + 16 normal, genuine independently seeded CPU training runs",
+    "training_lines": 240,
+    "validation_lines": 48,
+    "public_log_chars": 381,
+    "healthy_and_faulty_share_immutable_historical_logs": true
+  },
+  "cpx_03": {
+    "python": "3.10.20",
+    "torch": "2.7.1+cu128",
+    "device": "cpu",
+    "controlled_repetitions": 48,
+    "public_seed_range": [
+      10001,
+      10048
+    ],
+    "fixture_generator_sha256": "a29c9889b7c908f14a6ae18ef54b1f3074c1985c1d0545b24025fb471ae0286e",
+    "builder_sha256": "597bb84f836913f5388a5b27c61e800642f7dc2a630ba28f193aac883ec1d7c0",
+    "reference_sha256": "346122732d020eddcf331172964f6ba9965ee7361df341d08781f5d6247fd901",
+    "scenarios": "16 normal + 16 stress + 16 normal, genuine independently seeded CPU training runs",
+    "training_lines": 240,
+    "validation_lines": 48,
+    "public_log_chars": 381,
+    "healthy_and_faulty_share_immutable_historical_logs": true
+  },
+  "cpx_04": {
+    "python": "3.10.20",
+    "torch": "2.7.1+cu128",
+    "device": "cpu",
+    "controlled_repetitions": 48,
+    "public_seed_range": [
+      10001,
+      10048
+    ],
+    "fixture_generator_sha256": "a29c9889b7c908f14a6ae18ef54b1f3074c1985c1d0545b24025fb471ae0286e",
+    "builder_sha256": "597bb84f836913f5388a5b27c61e800642f7dc2a630ba28f193aac883ec1d7c0",
+    "reference_sha256": "346122732d020eddcf331172964f6ba9965ee7361df341d08781f5d6247fd901",
+    "scenarios": "16 normal + 16 stress + 16 normal, genuine independently seeded CPU training runs",
+    "training_lines": 336,
+    "validation_lines": 48,
+    "public_log_chars": 15829,
+    "healthy_and_faulty_share_immutable_historical_logs": true
+  },
+  "cpx_05": {
+    "python": "3.10.20",
+    "torch": "2.7.1+cu128",
+    "device": "cpu",
+    "controlled_repetitions": 48,
+    "public_seed_range": [
+      10001,
+      10048
+    ],
+    "fixture_generator_sha256": "a29c9889b7c908f14a6ae18ef54b1f3074c1985c1d0545b24025fb471ae0286e",
+    "builder_sha256": "597bb84f836913f5388a5b27c61e800642f7dc2a630ba28f193aac883ec1d7c0",
+    "reference_sha256": "346122732d020eddcf331172964f6ba9965ee7361df341d08781f5d6247fd901",
+    "scenarios": "16 normal + 16 stress + 16 normal, genuine independently seeded CPU training runs",
+    "training_lines": 240,
+    "validation_lines": 48,
+    "public_log_chars": 14363,
+    "healthy_and_faulty_share_immutable_historical_logs": true
+  },
+  "cpx_06": {
+    "python": "3.10.20",
+    "torch": "2.7.1+cu128",
+    "device": "cpu",
+    "controlled_repetitions": 48,
+    "public_seed_range": [
+      10001,
+      10048
+    ],
+    "fixture_generator_sha256": "a29c9889b7c908f14a6ae18ef54b1f3074c1985c1d0545b24025fb471ae0286e",
+    "builder_sha256": "597bb84f836913f5388a5b27c61e800642f7dc2a630ba28f193aac883ec1d7c0",
+    "reference_sha256": "346122732d020eddcf331172964f6ba9965ee7361df341d08781f5d6247fd901",
+    "scenarios": "16 normal + 16 stress + 16 normal, genuine independently seeded CPU training runs",
+    "training_lines": 240,
+    "validation_lines": 48,
+    "public_log_chars": 14096,
+    "healthy_and_faulty_share_immutable_historical_logs": true
+  }
+}

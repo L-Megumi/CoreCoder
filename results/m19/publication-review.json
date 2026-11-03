@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "credentials_uploaded": false,
+  "private_paths_uploaded": false,
+  "original_worktree_preserved": true,
+  "formal_git_branch_unchanged": true,
+  "upstream_licenses_preserved": true,
+  "historical_m17_m18_results_preserved": true,
+  "raw_private_artifacts_uploaded": false,
+  "source_files": 786,
+  "paid_trials": 12,
+  "prompt_or_oracle_tuned_during_trials": false,
+  "derived_record_path_redactions": []
+}

@@ -15,3 +15,22 @@ venv/
 .DS_Store
 .pytest_cache/
 .tmp/
+
+# Local credentials and generated execution state
+.env.*
+!.env.example
+.ssh/
+*.pem
+*.key
+*.sqlite
+*.sqlite-*
+*.db-wal
+*.db-shm
+*.pt
+*.pth
+/outputs/
+/artifacts/
+/traces/
+/runs/
+/checkpoints/
+# JSON and log fixtures under tests/benchmarks/examples remain versioned.

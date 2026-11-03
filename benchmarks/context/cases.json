@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "scope": "Independent expected answers for fixed offline context probes; not LLM diagnosis accuracy",
+  "cases": [
+    {"id":"long_traceback","scenario":"long_stack","fault":"shape_mismatch","location":"train/head.py","expected_evidence":["mat1 and mat2 shapes cannot be multiplied","train/head.py","projection(features)"]},
+    {"id":"middle_error","scenario":"middle_error","fault":"dataset_path","location":"data/loader.py","expected_evidence":["missing validation images","data/loader.py","/datasets/val"]},
+    {"id":"repeated_nan","scenario":"nan","fault":"unstable_log","location":"train/loss.py","expected_evidence":["loss=NaN","train/loss.py","torch.log(prob)"]},
+    {"id":"repeated_inf","scenario":"inf","fault":"division_zero","location":"train/normalize.py","expected_evidence":["grad_norm=Inf","train/normalize.py","features / std"]},
+    {"id":"wrapped_exception","scenario":"cause","fault":"dataset_path","location":"data/loader.py","expected_evidence":["FileNotFoundError","RuntimeError",["cause_id","The above exception was the direct cause"],"data/loader.py"]},
+    {"id":"multifile_dependency","scenario":"imports","fault":"detached_features","location":"models/backbone.py","expected_evidence":["models/backbone.py","from models.backbone import encode","features.detach()"]},
+    {"id":"middle_source","scenario":"source_middle","fault":"detached_features","location":"train/joint.py","expected_evidence":["train/joint.py","features = model.backbone(x).detach()","backbone gradients missing"]},
+    {"id":"duplicate_agents","scenario":"duplicate","fault":"shape_mismatch","location":"train/head.py","expected_evidence":["train/head.py","mat1 and mat2 shapes cannot be multiplied","projection(features)"]},
+    {"id":"conflicting_claims","scenario":"claims","fault":"detached_features","location":"train/joint.py","expected_evidence":["train/joint.py","features = model.backbone(x).detach()","backbone gradients missing"]},
+    {"id":"verification_history","scenario":"history","fault":"detached_features","location":"train/joint.py","expected_evidence":["FAILED joint_gradient_oracle","train/joint.py","Error: edit_file failed","features = model.backbone(x).detach()"]}
+  ]
+}

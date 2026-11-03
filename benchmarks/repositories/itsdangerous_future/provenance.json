@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "case_id": "itsdangerous_future",
+  "source_revision": "1a9b8d1f9968eb248bda69f39d373a6330b692ba",
+  "source_manifest_sha256": null,
+  "original_checker_sha256": {
+    "oracle/oracle.py": "4d56d2807741c41be29bf133b2a2d3853a5b3caeb142f4fae8f3d8db5895b867",
+    "oracle/case.json": "ecceed20c95352aac0f1f4d3837d8d0fa41fa56e6be4352f315585735d600b8a",
+    "oracle/historical_check.py": "a4d9ba3f3726b49ab9292bc87ac10b03c234a2b9de6d3818ef11714fa0850f5a",
+    "oracle/public-entry.py": "3fcced2584e5b9990e9fdb8dbb4ed7be75880441a16e95e84491ee39a9e220ee",
+    "oracle/f2p-entry.py": "6622027f23d70bec02e49672557ac13119d564312f40ed3c7a6400dc3f93382d",
+    "oracle/p2p-entry.py": "795f4164b3b9bdcda6e1a7ec4c2b690e25ecc6eca3220b526b7552538c728683"
+  },
+  "source_files": 10,
+  "upstream": "pallets/itsdangerous",
+  "scope": "Pinned historical development fixture; locally authored independent public/F2P/P2P checks.",
+  "oracle_original_bytes_preserved": true,
+  "distributed_checker_sha256": {
+    "oracle/historical_check.py": "a4d9ba3f3726b49ab9292bc87ac10b03c234a2b9de6d3818ef11714fa0850f5a",
+    "oracle/case.json": "ecceed20c95352aac0f1f4d3837d8d0fa41fa56e6be4352f315585735d600b8a",
+    "oracle/f2p-entry.py": "c57b7c34ab3547047f359aa3e400c71a6f7475a490a3f713d208e6b1efe21971",
+    "oracle/oracle.py": "4d56d2807741c41be29bf133b2a2d3853a5b3caeb142f4fae8f3d8db5895b867",
+    "oracle/public-entry.py": "863f2970f6969f07fcea5ca0ade1f56f1b092649f015f7382dc9ce0924649c7c",
+    "oracle/p2p-entry.py": "605fbd2d34fabcf6c54d48d4145af361e954ec5227183f6aaab7d3b4d10ae099"
+  },
+  "portable_wrapper_note": "Only profile entry wrappers resolve sibling assets relatively. Oracle and adapter source bytes are unchanged."
+}

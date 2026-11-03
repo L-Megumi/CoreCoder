@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "protocol_id": "m19-unified-final-v1",
+  "source_files": 599,
+  "source_manifest_sha256": "d8ca90bdf160cad860c58ee12d0b265970576edea0e9a848215f71e3a1e4a313",
+  "repeats_per_case": 3,
+  "planned": 12,
+  "schedule": [
+    {
+      "case_id": "packaging-requirement-hash",
+      "repeat": 1,
+      "scope": "live-packaging-requirement-hash-repeat-1",
+      "planned_id": "packaging-requirement-hash-expert_assisted"
+    },
+    {
+      "case_id": "sam-checkpoint-resume",
+      "repeat": 1,
+      "scope": "live-sam-checkpoint-resume-repeat-1",
+      "planned_id": "sam-checkpoint-resume-expert_assisted"
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "repeat": 1,
+      "scope": "live-jsonpointer_scalar-repeat-1",
+      "planned_id": "jsonpointer_scalar-expert_assisted"
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "repeat": 1,
+      "scope": "live-itsdangerous_future-repeat-1",
+      "planned_id": "itsdangerous_future-expert_assisted"
+    },
+    {
+      "case_id": "sam-checkpoint-resume",
+      "repeat": 2,
+      "scope": "live-sam-checkpoint-resume-repeat-2",
+      "planned_id": "sam-checkpoint-resume-expert_assisted"
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "repeat": 2,
+      "scope": "live-jsonpointer_scalar-repeat-2",
+      "planned_id": "jsonpointer_scalar-expert_assisted"
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "repeat": 2,
+      "scope": "live-itsdangerous_future-repeat-2",
+      "planned_id": "itsdangerous_future-expert_assisted"
+    },
+    {
+      "case_id": "packaging-requirement-hash",
+      "repeat": 2,
+      "scope": "live-packaging-requirement-hash-repeat-2",
+      "planned_id": "packaging-requirement-hash-expert_assisted"
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "repeat": 3,
+      "scope": "live-jsonpointer_scalar-repeat-3",
+      "planned_id": "jsonpointer_scalar-expert_assisted"
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "repeat": 3,
+      "scope": "live-itsdangerous_future-repeat-3",
+      "planned_id": "itsdangerous_future-expert_assisted"
+    },
+    {
+      "case_id": "packaging-requirement-hash",
+      "repeat": 3,
+      "scope": "live-packaging-requirement-hash-repeat-3",
+      "planned_id": "packaging-requirement-hash-expert_assisted"
+    },
+    {
+      "case_id": "sam-checkpoint-resume",
+      "repeat": 3,
+      "scope": "live-sam-checkpoint-resume-repeat-3",
+      "planned_id": "sam-checkpoint-resume-expert_assisted"
+    }
+  ],
+  "config_identities": [
+    {
+      "case_id": "packaging-requirement-hash",
+      "config_sha256": "a3d0c2792e613e2996c798784de0e1b0524a97deaadba9ebc8a84864bfbc5ce2",
+      "task_unchanged": true,
+      "oracle_unchanged": true
+    },
+    {
+      "case_id": "sam-checkpoint-resume",
+      "config_sha256": "bd1f809acdc8c10540d0b70ae8f75521311976632e6c07766f20a2cf34028c5d",
+      "task_unchanged": true,
+      "oracle_unchanged": true
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "config_sha256": "68d45d417699ad80f8be96aed03f7f9e7cdf05ca6cc7bfb3157585c693a7c73f",
+      "task_unchanged": true,
+      "oracle_unchanged": true
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "config_sha256": "5f89d48ce95d8ab052e3c0a74206592b1c60c005bbfa7cc873ddfb7f8e40890f",
+      "task_unchanged": true,
+      "oracle_unchanged": true
+    }
+  ],
+  "common_policy": {
+    "completion_version": "explicit-v1",
+    "job_limits": {
+      "max_model_calls": 22,
+      "max_runtime_seconds": 600,
+      "max_tool_calls": 60,
+      "max_total_tokens": 400000,
+      "schema_version": 1
+    },
+    "max_feedback_rounds": 1,
+    "progress_version": "progress-v1",
+    "schema_version": 1,
+    "stop_on_unknown_usage": true,
+    "task_limits": {
+      "max_context_tokens": 32000,
+      "max_model_calls": 12,
+      "max_output_tokens": 2048,
+      "max_rounds": 10,
+      "max_runtime_seconds": 300,
+      "max_tool_calls": 24,
+      "max_total_tokens": 200000,
+      "schema_version": 1
+    }
+  },
+  "common_expert_policy": {
+    "expert_limits": {
+      "max_context_tokens": 16000,
+      "max_model_calls": 6,
+      "max_output_tokens": 2048,
+      "max_rounds": 6,
+      "max_runtime_seconds": 180,
+      "max_tool_calls": 10,
+      "max_total_tokens": 80000,
+      "schema_version": 1
+    },
+    "initial_mode": "code-first-v1",
+    "max_episodes": 1,
+    "max_workers": 2,
+    "mode": "public-failure-v1",
+    "report_version": "readiness-v3",
+    "schedule_version": "serial-parallel-v2",
+    "schema_version": 1,
+    "working_set_version": "active-v1",
+    "writer_min_model_calls": 12,
+    "writer_min_seconds": 90,
+    "writer_min_tool_calls": 3,
+    "writer_min_total_tokens": 20000,
+    "assignment_version": "focused-v1",
+    "latency_profile": "streaming-v1"
+  },
+  "common_context_policy": {
+    "allow_recovery": true,
+    "coding_source_mode": "observed-source-v2",
+    "max_records": 32,
+    "role": "repair",
+    "schema_version": 1,
+    "strategy": "evidence",
+    "working_set_version": "active-v1",
+    "repair_state_version": "state-v1",
+    "expert_followup_version": "followup-v3",
+    "writer_guidance_version": "focused-repair-v1",
+    "handoff_view_version": "bounded-excerpts-v1"
+  },
+  "budget": {
+    "max_requests": 264,
+    "max_tokens": 4800000,
+    "usd_admission": 3.0
+  },
+  "frozen_prompts": true,
+  "no_in_trial_tuning": true,
+  "old_failures_preserved": true,
+  "interpretation": "Small repeated development-set validation under one final policy; uncertainty must be reported."
+}

@@ -1,0 +1,128 @@
+{
+  "formal_source_files": 599,
+  "formal_source_unchanged": true,
+  "formal_git_status_unchanged": true,
+  "branch": "researchcoder-evidence",
+  "head": "1c64e6da00a6d93854bde5973bb1cbd77deb3b93",
+  "status_records": 555,
+  "release_source_files": 786,
+  "full_regression": false,
+  "portable_success_checks": {
+    "checks": 8,
+    "rows": [
+      {
+        "case_id": "packaging-requirement-hash",
+        "repeat": 1,
+        "profile": "f2p",
+        "passed": true,
+        "check_count": 5
+      },
+      {
+        "case_id": "packaging-requirement-hash",
+        "repeat": 1,
+        "profile": "p2p",
+        "passed": true,
+        "check_count": 10
+      },
+      {
+        "case_id": "itsdangerous_future",
+        "repeat": 1,
+        "profile": "f2p",
+        "passed": true,
+        "check_count": 3
+      },
+      {
+        "case_id": "itsdangerous_future",
+        "repeat": 1,
+        "profile": "p2p",
+        "passed": true,
+        "check_count": 7
+      },
+      {
+        "case_id": "sam-checkpoint-resume",
+        "repeat": 2,
+        "profile": "f2p",
+        "passed": true,
+        "check_count": 3
+      },
+      {
+        "case_id": "sam-checkpoint-resume",
+        "repeat": 2,
+        "profile": "p2p",
+        "passed": true,
+        "check_count": 3
+      },
+      {
+        "case_id": "jsonpointer_scalar",
+        "repeat": 2,
+        "profile": "f2p",
+        "passed": true,
+        "check_count": 4
+      },
+      {
+        "case_id": "jsonpointer_scalar",
+        "repeat": 2,
+        "profile": "p2p",
+        "passed": true,
+        "check_count": 7
+      }
+    ],
+    "paid_model_calls": 0
+  },
+  "release_checks": {
+    "checks": [
+      {
+        "name": "redacted-fixture-check",
+        "returncode": 0,
+        "output": "28 passed; reused exact earlier check"
+      },
+      {
+        "name": "wheel-build",
+        "returncode": 0,
+        "output": "Processing ./.\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: corecoder\n  Building wheel for corecoder (pyproject.toml): started\n  Building wheel for corecoder (pyproject.toml): finished with status 'done'\n  Created wheel for corecoder: filename=corecoder-0.4.0+researchcoder.1-py3-none-any.whl size=543545 sha256=955bbeb30ab7f6521f7f0789bd6dbb924e1a0f3c0a8b77fbaec7d2903ab324a5\n  Stored in directory: /tmp/pip-ephem-wheel-cache-8jqvday6/wheels/26/0d/57/5d723f5fe039f3bb2c6ffb7b6d719e3b36c7066cff1e985599\nSuccessfully built corecoder\n"
+      },
+      {
+        "name": "wheel-install",
+        "returncode": 0,
+        "output": "Processing ./wheels/corecoder-0.4.0+researchcoder.1-py3-none-any.whl\nInstalling collected packages: corecoder\nSuccessfully installed corecoder-0.4.0+researchcoder.1\n"
+      },
+      {
+        "name": "wheel-import",
+        "returncode": 0,
+        "output": "installed imports passed\n"
+      },
+      {
+        "name": "original-cli",
+        "returncode": 0,
+        "output": "usage: corecoder [-h] [-m MODEL] [--base-url BASE_URL] [--api-key API_KEY]\n                 [-p PROMPT] [--demo] [-r ID] [-v]\n\nMinimal AI coding agent. Works with any OpenAI-compatible LLM.\n\noptions:\n  -h, --help            show this help message and exit\n  -m MODEL, --model MODEL\n                        Model name (default: $CORECODER_MODEL or gpt-5.5)\n  --base-url BASE_URL   API base URL (default: $OPENAI_BASE_URL)\n  --api-key API_KEY     API key (default: $OPENAI_API_KEY)\n  -p PROMPT, --prompt PROMPT\n                        One-shot prompt (non-interactive mode)\n  --demo                Run the offline scripted demo (no API key needed)\n  -r ID, --resume ID    Resume a saved session\n  -v, --version         show program's version number and exit\n"
+      },
+      {
+        "name": "research-cli",
+        "returncode": 0,
+        "output": "usage: researchcoder [-h] [{code,diagnose,repair,demo,run,chat}]\n\nResearchCoder: coding, diagnosis, explicit repair, and routed conversations.\n\npositional arguments:\n  {code,diagnose,repair,demo,run,chat}\n\noptions:\n  -h, --help            show this help message and exit\n"
+      },
+      {
+        "name": "evaluation-cli",
+        "returncode": 0,
+        "output": "usage: __main__.py [-h] {list,run,report,export} ...\n\nResearchCoder reproducible offline evaluation\n\npositional arguments:\n  {list,run,report,export}\n\noptions:\n  -h, --help            show this help message and exit\n"
+      }
+    ],
+    "full_regression": false,
+    "full_regression_stopped_by_user": true,
+    "installed_dependencies": false,
+    "isolated_build_backend": true,
+    "python": "3.11.17",
+    "package_versions": {
+      "openai": "3.35.1",
+      "rich": "15.0.0",
+      "prompt_toolkit": "3.0.53",
+      "python-dotenv": "1.2.4",
+      "pytest": "9.1.1",
+      "hatchling": null,
+      "httpx2": "2.15.1"
+    },
+    "paid_api_calls": 0
+  },
+  "snapshot_sha256": "18e3c63e768e773d91e112f44e92283e9bcf47558e49c1b7fb75a71a90ec9c41",
+  "source_archive_sha256": "655afe38bacf9fe9e580cb6f4423961587eb6bdc6c828eee9d93c32b586a99b8"
+}

@@ -34,6 +34,7 @@ class Agent:
         self.context = ContextManager(max_tokens=max_context_tokens)
         self.max_rounds = max_rounds
         self._system = system_prompt(self.tools)
+        self.execution_hooks = None  # Optional per-run observer; legacy CLI remains unchanged.
 
         # wire up sub-agent capability
         for t in self.tools:
@@ -52,6 +53,8 @@ class Agent:
         self.context.maybe_compress(self.messages, self.llm)
 
         for _ in range(self.max_rounds):
+            if self.execution_hooks is not None:
+                self.execution_hooks.before_round()
             resp = self.llm.chat(
                 messages=self._full_messages(),
                 tools=self._tool_schemas(),
@@ -72,7 +75,7 @@ class Agent:
                     tc = resp.tool_calls[0]
                     if on_tool:
                         on_tool(tc.name, tc.arguments)
-                    result = self._exec_tool(tc)
+                    result = self._run_tool(tc)
                     self.messages.append({
                         "role": "tool",
                         "tool_call_id": tc.id,
@@ -126,8 +129,28 @@ class Agent:
                 on_tool(tc.name, tc.arguments)
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
-            futures = [pool.submit(self._exec_tool, tc) for tc in tool_calls]
+            futures = [pool.submit(self._run_tool, tc) for tc in tool_calls]
             return [f.result() for f in futures]
+
+    def _run_tool(self, tc):
+        """Observe actual dispatch outside subclass handlers that may catch tool errors."""
+        hooks = self.execution_hooks
+        token = hooks.before_tool(tc.name) if hooks is not None else None
+        status = "error"
+        try:
+            result = self._exec_tool(tc)
+            status = "error" if result.startswith(("Error", "⚠ Blocked")) else "ok"
+            if result.lstrip().startswith('{'):
+                import json
+                try:
+                    if "error" in json.loads(result):
+                        status = "error"
+                except (ValueError, TypeError):
+                    pass
+            return result
+        finally:
+            if hooks is not None:
+                hooks.after_tool(token, status)
 
     def _answer_pending_tool_calls(self, tool_calls):
         """Backfill a tool reply for every call that didn't get one.

@@ -11,6 +11,7 @@ single unified interface. Set CORECODER_PROVIDER=litellm.
 
 import json
 import time
+from contextlib import nullcontext
 from dataclasses import dataclass, field
 
 from openai import OpenAI, APIError, BadRequestError, RateLimitError, APITimeoutError, APIConnectionError
@@ -29,6 +30,8 @@ class LLMResponse:
     tool_calls: list[ToolCall] = field(default_factory=list)
     prompt_tokens: int = 0
     completion_tokens: int = 0
+    usage_complete: bool | None = None
+    finish_reason: str | None = None
 
     @property
     def message(self) -> dict:
@@ -162,10 +165,13 @@ class LLM:
         tc_map: dict[int, dict] = {}  # index -> {id, name, arguments_str}
         prompt_tok = 0
         completion_tok = 0
+        usage_complete = False
+        finish_reason = None
 
         for chunk in stream:
             # usage info comes in the final chunk
             if chunk.usage:
+                usage_complete = chunk.usage.prompt_tokens is not None and chunk.usage.completion_tokens is not None
                 # some providers send usage with null fields; coerce to 0 so the
                 # running totals below don't blow up on int + None
                 prompt_tok = chunk.usage.prompt_tokens or 0
@@ -174,6 +180,8 @@ class LLM:
             if not chunk.choices:
                 continue
             delta = chunk.choices[0].delta
+            if getattr(chunk.choices[0], 'finish_reason', None):
+                finish_reason = chunk.choices[0].finish_reason
 
             # accumulate text
             if delta.content:
@@ -213,13 +221,17 @@ class LLM:
             tool_calls=parsed,
             prompt_tokens=prompt_tok,
             completion_tokens=completion_tok,
+            usage_complete=usage_complete,
+            finish_reason=finish_reason,
         )
 
     def _call_with_retry(self, params: dict, max_retries: int = 3):
         """Retry on transient errors with exponential backoff."""
         for attempt in range(max_retries):
             try:
-                return self.client.chat.completions.create(**params)
+                # Runtime can observe every transport attempt, including retries/fallbacks.
+                with getattr(self, "_transport_context", nullcontext)():
+                    return self.client.chat.completions.create(**params)
             except (RateLimitError, APITimeoutError, APIConnectionError):
                 if attempt == max_retries - 1:
                     raise

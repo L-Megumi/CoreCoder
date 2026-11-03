@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "case_id": "autograd_detach",
+  "business_goal": "Jointly train backbone and head; head-only learning is insufficient.",
+  "joint_trainable": ["backbone.0.weight", "backbone.0.bias", "head.weight", "head.bias"],
+  "frozen_trainable": ["head.weight", "head.bias"],
+  "discovery_seeds": [42],
+  "holdout_seeds": [142, 314],
+  "steps": 2,
+  "learning_rate": 0.05,
+  "writable_files": ["training.py"]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "source_review_sha256": "44d9fc5631282405d357ea73c10de9b5b5665736ce94644c836ee5455860f950",
+  "source_analysis_sha256": "e8893597de287eea99d9dac1ebe90c20b4a34fec1ceb92b4f828d126d7325a2f",
+  "fixtures": [
+    {
+      "planned_id": "packaging-old_adaptive",
+      "provenance": {
+        "diagnosis_artifact_sha256": "92a77e5d782b206b98fe0bf57e117aec75aad34be80e457f87a1cd82244f1bd0",
+        "final_request_artifact_sha256": "7ae8e69506d2830dcb36d4501b3e03261d508c1a31e537f7e459db43a00f5556",
+        "original_response_sha256": "2d6f3bab0f468d7d4c4914d0839fd32235d541dfb6cc9f2bc24e7faafd4d904c"
+      },
+      "raw_invalid_response": "接下来读取 `requirements.py` 中的 `Requirement` 类。\n\n<｜｜DSML｜｜ calls>\n<｜｜DSML｜｜ invoke name=\"read_project_file\">\n<｜｜DSML｜｜ parameter name=\"path\" string=\"true\">src/packaging/requirements.py</｜｜DSML｜｜ parameter>\n<｜｜DSML｜｜ parameter name=\"start_line\" string=\"false\">1</｜｜DSML｜｜ parameter>\n<｜｜DSML｜｜ parameter name=\"max_lines\" string=\"false\">160</｜｜DSML｜｜ parameter>\n</｜｜DSML｜｜ invoke>\n</｜｜DSML｜｜ calls>"
+    },
+    {
+      "planned_id": "packaging-new_adaptive",
+      "provenance": {
+        "diagnosis_artifact_sha256": "49450ab6817a0ce606b9df46b7ffdf2ff0c622a4f732c379724f584cd5a86430",
+        "final_request_artifact_sha256": "a9ffce6f1ad36e99e92dc3af9979eccc872bda1c8c352add110ea130c7667f77",
+        "original_response_sha256": "9c22b461a5d0ee78e9db5e7ae8bb88b99eed7ff86a80f4af841457f95ff0afce"
+      },
+      "raw_invalid_response": "Now let me read the Requirement class fully.\n\n<｜｜DSML｜｜ calls>\n<｜｜DSML｜｜ invoke name=\"read_project_file\">\n<｜｜DSML｜｜ parameter name=\"path\" string=\"true\">src/packaging/requirements.py</｜｜DSML｜｜ parameter>\n<｜｜DSML｜｜ parameter name=\"start_line\" string=\"false\">60</｜｜DSML｜｜ parameter>\n<｜｜DSML｜｜ parameter name=\"max_lines\" string=\"false\">140</｜｜DSML｜｜ parameter>\n</｜｜DSML｜｜ invoke>\n</｜｜DSML｜｜ calls>"
+    },
+    {
+      "planned_id": "sam-new_adaptive",
+      "provenance": {
+        "diagnosis_artifact_sha256": "eb3ac25675befeca321a187b6986b387b8f92d0eac7c064b073c9b3d878eda60",
+        "final_request_artifact_sha256": "448a0907fa59c66432910fe332e00a7522bb3cd0a7045dbc85b979af2a83508e",
+        "original_response_sha256": "a17f2e5cb78c3127074a050aa66a095317cc099f2c6038a4e9e6fd79095d967a"
+      },
+      "raw_invalid_response": "我需要查看中间部分（first_step/second_step）以及 load_state_dict 的处理。\n\n<｜｜DSML｜｜ calls>\n<｜｜DSML｜｜ invoke name=\"read_project_file\">\n<｜｜DSML｜｜ parameter name=\"path\" string=\"true\">sam.py</｜｜DSML｜｜ parameter>\n<｜｜DSML｜｜ parameter name=\"start_line\" string=\"false\">20</｜｜DSML｜｜ parameter>\n<｜｜DSML｜｜ parameter name=\"max_lines\" string=\"false\">45</｜｜DSML｜｜ parameter>\n</｜｜DSML｜｜ invoke>\n</｜｜DSML｜｜ calls>"
+    },
+    {
+      "planned_id": "sam-old_adaptive",
+      "provenance": {
+        "diagnosis_artifact_sha256": "950625a0e8c9fa72d228e02d1f4caf02b552deadc16537c0ab663ec5abc289f1",
+        "final_request_artifact_sha256": "10772f84b7ecfd239010a1610e382d6234d25e571744da4d5005272afcb5d851",
+        "original_response_sha256": "b41db6f926947a06d1b9844844b8ad118f3059d28a3decc81681ed79fdd4f7b0"
+      },
+      "raw_invalid_response": "\n\n<｜｜DSML｜｜ calls>\n<｜｜DSML｜｜ invoke name=\"read_project_file\">\n<｜｜DSML｜｜ parameter name=\"path\" string=\"true\">sam.py</｜｜DSML｜｜ parameter>\n<｜｜DSML｜｜ parameter name=\"start_line\" string=\"false\">20</｜｜DSML｜｜ parameter>\n<｜｜DSML｜｜ parameter name=\"max_lines\" string=\"false\">40</｜｜DSML｜｜ parameter>\n</｜｜DSML｜｜ invoke>\n</｜｜DSML｜｜ calls>"
+    }
+  ]
+}

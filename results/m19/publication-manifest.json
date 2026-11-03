@@ -1,0 +1,23 @@
+{
+  "README.md": "72e1104e7613b3dc21a4a48901fe4207781b9a9ae1f96d8c729a5527172a23cf",
+  "failure-analysis.md": "f3b665a9cca2af1900c0e1011c5aaef6f40b4c70efa31e0476167a9e25db4f31",
+  "protocol.json": "90262388b6c8daa713343a10bd900f0c1a9ad727395f41a81dc2964899769bfa",
+  "publication-review.json": "d0f304329a9a5d67c774c5dbf981af5b2447621a80350b02575e3ef906f9727e",
+  "recompute.py": "2523db96df7e6330f821beec15b2531f9aa148b95321a54b2522e45448f516b8",
+  "release-checks.json": "a8642e40c9ec1fa8118b86240b74acda3a06641c5d1a1d25b98013f52142f98a",
+  "release-verification.json": "831a7f814aeb929951c1b8047c828d6157bcbd12d0eb7c88bddaa7501615c9a0",
+  "source-identity.json": "685c9ad89637556fe7813d36626cf68bab95c454b4bc049500df12d253001729",
+  "summary.json": "7687e0bcba597a0c6ea27973680e28226408314602996d60e03862152fc0c3be",
+  "trials/01-packaging-requirement-hash-repeat-1.json": "5e6067d36fe6ac86962875fefd917f82678f823d7cafb2c58f3e616b768a8436",
+  "trials/02-sam-checkpoint-resume-repeat-1.json": "78fbd40a70dbf725f7fe78eb1cd11a43722c6af431ad920bc50bf411b545fa08",
+  "trials/03-jsonpointer_scalar-repeat-1.json": "edc7505b8d761aa6cf2b92bfb8c3e70d4c497bf68de82d62d8bc67f47adc81fb",
+  "trials/04-itsdangerous_future-repeat-1.json": "167b5a481e38ac36c107967dba2194696e47900c7e5f661dbbdff92fe7c6e142",
+  "trials/05-sam-checkpoint-resume-repeat-2.json": "360a728b0bfa522055b3a6e4d6cff43a8d6d88b8e4c34a00e239ea4b56e22f49",
+  "trials/06-jsonpointer_scalar-repeat-2.json": "9992e0303d94f9a8e24ce8ed93908c2316fdb7a7b4ffa8f2df3965f584420d13",
+  "trials/07-itsdangerous_future-repeat-2.json": "9d0ed3dcbb548115b4a1aef6f80b741e290ea3b74432fbea2cdff1aa5a89e71b",
+  "trials/08-packaging-requirement-hash-repeat-2.json": "8b444d3244f88bd1a8500328a6d48fdfa931b5ccce1190deff511adf2df42693",
+  "trials/09-jsonpointer_scalar-repeat-3.json": "4c2c482e72352e7e40bdfc9fe4fdfd8723bfe176034931367c5cc95e0c230cb5",
+  "trials/10-itsdangerous_future-repeat-3.json": "ca6b1723b6e9f3773b899393c9b12b98da93b34b01b1d30fae7743d91942213d",
+  "trials/11-packaging-requirement-hash-repeat-3.json": "39d5f79f085f8bffa02485884b712e7b25bb831377e56fd79d639c9e1161afae",
+  "trials/12-sam-checkpoint-resume-repeat-3.json": "87d3e62aabebf29de6c00dcaf5ab4f19607281fc67d018a7cc196513e9fdcd5a"
+}

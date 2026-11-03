@@ -1,26 +1,33 @@
 """Interactive REPL - the user-facing terminal interface."""
 
-import sys
-import os
 import argparse
+import os
+import sys
 
-from rich.console import Console
-from rich.markdown import Markdown
-from rich.panel import Panel
+from openai import APIError
 from prompt_toolkit import prompt as pt_prompt
 from prompt_toolkit.history import FileHistory
 from prompt_toolkit.key_binding import KeyBindings
+from rich.console import Console
+from rich.markdown import Markdown
+from rich.panel import Panel
 
-from .agent import Agent
-from .llm import LLM, LiteLLM
-from .config import Config
-from .session import save_session, load_session, list_sessions
 from . import __version__
+from .agent import Agent
+from .config import Config
+from .llm import LLM, LiteLLM
+from .session import list_sessions, load_session, save_session
 
 console = Console()
 
 
-def _parse_args():
+def _error_message(error):
+    if isinstance(error, APIError):
+        return f"Model API request failed: {type(error).__name__}; check model configuration and service status"
+    return str(error)
+
+
+def _parse_args(argv=None):
     p = argparse.ArgumentParser(
         prog="corecoder",
         description="Minimal AI coding agent. Works with any OpenAI-compatible LLM.",
@@ -32,11 +39,11 @@ def _parse_args():
     p.add_argument("--demo", action="store_true", help="Run the offline scripted demo (no API key needed)")
     p.add_argument("-r", "--resume", metavar="ID", help="Resume a saved session")
     p.add_argument("-v", "--version", action="version", version=f"%(prog)s {__version__}")
-    return p.parse_args()
+    return p.parse_args(argv)
 
 
-def main():
-    args = _parse_args()
+def main(argv=None, *, llm_factory=None):
+    args = _parse_args(argv)
 
     if args.demo:
         from .demo import run_demo
@@ -68,14 +75,17 @@ def main():
         )
         sys.exit(1)
 
-    llm_cls = LiteLLM if config.provider == "litellm" else LLM
-    llm = llm_cls(
-        model=config.model,
-        api_key=config.api_key,
-        base_url=config.base_url,
-        temperature=config.temperature,
-        max_tokens=config.max_tokens,
-    )
+    if llm_factory is None:
+        llm_cls = LiteLLM if config.provider == "litellm" else LLM
+        llm = llm_cls(
+            model=config.model,
+            api_key=config.api_key,
+            base_url=config.base_url,
+            temperature=config.temperature,
+            max_tokens=config.max_tokens,
+        )
+    else:
+        llm = llm_factory(config)
     agent = Agent(llm=llm, max_context_tokens=config.max_context_tokens)
 
     # resume saved session
@@ -114,8 +124,8 @@ def _run_once(agent: Agent, prompt: str):
     except KeyboardInterrupt:
         console.print("\n[yellow]Interrupted.[/yellow]")
         sys.exit(130)
-    except Exception as e:
-        console.print(f"\n[red]Error: {e}[/red]")
+    except Exception as e:  # noqa: BLE001 -- terminal boundary handles provider and tool failures
+        console.print(f"\n[red]Error: {_error_message(e)}[/red]")
         sys.exit(1)
     print()
 
@@ -229,8 +239,8 @@ def _repl(agent: Agent, config: Config):
         # call the agent
         streamed: list[str] = []
 
-        def on_token(tok):
-            streamed.append(tok)
+        def on_token(tok, _streamed=streamed):
+            _streamed.append(tok)
             print(tok, end="", flush=True)
 
         def on_tool(name, kwargs):
@@ -245,8 +255,8 @@ def _repl(agent: Agent, config: Config):
                 console.print(Markdown(response))
         except KeyboardInterrupt:
             console.print("\n[yellow]Interrupted.[/yellow]")
-        except Exception as e:
-            console.print(f"\n[red]Error: {e}[/red]")
+        except Exception as e:  # noqa: BLE001 -- preserve an interactive session after provider/tool failure
+            console.print(f"\n[red]Error: {_error_message(e)}[/red]")
 
 
 def _show_help():

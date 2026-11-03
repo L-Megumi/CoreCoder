@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/home/example/M2D-LIF/ultralytics/engine/trainer.py", line 643, in __init__
+    self.data = check_det_dataset(self.args.data)
+  File "/home/example/M2D-LIF/ultralytics/data/utils.py", line 312, in check_det_dataset
+    raise FileNotFoundError(m)
+FileNotFoundError:
+Dataset '/home/example/M2D-LIF/data/DroneVehicle.yaml' images not found ⚠️, missing path '/data/example/M2D-LIF/dataset/DroneVehicle_train_val_crop/images/val'
+Note dataset download directory is '/home/example/M2D-LIF/datasets'. You can update this in '/home/example/.config/Ultralytics/settings.yaml'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/example/M2D-LIF/train_dist_obb.py", line 99, in <module>
+    train_config_experiment(cli_args)
+  File "/home/example/M2D-LIF/train_dist_obb.py", line 41, in train_config_experiment
+    OBBTrainer(overrides=overrides).train()
+  File "/home/example/M2D-LIF/ultralytics/models/yolo/obb/train.py", line 31, in __init__
+    super().__init__(overrides, _callbacks)
+  File "/home/example/M2D-LIF/ultralytics/models/yolo/detect/train.py", line 33, in __init__
+    super().__init__(overrides=overrides)
+  File "/home/example/M2D-LIF/ultralytics/engine/trainer.py", line 647, in __init__
+    raise RuntimeError(emojis(f"Dataset '{clean_url(self.args.data)}' error ❌ {e}")) from e
+RuntimeError: Dataset '/home/example/M2D-LIF/data/DroneVehicle.yaml' error ❌
+Dataset '/home/example/M2D-LIF/data/DroneVehicle.yaml' images not found ⚠️, missing path '/data/example/M2D-LIF/dataset/DroneVehicle_train_val_crop/images/val'
+Note dataset download directory is '/home/example/M2D-LIF/datasets'. You can update this in '/home/example/.config/Ultralytics/settings.yaml'
