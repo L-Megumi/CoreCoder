@@ -1,0 +1,347 @@
+{
+  "schema_version": 1,
+  "planned_trials": 10,
+  "started_trials": 8,
+  "archived_trials": 8,
+  "unstarted_trials": 2,
+  "successes": 4,
+  "unique_cases": 4,
+  "latest_case_successes": 4,
+  "latest_versions": {
+    "packaging-requirement-hash": "R4",
+    "sam-checkpoint-resume": "R4",
+    "jsonpointer_scalar": "R1",
+    "itsdangerous_future": "R1"
+  },
+  "total": {
+    "requests": 76,
+    "tokens": 851201,
+    "usd_admission_charge": 0.27222810000000003,
+    "prompt_tokens": 832459,
+    "completion_tokens": 18742,
+    "cache_hit_tokens": 116480,
+    "cache_miss_tokens": 715979,
+    "unknown_requests": 0,
+    "pending_requests": 0
+  },
+  "cumulative_admission": {
+    "requests": 96,
+    "tokens": 1600000,
+    "usd": 1.0
+  },
+  "prior_unknown": {
+    "m17_tokens": 6853,
+    "m17_usd": 0.0038991,
+    "m15_tokens": 14218,
+    "m15_usd": 0.0061086,
+    "preserved": true
+  },
+  "r3_missing_worker_response_liability": {
+    "tokens": 200000,
+    "preserved": true,
+    "provider_requests_observed": 0,
+    "note": "Historical runtime unknown not erased; initialization failed before writer transport"
+  },
+  "full_regression": false,
+  "installation_acceptance": false,
+  "cost_semantics": "Conservative peak cache-miss admission charge, not provider invoice; actual usage is separate.",
+  "interpretation": "Versioned development debugging; all trials retained, not an unbiased accuracy or causal architecture comparison.",
+  "latest_cases": [
+    {
+      "case_id": "packaging-requirement-hash",
+      "version": "R4",
+      "status": "succeeded",
+      "e2e": true,
+      "requests": 14,
+      "checks": {
+        "f2p": {
+          "passed": true,
+          "check_count": 5,
+          "checks": [
+            {
+              "name": "release-padding",
+              "passed": true
+            },
+            {
+              "name": "lower-bound-padding",
+              "passed": true
+            },
+            {
+              "name": "upper-bound-padding",
+              "passed": true
+            },
+            {
+              "name": "name-extras-marker",
+              "passed": true
+            },
+            {
+              "name": "compound-range",
+              "passed": true
+            }
+          ],
+          "source_sha256": "f52e0812a025938c2031c9167dfdd4eb43c089a0f75ae5d5a1f30563a7e33db5",
+          "checked_workspace_revision": "42dddbfdcd954acba01abf5c0125f572ef42ee12239a2b3aed74784a1857df89"
+        },
+        "p2p": {
+          "passed": true,
+          "check_count": 10,
+          "checks": [
+            {
+              "name": "canonical-name",
+              "passed": true
+            },
+            {
+              "name": "different-name",
+              "passed": true
+            },
+            {
+              "name": "different-extras",
+              "passed": true
+            },
+            {
+              "name": "different-marker",
+              "passed": true
+            },
+            {
+              "name": "different-url",
+              "passed": true
+            },
+            {
+              "name": "compatible-boundary",
+              "passed": true
+            },
+            {
+              "name": "operator-preserved",
+              "passed": true
+            },
+            {
+              "name": "render-parse-membership",
+              "passed": true
+            },
+            {
+              "name": "pickle-roundtrip",
+              "passed": true
+            },
+            {
+              "name": "invalid-inputs",
+              "passed": true
+            }
+          ],
+          "source_sha256": "f52e0812a025938c2031c9167dfdd4eb43c089a0f75ae5d5a1f30563a7e33db5",
+          "checked_workspace_revision": "42dddbfdcd954acba01abf5c0125f572ef42ee12239a2b3aed74784a1857df89"
+        }
+      }
+    },
+    {
+      "case_id": "sam-checkpoint-resume",
+      "version": "R4",
+      "status": "succeeded",
+      "e2e": true,
+      "requests": 10,
+      "checks": {
+        "f2p": {
+          "passed": true,
+          "check_count": 3,
+          "checks": [
+            {
+              "name": "restore_multigroup",
+              "passed": true
+            },
+            {
+              "name": "restore_adaptive",
+              "passed": true
+            },
+            {
+              "name": "restore_zero_rho",
+              "passed": true
+            }
+          ],
+          "source_sha256": "3bf0856124be92559d2fc54c9033075faa2e55ae1dfd582fe2b1685eca2f6eb8",
+          "checked_workspace_revision": "10ac812867e58565a9f8727cf18b3f514fee3fad39291c9265b03dd0223e9f64"
+        },
+        "p2p": {
+          "passed": true,
+          "check_count": 3,
+          "checks": [
+            {
+              "name": "normal_multigroup",
+              "passed": true
+            },
+            {
+              "name": "normal_adaptive",
+              "passed": true
+            },
+            {
+              "name": "zero_rho_sgd",
+              "passed": true
+            }
+          ],
+          "source_sha256": "3bf0856124be92559d2fc54c9033075faa2e55ae1dfd582fe2b1685eca2f6eb8",
+          "checked_workspace_revision": "10ac812867e58565a9f8727cf18b3f514fee3fad39291c9265b03dd0223e9f64"
+        }
+      }
+    },
+    {
+      "case_id": "jsonpointer_scalar",
+      "version": "R1",
+      "status": "succeeded",
+      "e2e": true,
+      "requests": 10,
+      "checks": {
+        "f2p": {
+          "passed": true,
+          "check_count": 4,
+          "checks": [
+            {
+              "name": "reject_scalar_0",
+              "passed": true
+            },
+            {
+              "name": "reject_scalar_1",
+              "passed": true
+            },
+            {
+              "name": "reject_scalar_2",
+              "passed": true
+            },
+            {
+              "name": "reject_scalar_3",
+              "passed": true
+            }
+          ],
+          "source_sha256": "60975572a024ac4fa59feeca96ff190095b3d53f123de7ecb22cfb3c4ff6afe3",
+          "checked_workspace_revision": "07123a3d54df09eb3e9bac8a64185cf54726014948c2d6860fb14b3171525d47"
+        },
+        "p2p": {
+          "passed": true,
+          "check_count": 7,
+          "checks": [
+            {
+              "name": "legal_resolution_0",
+              "passed": true
+            },
+            {
+              "name": "legal_resolution_1",
+              "passed": true
+            },
+            {
+              "name": "legal_resolution_2",
+              "passed": true
+            },
+            {
+              "name": "legal_resolution_3",
+              "passed": true
+            },
+            {
+              "name": "legal_resolution_4",
+              "passed": true
+            },
+            {
+              "name": "leading_zero_refused",
+              "passed": true
+            },
+            {
+              "name": "missing_default",
+              "passed": true
+            }
+          ],
+          "source_sha256": "60975572a024ac4fa59feeca96ff190095b3d53f123de7ecb22cfb3c4ff6afe3",
+          "checked_workspace_revision": "07123a3d54df09eb3e9bac8a64185cf54726014948c2d6860fb14b3171525d47"
+        }
+      }
+    },
+    {
+      "case_id": "itsdangerous_future",
+      "version": "R1",
+      "status": "succeeded",
+      "e2e": true,
+      "requests": 11,
+      "checks": {
+        "f2p": {
+          "passed": true,
+          "check_count": 3,
+          "checks": [
+            {
+              "name": "future_age_0",
+              "passed": true
+            },
+            {
+              "name": "future_age_1",
+              "passed": true
+            },
+            {
+              "name": "future_age_2",
+              "passed": true
+            }
+          ],
+          "source_sha256": "4137e6a1bdc0f01088cb3f03ecacfefc45b4a122d208985d074100e47079499d",
+          "checked_workspace_revision": "09e9f573df5008078ce99679ddbe55944ad4c096d5fc2b030afef14a03202c38"
+        },
+        "p2p": {
+          "passed": true,
+          "check_count": 7,
+          "checks": [
+            {
+              "name": "valid_age_0",
+              "passed": true
+            },
+            {
+              "name": "valid_age_17",
+              "passed": true
+            },
+            {
+              "name": "valid_age_60",
+              "passed": true
+            },
+            {
+              "name": "old_signature_expired",
+              "passed": true
+            },
+            {
+              "name": "unbounded_compatibility",
+              "passed": true
+            },
+            {
+              "name": "timestamp_return",
+              "passed": true
+            },
+            {
+              "name": "tampered_signature_refused",
+              "passed": true
+            }
+          ],
+          "source_sha256": "4137e6a1bdc0f01088cb3f03ecacfefc45b4a122d208985d074100e47079499d",
+          "checked_workspace_revision": "09e9f573df5008078ce99679ddbe55944ad4c096d5fc2b030afef14a03202c38"
+        }
+      }
+    }
+  ],
+  "pricing_estimate": {
+    "source": "https://api-docs.deepseek.com/quick_start/pricing/",
+    "checked_date": "2026-11-03",
+    "usd_peak_cache_adjusted": 0.23798297999999998,
+    "usd_offpeak_cache_adjusted": 0.11899148999999999,
+    "timing": "All M18 requests occurred after 10:00 UTC, outside the documented peak intervals.",
+    "semantics": "Post-hoc estimate from actual provider usage and published rates, not an invoice."
+  },
+  "focused_tests": {
+    "R1": 119,
+    "R2": 69,
+    "R3": 45,
+    "R4": 42,
+    "R4_affected_recheck": 26,
+    "overlapping_nodes": true,
+    "not_a_sum_of_unique_test_nodes": true,
+    "original_environment_failures_preserved": "R3: 2 Torch configuration failures, then only those 2 nodes rerun and passed."
+  },
+  "offline_real_handoff": {
+    "fixed_actions": true,
+    "paid_api_calls": 0,
+    "provider_accuracy_claim": false,
+    "retained_refs": 26,
+    "worker_requests": 3,
+    "f2p_passed": 5,
+    "p2p_passed": 10
+  },
+  "owned_model_tunnel_closed": true
+}

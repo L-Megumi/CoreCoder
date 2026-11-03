@@ -1,0 +1,7 @@
+{
+  "scope": "results/m18 only",
+  "findings": [],
+  "tests_retained": true,
+  "raw_prompts_published": false,
+  "source_release": false
+}

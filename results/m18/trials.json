@@ -1,0 +1,1292 @@
+{
+  "schema_version": 1,
+  "rows": [
+    {
+      "version": "R1",
+      "case_id": "packaging-requirement-hash",
+      "planned": true,
+      "started": true,
+      "status": "incomplete",
+      "result": {
+        "schema_version": 1,
+        "job_id": "project-e57ea0ab5732452593162717d1f25bb0",
+        "project_id": "packaging-requirement-hash",
+        "status": "incomplete",
+        "failure_kind": "routing_stopped",
+        "end_to_end_success": false,
+        "fail_to_pass": false,
+        "pass_to_pass": true,
+        "diagnosis_correct": null,
+        "localization_correct": null,
+        "diagnosis_review": "not_scored_model_hypothesis_only",
+        "feedback_retries": 0,
+        "wall_seconds": 47.599503,
+        "usage_semantics": "provider_usage_with_unknown_retained",
+        "evaluation_checks": 5,
+        "model_requests": 15,
+        "tool_calls": 21,
+        "actual_prompt_tokens": 206331,
+        "actual_completion_tokens": 3566,
+        "estimated_input_tokens": 208835,
+        "unknown_requests": 0,
+        "usage_complete": true,
+        "cost": null,
+        "evidence_retention": null,
+        "progress_metrics": {
+          "version": "progress-v1",
+          "recorded_attempts": 1,
+          "stopped_attempts": 0,
+          "observed_tool_rounds": 8,
+          "novel_evidence_fingerprints": 10,
+          "no_progress_rounds": 1,
+          "semantics": "per_attempt_observed_novelty_not_diagnostic_correctness"
+        }
+      },
+      "stop_reason": "routing_stopped",
+      "usage": {
+        "requests": 15,
+        "tokens": 209897,
+        "usd_admission_charge": 0.0661785,
+        "prompt_tokens": 206331,
+        "completion_tokens": 3566,
+        "cache_hit_tokens": 34944,
+        "cache_miss_tokens": 171387,
+        "unknown_requests": 0,
+        "pending_requests": 0
+      },
+      "independent_checks": {
+        "f2p": {
+          "passed": false,
+          "check_count": 5,
+          "checks": [
+            {
+              "name": "release-padding",
+              "passed": false
+            },
+            {
+              "name": "lower-bound-padding",
+              "passed": false
+            },
+            {
+              "name": "upper-bound-padding",
+              "passed": false
+            },
+            {
+              "name": "name-extras-marker",
+              "passed": false
+            },
+            {
+              "name": "compound-range",
+              "passed": false
+            }
+          ],
+          "source_sha256": "f72dede95760b07e92ecc5218b817c5e68ffec765cf64330fd8ea0f6b62dc921",
+          "checked_workspace_revision": "60d5ec39ef8b99dcbc9d1ea628d6f3c636106abea1119563cbe02882d1e34373"
+        },
+        "p2p": {
+          "passed": true,
+          "check_count": 10,
+          "checks": [
+            {
+              "name": "canonical-name",
+              "passed": true
+            },
+            {
+              "name": "different-name",
+              "passed": true
+            },
+            {
+              "name": "different-extras",
+              "passed": true
+            },
+            {
+              "name": "different-marker",
+              "passed": true
+            },
+            {
+              "name": "different-url",
+              "passed": true
+            },
+            {
+              "name": "compatible-boundary",
+              "passed": true
+            },
+            {
+              "name": "operator-preserved",
+              "passed": true
+            },
+            {
+              "name": "render-parse-membership",
+              "passed": true
+            },
+            {
+              "name": "pickle-roundtrip",
+              "passed": true
+            },
+            {
+              "name": "invalid-inputs",
+              "passed": true
+            }
+          ],
+          "source_sha256": "f72dede95760b07e92ecc5218b817c5e68ffec765cf64330fd8ea0f6b62dc921",
+          "checked_workspace_revision": "60d5ec39ef8b99dcbc9d1ea628d6f3c636106abea1119563cbe02882d1e34373"
+        }
+      },
+      "oracle_preserved": true,
+      "hidden_checker_bodies_absent": true,
+      "supervised_processes_clean": true,
+      "policy_intact": true,
+      "raw_reference": {
+        "job_id": "project-e57ea0ab5732452593162717d1f25bb0",
+        "artifact_id": "artifact-c1fece567a6a4556a0f30bf5b715a596",
+        "storage_key": "project-e57ea0ab5732452593162717d1f25bb0/artifact-c1fece567a6a4556a0f30bf5b715a596.blob",
+        "sha256": "c204c0338cb3a1c26b18b99d2d1eb9808fb0f7d1bdd501e24542eb2bb20f7d93",
+        "size_bytes": 325918,
+        "media_type": "application/json",
+        "schema_version": 1
+      },
+      "protocol_sha256": "3bd39a2b204c367442ac7a9c405e4b16306e83087b0c74eea3655c13894e58cb",
+      "experts": [
+        {
+          "safe_to_continue": true,
+          "selected_producers": [
+            "experts-1.expert-code"
+          ],
+          "stop_reason": null,
+          "reports": [
+            {
+              "status": "completed",
+              "failure_reason": null,
+              "validation": {
+                "semantic_correctness": "not_automatically_verified",
+                "structure_and_references": true
+              },
+              "metrics": {
+                "completion_tokens": 1511,
+                "elapsed_seconds": 13.9071,
+                "investigation_continuations": 0,
+                "investigation_rounds": 6,
+                "llm_calls": 6,
+                "prompt_tokens": 48288,
+                "provider_usage_complete": true,
+                "report_repairs": 0,
+                "request_tokens_estimate_total": 53322,
+                "tool_calls": 8,
+                "tool_errors": 0,
+                "tool_schema_chars_total": 15420
+              },
+              "output_policy": {
+                "compact_prompt_sha256": "f93f16f925c513c3364b380bae7b93fd45034bc26a9ef82b087a5de2b6af3273",
+                "investigation_prompt_sha256": "c99ab7a38791e05b9c16d763342f5ed3df550670d150bd64f1b6162249c68359",
+                "prompt_sha256": "b4fad89fbd48aeadf814c74807e0a2184e6909279645c0fb40a5fd2b57adcc29",
+                "references": "original strict local IDs; immutable originals retained through ArtifactIO/EvidenceRef",
+                "version": "evidence-ready-v2"
+              },
+              "report_attempt_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "R1",
+      "case_id": "sam-checkpoint-resume",
+      "planned": true,
+      "started": true,
+      "status": "incomplete",
+      "result": {
+        "schema_version": 1,
+        "job_id": "project-027759a9481f442ba1efaa95871bca2d",
+        "project_id": "sam-checkpoint-resume",
+        "status": "incomplete",
+        "failure_kind": "consultation_no_evidence",
+        "end_to_end_success": false,
+        "fail_to_pass": null,
+        "pass_to_pass": null,
+        "diagnosis_correct": null,
+        "localization_correct": null,
+        "diagnosis_review": "not_scored_model_hypothesis_only",
+        "feedback_retries": 0,
+        "wall_seconds": 28.663985,
+        "usage_semantics": "provider_usage_with_unknown_retained",
+        "evaluation_checks": 3,
+        "model_requests": 6,
+        "tool_calls": 7,
+        "actual_prompt_tokens": 50175,
+        "actual_completion_tokens": 1507,
+        "estimated_input_tokens": 50792,
+        "unknown_requests": 0,
+        "usage_complete": true,
+        "cost": null,
+        "evidence_retention": null,
+        "progress_metrics": {
+          "version": "progress-v1",
+          "recorded_attempts": 0,
+          "stopped_attempts": 0,
+          "observed_tool_rounds": 0,
+          "novel_evidence_fingerprints": 0,
+          "no_progress_rounds": 0,
+          "semantics": "per_attempt_observed_novelty_not_diagnostic_correctness"
+        }
+      },
+      "stop_reason": "consultation_no_evidence",
+      "usage": {
+        "requests": 6,
+        "tokens": 51682,
+        "usd_admission_charge": 0.016860899999999998,
+        "prompt_tokens": 50175,
+        "completion_tokens": 1507,
+        "cache_hit_tokens": 3584,
+        "cache_miss_tokens": 46591,
+        "unknown_requests": 0,
+        "pending_requests": 0
+      },
+      "independent_checks": {},
+      "oracle_preserved": true,
+      "hidden_checker_bodies_absent": true,
+      "supervised_processes_clean": true,
+      "policy_intact": true,
+      "raw_reference": {
+        "job_id": "project-027759a9481f442ba1efaa95871bca2d",
+        "artifact_id": "artifact-76aad11185fb4509b0532675f9b3477c",
+        "storage_key": "project-027759a9481f442ba1efaa95871bca2d/artifact-76aad11185fb4509b0532675f9b3477c.blob",
+        "sha256": "2dd0c88ccd63468a7f2805a8551726363cd32d987e8373b3eb2b43aa46d32449",
+        "size_bytes": 97828,
+        "media_type": "application/json",
+        "schema_version": 1
+      },
+      "protocol_sha256": "6115c80ecaaeb808e9a3f5edadec469e25f27676ef0dad8f75ee6b4ed525f601",
+      "experts": [
+        {
+          "safe_to_continue": false,
+          "selected_producers": [],
+          "stop_reason": "consultation_no_evidence",
+          "reports": [
+            {
+              "status": "incomplete",
+              "failure_reason": "current_state cites a superseded observation; use the latest observed file/path version",
+              "validation": {
+                "semantic_correctness": "not_automatically_verified",
+                "structure_and_references": false
+              },
+              "metrics": {
+                "completion_tokens": 1507,
+                "elapsed_seconds": 12.8738,
+                "investigation_continuations": 0,
+                "investigation_rounds": 6,
+                "llm_calls": 6,
+                "prompt_tokens": 50175,
+                "provider_usage_complete": true,
+                "report_repairs": 0,
+                "request_tokens_estimate_total": 53361,
+                "tool_calls": 7,
+                "tool_errors": 0,
+                "tool_schema_chars_total": 15420
+              },
+              "output_policy": {
+                "compact_prompt_sha256": "f93f16f925c513c3364b380bae7b93fd45034bc26a9ef82b087a5de2b6af3273",
+                "investigation_prompt_sha256": "c99ab7a38791e05b9c16d763342f5ed3df550670d150bd64f1b6162249c68359",
+                "prompt_sha256": "b4fad89fbd48aeadf814c74807e0a2184e6909279645c0fb40a5fd2b57adcc29",
+                "references": "original strict local IDs; immutable originals retained through ArtifactIO/EvidenceRef",
+                "version": "evidence-ready-v2"
+              },
+              "report_attempt_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "R1",
+      "case_id": "jsonpointer_scalar",
+      "planned": true,
+      "started": true,
+      "status": "succeeded",
+      "result": {
+        "schema_version": 1,
+        "job_id": "project-5f22751c5acc4f3ebec82eb329f00985",
+        "project_id": "jsonpointer_scalar-development",
+        "status": "succeeded",
+        "failure_kind": null,
+        "end_to_end_success": true,
+        "fail_to_pass": true,
+        "pass_to_pass": true,
+        "diagnosis_correct": null,
+        "localization_correct": null,
+        "diagnosis_review": "not_scored_model_hypothesis_only",
+        "feedback_retries": 0,
+        "wall_seconds": 27.392075,
+        "usage_semantics": "provider_usage_with_unknown_retained",
+        "evaluation_checks": 5,
+        "model_requests": 10,
+        "tool_calls": 11,
+        "actual_prompt_tokens": 76211,
+        "actual_completion_tokens": 2346,
+        "estimated_input_tokens": 82107,
+        "unknown_requests": 0,
+        "usage_complete": true,
+        "cost": null,
+        "evidence_retention": null,
+        "progress_metrics": {
+          "version": "progress-v1",
+          "recorded_attempts": 1,
+          "stopped_attempts": 0,
+          "observed_tool_rounds": 5,
+          "novel_evidence_fingerprints": 2,
+          "no_progress_rounds": 2,
+          "semantics": "per_attempt_observed_novelty_not_diagnostic_correctness"
+        }
+      },
+      "stop_reason": null,
+      "usage": {
+        "requests": 10,
+        "tokens": 78557,
+        "usd_admission_charge": 0.025678500000000003,
+        "prompt_tokens": 76211,
+        "completion_tokens": 2346,
+        "cache_hit_tokens": 14336,
+        "cache_miss_tokens": 61875,
+        "unknown_requests": 0,
+        "pending_requests": 0
+      },
+      "independent_checks": {
+        "f2p": {
+          "passed": true,
+          "check_count": 4,
+          "checks": [
+            {
+              "name": "reject_scalar_0",
+              "passed": true
+            },
+            {
+              "name": "reject_scalar_1",
+              "passed": true
+            },
+            {
+              "name": "reject_scalar_2",
+              "passed": true
+            },
+            {
+              "name": "reject_scalar_3",
+              "passed": true
+            }
+          ],
+          "source_sha256": "60975572a024ac4fa59feeca96ff190095b3d53f123de7ecb22cfb3c4ff6afe3",
+          "checked_workspace_revision": "07123a3d54df09eb3e9bac8a64185cf54726014948c2d6860fb14b3171525d47"
+        },
+        "p2p": {
+          "passed": true,
+          "check_count": 7,
+          "checks": [
+            {
+              "name": "legal_resolution_0",
+              "passed": true
+            },
+            {
+              "name": "legal_resolution_1",
+              "passed": true
+            },
+            {
+              "name": "legal_resolution_2",
+              "passed": true
+            },
+            {
+              "name": "legal_resolution_3",
+              "passed": true
+            },
+            {
+              "name": "legal_resolution_4",
+              "passed": true
+            },
+            {
+              "name": "leading_zero_refused",
+              "passed": true
+            },
+            {
+              "name": "missing_default",
+              "passed": true
+            }
+          ],
+          "source_sha256": "60975572a024ac4fa59feeca96ff190095b3d53f123de7ecb22cfb3c4ff6afe3",
+          "checked_workspace_revision": "07123a3d54df09eb3e9bac8a64185cf54726014948c2d6860fb14b3171525d47"
+        }
+      },
+      "oracle_preserved": true,
+      "hidden_checker_bodies_absent": true,
+      "supervised_processes_clean": true,
+      "policy_intact": true,
+      "raw_reference": {
+        "job_id": "project-5f22751c5acc4f3ebec82eb329f00985",
+        "artifact_id": "artifact-c8d7dcc6d86d467aa30385f674abea64",
+        "storage_key": "project-5f22751c5acc4f3ebec82eb329f00985/artifact-c8d7dcc6d86d467aa30385f674abea64.blob",
+        "sha256": "3264a51a6c540a2f55d2cc08a252a3bc2b51cbdd6b705b48ab451c3dde1a707d",
+        "size_bytes": 137697,
+        "media_type": "application/json",
+        "schema_version": 1
+      },
+      "protocol_sha256": "1abe4d12448e3966e6ca694cb1116c47dbd23fa2c9ed89f033a4feefd03565c8",
+      "experts": [
+        {
+          "safe_to_continue": true,
+          "selected_producers": [
+            "experts-1.expert-code"
+          ],
+          "stop_reason": null,
+          "reports": [
+            {
+              "status": "completed",
+              "failure_reason": null,
+              "validation": {
+                "semantic_correctness": "not_automatically_verified",
+                "structure_and_references": true
+              },
+              "metrics": {
+                "completion_tokens": 956,
+                "elapsed_seconds": 7.9864,
+                "investigation_continuations": 0,
+                "investigation_rounds": 4,
+                "llm_calls": 4,
+                "prompt_tokens": 22253,
+                "provider_usage_complete": true,
+                "report_repairs": 0,
+                "request_tokens_estimate_total": 25255,
+                "tool_calls": 5,
+                "tool_errors": 0,
+                "tool_schema_chars_total": 12336
+              },
+              "output_policy": {
+                "compact_prompt_sha256": "f93f16f925c513c3364b380bae7b93fd45034bc26a9ef82b087a5de2b6af3273",
+                "investigation_prompt_sha256": "c99ab7a38791e05b9c16d763342f5ed3df550670d150bd64f1b6162249c68359",
+                "prompt_sha256": "b4fad89fbd48aeadf814c74807e0a2184e6909279645c0fb40a5fd2b57adcc29",
+                "references": "original strict local IDs; immutable originals retained through ArtifactIO/EvidenceRef",
+                "version": "evidence-ready-v2"
+              },
+              "report_attempt_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "R1",
+      "case_id": "itsdangerous_future",
+      "planned": true,
+      "started": true,
+      "status": "succeeded",
+      "result": {
+        "schema_version": 1,
+        "job_id": "project-4e5c7c4f43534642ab9cce8d33b76a77",
+        "project_id": "itsdangerous_future-development",
+        "status": "succeeded",
+        "failure_kind": null,
+        "end_to_end_success": true,
+        "fail_to_pass": true,
+        "pass_to_pass": true,
+        "diagnosis_correct": null,
+        "localization_correct": null,
+        "diagnosis_review": "not_scored_model_hypothesis_only",
+        "feedback_retries": 0,
+        "wall_seconds": 33.832687,
+        "usage_semantics": "provider_usage_with_unknown_retained",
+        "evaluation_checks": 5,
+        "model_requests": 11,
+        "tool_calls": 16,
+        "actual_prompt_tokens": 107624,
+        "actual_completion_tokens": 3220,
+        "estimated_input_tokens": 113400,
+        "unknown_requests": 0,
+        "usage_complete": true,
+        "cost": null,
+        "evidence_retention": null,
+        "progress_metrics": {
+          "version": "progress-v1",
+          "recorded_attempts": 1,
+          "stopped_attempts": 0,
+          "observed_tool_rounds": 5,
+          "novel_evidence_fingerprints": 3,
+          "no_progress_rounds": 2,
+          "semantics": "per_attempt_observed_novelty_not_diagnostic_correctness"
+        }
+      },
+      "stop_reason": null,
+      "usage": {
+        "requests": 11,
+        "tokens": 110844,
+        "usd_admission_charge": 0.036151199999999994,
+        "prompt_tokens": 107624,
+        "completion_tokens": 3220,
+        "cache_hit_tokens": 19200,
+        "cache_miss_tokens": 88424,
+        "unknown_requests": 0,
+        "pending_requests": 0
+      },
+      "independent_checks": {
+        "f2p": {
+          "passed": true,
+          "check_count": 3,
+          "checks": [
+            {
+              "name": "future_age_0",
+              "passed": true
+            },
+            {
+              "name": "future_age_1",
+              "passed": true
+            },
+            {
+              "name": "future_age_2",
+              "passed": true
+            }
+          ],
+          "source_sha256": "4137e6a1bdc0f01088cb3f03ecacfefc45b4a122d208985d074100e47079499d",
+          "checked_workspace_revision": "09e9f573df5008078ce99679ddbe55944ad4c096d5fc2b030afef14a03202c38"
+        },
+        "p2p": {
+          "passed": true,
+          "check_count": 7,
+          "checks": [
+            {
+              "name": "valid_age_0",
+              "passed": true
+            },
+            {
+              "name": "valid_age_17",
+              "passed": true
+            },
+            {
+              "name": "valid_age_60",
+              "passed": true
+            },
+            {
+              "name": "old_signature_expired",
+              "passed": true
+            },
+            {
+              "name": "unbounded_compatibility",
+              "passed": true
+            },
+            {
+              "name": "timestamp_return",
+              "passed": true
+            },
+            {
+              "name": "tampered_signature_refused",
+              "passed": true
+            }
+          ],
+          "source_sha256": "4137e6a1bdc0f01088cb3f03ecacfefc45b4a122d208985d074100e47079499d",
+          "checked_workspace_revision": "09e9f573df5008078ce99679ddbe55944ad4c096d5fc2b030afef14a03202c38"
+        }
+      },
+      "oracle_preserved": true,
+      "hidden_checker_bodies_absent": true,
+      "supervised_processes_clean": true,
+      "policy_intact": true,
+      "raw_reference": {
+        "job_id": "project-4e5c7c4f43534642ab9cce8d33b76a77",
+        "artifact_id": "artifact-7489b388b6c147509a52f3782974d1ad",
+        "storage_key": "project-4e5c7c4f43534642ab9cce8d33b76a77/artifact-7489b388b6c147509a52f3782974d1ad.blob",
+        "sha256": "5dff546bf17f7efe49712505ccd8dba57b05bc2891fca1bb8cfefc1f15096d4e",
+        "size_bytes": 156986,
+        "media_type": "application/json",
+        "schema_version": 1
+      },
+      "protocol_sha256": "995c4955e7fe2b42e172137aa1cd2969376a8c116a0382d7e0eb8ed93f0c745c",
+      "experts": [
+        {
+          "safe_to_continue": true,
+          "selected_producers": [
+            "experts-1.expert-code"
+          ],
+          "stop_reason": null,
+          "reports": [
+            {
+              "status": "completed",
+              "failure_reason": null,
+              "validation": {
+                "semantic_correctness": "not_automatically_verified",
+                "structure_and_references": true
+              },
+              "metrics": {
+                "completion_tokens": 1331,
+                "elapsed_seconds": 10.8626,
+                "investigation_continuations": 0,
+                "investigation_rounds": 5,
+                "llm_calls": 5,
+                "prompt_tokens": 34358,
+                "provider_usage_complete": true,
+                "report_repairs": 0,
+                "request_tokens_estimate_total": 34812,
+                "tool_calls": 8,
+                "tool_errors": 0,
+                "tool_schema_chars_total": 15420
+              },
+              "output_policy": {
+                "compact_prompt_sha256": "f93f16f925c513c3364b380bae7b93fd45034bc26a9ef82b087a5de2b6af3273",
+                "investigation_prompt_sha256": "c99ab7a38791e05b9c16d763342f5ed3df550670d150bd64f1b6162249c68359",
+                "prompt_sha256": "b4fad89fbd48aeadf814c74807e0a2184e6909279645c0fb40a5fd2b57adcc29",
+                "references": "original strict local IDs; immutable originals retained through ArtifactIO/EvidenceRef",
+                "version": "evidence-ready-v2"
+              },
+              "report_attempt_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "R2",
+      "case_id": "packaging-requirement-hash",
+      "planned": true,
+      "started": true,
+      "status": "needs_review",
+      "result": {
+        "schema_version": 1,
+        "job_id": "project-4fae0b1fb57142928b3b9a16605ead46",
+        "project_id": "packaging-requirement-hash",
+        "status": "needs_review",
+        "failure_kind": "source_changed",
+        "end_to_end_success": false,
+        "fail_to_pass": null,
+        "pass_to_pass": null,
+        "diagnosis_correct": null,
+        "localization_correct": null,
+        "diagnosis_review": "not_scored_model_hypothesis_only",
+        "feedback_retries": 0,
+        "wall_seconds": 17.419053,
+        "usage_semantics": "provider_usage_with_unknown_retained",
+        "evaluation_checks": 3,
+        "model_requests": 5,
+        "tool_calls": 6,
+        "actual_prompt_tokens": 41812,
+        "actual_completion_tokens": 1264,
+        "estimated_input_tokens": 42015,
+        "unknown_requests": 0,
+        "usage_complete": true,
+        "cost": null,
+        "evidence_retention": null,
+        "progress_metrics": {
+          "version": "progress-v1",
+          "recorded_attempts": 0,
+          "stopped_attempts": 0,
+          "observed_tool_rounds": 0,
+          "novel_evidence_fingerprints": 0,
+          "no_progress_rounds": 0,
+          "semantics": "per_attempt_observed_novelty_not_diagnostic_correctness"
+        }
+      },
+      "stop_reason": "source_changed",
+      "usage": {
+        "requests": 5,
+        "tokens": 43076,
+        "usd_admission_charge": 0.014060399999999999,
+        "prompt_tokens": 41812,
+        "completion_tokens": 1264,
+        "cache_hit_tokens": 0,
+        "cache_miss_tokens": 41812,
+        "unknown_requests": 0,
+        "pending_requests": 0
+      },
+      "independent_checks": {},
+      "oracle_preserved": true,
+      "hidden_checker_bodies_absent": true,
+      "supervised_processes_clean": true,
+      "policy_intact": false,
+      "raw_reference": {
+        "job_id": "project-4fae0b1fb57142928b3b9a16605ead46",
+        "artifact_id": "artifact-f057ce3a60c2484185fc15906ec3bb61",
+        "storage_key": "project-4fae0b1fb57142928b3b9a16605ead46/artifact-f057ce3a60c2484185fc15906ec3bb61.blob",
+        "sha256": "f422a41314d880ca4a2e9f8070327d5bea77324584d848cef644215091be0830",
+        "size_bytes": 212456,
+        "media_type": "application/json",
+        "schema_version": 1
+      },
+      "protocol_sha256": "233efb40d620304e72708564bd899d947e2ddd858961f638e28ebc1c6ab4741c",
+      "experts": [
+        {
+          "safe_to_continue": false,
+          "selected_producers": [
+            "experts-1.expert-code"
+          ],
+          "stop_reason": "source_changed",
+          "reports": [
+            {
+              "status": "completed",
+              "failure_reason": null,
+              "validation": {
+                "semantic_correctness": "not_automatically_verified",
+                "structure_and_references": true
+              },
+              "metrics": {
+                "completion_tokens": 1264,
+                "elapsed_seconds": 11.0385,
+                "investigation_continuations": 0,
+                "investigation_rounds": 5,
+                "llm_calls": 5,
+                "prompt_tokens": 41812,
+                "provider_usage_complete": true,
+                "report_repairs": 0,
+                "request_tokens_estimate_total": 53572,
+                "tool_calls": 6,
+                "tool_errors": 0,
+                "tool_schema_chars_total": 12336
+              },
+              "output_policy": {
+                "compact_prompt_sha256": "f93f16f925c513c3364b380bae7b93fd45034bc26a9ef82b087a5de2b6af3273",
+                "investigation_prompt_sha256": "c99ab7a38791e05b9c16d763342f5ed3df550670d150bd64f1b6162249c68359",
+                "prompt_sha256": "346ad160d59f48bd2a176d4013c427e5e7e232ea9f415ea6c0a90d40819147ff",
+                "references": "original strict local IDs; immutable originals retained through ArtifactIO/EvidenceRef",
+                "version": "evidence-ready-v3"
+              },
+              "report_attempt_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "R2",
+      "case_id": "sam-checkpoint-resume",
+      "planned": true,
+      "started": false,
+      "status": "cancelled_before_start",
+      "result": null,
+      "stop_reason": "safety_or_permission_violation"
+    },
+    {
+      "version": "R3",
+      "case_id": "packaging-requirement-hash",
+      "planned": true,
+      "started": true,
+      "status": "needs_review",
+      "result": {
+        "schema_version": 1,
+        "job_id": "project-b975f10ae55b4d1383530504542fa471",
+        "project_id": "packaging-requirement-hash",
+        "status": "needs_review",
+        "failure_kind": "accounting_unknown",
+        "end_to_end_success": false,
+        "fail_to_pass": false,
+        "pass_to_pass": true,
+        "diagnosis_correct": null,
+        "localization_correct": null,
+        "diagnosis_review": "not_scored_model_hypothesis_only",
+        "feedback_retries": 0,
+        "wall_seconds": 22.853521,
+        "usage_semantics": "provider_usage_with_unknown_retained",
+        "evaluation_checks": 5,
+        "model_requests": null,
+        "tool_calls": null,
+        "actual_prompt_tokens": null,
+        "actual_completion_tokens": null,
+        "estimated_input_tokens": null,
+        "unknown_requests": null,
+        "usage_complete": false,
+        "cost": null,
+        "evidence_retention": null,
+        "progress_metrics": {
+          "version": "progress-v1",
+          "recorded_attempts": 0,
+          "stopped_attempts": 0,
+          "observed_tool_rounds": 0,
+          "novel_evidence_fingerprints": 0,
+          "no_progress_rounds": 0,
+          "semantics": "per_attempt_observed_novelty_not_diagnostic_correctness"
+        }
+      },
+      "stop_reason": "accounting_unknown",
+      "usage": {
+        "requests": 5,
+        "tokens": 39419,
+        "usd_admission_charge": 0.012977699999999998,
+        "prompt_tokens": 38139,
+        "completion_tokens": 1280,
+        "cache_hit_tokens": 0,
+        "cache_miss_tokens": 38139,
+        "unknown_requests": 0,
+        "pending_requests": 0
+      },
+      "independent_checks": {
+        "f2p": {
+          "passed": false,
+          "check_count": 5,
+          "checks": [
+            {
+              "name": "release-padding",
+              "passed": false
+            },
+            {
+              "name": "lower-bound-padding",
+              "passed": false
+            },
+            {
+              "name": "upper-bound-padding",
+              "passed": false
+            },
+            {
+              "name": "name-extras-marker",
+              "passed": false
+            },
+            {
+              "name": "compound-range",
+              "passed": false
+            }
+          ],
+          "source_sha256": "f72dede95760b07e92ecc5218b817c5e68ffec765cf64330fd8ea0f6b62dc921",
+          "checked_workspace_revision": "60d5ec39ef8b99dcbc9d1ea628d6f3c636106abea1119563cbe02882d1e34373"
+        },
+        "p2p": {
+          "passed": true,
+          "check_count": 10,
+          "checks": [
+            {
+              "name": "canonical-name",
+              "passed": true
+            },
+            {
+              "name": "different-name",
+              "passed": true
+            },
+            {
+              "name": "different-extras",
+              "passed": true
+            },
+            {
+              "name": "different-marker",
+              "passed": true
+            },
+            {
+              "name": "different-url",
+              "passed": true
+            },
+            {
+              "name": "compatible-boundary",
+              "passed": true
+            },
+            {
+              "name": "operator-preserved",
+              "passed": true
+            },
+            {
+              "name": "render-parse-membership",
+              "passed": true
+            },
+            {
+              "name": "pickle-roundtrip",
+              "passed": true
+            },
+            {
+              "name": "invalid-inputs",
+              "passed": true
+            }
+          ],
+          "source_sha256": "f72dede95760b07e92ecc5218b817c5e68ffec765cf64330fd8ea0f6b62dc921",
+          "checked_workspace_revision": "60d5ec39ef8b99dcbc9d1ea628d6f3c636106abea1119563cbe02882d1e34373"
+        }
+      },
+      "oracle_preserved": true,
+      "hidden_checker_bodies_absent": true,
+      "supervised_processes_clean": true,
+      "policy_intact": true,
+      "raw_reference": {
+        "job_id": "project-b975f10ae55b4d1383530504542fa471",
+        "artifact_id": "artifact-d424a193a0844c34985dc0569777ee7c",
+        "storage_key": "project-b975f10ae55b4d1383530504542fa471/artifact-d424a193a0844c34985dc0569777ee7c.blob",
+        "sha256": "02389c920a051a224804deb897cab34b8d4e7ae4e35c6f86db1f06f233aff3d5",
+        "size_bytes": 302657,
+        "media_type": "application/json",
+        "schema_version": 1
+      },
+      "protocol_sha256": "37d46282577b015dbd16ba9c44319375cd20b7577790e8a6f0558ad1d55e4a4a",
+      "experts": [
+        {
+          "safe_to_continue": true,
+          "selected_producers": [
+            "experts-1.expert-code"
+          ],
+          "stop_reason": null,
+          "reports": [
+            {
+              "status": "completed",
+              "failure_reason": null,
+              "validation": {
+                "semantic_correctness": "not_automatically_verified",
+                "structure_and_references": true
+              },
+              "metrics": {
+                "completion_tokens": 1280,
+                "elapsed_seconds": 12.2006,
+                "investigation_continuations": 0,
+                "investigation_rounds": 5,
+                "llm_calls": 5,
+                "prompt_tokens": 38139,
+                "provider_usage_complete": true,
+                "report_repairs": 0,
+                "request_tokens_estimate_total": 44652,
+                "tool_calls": 7,
+                "tool_errors": 0,
+                "tool_schema_chars_total": 12336
+              },
+              "output_policy": {
+                "compact_prompt_sha256": "f93f16f925c513c3364b380bae7b93fd45034bc26a9ef82b087a5de2b6af3273",
+                "investigation_prompt_sha256": "c99ab7a38791e05b9c16d763342f5ed3df550670d150bd64f1b6162249c68359",
+                "prompt_sha256": "346ad160d59f48bd2a176d4013c427e5e7e232ea9f415ea6c0a90d40819147ff",
+                "references": "original strict local IDs; immutable originals retained through ArtifactIO/EvidenceRef",
+                "version": "evidence-ready-v3"
+              },
+              "report_attempt_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "R3",
+      "case_id": "sam-checkpoint-resume",
+      "planned": true,
+      "started": false,
+      "status": "cancelled_before_start",
+      "result": null,
+      "stop_reason": "trial_usage_unknown"
+    },
+    {
+      "version": "R4",
+      "case_id": "packaging-requirement-hash",
+      "planned": true,
+      "started": true,
+      "status": "succeeded",
+      "result": {
+        "schema_version": 1,
+        "job_id": "project-efb6a5e3a33d47069dd9bfe52e760225",
+        "project_id": "packaging-requirement-hash",
+        "status": "succeeded",
+        "failure_kind": null,
+        "end_to_end_success": true,
+        "fail_to_pass": true,
+        "pass_to_pass": true,
+        "diagnosis_correct": null,
+        "localization_correct": null,
+        "diagnosis_review": "not_scored_model_hypothesis_only",
+        "feedback_retries": 0,
+        "wall_seconds": 39.190555,
+        "usage_semantics": "provider_usage_with_unknown_retained",
+        "evaluation_checks": 5,
+        "model_requests": 14,
+        "tool_calls": 14,
+        "actual_prompt_tokens": 219474,
+        "actual_completion_tokens": 2216,
+        "estimated_input_tokens": 221520,
+        "unknown_requests": 0,
+        "usage_complete": true,
+        "cost": null,
+        "evidence_retention": null,
+        "progress_metrics": {
+          "version": "progress-v1",
+          "recorded_attempts": 1,
+          "stopped_attempts": 0,
+          "observed_tool_rounds": 8,
+          "novel_evidence_fingerprints": 6,
+          "no_progress_rounds": 1,
+          "semantics": "per_attempt_observed_novelty_not_diagnostic_correctness"
+        }
+      },
+      "stop_reason": null,
+      "usage": {
+        "requests": 14,
+        "tokens": 221690,
+        "usd_admission_charge": 0.0685014,
+        "prompt_tokens": 219474,
+        "completion_tokens": 2216,
+        "cache_hit_tokens": 32000,
+        "cache_miss_tokens": 187474,
+        "unknown_requests": 0,
+        "pending_requests": 0
+      },
+      "independent_checks": {
+        "f2p": {
+          "passed": true,
+          "check_count": 5,
+          "checks": [
+            {
+              "name": "release-padding",
+              "passed": true
+            },
+            {
+              "name": "lower-bound-padding",
+              "passed": true
+            },
+            {
+              "name": "upper-bound-padding",
+              "passed": true
+            },
+            {
+              "name": "name-extras-marker",
+              "passed": true
+            },
+            {
+              "name": "compound-range",
+              "passed": true
+            }
+          ],
+          "source_sha256": "f52e0812a025938c2031c9167dfdd4eb43c089a0f75ae5d5a1f30563a7e33db5",
+          "checked_workspace_revision": "42dddbfdcd954acba01abf5c0125f572ef42ee12239a2b3aed74784a1857df89"
+        },
+        "p2p": {
+          "passed": true,
+          "check_count": 10,
+          "checks": [
+            {
+              "name": "canonical-name",
+              "passed": true
+            },
+            {
+              "name": "different-name",
+              "passed": true
+            },
+            {
+              "name": "different-extras",
+              "passed": true
+            },
+            {
+              "name": "different-marker",
+              "passed": true
+            },
+            {
+              "name": "different-url",
+              "passed": true
+            },
+            {
+              "name": "compatible-boundary",
+              "passed": true
+            },
+            {
+              "name": "operator-preserved",
+              "passed": true
+            },
+            {
+              "name": "render-parse-membership",
+              "passed": true
+            },
+            {
+              "name": "pickle-roundtrip",
+              "passed": true
+            },
+            {
+              "name": "invalid-inputs",
+              "passed": true
+            }
+          ],
+          "source_sha256": "f52e0812a025938c2031c9167dfdd4eb43c089a0f75ae5d5a1f30563a7e33db5",
+          "checked_workspace_revision": "42dddbfdcd954acba01abf5c0125f572ef42ee12239a2b3aed74784a1857df89"
+        }
+      },
+      "oracle_preserved": true,
+      "hidden_checker_bodies_absent": true,
+      "supervised_processes_clean": true,
+      "policy_intact": true,
+      "raw_reference": {
+        "job_id": "project-efb6a5e3a33d47069dd9bfe52e760225",
+        "artifact_id": "artifact-07b072abdcbb4038bada0f321d51e568",
+        "storage_key": "project-efb6a5e3a33d47069dd9bfe52e760225/artifact-07b072abdcbb4038bada0f321d51e568.blob",
+        "sha256": "bc8bf8f1cff63e9e2e5cc00fd94899544356a5be6599357c2d8d2c2e3ff29fdd",
+        "size_bytes": 321049,
+        "media_type": "application/json",
+        "schema_version": 1
+      },
+      "protocol_sha256": "1bff15d67fb9bb5ca565d533a915778b635ad592023012b1c85807faf4d852eb",
+      "experts": [
+        {
+          "safe_to_continue": true,
+          "selected_producers": [
+            "experts-1.expert-code"
+          ],
+          "stop_reason": null,
+          "reports": [
+            {
+              "status": "completed",
+              "failure_reason": null,
+              "validation": {
+                "semantic_correctness": "not_automatically_verified",
+                "structure_and_references": true
+              },
+              "metrics": {
+                "completion_tokens": 886,
+                "elapsed_seconds": 9.6294,
+                "investigation_continuations": 0,
+                "investigation_rounds": 5,
+                "llm_calls": 5,
+                "prompt_tokens": 46907,
+                "provider_usage_complete": true,
+                "report_repairs": 0,
+                "request_tokens_estimate_total": 61521,
+                "tool_calls": 5,
+                "tool_errors": 0,
+                "tool_schema_chars_total": 12336
+              },
+              "output_policy": {
+                "compact_prompt_sha256": "f93f16f925c513c3364b380bae7b93fd45034bc26a9ef82b087a5de2b6af3273",
+                "investigation_prompt_sha256": "c99ab7a38791e05b9c16d763342f5ed3df550670d150bd64f1b6162249c68359",
+                "prompt_sha256": "346ad160d59f48bd2a176d4013c427e5e7e232ea9f415ea6c0a90d40819147ff",
+                "references": "original strict local IDs; immutable originals retained through ArtifactIO/EvidenceRef",
+                "version": "evidence-ready-v3"
+              },
+              "report_attempt_count": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "version": "R4",
+      "case_id": "sam-checkpoint-resume",
+      "planned": true,
+      "started": true,
+      "status": "succeeded",
+      "result": {
+        "schema_version": 1,
+        "job_id": "project-582da3ef229542c0a5e440521119f48f",
+        "project_id": "sam-checkpoint-resume",
+        "status": "succeeded",
+        "failure_kind": null,
+        "end_to_end_success": true,
+        "fail_to_pass": true,
+        "pass_to_pass": true,
+        "diagnosis_correct": null,
+        "localization_correct": null,
+        "diagnosis_review": "not_scored_model_hypothesis_only",
+        "feedback_retries": 0,
+        "wall_seconds": 57.529428,
+        "usage_semantics": "provider_usage_with_unknown_retained",
+        "evaluation_checks": 5,
+        "model_requests": 10,
+        "tool_calls": 10,
+        "actual_prompt_tokens": 92693,
+        "actual_completion_tokens": 3343,
+        "estimated_input_tokens": 95125,
+        "unknown_requests": 0,
+        "usage_complete": true,
+        "cost": null,
+        "evidence_retention": null,
+        "progress_metrics": {
+          "version": "progress-v1",
+          "recorded_attempts": 1,
+          "stopped_attempts": 0,
+          "observed_tool_rounds": 4,
+          "novel_evidence_fingerprints": 3,
+          "no_progress_rounds": 1,
+          "semantics": "per_attempt_observed_novelty_not_diagnostic_correctness"
+        }
+      },
+      "stop_reason": null,
+      "usage": {
+        "requests": 10,
+        "tokens": 96036,
+        "usd_admission_charge": 0.0318195,
+        "prompt_tokens": 92693,
+        "completion_tokens": 3343,
+        "cache_hit_tokens": 12416,
+        "cache_miss_tokens": 80277,
+        "unknown_requests": 0,
+        "pending_requests": 0
+      },
+      "independent_checks": {
+        "f2p": {
+          "passed": true,
+          "check_count": 3,
+          "checks": [
+            {
+              "name": "restore_multigroup",
+              "passed": true
+            },
+            {
+              "name": "restore_adaptive",
+              "passed": true
+            },
+            {
+              "name": "restore_zero_rho",
+              "passed": true
+            }
+          ],
+          "source_sha256": "3bf0856124be92559d2fc54c9033075faa2e55ae1dfd582fe2b1685eca2f6eb8",
+          "checked_workspace_revision": "10ac812867e58565a9f8727cf18b3f514fee3fad39291c9265b03dd0223e9f64"
+        },
+        "p2p": {
+          "passed": true,
+          "check_count": 3,
+          "checks": [
+            {
+              "name": "normal_multigroup",
+              "passed": true
+            },
+            {
+              "name": "normal_adaptive",
+              "passed": true
+            },
+            {
+              "name": "zero_rho_sgd",
+              "passed": true
+            }
+          ],
+          "source_sha256": "3bf0856124be92559d2fc54c9033075faa2e55ae1dfd582fe2b1685eca2f6eb8",
+          "checked_workspace_revision": "10ac812867e58565a9f8727cf18b3f514fee3fad39291c9265b03dd0223e9f64"
+        }
+      },
+      "oracle_preserved": true,
+      "hidden_checker_bodies_absent": true,
+      "supervised_processes_clean": true,
+      "policy_intact": true,
+      "raw_reference": {
+        "job_id": "project-582da3ef229542c0a5e440521119f48f",
+        "artifact_id": "artifact-83b5503eaf88438fb0da1dd5a8a0d91d",
+        "storage_key": "project-582da3ef229542c0a5e440521119f48f/artifact-83b5503eaf88438fb0da1dd5a8a0d91d.blob",
+        "sha256": "02013bc75adb73fdd294c749784d2ece2e4de221dfc641f398bf2f58cdaeb85c",
+        "size_bytes": 163960,
+        "media_type": "application/json",
+        "schema_version": 1
+      },
+      "protocol_sha256": "8a85fbed9fb581b745c7b94911b04cbaa329b5f3f8d5cf955d02ad8c41dd8c38",
+      "experts": [
+        {
+          "safe_to_continue": true,
+          "selected_producers": [
+            "experts-1.expert-code"
+          ],
+          "stop_reason": null,
+          "reports": [
+            {
+              "status": "completed",
+              "failure_reason": null,
+              "validation": {
+                "semantic_correctness": "not_automatically_verified",
+                "structure_and_references": true
+              },
+              "metrics": {
+                "completion_tokens": 1452,
+                "elapsed_seconds": 11.8432,
+                "investigation_continuations": 0,
+                "investigation_rounds": 5,
+                "llm_calls": 5,
+                "prompt_tokens": 32065,
+                "provider_usage_complete": true,
+                "report_repairs": 0,
+                "request_tokens_estimate_total": 34544,
+                "tool_calls": 4,
+                "tool_errors": 0,
+                "tool_schema_chars_total": 12336
+              },
+              "output_policy": {
+                "compact_prompt_sha256": "f93f16f925c513c3364b380bae7b93fd45034bc26a9ef82b087a5de2b6af3273",
+                "investigation_prompt_sha256": "c99ab7a38791e05b9c16d763342f5ed3df550670d150bd64f1b6162249c68359",
+                "prompt_sha256": "346ad160d59f48bd2a176d4013c427e5e7e232ea9f415ea6c0a90d40819147ff",
+                "references": "original strict local IDs; immutable originals retained through ArtifactIO/EvidenceRef",
+                "version": "evidence-ready-v3"
+              },
+              "report_attempt_count": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "semantics": "Every planned trial, including failures and unstarted rows. Original runtime unknown is not overwritten by known provider counters."
+}

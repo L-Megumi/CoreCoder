@@ -1,0 +1,37 @@
+{
+  "rows": [
+    {
+      "version": "R1",
+      "case_id": "packaging-requirement-hash",
+      "cause": "Repeated investigation reached the writer report reserve without an edit. edit_file had been available in rounds 1–8; this was not a permission rejection."
+    },
+    {
+      "version": "R1",
+      "case_id": "sam-checkpoint-resume",
+      "cause": "Strict current_state rejected a superseded observation; no model request remained for a report correction."
+    },
+    {
+      "version": "R2",
+      "case_id": "packaging-requirement-hash",
+      "cause": "66,908-character evidence context exceeded 50,000; generic exception handler misclassified capacity as source_changed. Offline replay found zero source mismatches."
+    },
+    {
+      "version": "R3",
+      "case_id": "packaging-requirement-hash",
+      "cause": "Sender shortened excerpts while receiver still required the original 1,200-character prefix. Worker exited before its model factory; missing response retained runtime unknown. Provider observation had five known expert requests and no writer transport."
+    }
+  ],
+  "strict_controls_preserved": [
+    "current local citation validation",
+    "producer/job/attempt identity",
+    "Artifact SHA256",
+    "source version",
+    "fresh candidate read before edits",
+    "File Guard",
+    "original F2P/P2P Oracle",
+    "unknown usage and permission stops"
+  ],
+  "bounded_view_contract": "Opt-in prefix length and version metadata; receiver validates each exact prefix against the immutable original. All full records remain restorable.",
+  "implementation_note": "The final local handoff character cap is 32,000 instead of 16,000 only for the opt-in view; the existing complete-input 32K Token budget still applies.",
+  "offline_debug_note": "The first offline replay reused an old public command wrapper and produced an unreferenced process receipt under that older scope. It was not used to score the real trial; later replay used an independent candidate and the unchanged public checker. Immutable raw-reference/results remain the scoring authority."
+}

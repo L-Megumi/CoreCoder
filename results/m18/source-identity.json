@@ -1,0 +1,120 @@
+{
+  "source": {
+    "source_files": 599,
+    "source_manifest_sha256": "d8ca90bdf160cad860c58ee12d0b265970576edea0e9a848215f71e3a1e4a313",
+    "snapshot_sha256": "18e3c63e768e773d91e112f44e92283e9bcf47558e49c1b7fb75a71a90ec9c41",
+    "changed_files": [
+      "researchcoder/orchestration/evidence.py",
+      "researchcoder/context/policy.py",
+      "researchcoder/context/coding_handoff.py",
+      "researchcoder/runtime/worker.py",
+      "tests/test_handoff_projection_contract.py"
+    ]
+  },
+  "changed_from_m17": [
+    {
+      "path": "corecoder/diagnose.py",
+      "before": "24759edae9ca9203915e46c3b49985358329a2b121d20458ab6a6a9df65691cb",
+      "after": "2f909b200f404d3e329660a6542c3f6310441a600a6a3150b03e94213433135b"
+    },
+    {
+      "path": "corecoder/diagnostic_output.py",
+      "before": "e8ffde45afe3921a798e3e6160257f56fcac3e44bb43fc614709f28127eec7c4",
+      "after": "03f952a8a78b4ed2bbafc155f1e280e36db414b6bf3f65786d2c94b0606835d4"
+    },
+    {
+      "path": "corecoder/diagnostic_policy.py",
+      "before": "513c27e2e94c3a70fc0b0e33213f8a755d388d6235d79d95f61f65cdf2d19d21",
+      "after": "c0b6909a6f9487ff4358b532989bad58d0ee6f53204e2cd44aba29a99eb6c065"
+    },
+    {
+      "path": "researchcoder/context/coding_handoff.py",
+      "before": "5a276c672775fc1d78afb8d8fc9f369bb3dcc6287a5bb3beb16607c4d2768099",
+      "after": "2512264f33d16e5430a5f946ba2351ff48fa64fba38db51694d498079ebba32d"
+    },
+    {
+      "path": "researchcoder/context/engine.py",
+      "before": "6605b4018fb2ca1164ba08fd89aa9aadd9d6a489f5b6772dc33b97af9b4c3b75",
+      "after": "540e4709f5185aad53b2fefb3442fa5b2d271a247c8a9fb2c46b19ef725b5fa8"
+    },
+    {
+      "path": "researchcoder/context/policy.py",
+      "before": "8cb13221a8b3fec6e2495dff0f9b90ca9392830a5f6728a82cc14c66ad292d13",
+      "after": "12aac4fc30e6563075f08c694b51d9d75713b902a0b4b3825c365ec32ea4cd49"
+    },
+    {
+      "path": "researchcoder/context/repair_state.py",
+      "before": "a5ef82421f92498e6ad31d557278e4069fd95c5a467d71cf6665226e1a7f3e22",
+      "after": "a484522038fcedefab9a83a37661cbe4e5efb8e84d818711f6fb51a88b4d775b"
+    },
+    {
+      "path": "researchcoder/evaluation/projects/consultation.py",
+      "before": "d6b59bcc894af72fee9db2d13d0455060613f19eae4322aae5c409e0b64fc923",
+      "after": "d0fa97bc84d80ee07293b032e869c484d954cd762127a30a29be46cb2e8149dd"
+    },
+    {
+      "path": "researchcoder/evaluation/projects/routing.py",
+      "before": "2c218c0460cdb35fff5444ec4454207bb8f9611cc497c75c996c233fbae5599c",
+      "after": "9ddcd58bd588bbdb812e0c6f464491c169553c018865bbd1dd8abe6b56a716a4"
+    },
+    {
+      "path": "researchcoder/orchestration/evidence.py",
+      "before": "8cff3e1d35e28012a28f74d91c9a8074b1110663638d9ad978ad92c1e0f36ec9",
+      "after": "7f04ac5dc10f657e633973a20d6401afd2db12168d76ce122a9d12147ee65cc6"
+    },
+    {
+      "path": "researchcoder/runtime/budget.py",
+      "before": "70352bbed8ec9a67a61e2134def28f2e5c737e708ce5a0a835b26570f0fbb68f",
+      "after": "467ff0b90bb389699fc8d19faa9229b8c1661a074f7caba0b7c7a7a21f78bbbb"
+    },
+    {
+      "path": "researchcoder/runtime/optimization.py",
+      "before": "c88f9384061a4a7a5016378ca25e4e273ca728f5c62bd824cb8ed0cf4b8e4c7f",
+      "after": "2fc17db1ec36da7b04149a6b96d20ee1bfbc926fc3c464c4f95fe245715d0268"
+    },
+    {
+      "path": "researchcoder/runtime/worker.py",
+      "before": "b1f0447d5654aa214acc4739ed13959e851bdb7585454dbb491dcfb093001ac6",
+      "after": "aca4f36e584f5f4b5a1cfb2e5e49f799b450177b1d3d91d29c34404ddd8f5e26"
+    },
+    {
+      "path": "tests/test_bounded_exchange_view.py",
+      "before": null,
+      "after": "a02dce610615da5a080098c606c08f8256fd4b4355a80a21b223e4f083bf010c"
+    },
+    {
+      "path": "tests/test_expert_latency_profile.py",
+      "before": null,
+      "after": "b2487615451b61fda3f559b53f181657818b136ad103dc5beb8095b2e4a3922e"
+    },
+    {
+      "path": "tests/test_handoff_projection_contract.py",
+      "before": null,
+      "after": "787664444dfe1cf2b17cfee091b442977b87673d1dea304f7de80ef700079fc7"
+    },
+    {
+      "path": "tests/test_report_repair_reserve.py",
+      "before": null,
+      "after": "f5e64f3fea8e4767ea0080a1e6715b156f1d302064de08c06ee9f4515fedf8d2"
+    }
+  ],
+  "executed_source_kind": "uncommitted_server_worktree_snapshot",
+  "source_files": 599,
+  "source_manifest_sha256": "d8ca90bdf160cad860c58ee12d0b265970576edea0e9a848215f71e3a1e4a313",
+  "snapshot_sha256": "18e3c63e768e773d91e112f44e92283e9bcf47558e49c1b7fb75a71a90ec9c41",
+  "archive": {
+    "schema_version": 1,
+    "filename": "m18-records.zip",
+    "bytes": 13458885,
+    "sha256": "6619801ed9066f96e730897cbcc588d134903593fd43a8d41fae87647569f542",
+    "members": 3290,
+    "source_files": 599,
+    "source_manifest_sha256": "d8ca90bdf160cad860c58ee12d0b265970576edea0e9a848215f71e3a1e4a313",
+    "model_requests": 76,
+    "unique_cases_passed": 4,
+    "trial_records_preserved": 10,
+    "owned_tunnel_closed": true
+  },
+  "public_commit_is_results_only": true,
+  "original_development_branch_not_committed_or_pushed": true
+}

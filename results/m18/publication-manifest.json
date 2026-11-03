@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "files": {
+    "failure-analysis.json": "8b669fff0f192aa19a59347e63ba46651590aba81f48009b54b9e1e67327e9e9",
+    "protocols.json": "ce2303d8ab6f925fa13cbe32a1c9a4533a1e7a081b5a57948eff3a8c66311312",
+    "publication-review.json": "c61c61de783853d84c593dc1890e6f4ec1553a86476f2109f683105a870f4e95",
+    "README.md": "1ea337d8d0276ddc25f76b5447664c6486462181ee8088616c1f8e7a78a99814",
+    "recompute.py": "b649a8c5dfa2ae7c8295e2768fa78d5d80736b8c173a29af7f3af41c8bb93d5b",
+    "source-identity.json": "669793bea561149ee981e2575b0e5d43aae3f464c9c397e7e7b9c981fb152eca",
+    "summary.json": "56a05ee87eafa07fdd2435a9e02d02220c6d23493e85b6617dd15f4b567e271a",
+    "trials.json": "9cdb2491b204766f1db825cdc61d8bb8d46c4bd8e12ee6603ca9ea3efd5bb10e"
+  }
+}
