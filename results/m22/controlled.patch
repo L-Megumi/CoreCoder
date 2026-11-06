@@ -1,0 +1,14 @@
+--- a/jsonpointer.py
++++ b/jsonpointer.py
+@@ -222,6 +222,11 @@
+ 
+         if isinstance(doc, Mapping):
+             return part
++
++        elif isinstance(doc, (str, bytes)):
++            # JSON strings are scalars, never traversable containers
++            raise JsonPointerException("Document '%s' does not support indexing, "
++                                       "must be mapping/sequence or support __getitem__" % type(doc))
+ 
+         elif isinstance(doc, Sequence):
+ 

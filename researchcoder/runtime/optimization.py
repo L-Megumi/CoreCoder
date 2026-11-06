@@ -14,7 +14,7 @@ class RuntimeOptimization(Contract):
     schema_version: int = 1
 
     def validate(self):
-        if self.coding_phase_version not in ("off", "repair-cycle-v1"):
+        if self.coding_phase_version not in ("off", "repair-cycle-v1", "corrective-edit-window-v1"):
             raise ValueError("Unknown coding phase policy")
         if self.coding_phase_version != "off" and self.version != "explicit-report-v1":
             raise ValueError("Coding phases require explicit completion")

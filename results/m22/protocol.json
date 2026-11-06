@@ -1,0 +1,49 @@
+{
+  "budget": {
+    "max_requests": 44,
+    "max_tokens": 800000,
+    "usd_admission": 0.5
+  },
+  "case": "jsonpointer_scalar",
+  "controlled_excluded_from_natural_performance": true,
+  "freeze_before_execution": true,
+  "job_limits": {
+    "context_tokens": 32000,
+    "http": 22,
+    "job_http": 22,
+    "job_seconds": 600,
+    "job_tokens": 400000,
+    "job_tools": 60,
+    "jobs": 1,
+    "output_tokens": 2048,
+    "tokens": 400000,
+    "usd_admission": 0.25
+  },
+  "max_output_tokens": 2048,
+  "model": "deepseek-flash",
+  "no_automatic_replay": true,
+  "planned": 2,
+  "policy": "edit-window-v1",
+  "protocol_id": "m22-jsonpointer-correction-v1",
+  "schedule": [
+    {
+      "arm": "controlled",
+      "case_id": "jsonpointer_scalar",
+      "planned_id": "jsonpointer_scalar-expert_assisted",
+      "protocol_sha256": "bedb898e353500e93b13a39421b955cab34476530b846573dc2264b69ec2b291",
+      "repeat": 1,
+      "scope": "live-01-controlled-jsonpointer"
+    },
+    {
+      "arm": "natural",
+      "case_id": "jsonpointer_scalar",
+      "planned_id": "jsonpointer_scalar-expert_assisted",
+      "protocol_sha256": "91f9ccb9c70e8a331128b684993c627d6e85df90c9dcb9722706e7cb29095b18",
+      "repeat": 1,
+      "scope": "live-02-natural-jsonpointer"
+    }
+  ],
+  "schema_version": 1,
+  "source_fingerprint": "5056f0338ffd2b787e2e5bb823b0d516f7e8901ecd885ce76d563a55e7c7f6d7",
+  "triggered_acceptance": "Public first failure with archived candidate digest, same Job, distinct real Workers, original public/F2P/P2P passed, workflow completed"
+}

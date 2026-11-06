@@ -1,0 +1,45 @@
+{
+  "archive_members": 677,
+  "before_snapshot_sha256": "f0d5d9ad7cc0a79909646727e175856324e0de5e644925824422af4ecc884684",
+  "full_regression": false,
+  "historical_records_modified": false,
+  "linux_tests": 60,
+  "private_archive_sha256": "c9a0789c6adab0a5ab012d058b0a91a25e69a24e6b9e7d1fad28cfe022557102",
+  "source_files": {
+    "researchcoder/context/coding_handoff.py": {
+      "after": "9a8de84ce83d01598934789101510c0cd686839eee8174dbe52e20f4b99f7cb0",
+      "before": "2512264f33d16e5430a5f946ba2351ff48fa64fba38db51694d498079ebba32d"
+    },
+    "researchcoder/evaluation/projects/correction_context.py": {
+      "after": "84331de02368f8f15f492f86ba330c74e51d4a8530ad2b8aaf59c5497cb05a3c",
+      "before": null
+    },
+    "researchcoder/evaluation/projects/runner.py": {
+      "after": "7032bf5ed40add3eb4832ab7ebfc6752aa773a2f9115f5e039b6fa78532a72c9",
+      "before": "4d22876b93ddcc30c2af9c07df5e937ceff2d03f9b18ee5e943d5f88062b8b67"
+    },
+    "researchcoder/runtime/budget.py": {
+      "after": "979f23329bd3167ecdc7d617018c69653effa405409453be7e592573aafaa771",
+      "before": "0f91e1643f9ddd4c059dc9afe82270e259c213d3ec3279ef90d4b18bc181a769"
+    },
+    "researchcoder/runtime/optimization.py": {
+      "after": "21af8c651eeb58a89b66d67065e1938aaa412c00ee4b71a15125b8612ce9a313",
+      "before": "1776d3f9d2e7806e55cd0016f9e70833a35de5d4ff4c17032180e291d37fda10"
+    },
+    "tests/test_corrective_round_budget.py": {
+      "after": "4cdd585de286bffe97531caaad7c1293f3f96f767efae7c0eaf7230b716526f4",
+      "before": null
+    },
+    "tests/test_edit_window_correction.py": {
+      "after": "cff5b6b97846b57a5027749c269cfa3dcaffd3a964005d7595dac6f7c94779b9",
+      "before": null
+    }
+  },
+  "status": "passed",
+  "test_targets": [
+    "tests/test_coding_handoff_context.py",
+    "tests/test_corrective_round_budget.py",
+    "tests/test_edit_window_correction.py",
+    "tests/test_project_repair_cycle.py"
+  ]
+}

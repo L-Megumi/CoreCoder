@@ -248,7 +248,7 @@ class RuntimeHooks:
         self._verification_reserve_seconds = float(verification_timeout)
 
     def coding_phase_instruction(self, agent):
-        if getattr(self.optimization, "coding_phase_version", "off") != "repair-cycle-v1":
+        if getattr(self.optimization, "coding_phase_version", "off") not in ("repair-cycle-v1", "corrective-edit-window-v1"):
             return None
         if agent.mutation_count:
             return None
@@ -275,7 +275,12 @@ class RuntimeHooks:
         remaining = b.limits.max_runtime_seconds - (time.monotonic() - b.started)
         if b.model_calls >= b.limits.max_model_calls - 1:
             return "model_call_reserve"
-        if b.rounds >= b.limits.max_rounds - 1:
+        # before_round already charged the current round. With two rounds
+        # available on entry, the corrective writer can act now and report next.
+        if getattr(self.optimization, "coding_phase_version", "off") == "corrective-edit-window-v1":
+            if b.rounds >= b.limits.max_rounds:
+                return "last_admitted_round"
+        elif b.rounds >= b.limits.max_rounds - 1:
             return "round_reserve"
         if b.tool_calls >= b.limits.max_tool_calls - 1:
             return "verification_tool_reserve"

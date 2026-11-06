@@ -1,0 +1,175 @@
+{
+  "m21_historical_audit": {
+    "checks": {
+      "bounded_same_budget": true,
+      "diagnostic_scope_verified": true,
+      "expected_source_and_permissions": true,
+      "feedback_in_real_request": true,
+      "honest_first_public_failure": true,
+      "live_corrective_worker": true,
+      "precondition_is_archived_change": true,
+      "route_authorized": true,
+      "same_job_new_worker_attempt": true,
+      "same_workspace_state": true,
+      "transport_complete": true
+    },
+    "condition": "unmodified_first_attempt",
+    "corrective_attempt": "attempt-15e5d85949a5408f88121ecae3654af5",
+    "corrective_attempt_started": true,
+    "corrective_changed_paths": [],
+    "corrective_effective_edits": 0,
+    "corrective_ok_write_events": 0,
+    "corrective_requests": 5,
+    "end_to_end": false,
+    "feedback_source_sha256": "8d10021310f27f0cb525a71118b09429ca4a9e8ee84ece1a7d584c0117fb4b51",
+    "first_attempt": "attempt-0301ed6619634dbcbb85bf2531dd69ad",
+    "first_termination": "verification_failed",
+    "job_id": "project-ca5ba8a6858543f6b4c3495ec798e76f",
+    "provider_calls": 16,
+    "public_history_sha256": "ea50955102bded0abce34f42433643b15b9658f7feef487eeaba6ae3e71677ef",
+    "raw_sha256": "d23633f22c689519f94a224fee74686de6275969afb94ab7cf3c855bad2c86fb",
+    "rounds": 2,
+    "terminal_status": "incomplete",
+    "triggered": true,
+    "verified_corrective_mutation": false,
+    "verified_repair": false
+  },
+  "planned": 2,
+  "protocol_id": "m22-jsonpointer-correction-v1",
+  "rows": [
+    {
+      "arm": "controlled",
+      "audit": {
+        "checks": {
+          "bounded_same_budget": true,
+          "diagnostic_scope_verified": true,
+          "expected_source_and_permissions": true,
+          "feedback_in_real_request": true,
+          "honest_first_public_failure": true,
+          "live_corrective_worker": true,
+          "precondition_is_archived_change": true,
+          "route_authorized": true,
+          "same_job_new_worker_attempt": true,
+          "same_workspace_state": true,
+          "transport_complete": true
+        },
+        "condition": "induced_first_attempt",
+        "corrective_attempt": "attempt-d5b3eb17a8244f3383bbb4bedd8f9f87",
+        "corrective_attempt_started": true,
+        "corrective_changed_paths": [
+          "jsonpointer.py"
+        ],
+        "corrective_effective_edits": 1,
+        "corrective_ok_write_events": 1,
+        "corrective_requests": 4,
+        "end_to_end": true,
+        "feedback_source_sha256": "fb35928dce116813303b8eb78bd071d5c21e31e05356ecae1640fbb9cd03fd87",
+        "first_attempt": "attempt-938757cf82644ce6b16f3d72b174ca3a",
+        "first_termination": "verification_failed",
+        "job_id": "project-e4364166fb504c0bbc88fbce4f3861fd",
+        "provider_calls": 16,
+        "public_history_sha256": "6bbfa6858d7f8d5866de1e750862d71531277a780389b2a47d5bc746976bb763",
+        "raw_sha256": "216e505e0042543dd6e2b4898641adb14600e1ef2225874fa3dd9cb15a58d0cb",
+        "rounds": 2,
+        "terminal_status": "succeeded",
+        "triggered": true,
+        "verified_corrective_mutation": true,
+        "verified_repair": true
+      },
+      "e2e": true,
+      "failure_kind": null,
+      "offline_replay": {
+        "candidate_sha256": "cbaa13a8484e36c49c470797d5de92da2c7830fb269ea58d143ebab5f1375496",
+        "checks": {
+          "f2p": {
+            "passed": true,
+            "passed_count": 4,
+            "total": 4
+          },
+          "p2p": {
+            "passed": true,
+            "passed_count": 7,
+            "total": 7
+          },
+          "public": {
+            "passed": true,
+            "passed_count": 1,
+            "total": 1
+          }
+        }
+      },
+      "pending": 0,
+      "requests": 16,
+      "scope_stop": null,
+      "started": true,
+      "status": "succeeded",
+      "terminal": true,
+      "tool_calls": 17,
+      "unknown": 0,
+      "usage": {
+        "completion_tokens": 4183,
+        "prompt_cache_hit_tokens": 26752,
+        "prompt_cache_miss_tokens": 118898,
+        "prompt_tokens": 145650,
+        "total_tokens": 149833
+      },
+      "wall_seconds": 45.652712
+    },
+    {
+      "arm": "natural",
+      "audit": {
+        "condition": "unmodified_first_attempt",
+        "corrective_attempt_started": false,
+        "end_to_end": true,
+        "job_id": "project-e4f6ae99d5cc4f64a0131c1ddebbd8fe",
+        "provider_calls": 13,
+        "raw_sha256": "52a26d1d7528277190d78127962ffe4cbc04bad81e9355e267e13d8784bff26d",
+        "rounds": 1,
+        "terminal_status": "succeeded",
+        "triggered": false,
+        "verified_repair": false
+      },
+      "e2e": true,
+      "failure_kind": null,
+      "offline_replay": {
+        "candidate_sha256": "ac9f2748daa3aae8cb852bf7feb14a97a536d608381dedfa648b02c7229ba162",
+        "checks": {
+          "f2p": {
+            "passed": true,
+            "passed_count": 4,
+            "total": 4
+          },
+          "p2p": {
+            "passed": true,
+            "passed_count": 7,
+            "total": 7
+          },
+          "public": {
+            "passed": true,
+            "passed_count": 1,
+            "total": 1
+          }
+        }
+      },
+      "pending": 0,
+      "requests": 13,
+      "scope_stop": null,
+      "started": true,
+      "status": "succeeded",
+      "terminal": true,
+      "tool_calls": 12,
+      "unknown": 0,
+      "usage": {
+        "completion_tokens": 2795,
+        "prompt_cache_hit_tokens": 20224,
+        "prompt_cache_miss_tokens": 82803,
+        "prompt_tokens": 103027,
+        "total_tokens": 105822
+      },
+      "wall_seconds": 33.575758
+    }
+  ],
+  "started": 2,
+  "stop_reason": null,
+  "terminal": 2
+}

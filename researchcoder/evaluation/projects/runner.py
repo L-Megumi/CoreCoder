@@ -63,9 +63,12 @@ class ProjectPolicy(Contract):
     completion_version: Literal["legacy-v1", "explicit-v1"] = "legacy-v1"
     progress_version: Literal["legacy-v1", "progress-v1"] = "legacy-v1"
     repair_cycle_version: Literal["off", "repair-cycle-v1"] = "off"
+    correction_context_version: Literal["off", "edit-window-v1"] = "off"
     schema_version: int = 1
 
     def validate(self):
+        if self.correction_context_version != "off" and self.repair_cycle_version != "repair-cycle-v1":
+            raise ValueError("Edit-window feedback requires the bounded repair cycle")
         if self.repair_cycle_version != "off" and (self.completion_version != "explicit-v1"
                 or self.progress_version != "progress-v1" or self.max_feedback_rounds != 1):
             raise ValueError("Repair cycle requires explicit completion, progress accounting and one correction")
@@ -85,6 +88,8 @@ class ProjectPolicy(Contract):
             value.pop("progress_version")
         if self.repair_cycle_version == "off":
             value.pop("repair_cycle_version")
+        if self.correction_context_version == "off":
+            value.pop("correction_context_version")
         return value
 
 
@@ -427,6 +432,39 @@ class ProjectEvaluationRunner:
                     break
                 seconds = policy.job_limits.max_runtime_seconds - (time.monotonic() - agent_started)
                 key = "coding-" + str(generation)
+                writer_instructions = instructions
+                use_window = (policy.correction_context_version == "edit-window-v1" and generation == 1
+                              and history and history[-1]["status"] == "failed")
+                if use_window:
+                    from .correction_context import INSTRUCTION as CORRECTION_INSTRUCTION, INSTRUCTION_SHA256, build_edit_window
+                    prior = raw["rounds"][-1]
+                    failure = history[-1]
+                    public_receipt = prior["public_receipt"] or prior.get("public_exception_receipt")
+                    if (not public_receipt or public_receipt.get("passed") is not False
+                            or failure["attempt_id"] != prior["result"]["attempt_id"]
+                            or prior["before"] != baseline.to_dict() or failure["source_digest"] != expected_current.digest):
+                        raise ProjectIntegrityError("Unbound public failure for corrective context")
+                    try:
+                        window = build_edit_window(source_root, project, baseline, expected_current, task.writable_paths)
+                    except (ValueError, OSError) as exc:
+                        raise ProjectIntegrityError("Corrective source evidence changed") from exc
+                    # Only the public verifier's actual observations enter the next
+                    # attempt. Source and stdout are carried as user data.
+                    failed_checks = [c["name"] for c in public_receipt.get("checks", ()) if c["passed"] is False]
+                    observation = dict(status="failed",failed_checks=[s[:120] for s in failed_checks[:5]],
+                                       exit_code=public_receipt["exit_code"])
+                    if not failed_checks:
+                        observation.update(stdout_head=failure["stdout"]["text"][:320],
+                                           stderr_tail=failure["stderr"]["text"][-320:])
+                    failure.update(edit_window=window, public_observation=observation)
+                    writer_instructions += CORRECTION_INSTRUCTION
+                    reference = io.put_json(job,failure)
+                    raw.setdefault("correction_contexts",[]).append(dict(task_id=key,
+                        producer_attempt_id=failure["attempt_id"],version=policy.correction_context_version,
+                        instruction_sha256=INSTRUCTION_SHA256, prompt_sha256=hashlib.sha256(writer_instructions.encode()).hexdigest(),
+                        reference=reference.to_dict()))
+                    trace.emit("project.correction_context.prepared", revision_id=policy.correction_context_version,
+                               count=len(window["windows"]), artifact_id=reference.artifact_id, workspace_revision=expected_current.digest)
                 try:
                     limits = single_limits(policy.task_limits, budget, seconds)
                     if policy.repair_cycle_version != "off":
@@ -499,7 +537,7 @@ class ProjectEvaluationRunner:
                 spec = CodingTaskSpec(job_id=job, task_id=key, objective=objective,
                     workspace=WorkspaceRef(workspace_id="candidate", root=str(project), source_manifest_sha256=workspace_revision(project)),
                     inputs=(TaskInput(role="raw_log", reference=log),),
-                    policy=replace(permissions, profile="project-expert-reread-v1") if expert_context else permissions,
+                    policy=replace(permissions, profile="project-expert-reread-v1") if expert_context or use_window else permissions,
                     verification=command,
                     budget=BudgetSpec(max_rounds=limits.max_rounds, max_tool_calls=limits.max_tool_calls, max_context_tokens=limits.max_context_tokens))
                 current_model = feedback_models[generation-1] if generation and generation <= len(feedback_models) else model
@@ -519,10 +557,10 @@ class ProjectEvaluationRunner:
                 config = ExecutionConfig(artifact_root=str(io.root), allowed_workspaces=(str(project),), max_policy=spec.policy,
                     permitted_verifications=(command,), protected_files=verification_protected,
                     limits=limits, model=current_model, model_options=model_options, cancel_event=cancel_event,
-                    system_instructions=instructions, record_requests=True, worker_command=worker_command,
+                    system_instructions=writer_instructions, record_requests=True, worker_command=worker_command,
                     permission_recovery=recovery, coding_continuation=continuation,
                     optimization=(RuntimeOptimization(compact_reports=True, version="explicit-report-v1",
-                                      coding_phase_version=policy.repair_cycle_version)
+                                      coding_phase_version="corrective-edit-window-v1" if use_window else policy.repair_cycle_version)
                                   if policy.completion_version == "explicit-v1" else None),
                     context_policy=writer_context_policy, evidence_context=structured_context)
                 write_json(directory / (key + ".input.json"), spec)
@@ -568,6 +606,8 @@ class ProjectEvaluationRunner:
                 row = dict(generation=generation, result=result.to_dict(), record=record,
                     public_receipt=receipt, public_receipt_error=error,
                     before=before.to_dict(), after=after.to_dict(), changed_paths=list(changed), budget=budget.snapshot())
+                if policy.correction_context_version != "off":
+                    row["attempt_changed_paths"] = list(assert_allowed_changes(before, after, task.writable_paths))
                 if policy.progress_version == "progress-v1":
                     snapshots = [value["coding_progress"] for reference in result.outputs
                         if isinstance((value := io.read_json(reference)), dict) and "coding_progress" in value]

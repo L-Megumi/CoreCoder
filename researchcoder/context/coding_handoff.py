@@ -53,6 +53,8 @@ class CodingHandoffContext:
             fields = ("attempt_id", "source_digest", "status", "stdout", "stderr", "changed_paths", "hypothesis")
             if isinstance(failure, dict) and "public_exception_ref" in failure:
                 fields += ("public_exception_ref",)
+            if isinstance(failure, dict) and "edit_window" in failure:
+                fields += ("edit_window","public_observation")
             _object(failure, fields)
             identifier(failure["attempt_id"])
             digest(failure["source_digest"])
@@ -67,6 +69,9 @@ class CodingHandoffContext:
                 raise ValueError("Invalid previous model summary")
             if "public_exception_ref" in failure:
                 self._public_exception(failure)
+            if "edit_window" in failure:
+                from researchcoder.evaluation.projects.correction_context import validate_worker_window
+                validate_worker_window(failure["edit_window"], request, sources, failure)
             observed = {k: copy.deepcopy(v) for k, v in failure.items() if k != "hypothesis"}
             binding = self._document(observed, "failed_attempt", failure["source_digest"],
                                      dict(artifact=history_ref.to_dict(), producer_attempt_id=failure["attempt_id"]))
@@ -334,6 +339,10 @@ class CodingHandoffContext:
                                  view_truncated=len(raw[key]["text"]) > 700)
             if "public_exception_ref" in raw:
                 card["public_execution_observation"] = self._public_exception(raw)
+            if "edit_window" in raw:
+                card["public_observation"] = raw["public_observation"]
+                if card["current_eligible"]:
+                    card["edit_window"] = raw["edit_window"]
             failures.append(card)
         data = dict(schema_version=1, kind=KIND, citation_scope=UPSTREAM_SCOPE,
             selected_producers=self.selected, context_refs=self.context_refs,
@@ -423,6 +432,10 @@ class CodingHandoffContext:
                 public = self._public_exception(raw)
                 public["artifact"] = index(artifacts, public.pop("reference"))
                 row["public_execution_observation"] = public
+            if "edit_window" in raw:
+                row["public_observation"] = raw["public_observation"]
+                if row["current_eligible"]:
+                    row["edit_window"] = raw["edit_window"]
             failures.append(row)
 
         context_refs = [index(artifacts, value) for value in self.context_refs]
