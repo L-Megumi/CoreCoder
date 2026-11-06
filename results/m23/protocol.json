@@ -1,0 +1,90 @@
+{
+  "audit_sha256": "b7ddcc1e80c4e4d85154b2d96e6c43ae8517598d1946451a55077ae865377ec2",
+  "batch_runner_sha256": "207d103c21bc1eb5b0ea54e61144238cd32bb220065c841fb8428529a90677bd",
+  "budget": {
+    "max_requests": 132,
+    "max_tokens": 2400000,
+    "max_tools": 360,
+    "usd_admission": 1.5
+  },
+  "model": "deepseek-flash",
+  "no_automatic_replay": true,
+  "no_midbatch_tuning": true,
+  "per_job": {
+    "context_tokens": 32000,
+    "http": 22,
+    "job_http": 22,
+    "job_seconds": 600,
+    "job_tokens": 400000,
+    "job_tools": 60,
+    "jobs": 1,
+    "output_tokens": 2048,
+    "tokens": 400000,
+    "usd_admission": 0.25
+  },
+  "planned": 6,
+  "policies": {
+    "policy": {
+      "correction_context_version": "edit-window-v1"
+    },
+    "writer_context_policy": {
+      "handoff_view_version": "indexed-refs-v2",
+      "writer_guidance_version": "focused-repair-v2"
+    }
+  },
+  "protocol_id": "m23-stability-v1",
+  "safety_stop_global": true,
+  "schedule": [
+    {
+      "arm": "natural",
+      "case_id": "packaging-requirement-hash",
+      "planned_id": "packaging-requirement-hash-expert_assisted",
+      "protocol_sha256": "505e6e338badec6b0c005dd5550f7ea239f60901cf759af05968d894b442ed10",
+      "repeat": 1,
+      "scope": "live-01-packaging-requirement-hash"
+    },
+    {
+      "arm": "natural",
+      "case_id": "sam-checkpoint-resume",
+      "planned_id": "sam-checkpoint-resume-expert_assisted",
+      "protocol_sha256": "7095dd7464e382bb6cd1bb3c2088166b5d60eb6a4739020e0f284d11d1a79df7",
+      "repeat": 1,
+      "scope": "live-02-sam-checkpoint-resume"
+    },
+    {
+      "arm": "natural",
+      "case_id": "packaging-requirement-hash",
+      "planned_id": "packaging-requirement-hash-expert_assisted",
+      "protocol_sha256": "9f66ab02e81b9dcf60f509ba5734a306f6d38ee3d9e229cd7def4c91611907b8",
+      "repeat": 2,
+      "scope": "live-03-packaging-requirement-hash"
+    },
+    {
+      "arm": "natural",
+      "case_id": "sam-checkpoint-resume",
+      "planned_id": "sam-checkpoint-resume-expert_assisted",
+      "protocol_sha256": "90351fab92138bd342dc2218f737b567055661569f628f982dfa0824de0bfe94",
+      "repeat": 2,
+      "scope": "live-04-sam-checkpoint-resume"
+    },
+    {
+      "arm": "natural",
+      "case_id": "packaging-requirement-hash",
+      "planned_id": "packaging-requirement-hash-expert_assisted",
+      "protocol_sha256": "f1adfd6981426363939cd2ba0883719929016d41b685f1a918fdb5fae7871db1",
+      "repeat": 3,
+      "scope": "live-05-packaging-requirement-hash"
+    },
+    {
+      "arm": "natural",
+      "case_id": "sam-checkpoint-resume",
+      "planned_id": "sam-checkpoint-resume-expert_assisted",
+      "protocol_sha256": "83579d43542e0537fb36619ec5445d25ac8a16b4ce0fdadeddd935f98e2e2588",
+      "repeat": 3,
+      "scope": "live-06-sam-checkpoint-resume"
+    }
+  ],
+  "schema_version": 1,
+  "source_fingerprint": "700ef24fdfa4bc7a07bc6ef662483c6e6c696c2d1c67a255cbb1ab4912170f54",
+  "thinking": "disabled"
+}

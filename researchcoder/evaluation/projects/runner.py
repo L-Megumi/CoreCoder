@@ -247,6 +247,9 @@ class ProjectEvaluationRunner:
             if (writer_context_policy.role != "repair"
                     or writer_context_policy.coding_source_mode not in ("observed-source-v1", "observed-source-v2")):
                 raise ValueError("Writer context requires the explicit observed-source Repair strategy")
+        indexed_handoff = writer_context_policy is not None and writer_context_policy.handoff_view_version == "indexed-refs-v2"
+        if indexed_handoff and expert_policy.mode != "off" and expert_policy.report_version != "readiness-v3":
+            raise ValueError("Indexed handoff requires evidence-ready v3 experts")
         expert_models = dict(expert_models or {})
         if expert_models and (model.provider != "scripted" or any(
                 role not in ("code_analysis", "log_analysis") or not isinstance(value, ModelSpec)
@@ -409,7 +412,7 @@ class ProjectEvaluationRunner:
                     remaining_seconds=features.remaining_seconds, model_options=model_options,
                     cancel_event=cancel_event,
                     role_models={role: expert_models[role] for role in decision.roles if role in expert_models},
-                    worker_command=worker_command, initial_receipt=initial)
+                    worker_command=worker_command, initial_receipt=initial, indexed_handoff=indexed_handoff)
                 raw["consultations"].append(consultation.to_dict())
                 raw["records"].extend(consultation.records)
                 if capture_manifest(project) != expected_current:
@@ -751,7 +754,7 @@ class ProjectEvaluationRunner:
                             remaining_seconds=features.remaining_seconds,
                             model_options=model_options, cancel_event=cancel_event,
                             role_models={role: expert_models[role] for role in decision.roles if role in expert_models},
-                            worker_command=worker_command, handoff=handoff)
+                            worker_command=worker_command, handoff=handoff, indexed_handoff=indexed_handoff)
                         raw["consultations"].append(consultation.to_dict())
                         raw["records"].extend(consultation.records)
                         try:

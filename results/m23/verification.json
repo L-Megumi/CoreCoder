@@ -1,0 +1,58 @@
+{
+  "before_snapshot_sha256": "4c46906ce30b64882be16e4f28eec8073986cf3f7a8cc986cc811ab62b2f712f",
+  "frozen_protocol_sha256": "9f6b3c9326406bb29ee57c05a819d888d25fad92abe853214d1027117e45d87a",
+  "full_regression": false,
+  "independent_validation_sha256": "3d42bf9559c709a3d8531e57d37274ee43ca96cf852ae57118afc47854d55e5e",
+  "linux_targeted_passed": 82,
+  "previous_release": "4bbd8cc0ebc239e38e2ff3feba90d99bcc8188b7",
+  "private_archive_members": 461,
+  "private_archive_sha256": "60bd359b999d9962383dba2390df8a04da6a668581eba8d283e593673c80a6e7",
+  "source_manifest_sha256": "d57746822bd43c15c5342c705fe72070677f870a43b7b34c5e8c5c022a79af3c",
+  "test_targets": [
+    "tests/test_coding_handoff_context.py",
+    "tests/test_handoff_projection_contract.py",
+    "tests/test_indexed_evidence_handoff.py",
+    "tests/test_m12_expert_followup.py",
+    "tests/test_project_repair_cycle.py",
+    "tests/test_writer_edit_handoff.py"
+  ],
+  "tested_snapshot_sha256": "7383ab5dacc2eac0f676df5b6deaea0c72b04af3c2d1b341ecb0a633a39eadee",
+  "validated_source": {
+    "researchcoder/context/coding_handoff.py": {
+      "after": "04221f3735932912b3f3f87f315741eefb8d1b9b9a1ee88a3f66edf7607fc61b",
+      "before": "9a8de84ce83d01598934789101510c0cd686839eee8174dbe52e20f4b99f7cb0"
+    },
+    "researchcoder/context/policy.py": {
+      "after": "4d46a34255169f5ba3e6ddc86977e868e8bdac8cae622917cb607409123dd6cd",
+      "before": "12aac4fc30e6563075f08c694b51d9d75713b902a0b4b3825c365ec32ea4cd49"
+    },
+    "researchcoder/context/repair_state.py": {
+      "after": "0486b49c6ac5e083ef78a166d38c24dc94902ca4ffb4f7605be9a02eb80b7ae2",
+      "before": "a484522038fcedefab9a83a37661cbe4e5efb8e84d818711f6fb51a88b4d775b"
+    },
+    "researchcoder/evaluation/projects/consultation.py": {
+      "after": "4db48fab8a228d4ff4707a5dfd1aca2fc26de8a3555f24070e289a107b914776",
+      "before": "d0fa97bc84d80ee07293b032e869c484d954cd762127a30a29be46cb2e8149dd"
+    },
+    "researchcoder/evaluation/projects/runner.py": {
+      "after": "94e720318ae8f36df7ae84601240045c699687f564ce22b29c2e77608776f7d1",
+      "before": "7032bf5ed40add3eb4832ab7ebfc6752aa773a2f9115f5e039b6fa78532a72c9"
+    },
+    "researchcoder/handoff_codec.py": {
+      "after": "6f5187c8b3e3a8a0751ad790bdc397329db11873073019f34ec69e01c349d9e6",
+      "before": null
+    },
+    "researchcoder/orchestration/evidence.py": {
+      "after": "bd1498074fa8ce7b7fd152b28dbc9f44013d9505af41a996255d8c866242924a",
+      "before": "7f04ac5dc10f657e633973a20d6401afd2db12168d76ce122a9d12147ee65cc6"
+    },
+    "tests/test_indexed_evidence_handoff.py": {
+      "after": "11aca2d4183cd34b4d433e898b492bd61d6ad4ee5aaa8827b8cdb89552ab0d0c",
+      "before": null
+    },
+    "tests/test_writer_edit_handoff.py": {
+      "after": "c36f668ce3c996b614f7816c12dd50cb08411f17f715df5f8046a3bb6f09e96b",
+      "before": null
+    }
+  }
+}

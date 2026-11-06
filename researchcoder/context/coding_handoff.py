@@ -9,6 +9,7 @@ import json
 
 from corecoder.citation_scope import UPSTREAM_SCOPE
 from researchcoder.contracts import ArtifactRef, EvidenceRef, digest, identifier, relative
+from researchcoder.handoff_codec import INDEXED_VIEW, expand_indexed_references
 from .coding_source import message_key
 
 
@@ -212,8 +213,8 @@ class CodingHandoffContext:
         projection = data.get("excerpt_policy")
         if projection is not None:
             _object(projection, ("version", "prefix_chars"))
-            if (self.request.context_policy.handoff_view_version != "bounded-excerpts-v1"
-                    or projection["version"] != "bounded-excerpts-v1"
+            if (projection["version"] not in ("bounded-excerpts-v1", INDEXED_VIEW)
+                    or self.request.context_policy.handoff_view_version != projection["version"]
                     or type(projection["prefix_chars"]) is not int
                     or not 0 <= projection["prefix_chars"] <= 1200
                     or len(json.dumps(data, ensure_ascii=False)) > 50000):
@@ -224,6 +225,8 @@ class CodingHandoffContext:
         observations, paths, claims = (data.get(k) for k in ("observations", "candidate_source_paths", "hypotheses"))
         if not all(isinstance(v, list) for v in (observations, paths, claims)) or len(observations) > 128:
             raise ValueError("Invalid bounded consultation records")
+        if projection is not None and projection["version"] == INDEXED_VIEW:
+            observations = expand_indexed_references(observations, data.get("producer_table"))
         mapped = {}
         entries = {entry.path: entry for entry in self.sources.current.entries}
         for path in paths:
@@ -457,7 +460,7 @@ class CodingHandoffContext:
             data, ensure_ascii=False, allow_nan=False, separators=(",", ":"))
         # This local character cap is distinct from the model Token budget.
         # The existing Context Builder still admits the complete provider input.
-        limit = 32000 if self.request.context_policy.handoff_view_version == "bounded-excerpts-v1" else COMPACT_MAX_CHARS
+        limit = 32000 if self.request.context_policy.handoff_view_version != "legacy-v1" else COMPACT_MAX_CHARS
         if len(content) > limit:
             # Dropping an action/verification clause silently would reproduce
             # the very continuity failure this view addresses. The documents

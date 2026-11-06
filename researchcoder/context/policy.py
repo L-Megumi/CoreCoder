@@ -17,8 +17,8 @@ class ContextPolicy(Contract):
     working_set_version: Literal["legacy-v1", "active-v1"] = "legacy-v1"
     repair_state_version: Literal["off", "state-v1"] = "off"
     expert_followup_version: Literal["off", "followup-v1", "followup-v2", "followup-v3"] = "off"
-    writer_guidance_version: Literal["legacy-v1", "focused-repair-v1"] = "legacy-v1"
-    handoff_view_version: Literal["legacy-v1", "bounded-excerpts-v1"] = "legacy-v1"
+    writer_guidance_version: Literal["legacy-v1", "focused-repair-v1", "focused-repair-v2"] = "legacy-v1"
+    handoff_view_version: Literal["legacy-v1", "bounded-excerpts-v1", "indexed-refs-v2"] = "legacy-v1"
     schema_version: int = 1
 
     def validate(self):

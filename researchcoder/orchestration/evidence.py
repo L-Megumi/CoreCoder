@@ -3,6 +3,7 @@
 from dataclasses import dataclass
 import hashlib
 import json
+from researchcoder.handoff_codec import INDEXED_VIEW, index_references
 from corecoder.citation_scope import UPSTREAM_SCOPE
 from researchcoder.contracts import Contract, EvidenceRef, ArtifactRef, identifier, digest
 
@@ -110,9 +111,11 @@ class EvidenceExchange:
             job_id=self.job_id, workspace_revision=expected_revision, items=tuple(items), hypothesis_artifacts=tuple(hypotheses)
         )
 
-    def context(self, bundle, *, max_chars=50000, compact_excerpts=False):
+    def context(self, bundle, *, max_chars=50000, compact_excerpts=False, indexed_refs=False):
         if type(max_chars) is not int or not 1000 <= max_chars <= 50000 or type(compact_excerpts) is not bool:
             raise ValueError("Expected bounded controller-selected view options")
+        if type(indexed_refs) is not bool or (indexed_refs and not compact_excerpts):
+            raise ValueError("Indexed references require a bounded handoff")
         # Only controller-registered producer results may be rendered. A caller
         # cannot manufacture a bundle with self-declared producer identities.
         producers = tuple(dict.fromkeys(i.reference.producer_task_id for i in bundle.items))
@@ -141,25 +144,21 @@ class EvidenceExchange:
                     hypotheses=report["diagnosis"].get("hypotheses", []),
                 )
             )
-        context = json.dumps(
-            dict(schema_version=1, workspace_revision=bundle.workspace_revision,
-                 citation_scope=UPSTREAM_SCOPE, observations=observed, hypotheses=claims),
-            ensure_ascii=False,
-        )
+        view = dict(schema_version=1, workspace_revision=bundle.workspace_revision,
+                    citation_scope=UPSTREAM_SCOPE, observations=observed, hypotheses=claims)
         if compact_excerpts:
-            excerpt_policy = dict(version="bounded-excerpts-v1", prefix_chars=1200)
-            context = json.dumps(dict(schema_version=1, workspace_revision=bundle.workspace_revision,
-                citation_scope=UPSTREAM_SCOPE, observations=observed, hypotheses=claims,
-                excerpt_policy=excerpt_policy), ensure_ascii=False)
+            excerpt_policy = dict(version=INDEXED_VIEW if indexed_refs else "bounded-excerpts-v1", prefix_chars=1200)
+            view["excerpt_policy"] = excerpt_policy
+            if indexed_refs:
+                view["producer_table"] = index_references(observed)
+        context = json.dumps(view, ensure_ascii=False)
         if len(context) > max_chars and compact_excerpts:
             originals = [row["excerpt"] for row in observed]
             def render(limit):
                 for row, original in zip(observed, originals):
                     row["excerpt"] = original[:limit]
                 excerpt_policy["prefix_chars"] = limit
-                return json.dumps(dict(schema_version=1, workspace_revision=bundle.workspace_revision,
-                    citation_scope=UPSTREAM_SCOPE, observations=observed, hypotheses=claims,
-                    excerpt_policy=excerpt_policy), ensure_ascii=False)
+                return json.dumps(view, ensure_ascii=False)
             context = render(0)
             if len(context) > max_chars:
                 raise EvidenceContextCapacityError("Evidence reference metadata exceeds bounded view")

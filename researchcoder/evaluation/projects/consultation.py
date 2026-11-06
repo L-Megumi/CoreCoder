@@ -23,7 +23,7 @@ from researchcoder.contracts import (
 from researchcoder.evaluation.runner import rejected_tool_events
 from researchcoder.orchestration.budget import JobBudget
 from researchcoder.orchestration.contracts import OrchestrationTask, PlanRevision, SchedulerResult
-from researchcoder.orchestration.evidence import EvidenceBundle, EvidenceContextCapacityError
+from researchcoder.orchestration.evidence import INDEXED_VIEW, EvidenceBundle, EvidenceContextCapacityError
 from researchcoder.orchestration.profiles import PROFILES
 from researchcoder.orchestration.scheduler import DAGScheduler, SchedulerConfig, TaskTemplate
 from researchcoder.runtime import ExecutionConfig
@@ -231,7 +231,7 @@ class _StopOnUnsafe:
 def execute_consultation(*, job_id, candidate, manifest, public_task, public_failure, io, budget,
         model, decision, policy, features, remaining_seconds, episode_id="experts-1", public_log=None,
         model_options=None, cancel_event=None, role_models=None, worker_command=None, handoff=None,
-        initial_receipt=None):
+        initial_receipt=None, indexed_handoff=False):
     """Execute a controller-authorized Code-first expert episode, without writes.
 
     ``manifest`` identifies the current candidate; ``public_task.manifest`` may
@@ -485,13 +485,14 @@ def execute_consultation(*, job_id, candidate, manifest, public_task, public_fai
             view_cap = 50000 - len(json.dumps(additions, ensure_ascii=False)) - 64
             if view_cap < 1000:
                 raise EvidenceContextCapacityError("Source mappings exceed bounded consultation view")
-            data = json.loads(scheduler.exchange.context(bundle, max_chars=view_cap, compact_excerpts=True))
+            data = json.loads(scheduler.exchange.context(bundle, max_chars=view_cap, compact_excerpts=True,
+                                                       indexed_refs=indexed_handoff))
         else:
             data = json.loads(scheduler.exchange.context(bundle))
         data.update(additions)
         context = json.dumps(data, ensure_ascii=False, allow_nan=False)
         if policy.report_version == "readiness-v3":
-            trace.emit("consultation.context.projected", revision_id="bounded-excerpts-v1",
+            trace.emit("consultation.context.projected", revision_id=INDEXED_VIEW if indexed_handoff else "bounded-excerpts-v1",
                        count=len(bundle.items), amount=len(context))
         if len(context) > 50000:
             context = ""

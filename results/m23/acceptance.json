@@ -1,0 +1,84 @@
+{
+  "cases": {
+    "packaging-requirement-hash": {
+      "planned": 3,
+      "started": 1,
+      "three_of_three_observed": false,
+      "verified_end_to_end": 0
+    },
+    "sam-checkpoint-resume": {
+      "planned": 3,
+      "started": 0,
+      "three_of_three_observed": false,
+      "verified_end_to_end": 0
+    }
+  },
+  "cost_semantics": "Conservative usage estimate, not invoice",
+  "protocol_id": "m23-stability-v1",
+  "rows": [
+    {
+      "audit_status": "unavailable",
+      "batch_status": "cancelled",
+      "case_id": "packaging-requirement-hash",
+      "controller_stop": "usage_unknown",
+      "independently_revalidated": false,
+      "repeat": 1,
+      "scope": "live-01-packaging-requirement-hash",
+      "started": true,
+      "terminal": true,
+      "transport_accounting": {
+        "pending": 0,
+        "requests": 1,
+        "tokens": 6812,
+        "unknown": 1,
+        "usd": 0.0038868
+      }
+    },
+    {
+      "batch_status": "cancelled_before_start",
+      "case_id": "sam-checkpoint-resume",
+      "independently_revalidated": false,
+      "repeat": 1,
+      "scope": "live-02-sam-checkpoint-resume",
+      "started": false,
+      "terminal": false
+    },
+    {
+      "batch_status": "cancelled_before_start",
+      "case_id": "packaging-requirement-hash",
+      "independently_revalidated": false,
+      "repeat": 2,
+      "scope": "live-03-packaging-requirement-hash",
+      "started": false,
+      "terminal": false
+    },
+    {
+      "batch_status": "cancelled_before_start",
+      "case_id": "sam-checkpoint-resume",
+      "independently_revalidated": false,
+      "repeat": 2,
+      "scope": "live-04-sam-checkpoint-resume",
+      "started": false,
+      "terminal": false
+    },
+    {
+      "batch_status": "cancelled_before_start",
+      "case_id": "packaging-requirement-hash",
+      "independently_revalidated": false,
+      "repeat": 3,
+      "scope": "live-05-packaging-requirement-hash",
+      "started": false,
+      "terminal": false
+    },
+    {
+      "batch_status": "cancelled_before_start",
+      "case_id": "sam-checkpoint-resume",
+      "independently_revalidated": false,
+      "repeat": 3,
+      "scope": "live-06-sam-checkpoint-resume",
+      "started": false,
+      "terminal": false
+    }
+  ],
+  "stopped": true
+}
