@@ -1,0 +1,13 @@
+{
+  "adjudication_sha256": "d0c03a83904333165d2382ea608cd8d6b8fcc9ed511e66975a8d0147c00c660c",
+  "archive_members": 574,
+  "archive_sha256": "d1e04bb7a4878f0188382c3720eebd1d713d8b6c3e4811011a048aeb0b4709d0",
+  "fresh_replay_sha256": "4bd3c55de0a3c3fa8ed911159d7a94da42974865db5f3ca25426ad3ba215b198",
+  "frozen_protocol_sha256": "6055bc1a9803e817c685e1e7fdd2c02916ff0266bd35ec732ecfb7fddb227bfb",
+  "full_regression": false,
+  "offline_model_requests": 0,
+  "replayed_candidates": 0,
+  "runtime_source_manifest": "d57746822bd43c15c5342c705fe72070677f870a43b7b34c5e8c5c022a79af3c",
+  "unchanged_runtime_targeted_tests": 82,
+  "v1_public_release": "6f229a0943451542c293a0437ff9d06a89ee5fa0"
+}

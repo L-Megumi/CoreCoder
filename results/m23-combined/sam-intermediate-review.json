@@ -1,0 +1,35 @@
+{
+  "checks": {
+    "f2p": {
+      "named_passed": 3,
+      "named_total": 3,
+      "passed": true,
+      "source_sha256": "7911886098875164d955ffbaba3afe18d8bb9808e24207ebf99fb9741324ce66",
+      "spec_sha256": "822e57b66cca3a6ece9f8edb59663f6ec306fe2a021d2e642149258e1463f708",
+      "stdout_sha256": "bc352e1303edb1124d89e78352864815e32a57a08712a36ebf8a2ee7a70cd307"
+    },
+    "p2p": {
+      "named_passed": 3,
+      "named_total": 3,
+      "passed": true,
+      "source_sha256": "7911886098875164d955ffbaba3afe18d8bb9808e24207ebf99fb9741324ce66",
+      "spec_sha256": "7453265088027c6cb0ca62d8b05fb883c63274c37f01f0bac251957a1c0b31e1",
+      "stdout_sha256": "75c3986d86892d3c69e23cc0b197f36e8d0f0d37890ce9d3ba1237622c0b897e"
+    },
+    "public": {
+      "named_passed": 0,
+      "named_total": 0,
+      "passed": true,
+      "source_sha256": "7911886098875164d955ffbaba3afe18d8bb9808e24207ebf99fb9741324ce66",
+      "spec_sha256": "54e4fe117b99528f47a35f1688c690db644bea01e1f9c64d4af2b808d8bbbaef",
+      "stdout_sha256": "f20d0cd4d31670be5a02253f8521e9d3fb0da5a7be4320e1f3a40292c9010c7d"
+    }
+  },
+  "kind": "post-stop offline review of a captured intermediate edit",
+  "official_final_checks_executed": false,
+  "paid_calls": 0,
+  "raw_trial_sha256": "561636cd1bc163fc6039d1322732164800ef9fc13965ddb8593e773ae597c30c",
+  "sam_py_sha256": "7911886098875164d955ffbaba3afe18d8bb9808e24207ebf99fb9741324ce66",
+  "status": "needs_review",
+  "trial_e2e": false
+}

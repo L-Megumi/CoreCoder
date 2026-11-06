@@ -1,0 +1,10 @@
+{
+  "combined_record_sha256": "bb3f6598a8719fc706fdd0c6696deb448f99d2b3a8b14f229056590965186ccc",
+  "full_regression": false,
+  "independent_replay_model_calls": 0,
+  "independent_replay_record_sha256": "c3eac16edc83c7f4ba372eb59fc21476d165f2bda4756d21399c3b0b75191c6e",
+  "inherited_linux_targeted_tests": 82,
+  "measured_product_commit": "6f229a0943451542c293a0437ff9d06a89ee5fa0",
+  "measured_source_manifest_sha256": "d57746822bd43c15c5342c705fe72070677f870a43b7b34c5e8c5c022a79af3c",
+  "publication_base": "6f229a0943451542c293a0437ff9d06a89ee5fa0"
+}

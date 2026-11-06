@@ -1,0 +1,515 @@
+{
+  "accounting": {
+    "historical_unknown_reservation": {
+      "requests": 1,
+      "tokens": 6812,
+      "usd": 0.0038868
+    },
+    "including_v1_admitted": 15,
+    "including_v1_conservative_usd": 0.047417999999999995,
+    "including_v1_token_charge": 142391,
+    "logical_slots_admitted": 14,
+    "logical_slots_conservative_token_charge": 135579,
+    "logical_slots_conservative_usd": 0.0435312,
+    "logical_slots_known_actual_tokens": 135579,
+    "unknown_or_pending_in_logical_slots": 0
+  },
+  "cases": {
+    "packaging-requirement-hash": {
+      "planned": 3,
+      "started": 1,
+      "three_of_three_observed": false,
+      "verified_end_to_end": 0
+    },
+    "sam-checkpoint-resume": {
+      "planned": 3,
+      "started": 1,
+      "three_of_three_observed": false,
+      "verified_end_to_end": 0
+    }
+  },
+  "cost_semantics": "Conservative estimate; unknown reservations separate.",
+  "hidden_terminal_commands": {
+    "f2p": {
+      "fresh_offline_executions": 0,
+      "original_confirmed_executions": 0,
+      "unconfirmed_original_slots": 0,
+      "valid_original_receipts": 0
+    },
+    "p2p": {
+      "fresh_offline_executions": 0,
+      "original_confirmed_executions": 0,
+      "unconfirmed_original_slots": 0,
+      "valid_original_receipts": 0
+    }
+  },
+  "rows": [
+    {
+      "archive_terminal": true,
+      "case_id": "packaging-requirement-hash",
+      "checks": {
+        "f2p": {
+          "named_expected": 5,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": null
+        },
+        "p2p": {
+          "named_expected": 10,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": null
+        },
+        "public": {
+          "named_expected": 0,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": null
+        }
+      },
+      "classification": "controller_safety_stop",
+      "engine_e2e": false,
+      "engine_status": "incomplete",
+      "failure_kind": "setup_or_integrity_error",
+      "fresh_offline": {
+        "fresh": {},
+        "replay_status": "retained_first_trial"
+      },
+      "ledger_status": "incomplete",
+      "original_hidden": {
+        "f2p": {
+          "executions": 0,
+          "status": "not_scheduled",
+          "valid_receipts": 0
+        },
+        "p2p": {
+          "executions": 0,
+          "status": "not_scheduled",
+          "valid_receipts": 0
+        }
+      },
+      "parent_scope_protocol_sha256": "b84291107faedb74f88d17d52a66f45637b96f2dc1770c202a4286a187ba3327",
+      "physical_protocol": "m23-stability-v2",
+      "policy_intact": false,
+      "raw_sha256": "6cb15a0fec7a41dd82b1dfe09cbfa2be5b6521cbfe1e22b0a52ac9b5be68d4a2",
+      "repeat": 1,
+      "scope": "live-01-packaging-requirement-hash",
+      "scope_protocol_sha256": "b84291107faedb74f88d17d52a66f45637b96f2dc1770c202a4286a187ba3327",
+      "started": true,
+      "stop_reason": "safety_or_permission_violation",
+      "tool_calls": null,
+      "usage": {
+        "admitted": 5,
+        "all_calls_actual_tokens": 48103,
+        "conservative_token_charge": 48103,
+        "conservative_usd_charge": 0.0152193,
+        "known_actual_tokens": {
+          "completion_tokens": 876,
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 47227,
+          "prompt_tokens": 47227,
+          "total_tokens": 48103
+        },
+        "known_estimated_usd": 0.0152193,
+        "known_usage": 5,
+        "ledger_available": true,
+        "pending": 0,
+        "unknown_usage": 0,
+        "unresolved": 0,
+        "unresolved_reserved_tokens": 0,
+        "unresolved_reserved_usd": 0.0
+      },
+      "verified_e2e": null,
+      "wall_seconds": 15.158875
+    },
+    {
+      "archive_terminal": true,
+      "case_id": "sam-checkpoint-resume",
+      "checks": {
+        "f2p": {
+          "named_expected": 3,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": null
+        },
+        "p2p": {
+          "named_expected": 3,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": null
+        },
+        "public": {
+          "named_expected": 0,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": false
+        }
+      },
+      "classification": "controller_safety_stop",
+      "engine_e2e": false,
+      "engine_status": "needs_review",
+      "failure_kind": "policy_violation",
+      "fresh_offline": {
+        "fresh": {},
+        "replay_status": "no_final_manifest"
+      },
+      "ledger_status": "needs_review",
+      "original_hidden": {
+        "f2p": {
+          "executions": 0,
+          "status": "not_scheduled",
+          "valid_receipts": 0
+        },
+        "p2p": {
+          "executions": 0,
+          "status": "not_scheduled",
+          "valid_receipts": 0
+        }
+      },
+      "parent_scope_protocol_sha256": "85777af9cc052aa0ccb3350d7852f6a32c1d4bf2646187998092ddcc26c98942",
+      "physical_protocol": "m23-stability-v2-continuation",
+      "policy_intact": false,
+      "raw_sha256": "561636cd1bc163fc6039d1322732164800ef9fc13965ddb8593e773ae597c30c",
+      "repeat": 1,
+      "scope": "live-02-sam-checkpoint-resume",
+      "scope_protocol_sha256": "3e999394be9d02a722445855ec18d78bb56477046585e123e6008a0aba4be98c",
+      "started": true,
+      "stop_reason": "permission_violation",
+      "tool_calls": 13,
+      "usage": {
+        "admitted": 9,
+        "all_calls_actual_tokens": 87476,
+        "conservative_token_charge": 87476,
+        "conservative_usd_charge": 0.028311899999999997,
+        "known_actual_tokens": {
+          "completion_tokens": 2299,
+          "prompt_cache_hit_tokens": 8704,
+          "prompt_cache_miss_tokens": 76473,
+          "prompt_tokens": 85177,
+          "total_tokens": 87476
+        },
+        "known_estimated_usd": 0.028311899999999997,
+        "known_usage": 9,
+        "ledger_available": true,
+        "pending": 0,
+        "unknown_usage": 0,
+        "unresolved": 0,
+        "unresolved_reserved_tokens": 0,
+        "unresolved_reserved_usd": 0.0
+      },
+      "verified_e2e": null,
+      "wall_seconds": 33.416689
+    },
+    {
+      "archive_terminal": false,
+      "case_id": "packaging-requirement-hash",
+      "checks": {
+        "f2p": {
+          "named_expected": 5,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": null
+        },
+        "p2p": {
+          "named_expected": 10,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": null
+        },
+        "public": {
+          "named_expected": 0,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": null
+        }
+      },
+      "classification": "cancelled_before_start",
+      "engine_e2e": null,
+      "failure_kind": null,
+      "fresh_offline": {
+        "fresh": {},
+        "replay_status": "not_started"
+      },
+      "ledger_status": "cancelled_before_start",
+      "original_hidden": {
+        "f2p": {
+          "executions": 0,
+          "status": "not_started",
+          "valid_receipts": 0
+        },
+        "p2p": {
+          "executions": 0,
+          "status": "not_started",
+          "valid_receipts": 0
+        }
+      },
+      "parent_scope_protocol_sha256": "c196c98d3aa5124804739ac4959601a2cc2e9308f83c544448ce908edf6f1d07",
+      "physical_protocol": "m23-stability-v2-continuation",
+      "repeat": 2,
+      "scope": "live-03-packaging-requirement-hash",
+      "scope_protocol_sha256": "0d6c6272bcc9cb78e29682ad5d5a09413c50c335788eaeccc2b5838aceb5969c",
+      "started": false,
+      "stop_reason": null,
+      "usage": {
+        "admitted": 0,
+        "all_calls_actual_tokens": null,
+        "conservative_token_charge": 0,
+        "conservative_usd_charge": 0.0,
+        "known_actual_tokens": {
+          "completion_tokens": 0,
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 0,
+          "prompt_tokens": 0,
+          "total_tokens": 0
+        },
+        "known_estimated_usd": 0.0,
+        "known_usage": 0,
+        "ledger_available": false,
+        "pending": 0,
+        "unknown_usage": 0,
+        "unresolved": 0,
+        "unresolved_reserved_tokens": 0,
+        "unresolved_reserved_usd": 0.0
+      },
+      "verified_e2e": null
+    },
+    {
+      "archive_terminal": false,
+      "case_id": "sam-checkpoint-resume",
+      "checks": {
+        "f2p": {
+          "named_expected": 3,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": null
+        },
+        "p2p": {
+          "named_expected": 3,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": null
+        },
+        "public": {
+          "named_expected": 0,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": null
+        }
+      },
+      "classification": "cancelled_before_start",
+      "engine_e2e": null,
+      "failure_kind": null,
+      "fresh_offline": {
+        "fresh": {},
+        "replay_status": "not_started"
+      },
+      "ledger_status": "cancelled_before_start",
+      "original_hidden": {
+        "f2p": {
+          "executions": 0,
+          "status": "not_started",
+          "valid_receipts": 0
+        },
+        "p2p": {
+          "executions": 0,
+          "status": "not_started",
+          "valid_receipts": 0
+        }
+      },
+      "parent_scope_protocol_sha256": "df350f94e687c500adb6712132b7f816f45d705bf6347557afa13fb87490565b",
+      "physical_protocol": "m23-stability-v2-continuation",
+      "repeat": 2,
+      "scope": "live-04-sam-checkpoint-resume",
+      "scope_protocol_sha256": "696d3271ba14366423cf97761047434d4cc66fc9451272b6954da20be1a01930",
+      "started": false,
+      "stop_reason": null,
+      "usage": {
+        "admitted": 0,
+        "all_calls_actual_tokens": null,
+        "conservative_token_charge": 0,
+        "conservative_usd_charge": 0.0,
+        "known_actual_tokens": {
+          "completion_tokens": 0,
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 0,
+          "prompt_tokens": 0,
+          "total_tokens": 0
+        },
+        "known_estimated_usd": 0.0,
+        "known_usage": 0,
+        "ledger_available": false,
+        "pending": 0,
+        "unknown_usage": 0,
+        "unresolved": 0,
+        "unresolved_reserved_tokens": 0,
+        "unresolved_reserved_usd": 0.0
+      },
+      "verified_e2e": null
+    },
+    {
+      "archive_terminal": false,
+      "case_id": "packaging-requirement-hash",
+      "checks": {
+        "f2p": {
+          "named_expected": 5,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": null
+        },
+        "p2p": {
+          "named_expected": 10,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": null
+        },
+        "public": {
+          "named_expected": 0,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": null
+        }
+      },
+      "classification": "cancelled_before_start",
+      "engine_e2e": null,
+      "failure_kind": null,
+      "fresh_offline": {
+        "fresh": {},
+        "replay_status": "not_started"
+      },
+      "ledger_status": "cancelled_before_start",
+      "original_hidden": {
+        "f2p": {
+          "executions": 0,
+          "status": "not_started",
+          "valid_receipts": 0
+        },
+        "p2p": {
+          "executions": 0,
+          "status": "not_started",
+          "valid_receipts": 0
+        }
+      },
+      "parent_scope_protocol_sha256": "88989cc6589724d3dec390ae0e14f087f6a55c466513a5bbc6105566f2c670c7",
+      "physical_protocol": "m23-stability-v2-continuation",
+      "repeat": 3,
+      "scope": "live-05-packaging-requirement-hash",
+      "scope_protocol_sha256": "6c1cdf8690fd6f1521c094525ca8394b47c28a0e62206d326d2900f868dc6704",
+      "started": false,
+      "stop_reason": null,
+      "usage": {
+        "admitted": 0,
+        "all_calls_actual_tokens": null,
+        "conservative_token_charge": 0,
+        "conservative_usd_charge": 0.0,
+        "known_actual_tokens": {
+          "completion_tokens": 0,
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 0,
+          "prompt_tokens": 0,
+          "total_tokens": 0
+        },
+        "known_estimated_usd": 0.0,
+        "known_usage": 0,
+        "ledger_available": false,
+        "pending": 0,
+        "unknown_usage": 0,
+        "unresolved": 0,
+        "unresolved_reserved_tokens": 0,
+        "unresolved_reserved_usd": 0.0
+      },
+      "verified_e2e": null
+    },
+    {
+      "archive_terminal": false,
+      "case_id": "sam-checkpoint-resume",
+      "checks": {
+        "f2p": {
+          "named_expected": 3,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": null
+        },
+        "p2p": {
+          "named_expected": 3,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": null
+        },
+        "public": {
+          "named_expected": 0,
+          "named_passed": null,
+          "passed": null,
+          "recorded_commands": 0,
+          "valid_receipt": null
+        }
+      },
+      "classification": "cancelled_before_start",
+      "engine_e2e": null,
+      "failure_kind": null,
+      "fresh_offline": {
+        "fresh": {},
+        "replay_status": "not_started"
+      },
+      "ledger_status": "cancelled_before_start",
+      "original_hidden": {
+        "f2p": {
+          "executions": 0,
+          "status": "not_started",
+          "valid_receipts": 0
+        },
+        "p2p": {
+          "executions": 0,
+          "status": "not_started",
+          "valid_receipts": 0
+        }
+      },
+      "parent_scope_protocol_sha256": "f9a53361fc43b45e1d65e771d5e2db566d2bd7d4c738ddd0096ba1775b3fbb3d",
+      "physical_protocol": "m23-stability-v2-continuation",
+      "repeat": 3,
+      "scope": "live-06-sam-checkpoint-resume",
+      "scope_protocol_sha256": "dd8131b614587085863c606fd08a119076cb3da8d6431757ae03a55f373b6cc9",
+      "started": false,
+      "stop_reason": null,
+      "usage": {
+        "admitted": 0,
+        "all_calls_actual_tokens": null,
+        "conservative_token_charge": 0,
+        "conservative_usd_charge": 0.0,
+        "known_actual_tokens": {
+          "completion_tokens": 0,
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 0,
+          "prompt_tokens": 0,
+          "total_tokens": 0
+        },
+        "known_estimated_usd": 0.0,
+        "known_usage": 0,
+        "ledger_available": false,
+        "pending": 0,
+        "unknown_usage": 0,
+        "unresolved": 0,
+        "unresolved_reserved_tokens": 0,
+        "unresolved_reserved_usd": 0.0
+      },
+      "verified_e2e": null
+    }
+  ],
+  "scope": "one original plus five previously unstarted slots"
+}

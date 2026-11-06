@@ -1,0 +1,104 @@
+{
+  "audit_sha256": "ef5ab88f12e242a9ba330be571548419599509b1ab97fb53d8d81ce3b8bc4cf3",
+  "batch_runner_sha256": "9f141c23a912393aa40f6e2c48b19982b7d0d248218fc671a390d62cd57276d2",
+  "budget": {
+    "max_requests": 126,
+    "max_tokens": 2388000,
+    "max_tools": 360,
+    "usd_admission": 1.494
+  },
+  "cumulative_authorization": {
+    "requests": 132,
+    "tokens": 2400000,
+    "usd": 1.5
+  },
+  "model": "deepseek-flash",
+  "no_automatic_replay": true,
+  "no_midbatch_tuning": true,
+  "per_job": {
+    "context_tokens": 32000,
+    "http": 21,
+    "job_http": 21,
+    "job_seconds": 600,
+    "job_tokens": 398000,
+    "job_tools": 60,
+    "jobs": 1,
+    "output_tokens": 2048,
+    "tokens": 398000,
+    "usd_admission": 0.249
+  },
+  "planned": 6,
+  "policies": {
+    "policy": {
+      "correction_context_version": "edit-window-v1"
+    },
+    "writer_context_policy": {
+      "handoff_view_version": "indexed-refs-v2",
+      "writer_guidance_version": "focused-repair-v2"
+    }
+  },
+  "previous_liability": {
+    "debt": {
+      "requests": 1,
+      "tokens": 6812,
+      "usd": 0.0038868
+    },
+    "status": "reserved_unknown_not_reclassified"
+  },
+  "protocol_id": "m23-stability-v2",
+  "route_gate_sha256": "731be47365114f0916123797e68c3025cc8d8fcfb9d772ca88562c49782c9b24",
+  "safety_stop_global": true,
+  "schedule": [
+    {
+      "arm": "natural",
+      "case_id": "packaging-requirement-hash",
+      "planned_id": "packaging-requirement-hash-expert_assisted",
+      "protocol_sha256": "b84291107faedb74f88d17d52a66f45637b96f2dc1770c202a4286a187ba3327",
+      "repeat": 1,
+      "scope": "live-01-packaging-requirement-hash"
+    },
+    {
+      "arm": "natural",
+      "case_id": "sam-checkpoint-resume",
+      "planned_id": "sam-checkpoint-resume-expert_assisted",
+      "protocol_sha256": "85777af9cc052aa0ccb3350d7852f6a32c1d4bf2646187998092ddcc26c98942",
+      "repeat": 1,
+      "scope": "live-02-sam-checkpoint-resume"
+    },
+    {
+      "arm": "natural",
+      "case_id": "packaging-requirement-hash",
+      "planned_id": "packaging-requirement-hash-expert_assisted",
+      "protocol_sha256": "c196c98d3aa5124804739ac4959601a2cc2e9308f83c544448ce908edf6f1d07",
+      "repeat": 2,
+      "scope": "live-03-packaging-requirement-hash"
+    },
+    {
+      "arm": "natural",
+      "case_id": "sam-checkpoint-resume",
+      "planned_id": "sam-checkpoint-resume-expert_assisted",
+      "protocol_sha256": "df350f94e687c500adb6712132b7f816f45d705bf6347557afa13fb87490565b",
+      "repeat": 2,
+      "scope": "live-04-sam-checkpoint-resume"
+    },
+    {
+      "arm": "natural",
+      "case_id": "packaging-requirement-hash",
+      "planned_id": "packaging-requirement-hash-expert_assisted",
+      "protocol_sha256": "88989cc6589724d3dec390ae0e14f087f6a55c466513a5bbc6105566f2c670c7",
+      "repeat": 3,
+      "scope": "live-05-packaging-requirement-hash"
+    },
+    {
+      "arm": "natural",
+      "case_id": "sam-checkpoint-resume",
+      "planned_id": "sam-checkpoint-resume-expert_assisted",
+      "protocol_sha256": "f9a53361fc43b45e1d65e771d5e2db566d2bd7d4c738ddd0096ba1775b3fbb3d",
+      "repeat": 3,
+      "scope": "live-06-sam-checkpoint-resume"
+    }
+  ],
+  "schema_version": 1,
+  "source_fingerprint": "700ef24fdfa4bc7a07bc6ef662483c6e6c696c2d1c67a255cbb1ab4912170f54",
+  "thinking": "disabled"
+}

@@ -2,6 +2,8 @@
 
 面向 Python 工程与深度学习实验排错的 Multi-Agent Coding System。系统将日志和源码观察组织为可追溯证据，在受控预算内完成调查、专家交接、代码修改与独立验证，同时保留通用编程入口。
 
+[Packaging 与 SAM 六个原定试验位及独立验收](results/m23-combined/README.md) · [首次停止与根因](results/m23-v2/README.md)
+
 [M23 专家证据交接修复、定向验收与中断记录](results/m23/README.md)
 
 [M22 两份实测修复补丁、独立复核及 M21 逐轮写入勘误](results/m22/README.md)

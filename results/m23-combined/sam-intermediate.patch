@@ -1,0 +1,19 @@
+--- a/sam.py
++++ b/sam.py
+@@ -10,6 +10,16 @@
+ 
+         self.base_optimizer = base_optimizer(self.param_groups, **kwargs)
+         self.param_groups = self.base_optimizer.param_groups
++
++    def load_state_dict(self, state_dict):
++        super(SAM, self).load_state_dict(state_dict)
++        # the base optimizer holds (and reads) its own param_groups, so reload
++        # the restored groups (lr, momentum, weight_decay, ...) into it as well
++        self.base_optimizer.param_groups = self.param_groups
++        self.base_optimizer.state = self.state
++        if "defaults" in state_dict:
++            self.base_optimizer.defaults = state_dict["defaults"]
++        return self
+ 
+     @torch.no_grad()
+     def first_step(self, zero_grad=False):
