@@ -1,0 +1,35 @@
+[
+  {
+    "case_id": "jsonpointer_scalar",
+    "repeat": 2,
+    "condition": "unmodified_first_attempt",
+    "job_id": "project-ca5ba8a6858543f6b4c3495ec798e76f",
+    "rounds": 2,
+    "provider_calls": 16,
+    "raw_sha256": "d23633f22c689519f94a224fee74686de6275969afb94ab7cf3c855bad2c86fb",
+    "terminal_status": "incomplete",
+    "end_to_end": false,
+    "corrective_attempt_started": true,
+    "triggered": true,
+    "verified_repair": false,
+    "checks": {
+      "honest_first_public_failure": true,
+      "precondition_is_archived_change": true,
+      "same_job_new_worker_attempt": true,
+      "same_workspace_state": true,
+      "feedback_in_real_request": true,
+      "diagnostic_scope_verified": true,
+      "live_corrective_worker": true,
+      "transport_complete": true,
+      "bounded_same_budget": true,
+      "route_authorized": true,
+      "expected_source_and_permissions": true
+    },
+    "first_attempt": "attempt-0301ed6619634dbcbb85bf2531dd69ad",
+    "corrective_attempt": "attempt-15e5d85949a5408f88121ecae3654af5",
+    "corrective_requests": 5,
+    "feedback_source_sha256": "8d10021310f27f0cb525a71118b09429ca4a9e8ee84ece1a7d584c0117fb4b51",
+    "public_history_sha256": "ea50955102bded0abce34f42433643b15b9658f7feef487eeaba6ae3e71677ef",
+    "first_termination": "verification_failed"
+  }
+]

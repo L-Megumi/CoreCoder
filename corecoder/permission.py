@@ -12,7 +12,8 @@ import uuid
 REASONS = frozenset({
     "outside_workspace", "public_read_path_mismatch", "write_not_allowed",
     "sensitive_target", "unknown_target", "path_unavailable", "correction_exhausted",
-    "policy_disabled", "current_read_required", "tool_not_allowed", "guard_rejected",
+    "policy_disabled", "current_read_required", "source_changed_since_read",
+    "source_digest_unavailable", "tool_not_allowed", "guard_rejected",
 })
 CATEGORIES = frozenset({
     "public_check", "sensitive", "symlink", "outside_workspace", "unknown",
@@ -31,9 +32,32 @@ _FEEDBACK = {
     "correction_exhausted": "The permitted parameter correction has already been used",
     "policy_disabled": "Parameter correction is not enabled for this execution",
     "current_read_required": "Unauthorized baseline write: re-read current candidate source after expert handoff",
+    "source_changed_since_read": "Unauthorized baseline write: the candidate source changed since its last observed read",
+    "source_digest_unavailable": "Unauthorized baseline write: the current candidate source digest could not be verified",
     "tool_not_allowed": "Unauthorized baseline tool",
     "guard_rejected": "The requested operation was rejected by the controller guard",
 }
+
+
+class CodingGuardRejection(ValueError):
+    """Trusted pre-execution decision. Only the auditing wrapper creates a receipt.
+
+    Keep the original unaudited guard messages for existing coding-loop callers.
+    Neither the model nor the exception text supplies the audit classification.
+    """
+
+    def __init__(self, reason_code):
+        if reason_code not in {
+            "tool_not_allowed", "outside_workspace", "write_not_allowed", "path_unavailable",
+            "current_read_required", "source_changed_since_read", "source_digest_unavailable",
+        }:
+            raise ValueError("Unknown coding guard decision")
+        self.reason_code = reason_code
+        legacy = {
+            "outside_workspace": "Unauthorized baseline write",
+            "source_changed_since_read": _FEEDBACK["current_read_required"],
+        }
+        super().__init__(legacy.get(reason_code, _FEEDBACK[reason_code]))
 
 
 def validate_permission_receipt(value):

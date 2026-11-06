@@ -124,7 +124,22 @@ def classify_permission_denial(spec, tool, target, *, reason_code="outside_works
 
     if normalized is not None and _sensitive(normalized):
         return receipt("sensitive_target", "sensitive")
-    if safe_tool in ("write_file", "edit_file", "bash", "agent"):
+    if safe_tool in ("write_file", "edit_file"):
+        # Report the decision at the guard branch, without inspecting file
+        # contents or guessing from exception text. All writes remain terminal.
+        categories = {
+            "current_read_required": "workspace_file",
+            "source_changed_since_read": "workspace_file",
+            "source_digest_unavailable": "workspace_file",
+            "write_not_allowed": "protected_source",
+            "outside_workspace": "outside_workspace",
+            "tool_not_allowed": "tool",
+            "path_unavailable": "unknown",
+        }
+        if original_reason in categories:
+            return receipt(original_reason, categories[original_reason])
+        return receipt("guard_rejected", "unknown")
+    if safe_tool in ("bash", "agent"):
         return receipt("write_not_allowed", "protected_source" if target in spec.public_check_paths else "unknown")
     if safe_tool != "read_file":
         return receipt("tool_not_allowed", "tool")

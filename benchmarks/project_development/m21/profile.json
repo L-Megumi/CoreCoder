@@ -1,0 +1,91 @@
+{
+  "expert_policy": {
+    "assignment_version": "focused-v1",
+    "expert_limits": {
+      "max_context_tokens": 16000,
+      "max_model_calls": 6,
+      "max_output_tokens": 2048,
+      "max_rounds": 6,
+      "max_runtime_seconds": 180,
+      "max_tool_calls": 10,
+      "max_total_tokens": 80000,
+      "schema_version": 1
+    },
+    "initial_mode": "code-first-v1",
+    "latency_profile": "streaming-v1",
+    "max_episodes": 1,
+    "max_workers": 2,
+    "mode": "public-failure-v1",
+    "report_version": "readiness-v3",
+    "schedule_version": "serial-parallel-v2",
+    "schema_version": 1,
+    "working_set_version": "active-v1",
+    "writer_min_model_calls": 12,
+    "writer_min_seconds": 90,
+    "writer_min_tool_calls": 3,
+    "writer_min_total_tokens": 20000
+  },
+  "handoff_policy": {
+    "closure_version": "reserve-incomplete-v1",
+    "max_handoffs": 1,
+    "mode": "local-stop-v3",
+    "request_version": "explicit-request-v1",
+    "schema_version": 1
+  },
+  "model": {
+    "base_url": "https://api.deepseek.com",
+    "credential_env": "DEEPSEEK_API_KEY",
+    "model": "deepseek-flash",
+    "provider": "openai",
+    "schema_version": 1,
+    "turns": []
+  },
+  "model_options": {
+    "schema_version": 1,
+    "thinking": "disabled"
+  },
+  "permission_recovery_mode": "bounded-public-read-v1",
+  "policy": {
+    "completion_version": "explicit-v1",
+    "job_limits": {
+      "max_model_calls": 22,
+      "max_runtime_seconds": 600,
+      "max_tool_calls": 60,
+      "max_total_tokens": 400000,
+      "schema_version": 1
+    },
+    "max_feedback_rounds": 1,
+    "progress_version": "progress-v1",
+    "repair_cycle_version": "repair-cycle-v1",
+    "schema_version": 1,
+    "stop_on_unknown_usage": true,
+    "task_limits": {
+      "max_context_tokens": 32000,
+      "max_model_calls": 12,
+      "max_output_tokens": 2048,
+      "max_rounds": 10,
+      "max_runtime_seconds": 300,
+      "max_tool_calls": 24,
+      "max_total_tokens": 200000,
+      "schema_version": 1
+    }
+  },
+  "public_execution_policy": {
+    "mode": "candidate-exception-v1",
+    "schema_version": 1
+  },
+  "schema_version": 1,
+  "writer_context_policy": {
+    "allow_recovery": true,
+    "coding_source_mode": "observed-source-v2",
+    "expert_followup_version": "followup-v3",
+    "handoff_view_version": "bounded-excerpts-v1",
+    "max_records": 32,
+    "repair_state_version": "state-v1",
+    "role": "repair",
+    "schema_version": 1,
+    "strategy": "evidence",
+    "working_set_version": "active-v1",
+    "writer_guidance_version": "focused-repair-v1"
+  }
+}

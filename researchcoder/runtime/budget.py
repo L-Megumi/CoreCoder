@@ -381,7 +381,7 @@ class RuntimeHooks:
                         + self._coding_fixed_prefix_tokens + len(CODING_FINAL_REPORT) // 3 + 2)
         if self.permission_recovery_session is not None:
             from corecoder.workflow import RepairAgent
-            from corecoder.permission import PermissionDenied
+            from corecoder.permission import CodingGuardRejection, PermissionDenied
             from pathlib import Path
             if isinstance(agent, RepairAgent):
                 original = agent.tool_guard
@@ -391,6 +391,9 @@ class RuntimeHooks:
                     if original is not None:
                         try:
                             original(name, arguments)
+                        except CodingGuardRejection as exc:
+                            receipt = session.deny(name, target, reason_code=exc.reason_code)
+                            raise PermissionDenied.from_receipt(receipt) from None
                         except (KeyError, TypeError, ValueError, OSError, RuntimeError):
                             receipt = session.deny(name, target, reason_code='guard_rejected')
                             raise PermissionDenied.from_receipt(receipt) from None

@@ -1,0 +1,95 @@
+{
+  "budget": {
+    "max_requests": 220,
+    "max_tokens": 4000000,
+    "usd_admission": 2.5
+  },
+  "controlled_probe": "Separate conditional mechanism check only if no natural public-failure correction, no safety stop, max one additional job.",
+  "experimental_units": "8 repeat trials (4 historical cases x2) and 2 authored development cases x1, reported separately",
+  "model": "deepseek-flash",
+  "no_midbatch_tuning": true,
+  "output_limit": 2048,
+  "per_job": {
+    "max_requests": 22,
+    "max_tokens": 400000,
+    "max_usd": 0.25
+  },
+  "planned": 10,
+  "protocol_id": "m21-closure-v1",
+  "safety_stop_global": true,
+  "schedule": [
+    {
+      "arm": "repeat",
+      "case_id": "packaging-requirement-hash",
+      "planned_id": "packaging-requirement-hash-expert_assisted",
+      "repeat": 1,
+      "scope": "live-01-packaging-requirement-hash"
+    },
+    {
+      "arm": "repeat",
+      "case_id": "sam-checkpoint-resume",
+      "planned_id": "sam-checkpoint-resume-expert_assisted",
+      "repeat": 1,
+      "scope": "live-02-sam-checkpoint-resume"
+    },
+    {
+      "arm": "repeat",
+      "case_id": "jsonpointer_scalar",
+      "planned_id": "jsonpointer_scalar-expert_assisted",
+      "repeat": 1,
+      "scope": "live-03-jsonpointer_scalar"
+    },
+    {
+      "arm": "repeat",
+      "case_id": "itsdangerous_future",
+      "planned_id": "itsdangerous_future-expert_assisted",
+      "repeat": 1,
+      "scope": "live-04-itsdangerous_future"
+    },
+    {
+      "arm": "new_development",
+      "case_id": "stream_utf8_chunks",
+      "planned_id": "stream_utf8_chunks-expert_assisted",
+      "repeat": 1,
+      "scope": "live-05-stream_utf8_chunks"
+    },
+    {
+      "arm": "new_development",
+      "case_id": "stable_shard_merge",
+      "planned_id": "stable_shard_merge-expert_assisted",
+      "repeat": 1,
+      "scope": "live-06-stable_shard_merge"
+    },
+    {
+      "arm": "repeat",
+      "case_id": "jsonpointer_scalar",
+      "planned_id": "jsonpointer_scalar-expert_assisted",
+      "repeat": 2,
+      "scope": "live-07-jsonpointer_scalar"
+    },
+    {
+      "arm": "repeat",
+      "case_id": "itsdangerous_future",
+      "planned_id": "itsdangerous_future-expert_assisted",
+      "repeat": 2,
+      "scope": "live-08-itsdangerous_future"
+    },
+    {
+      "arm": "repeat",
+      "case_id": "packaging-requirement-hash",
+      "planned_id": "packaging-requirement-hash-expert_assisted",
+      "repeat": 2,
+      "scope": "live-09-packaging-requirement-hash"
+    },
+    {
+      "arm": "repeat",
+      "case_id": "sam-checkpoint-resume",
+      "planned_id": "sam-checkpoint-resume-expert_assisted",
+      "repeat": 2,
+      "scope": "live-10-sam-checkpoint-resume"
+    }
+  ],
+  "schema_version": 1,
+  "source_fingerprint": "0b4b4b3797c1fe46f6bf928be2d80d2486291570eb505666d06a32f013e939fb",
+  "thinking": false
+}

@@ -3,7 +3,7 @@
 from pathlib import Path
 import uuid
 from openai import APIError
-from corecoder.permission import PermissionAuditError, PermissionDenied
+from corecoder.permission import CodingGuardRejection, PermissionAuditError, PermissionDenied
 from corecoder.workflow import RepairAgent, RepairInvestigationLimit, RepairProgressStalled, RepairFinalizationToolRequest, project_directory, run_verification, workspace_revision, file_digest
 from researchcoder.contracts import VerificationResult, OutputSlice
 from researchcoder.runtime.protocol import CodingTaskResult
@@ -22,19 +22,29 @@ def run_single_agent(spec, request, io, factory, hooks, protected_guard):
 
     def guard(name, arguments):
         if name not in spec.policy.allowed_tool_names:
-            raise ValueError("Unauthorized baseline tool")
+            raise CodingGuardRejection("tool_not_allowed")
         if name in ("write_file", "edit_file"):
-            target = Path(arguments["file_path"]).resolve()
-            if not target.is_relative_to(root) or target.relative_to(root).as_posix() not in spec.policy.writable_paths:
-                raise ValueError("Unauthorized baseline write")
+            try:
+                target = Path(arguments["file_path"]).resolve()
+            except (KeyError, TypeError, ValueError, OSError, RuntimeError):
+                raise CodingGuardRejection("path_unavailable") from None
+            if not target.is_relative_to(root):
+                raise CodingGuardRejection("outside_workspace")
+            if target.relative_to(root).as_posix() not in spec.policy.writable_paths:
+                raise CodingGuardRejection("write_not_allowed")
             if spec.policy.profile == "project-expert-reread-v1":
                 # RepairAgent caches only successful reads whose source digest
                 # still matched after reading. Retain per-file observations when
                 # an unrelated edit clears its ordinary output cache.
                 observed_reads.update({key[0]: key[-1] for key in agent.read_cache})
-                current = file_digest(target)
-                if observed_reads.get(str(target)) != current:
-                    raise ValueError("Unauthorized baseline write: re-read current candidate source after expert handoff")
+                try:
+                    current = file_digest(target)
+                except (OSError, ValueError):
+                    raise CodingGuardRejection("source_digest_unavailable") from None
+                if str(target) not in observed_reads:
+                    raise CodingGuardRejection("current_read_required")
+                if observed_reads[str(target)] != current:
+                    raise CodingGuardRejection("source_changed_since_read")
 
     # This is task input, not a fabricated diagnosis artifact. RepairAgent itself
     # supplies the original scoped coding tools, audit, version tracking and loop.

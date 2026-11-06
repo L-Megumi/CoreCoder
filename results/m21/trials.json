@@ -1,0 +1,473 @@
+[
+  {
+    "action_phase_events": 0,
+    "archived": true,
+    "arm": "repeat",
+    "cache_unknown_requests": 0,
+    "case_id": "packaging-requirement-hash",
+    "corrective_writer_requests": 0,
+    "cost_complete": true,
+    "e2e": false,
+    "f2p": null,
+    "failure_kind": "consultation_context_unavailable",
+    "feedback_attempts": 0,
+    "guard_reasons": {},
+    "known_peak_upper_usd": 0.0195339,
+    "known_requests": 6,
+    "known_usage": {
+      "completion_tokens": 1811,
+      "prompt_cache_hit_tokens": 3840,
+      "prompt_cache_miss_tokens": 54029,
+      "prompt_tokens": 57869,
+      "total_tokens": 59680
+    },
+    "native_status": "incomplete",
+    "p2p": null,
+    "pending": 0,
+    "provider_unknown": 0,
+    "public_passes": [],
+    "raw_sha256": "821c47d3a439df31d552e2b9cf82dedb2558b55204ccf5d18bd46f6591c41724",
+    "repeat": 1,
+    "requests": 6,
+    "runtime_usage_unknown_attempts": 0,
+    "scope_stop": null,
+    "started": true,
+    "status": "incomplete",
+    "terminal": true,
+    "tool_calls": 5,
+    "wall_seconds": 22.557278
+  },
+  {
+    "action_phase_events": 0,
+    "archived": true,
+    "arm": "repeat",
+    "cache_unknown_requests": 0,
+    "case_id": "sam-checkpoint-resume",
+    "corrective_writer_requests": 0,
+    "cost_complete": true,
+    "e2e": false,
+    "f2p": {
+      "passed": true,
+      "passed_checks": 3,
+      "total_checks": 3
+    },
+    "failure_kind": "unknown",
+    "feedback_attempts": 0,
+    "guard_reasons": {},
+    "known_peak_upper_usd": 0.0446076,
+    "known_requests": 12,
+    "known_usage": {
+      "completion_tokens": 3162,
+      "prompt_cache_hit_tokens": 17664,
+      "prompt_cache_miss_tokens": 118380,
+      "prompt_tokens": 136044,
+      "total_tokens": 139206
+    },
+    "native_status": "incomplete",
+    "p2p": {
+      "passed": true,
+      "passed_checks": 3,
+      "total_checks": 3
+    },
+    "pending": 0,
+    "provider_unknown": 0,
+    "public_passes": [
+      true
+    ],
+    "raw_sha256": "52ee9f6b12a23f2aeed671c9d549a09a080879c0f8e3c2572d9d6c7c9251aa92",
+    "repeat": 1,
+    "requests": 12,
+    "runtime_usage_unknown_attempts": 0,
+    "scope_stop": null,
+    "started": true,
+    "status": "incomplete",
+    "terminal": true,
+    "tool_calls": 16,
+    "wall_seconds": 51.248136
+  },
+  {
+    "action_phase_events": 0,
+    "archived": true,
+    "arm": "repeat",
+    "cache_unknown_requests": 0,
+    "case_id": "jsonpointer_scalar",
+    "corrective_writer_requests": 0,
+    "cost_complete": true,
+    "e2e": true,
+    "f2p": {
+      "passed": true,
+      "passed_checks": 4,
+      "total_checks": 4
+    },
+    "failure_kind": null,
+    "feedback_attempts": 0,
+    "guard_reasons": {},
+    "known_peak_upper_usd": 0.036396,
+    "known_requests": 12,
+    "known_usage": {
+      "completion_tokens": 2582,
+      "prompt_cache_hit_tokens": 16128,
+      "prompt_cache_miss_tokens": 94864,
+      "prompt_tokens": 110992,
+      "total_tokens": 113574
+    },
+    "native_status": "succeeded",
+    "p2p": {
+      "passed": true,
+      "passed_checks": 7,
+      "total_checks": 7
+    },
+    "pending": 0,
+    "provider_unknown": 0,
+    "public_passes": [
+      true
+    ],
+    "raw_sha256": "ab744cb0e4bffc5af99a4c0670786170aa4e3f58f231983ac2e68ff396713810",
+    "repeat": 1,
+    "requests": 12,
+    "runtime_usage_unknown_attempts": 0,
+    "scope_stop": null,
+    "started": true,
+    "status": "succeeded",
+    "terminal": true,
+    "tool_calls": 15,
+    "wall_seconds": 33.433506
+  },
+  {
+    "action_phase_events": 0,
+    "archived": true,
+    "arm": "repeat",
+    "cache_unknown_requests": 0,
+    "case_id": "itsdangerous_future",
+    "corrective_writer_requests": 0,
+    "cost_complete": true,
+    "e2e": true,
+    "f2p": {
+      "passed": true,
+      "passed_checks": 3,
+      "total_checks": 3
+    },
+    "failure_kind": null,
+    "feedback_attempts": 0,
+    "guard_reasons": {},
+    "known_peak_upper_usd": 0.034362,
+    "known_requests": 10,
+    "known_usage": {
+      "completion_tokens": 2041,
+      "prompt_cache_hit_tokens": 11648,
+      "prompt_cache_miss_tokens": 94728,
+      "prompt_tokens": 106376,
+      "total_tokens": 108417
+    },
+    "native_status": "succeeded",
+    "p2p": {
+      "passed": true,
+      "passed_checks": 7,
+      "total_checks": 7
+    },
+    "pending": 0,
+    "provider_unknown": 0,
+    "public_passes": [
+      true
+    ],
+    "raw_sha256": "adfc3efca127b6258abf470ff147a21b2d49aa24c588706034e72c9a08ed42c1",
+    "repeat": 1,
+    "requests": 10,
+    "runtime_usage_unknown_attempts": 0,
+    "scope_stop": null,
+    "started": true,
+    "status": "succeeded",
+    "terminal": true,
+    "tool_calls": 10,
+    "wall_seconds": 27.851833
+  },
+  {
+    "action_phase_events": 0,
+    "archived": true,
+    "arm": "new_development",
+    "cache_unknown_requests": 0,
+    "case_id": "stream_utf8_chunks",
+    "corrective_writer_requests": 0,
+    "cost_complete": true,
+    "e2e": true,
+    "f2p": {
+      "passed": true,
+      "passed_checks": 2,
+      "total_checks": 2
+    },
+    "failure_kind": null,
+    "feedback_attempts": 0,
+    "guard_reasons": {},
+    "known_peak_upper_usd": 0.0149619,
+    "known_requests": 7,
+    "known_usage": {
+      "completion_tokens": 1568,
+      "prompt_cache_hit_tokens": 10368,
+      "prompt_cache_miss_tokens": 33233,
+      "prompt_tokens": 43601,
+      "total_tokens": 45169
+    },
+    "native_status": "succeeded",
+    "p2p": {
+      "passed": true,
+      "passed_checks": 3,
+      "total_checks": 3
+    },
+    "pending": 0,
+    "provider_unknown": 0,
+    "public_passes": [
+      true
+    ],
+    "raw_sha256": "740601e7d3108ab54554eecb05952540f86c6eb81a4feb7a50c2d7b02f87893a",
+    "repeat": 1,
+    "requests": 7,
+    "runtime_usage_unknown_attempts": 0,
+    "scope_stop": null,
+    "started": true,
+    "status": "succeeded",
+    "terminal": true,
+    "tool_calls": 7,
+    "wall_seconds": 20.66935
+  },
+  {
+    "action_phase_events": 0,
+    "archived": true,
+    "arm": "new_development",
+    "cache_unknown_requests": 0,
+    "case_id": "stable_shard_merge",
+    "corrective_writer_requests": 0,
+    "cost_complete": true,
+    "e2e": true,
+    "f2p": {
+      "passed": true,
+      "passed_checks": 2,
+      "total_checks": 2
+    },
+    "failure_kind": null,
+    "feedback_attempts": 0,
+    "guard_reasons": {},
+    "known_peak_upper_usd": 0.0173802,
+    "known_requests": 8,
+    "known_usage": {
+      "completion_tokens": 1938,
+      "prompt_cache_hit_tokens": 10624,
+      "prompt_cache_miss_tokens": 39558,
+      "prompt_tokens": 50182,
+      "total_tokens": 52120
+    },
+    "native_status": "succeeded",
+    "p2p": {
+      "passed": true,
+      "passed_checks": 3,
+      "total_checks": 3
+    },
+    "pending": 0,
+    "provider_unknown": 0,
+    "public_passes": [
+      true
+    ],
+    "raw_sha256": "59066e5ad6096ab461349d7533994f6d52e8da0bc4e4b4361c4013b1479e2a37",
+    "repeat": 1,
+    "requests": 8,
+    "runtime_usage_unknown_attempts": 0,
+    "scope_stop": null,
+    "started": true,
+    "status": "succeeded",
+    "terminal": true,
+    "tool_calls": 8,
+    "wall_seconds": 25.702472
+  },
+  {
+    "action_phase_events": 2,
+    "archived": true,
+    "arm": "repeat",
+    "cache_unknown_requests": 0,
+    "case_id": "jsonpointer_scalar",
+    "corrective_writer_requests": 5,
+    "cost_complete": true,
+    "e2e": false,
+    "f2p": {
+      "passed": false,
+      "passed_checks": 0,
+      "total_checks": 4
+    },
+    "failure_kind": "no_new_evidence",
+    "feedback_attempts": 1,
+    "guard_reasons": {},
+    "known_peak_upper_usd": 0.0416121,
+    "known_requests": 16,
+    "known_usage": {
+      "completion_tokens": 2934,
+      "prompt_cache_hit_tokens": 25600,
+      "prompt_cache_miss_tokens": 101371,
+      "prompt_tokens": 126971,
+      "total_tokens": 129905
+    },
+    "native_status": "incomplete",
+    "p2p": {
+      "passed": true,
+      "passed_checks": 7,
+      "total_checks": 7
+    },
+    "pending": 0,
+    "provider_unknown": 0,
+    "public_passes": [
+      false,
+      false
+    ],
+    "raw_sha256": "d23633f22c689519f94a224fee74686de6275969afb94ab7cf3c855bad2c86fb",
+    "repeat": 2,
+    "requests": 16,
+    "runtime_usage_unknown_attempts": 0,
+    "scope_stop": null,
+    "started": true,
+    "status": "incomplete",
+    "terminal": true,
+    "tool_calls": 17,
+    "wall_seconds": 36.99746
+  },
+  {
+    "action_phase_events": 0,
+    "archived": true,
+    "arm": "repeat",
+    "cache_unknown_requests": 0,
+    "case_id": "itsdangerous_future",
+    "corrective_writer_requests": 0,
+    "cost_complete": true,
+    "e2e": true,
+    "f2p": {
+      "passed": true,
+      "passed_checks": 3,
+      "total_checks": 3
+    },
+    "failure_kind": null,
+    "feedback_attempts": 0,
+    "guard_reasons": {},
+    "known_peak_upper_usd": 0.0305853,
+    "known_requests": 10,
+    "known_usage": {
+      "completion_tokens": 1995,
+      "prompt_cache_hit_tokens": 11392,
+      "prompt_cache_miss_tokens": 82579,
+      "prompt_tokens": 93971,
+      "total_tokens": 95966
+    },
+    "native_status": "succeeded",
+    "p2p": {
+      "passed": true,
+      "passed_checks": 7,
+      "total_checks": 7
+    },
+    "pending": 0,
+    "provider_unknown": 0,
+    "public_passes": [
+      true
+    ],
+    "raw_sha256": "d78b7c990f6db33230909e1bb67f5018c388c525bc498e402ec045332f8ea178",
+    "repeat": 2,
+    "requests": 10,
+    "runtime_usage_unknown_attempts": 0,
+    "scope_stop": null,
+    "started": true,
+    "status": "succeeded",
+    "terminal": true,
+    "tool_calls": 11,
+    "wall_seconds": 30.175339
+  },
+  {
+    "action_phase_events": 0,
+    "archived": true,
+    "arm": "repeat",
+    "cache_unknown_requests": 0,
+    "case_id": "packaging-requirement-hash",
+    "corrective_writer_requests": 0,
+    "cost_complete": true,
+    "e2e": true,
+    "f2p": {
+      "passed": true,
+      "passed_checks": 5,
+      "total_checks": 5
+    },
+    "failure_kind": null,
+    "feedback_attempts": 0,
+    "guard_reasons": {},
+    "known_peak_upper_usd": 0.041157,
+    "known_requests": 10,
+    "known_usage": {
+      "completion_tokens": 2306,
+      "prompt_cache_hit_tokens": 16000,
+      "prompt_cache_miss_tokens": 111966,
+      "prompt_tokens": 127966,
+      "total_tokens": 130272
+    },
+    "native_status": "succeeded",
+    "p2p": {
+      "passed": true,
+      "passed_checks": 10,
+      "total_checks": 10
+    },
+    "pending": 0,
+    "provider_unknown": 0,
+    "public_passes": [
+      true
+    ],
+    "raw_sha256": "a3ac335bf77303dca9be2093303c12605179d56a4cd263ad65d2e87f474f6b0c",
+    "repeat": 2,
+    "requests": 10,
+    "runtime_usage_unknown_attempts": 0,
+    "scope_stop": null,
+    "started": true,
+    "status": "succeeded",
+    "terminal": true,
+    "tool_calls": 13,
+    "wall_seconds": 32.523034
+  },
+  {
+    "action_phase_events": 0,
+    "archived": true,
+    "arm": "repeat",
+    "cache_unknown_requests": 0,
+    "case_id": "sam-checkpoint-resume",
+    "corrective_writer_requests": 0,
+    "cost_complete": true,
+    "e2e": false,
+    "f2p": {
+      "passed": false,
+      "passed_checks": 0,
+      "total_checks": 3
+    },
+    "failure_kind": "independent_checks_failed",
+    "feedback_attempts": 0,
+    "guard_reasons": {},
+    "known_peak_upper_usd": 0.038562,
+    "known_requests": 11,
+    "known_usage": {
+      "completion_tokens": 3647,
+      "prompt_cache_hit_tokens": 17792,
+      "prompt_cache_miss_tokens": 96160,
+      "prompt_tokens": 113952,
+      "total_tokens": 117599
+    },
+    "native_status": "failed",
+    "p2p": {
+      "passed": true,
+      "passed_checks": 3,
+      "total_checks": 3
+    },
+    "pending": 0,
+    "provider_unknown": 0,
+    "public_passes": [
+      true
+    ],
+    "raw_sha256": "ef7395160e7e7b9b54179eb4ed72b6e33e2113055a3c236a2b8af3815f649e2b",
+    "repeat": 2,
+    "requests": 11,
+    "runtime_usage_unknown_attempts": 0,
+    "scope_stop": null,
+    "started": true,
+    "status": "failed",
+    "terminal": true,
+    "tool_calls": 14,
+    "wall_seconds": 55.74804
+  }
+]
